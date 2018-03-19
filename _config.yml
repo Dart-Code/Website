@@ -1,0 +1,11 @@
+collections:
+  pages:
+    output: true
+    permalink: /:name
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
