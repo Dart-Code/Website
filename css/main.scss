@@ -1,3 +1,80 @@
+---
+---
+
+$vscode-accent-1: #1079C7;
+$vscode-accent-2: #CC6633;
+$vscode-background: #1E1E1E;
+$vscode-foreground: #D4D4D4;
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.6em;
+}
+
+p, pre {
+	margin: 20px 0;
+}
+
+main {
+	max-width: 700px;
+	margin: auto;
+}
+
+code {
+	font-family: Consolas, "Courier New", monospace;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+	padding: 0.1em 0.4em;
+}
+
+pre.highlight {
+	background-color: $vscode-background;
+	color: $vscode-foreground;
+	line-height: 1.4em;
+	padding: 10px;
+	tab-size: 4;
+	border-left: 5px solid $vscode-accent-1;
+	width: 665px;
+
+	code {
+		background-color: inherit;
+		padding: 0;
+	}
+}
+
+pre.highlight:hover {
+	border-left-color: $vscode-accent-2;
+}
+
+.language-dart pre.highlight {
+	tab-size: 2;
+}
+
+pre.highlight, img {
+	box-shadow: 2px 2px 5px #999999;
+}
+
+.callout {
+	border: 1px solid #eeeeee;
+	border-left: 5px solid $vscode-accent-2;
+	border-radius: 3px;
+	padding: 15px 20px;
+
+	h4 {
+		margin: 0;
+	}
+}
+// This is a bit hacky, but can't get Kramdown to apply
+// classes to multiple elements in one go ¯\_(ツ)_/¯
+.callout.title {
+	margin-bottom: 0;
+	border-bottom-width: 0;
+	border-bottom-left-radius: 0;
+	padding-bottom: 0;
+}
+.callout.body {
+	margin-top: 0;
+	border-top-width: 0;
+	border-top-left-radius: 0;
 }

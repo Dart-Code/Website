@@ -2,19 +2,30 @@
 title: "Quickly Switching between SDK Versions"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel sem ut elit eleifend congue a et sem. Cras ultrices maximus ligula, eget ultrices turpis sodales eget. Sed molestie dolor vel mi placerat congue. Nullam ante purus, convallis a suscipit sed, scelerisque sit amet dui. Proin luctus feugiat purus vitae auctor. Ut nec tempus ipsum. Nam tempus ligula at mi luctus, vel cursus urna aliquam. Mauris velit nisi, lobortis nec suscipit nec, faucibus nec ipsum.
+
+To quickly switch between Dart or Flutter SDKs you need to provide Dart Code with a list of paths or containers for your SDKs. This can be done using the `dart.sdkPaths` and `dart.flutterSdkPaths` settings. Each setting is an array of paths that should either be SDK folders themselves or be a folder that contains SDK folders.
+	
 
 ```js
 {
-	`dart.sdkPaths`: [
-		"a",
-		"b"
-	],
-	`dart.flutterSdkPaths`: [
-		"a",
-		"b"
-	],
+	"dart.sdkPaths": [
+		"M:\\Apps\\Dart\\Dart-2.0.0-dev.35.0" // Can be a specific SDK folder
+		"M:\\Apps\\Dart" // Or can be a folder that contains multiple SDKs
+	]
 }
 ```
 
-Cras quis auctor quam. Maecenas vel libero lacinia, ullamcorper nulla id, gravida nulla. Nullam sit amet rutrum ex. Suspendisse tincidunt tristique leo non luctus. Quisque velit dui, elementum in porttitor ut, scelerisque vel diam. Pellentesque at elementum arcu, sed tempor lorem. Maecenas venenatis nisi a ante ultrices, egestas porta urna tristique. Ut malesuada felis risus, id consequat dui accumsan eget. Donec imperdiet lorem libero, nec imperdiet nisi vulputate eget. Praesent tortor ex, vestibulum at auctor vel, rutrum nec enim. Mauris posuere volutpat metus ac dapibus. Phasellus suscipit ipsum nec nunc ultrices, et rhoncus leo maximus. Ut aliquet fringilla dapibus. Aenean ultricies pretium velit, nec sodales augue pretium eu.
+{:.callout.title}
+### Flutter Channels
+
+{:.callout.body}
+Flutter comes with the ability to change "channels" (eg. `master`, `dev`, `beta`). Switching SDK in Dart Code works separately to this and you must have each version in its own folder. To avoid multiple clones you can use the `git worktree` command to check different branches out into different folders (for example `git worktree add ../flutter-dev origin/dev`).
+
+With this value set, the SDK version numbers shown in the status bar will now be clickable:
+
+![The Dart SDK version number in the status bar](/images/version_in_status_bar.png)
+
+When you click this you'll be presented with a pick-list of all SDKs:
+
+![The SDK version pick-list](/images/version_picklist.png)
+
