@@ -2,10 +2,17 @@ collections:
   pages:
     output: true
     permalink: /:name
+  releases:
+    output: true
+    permalink: /release/:name
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: pages
     values:
       layout: page
+  - scope:
+      path: _releases
+      type: releases
+    values:
+      layout: release

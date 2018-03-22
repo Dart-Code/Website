@@ -10,15 +10,35 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
+	margin: 50px;
+	display: grid;
+	grid-column-gap: 50px;
+	grid-template-columns: auto 200px 700px auto;
+	grid-template-areas:
+		"header header header header"
+		". nav main ."
+		"footer footer footer footer";
 }
 
 p, pre {
 	margin: 20px 0;
 }
 
+header {
+	grid-area: header;
+	background-color: #ccc;
+}
+
+nav {
+	grid-area: nav;
+}
+
 main {
-	max-width: 700px;
-	margin: auto;
+	grid-area: main;
+}
+
+footer {
+	grid-area: footer;
 }
 
 code {
