@@ -1,6 +1,10 @@
 ---
 ---
 
+$dart-blue-dark: #0081C6;
+$dart-blue-light: #00A4E4;
+$dart-green-dark: #00D2B8;
+$dart-green-light: #55DDCA;
 $vscode-accent-1: #1079C7;
 $vscode-accent-2: #CC6633;
 $vscode-background: #1E1E1E;
@@ -12,11 +16,13 @@ body {
 	line-height: 1.6em;
 	margin: 0;
 	display: grid;
-	grid-row-gap: 20px;
 	grid-column-gap: 50px;
-	grid-template-columns: auto 200px 700px auto;
+	grid-template-rows: auto auto 1fr auto;
+	min-height: 100%;
+	grid-template-columns: auto 100px 700px auto;
 	grid-template-areas:
-		"header header header header"
+		". . header ."
+		"line line line line"
 		". nav main ."
 		"footer footer footer footer";
 }
@@ -27,17 +33,30 @@ p, pre {
 
 header {
 	grid-area: header;
-	border-bottom: 5px solid #0081C6;
+	padding: 15px 0 10px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
 }
 
 header .title {
-	padding: 25px 15px 5px;
-	text-align: center;
-	font-family: "Montserrat", sans-serif;
 	font-size: 65px;
 	line-height: 1em;
-	font-weight: bold;
-	border-bottom: 5px solid #00D2B8;
+	margin-left: -4px;
+}
+
+header .title .desc {
+	font-size: 20px;
+	line-height: 1em;
+}
+
+.line {
+	grid-area: line;
+	border-bottom: 5px solid $dart-green-dark;
+	margin-bottom: 10px;
+}
+
+.line .inner {
+	border-bottom: 5px solid $dart-blue-dark;
 }
 
 nav {
@@ -50,6 +69,22 @@ main {
 
 footer {
 	grid-area: footer;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	margin-top: 15px;
+}
+
+footer a {
+	color: #eee;
+	margin: 0 10px;
+}
+
+hr {
+	background-color: $dart-green-dark;
+	border: 0;
+	height: 1px;
+	margin: 30px 0;
 }
 
 code {
@@ -86,6 +121,15 @@ pre.highlight:hover {
 
 main pre.highlight, main img {
 	box-shadow: 2px 2px 5px #999999;
+}
+
+a {
+	color: #0366d6;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .callout {

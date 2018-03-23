@@ -1,4 +1,5 @@
-site_name: Dart for Visual Studio Code
+name: Dart Code
+desc: Dart & Flutter support for Visual Studio Code
 collections:
   pages:
     output: true

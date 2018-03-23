@@ -4,8 +4,9 @@ layout: template
 
 <nav>
 	<ul>
-		{% for release in site.releases %}
-			<li><a href="{{ release.permalink | escape }}">{{ release.title | escape }}</a></li>
+		{% assign releases = site.releases | sort: "sort_order" | reverse %}
+		{% for release in releases %}
+			<li><a href="{{ release.url | escape }}">{{ release.title | escape }}</a></li>
 		{% endfor %}
 	</ul>
 </nav>
