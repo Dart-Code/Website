@@ -3,6 +3,7 @@ layout: template
 ---
 
 <nav>
+	<h4>Releases</h4>
 	<ul>
 		{% assign releases = site.releases | sort: "sort_order" | reverse %}
 		{% for release in releases %}
