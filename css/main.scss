@@ -90,6 +90,7 @@ main {
 		tab-size: 4;
 		border-left: 5px solid $vscode-accent-1;
 		max-width: 655px;
+		white-space: pre-wrap;
 	
 		&:hover {
 			border-left-color: $vscode-accent-2;
