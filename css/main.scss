@@ -10,8 +10,9 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
-	margin: 50px;
+	margin: 0;
 	display: grid;
+	grid-row-gap: 20px;
 	grid-column-gap: 50px;
 	grid-template-columns: auto 200px 700px auto;
 	grid-template-areas:
@@ -26,7 +27,17 @@ p, pre {
 
 header {
 	grid-area: header;
-	background-color: #ccc;
+	border-bottom: 5px solid #0081C6;
+}
+
+header .title {
+	padding: 25px 15px 5px;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+	font-size: 65px;
+	line-height: 1em;
+	font-weight: bold;
+	border-bottom: 5px solid #00D2B8;
 }
 
 nav {
@@ -42,7 +53,7 @@ footer {
 }
 
 code {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 	font-size: 12px;
 	background-color: #f6f8fa;
 	border-radius: 3px;
@@ -73,7 +84,7 @@ pre.highlight:hover {
 	tab-size: 2;
 }
 
-pre.highlight, img {
+main pre.highlight, main img {
 	box-shadow: 2px 2px 5px #999999;
 }
 

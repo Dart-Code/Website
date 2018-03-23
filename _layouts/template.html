@@ -1,12 +1,15 @@
 <html>
 	<head>
-		<title>{{ page.title | escape }}</title>
+		<title>{{ page.title | escape }} - {{ site.site_name }}</title>
 		<link rel="stylesheet" href="/css/main.css" />
 		<link rel="stylesheet" href="/css/code.css" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	</head>
 <body>
 	<header>
-		header
+		<div class="title">
+			{{ site.site_name }}
+		</div>
 	</header>
 	{{ content }}
 	<footer>

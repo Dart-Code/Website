@@ -1,3 +1,4 @@
+site_name: Dart for Visual Studio Code
 collections:
   pages:
     output: true
