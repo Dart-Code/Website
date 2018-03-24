@@ -27,6 +27,10 @@ body {
 		"footer footer footer footer";
 }
 
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2em;
+}
+
 p, pre {
 	margin: 20px 0;
 }
@@ -47,7 +51,6 @@ header {
 .line {
 	grid-area: line;
 	border-bottom: 5px solid $dart-green-dark;
-	margin-bottom: 10px;
 
 	.inner {
 		border-bottom: 5px solid $dart-blue-dark;
@@ -56,17 +59,29 @@ header {
 
 nav {
 	grid-area: nav;
+	margin-top: 20px;
 
 	h4 {
-		background-color: #eee;
+		background-color: $dart-blue-dark;
+		color: #fff;
 		padding: 2px 10px;
 		margin: 5px 0;
 	}
 	
 	ul {
 		list-style-type: none;
-		padding-left: 10px;
 		margin: 0;
+		padding: 0;
+		
+		a {
+			padding-left: 10px;
+			display: block;
+	
+			&.current {
+				background-color: $dart-green-dark;
+				color: #fff;
+			}
+		}
 	}
 }
 
@@ -150,7 +165,7 @@ main {
 	}
 
 	ul {
-		padding-left: 20px;
+		padding-left: 16px;
 	}
 }
 
@@ -171,7 +186,7 @@ hr {
 	background-color: $dart-green-dark;
 	border: 0;
 	height: 1px;
-	margin: 30px 0;
+	margin: 30px 25%;
 }
 
 a {
@@ -195,8 +210,16 @@ a {
 			"main"
 			"footer";
 	}
+
+	header {
+		.title {
+			font-size: 45px;
+		}
+	}
 	
 	nav {
+		margin-top: 0;
+
 		h4 {
 			padding: 2px 5px;
 		}
@@ -207,8 +230,13 @@ a {
 
 			li {
 				display: inline-block;
-				padding-right: 5px;
+				padding: 0;
 				margin: 0;
+
+				a {
+					margin: 0;
+					padding: 0 5px;
+				}
 			}
 		}
 	}
