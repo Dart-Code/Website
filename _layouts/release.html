@@ -4,12 +4,7 @@ layout: template
 
 <nav>
 	<h4>Releases</h4>
-	<ul>
-		{% assign releases = site.releases | sort: "sort_order" | reverse %}
-		{% for release in releases %}
-			<li><a href="{{ release.url | escape }}">{{ release.title | escape }}</a></li>
-		{% endfor %}
-	</ul>
+	{% include nav.html items=site.releases %}
 </nav>
 <main>
 	{{ content }}

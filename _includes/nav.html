@@ -1,0 +1,6 @@
+<ul>
+	{% assign items = include.items | sort: "sort_order" | reverse %}
+	{% for item in items %}
+		<li><a href="{{ item.url | escape }}" {% if page.url == item.url %}class="current"{% endif %}>{{ item.title | escape }}</a></li>
+	{% endfor %}
+</ul>
