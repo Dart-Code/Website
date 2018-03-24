@@ -19,13 +19,12 @@ To quickly switch between Dart or Flutter SDKs you need to provide Dart Code wit
 ### Flutter Channels
 
 {:.callout.body}
-Flutter comes with the ability to change "channels" (eg. `master`, `dev`, `beta`). Switching SDK in Dart Code works separately to this and you must have each version in its own folder. To avoid multiple clones you can use the `git worktree` command to check different branches out into different folders (for example `git worktree add ../flutter-dev origin/dev`).
+Flutter comes with the ability to change "channels" (eg. `master`, `dev`, `beta`). Using quick-switching in Dart Code works separately to this and you must have each Flutter channel in its own folder. To avoid multiple clones you can use the `git worktree` command to check different branches out into different folders (for example `git worktree add ../flutter-master origin/master` to check out the master channel into a `flutter-master` folder alongside your existing version).
 
-With this value set, the SDK version numbers shown in the status bar will now be clickable:
+With this value set, the SDK version numbers shown in the status bar will become clickable and open pick-lists of the found SDK versions:
 
 ![The Dart SDK version number in the status bar](/images/version_in_status_bar.png)
 
-When you click this you'll be presented with a pick-list of all SDKs:
-
 ![The SDK version pick-list](/images/version_picklist.png)
 
+Selecting a version will reload Dart Code's services silently in the background to use the new version (note this will require re-analyzing all of your project files).

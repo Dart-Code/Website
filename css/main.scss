@@ -104,13 +104,9 @@ main {
 		line-height: 1.5em;
 		padding: 15px;
 		tab-size: 4;
-		border-left: 5px solid $vscode-accent-1;
+		border-left: 5px solid $vscode-accent-2;
 		max-width: 655px;
 		white-space: pre-wrap;
-	
-		&:hover {
-			border-left-color: $vscode-accent-2;
-		}
 	
 		code {
 			background-color: inherit;
@@ -136,15 +132,11 @@ main {
 		position: relative;
 		max-width: 650px;
 	
-		h4 {
-			margin: 0;
-		}
-	
 		// This is to get the full bar without the corners merging into the border
 		&:before {
 			content: "";
 			width: 5px;
-			background-color: $vscode-accent-2;
+			background-color: $vscode-accent-1;
 			position: absolute;
 			top: -1px;
 			left: -1px;
@@ -157,6 +149,7 @@ main {
 			border-bottom-width: 0;
 			border-bottom-left-radius: 0;
 			padding-bottom: 0;
+			color: $vscode-accent-1;
 		}
 		&.body {
 			margin-top: 0;
