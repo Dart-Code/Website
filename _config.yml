@@ -6,7 +6,7 @@ collections:
     permalink: /:name
   releases:
     output: true
-    permalink: /release/:name
+    permalink: /releases/:name
 defaults:
   - scope:
       path: ""
