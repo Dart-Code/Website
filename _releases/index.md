@@ -1,7 +1,7 @@
 ---
 title: Releases
-sort_order: v999
+layout: page
 hide_from_nav: true
 ---
 
-blah
+{% include nav.html items=site.releases %}

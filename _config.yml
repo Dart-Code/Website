@@ -1,9 +1,9 @@
 name: Dart Code
 desc: Dart & Flutter support for Visual Studio Code
 collections:
-  pages:
+  docs:
     output: true
-    permalink: /:name
+    permalink: /docs/:name
   releases:
     output: true
     permalink: /releases/:name
@@ -13,6 +13,11 @@ defaults:
       type: pages
     values:
       layout: page
+  - scope:
+      path: "_docs"
+      type: docs
+    values:
+      layout: doc
   - scope:
       path: _releases
       type: releases

@@ -1,0 +1,10 @@
+<ul>
+	<li {% if page.url == "/" %}class="current"{% endif %}><a href="/">Home</a></li>
+	<li {% if page.url contains "/docs/" %}class="current"{% endif %}><a href="/docs/">Docs</a></li>
+	<li {% if page.url contains "/releases/" %}class="current"{% endif %}>
+		<a href="/releases/">Releases</a>
+		{% if page.url contains "/releases/" %}
+			{% include nav.html items=site.releases %}
+		{% endif %}
+	</li>
+</ul>
