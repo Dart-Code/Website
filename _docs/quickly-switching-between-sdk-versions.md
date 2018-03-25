@@ -26,4 +26,4 @@ With this value set, the SDK version numbers shown in the status bar will become
 
 ![The SDK version pick list](/images/version_picklist.png)
 
-Selecting a version will reload Dart Code's services silently in the background to use the new version (note this will require re-analyzing all of your project files).
+Selecting a version will reload Dart Code's services silently in the background to use the new version (this will require re-analyzing all of your project files).
