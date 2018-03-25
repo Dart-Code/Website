@@ -1,6 +1,5 @@
 <ul>
-	{% assign items = include.items | sort: "sort_order" | reverse %}
-	{% for item in items %}
+	{% for item in include.items %}
 		{% if item.hide_from_nav != true %}
 			<li {% if page.url == item.url %}class="current"{% endif %}><a href="{{ item.url | escape }}">{{ item.title | escape }}</a></li>
 		{% endif %}
