@@ -1,6 +1,5 @@
 ---
 title: ""
-layout: page
 ---
 
 <script>
