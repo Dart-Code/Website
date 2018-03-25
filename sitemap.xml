@@ -4,6 +4,7 @@ layout: none
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url><loc>https://dartcode.org/</loc></url>
+	<url><loc>https://dartcode.org/faq</loc></url>
 	{% for p in site.docs %}<url><loc>https://dartcode.org{{ p.url | replace: "/index", "" | escape }}</loc></url>{% endfor %}
 	{% for p in site.releases %}<url><loc>https://dartcode.org{{ p.url | replace: "/index", "" | escape }}</loc></url>{% endfor %}
 </urlset>
