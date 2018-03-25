@@ -1,5 +1,6 @@
 name: Dart Code
 desc: Dart & Flutter support for Visual Studio Code
+permalink: /a/:name/
 collections:
   docs:
     output: true
