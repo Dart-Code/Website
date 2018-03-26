@@ -8,6 +8,8 @@ Dart Code has a number of configurable settings that can be modified in your Use
 {:toc}
 
 <!-- TODO: Split into Window/Resource scope -->
+<!-- TODO: Add log settings -->
+<!-- TODO: Add a validation script that compares master package.json to this list -->
 
 ## dart.allowAnalytics `true`
 

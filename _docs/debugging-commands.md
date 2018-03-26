@@ -2,6 +2,8 @@
 title: Debugging Commands
 ---
 
+<!-- TODO: Add a validation script that compares master package.json to this list -->
+
 Dart Code adds a number of commands to the command palette (`Ctrl`+`Shift`+`P` or `Cmd`+`Shift`+`P`) during a debugging session.
 
 * TOC
