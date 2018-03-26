@@ -7,9 +7,12 @@ Dart Code has a number of configurable settings that can be modified in your Use
 * TOC
 {:toc}
 
-<!-- TODO: Split into Window/Resource scope -->
 <!-- TODO: Add log settings -->
 <!-- TODO: Add a validation script that compares master package.json to this list -->
+
+# Window Scoped Settings
+
+Window scoped settings must be applied in your User Settings or at the workspace level and will apply for all projects open in a window (for example, `dart.sdkPath` is used to launch an analyzer that is used for the whole window).
 
 ## dart.allowAnalytics `true`
 
@@ -22,22 +25,6 @@ Whether to show annotations against constructor, method invocations and lists th
 ## dart.checkForSdkUpdates `true`
 
 Whether to check you are using the latest version of the Dart SDK at startup.
-
-## dart.debugSdkLibraries `false`
-
-Whether SDK libraries should be marked as debuggable.
-
-## dart.debugExternalLibraries `false`
-
-Whether libraries should be marked as debuggable.
-
-## dart.flutterHotReloadOnSave `true`
-
-Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files.
-
-## dart.flutterSdkPath
-
-Override the detected Flutter SDK to allow you to run from another location.
 
 ## dart.insertArgumentPlaceholders `true`
 
@@ -63,6 +50,30 @@ Whether to prompt to get packages when opening a project with out of date packag
 
 Whether to prompt to upgrade folders to Workspace Folders when projects are detected in sub-folders.
 
+## dart.vmAdditionalArgs
+
+Additional args to pass to the Dart VM when running/debugging apps.
+
+# Resource Scoped Settings
+
+Resource scoped settings can be set in individual workspace folder settings and apply to resources within that workspace folder (for example each workspace folder could have its own `dart.lineLength`).
+
+## dart.debugSdkLibraries `false`
+
+Whether SDK libraries should be marked as debuggable.
+
+## dart.debugExternalLibraries `false`
+
+Whether libraries should be marked as debuggable.
+
+## dart.flutterHotReloadOnSave `true`
+
+Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files.
+
+## dart.flutterSdkPath
+
+Override the detected Flutter SDK to allow you to run from another location.
+
 ## dart.sdkPath
 
 If the Dart SDK is not automatically found on your machine from your `PATH` you can enter the path to it here.
@@ -83,6 +94,10 @@ Whether to show the names of linter rules in the problems panel to make it easie
 
 Whether to show TODOs in the Problems list.
 
-## dart.vmAdditionalArgs
+# Custom Colors
 
-Additional args to pass to the Dart VM when running/debugging apps.
+Some colors in Dart Code can be customised using the `workbench.colourCustomizations` section in settings. Supported colors are:
+
+## dart.closingLabels `tab.inactiveForeground`
+
+The color of the "closing label" annotations against constructor, method invocations and lists that span multiple lines.
