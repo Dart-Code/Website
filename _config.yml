@@ -1,13 +1,13 @@
 name: Dart Code
 desc: Dart & Flutter support for Visual Studio Code
-permalink: /a/:name/
+permalink: /:name/
 collections:
   docs:
     output: true
-    permalink: /docs/:name
+    permalink: /docs/:name/
   releases:
     output: true
-    permalink: /releases/:name
+    permalink: /releases/:name/
 defaults:
   - scope:
       path: ""
