@@ -112,13 +112,29 @@ main {
 			padding: 0;
 		}
 	}
+
+	.button a {
+		min-width: 200px;
+		font-size: 20px;
+		padding: 10px;
+		text-align: center;
+		display: inline-block;
+		background-color: $dart-blue-dark;
+		color: #fff;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 	
 	.language-dart pre.highlight {
 		tab-size: 2;
 	}
 	
-	pre.highlight, img {
-		box-shadow: 2px 2px 5px #999999;
+	& > :not(aside) {
+		pre.highlight, img {
+			box-shadow: 2px 2px 5px #999999;
+		}
 	}
 	
 	img {
