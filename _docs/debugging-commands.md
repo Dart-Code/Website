@@ -9,9 +9,9 @@ Dart Code adds a number of commands to the command palette (`Ctrl`+`Shift`+`P` o
 * TOC
 {:toc}
 
-## Keybinding Commands
+## Adding Key Bindings for Commands
 
-For commands that do not already have their own key bindings you can add your own by following the steps in the [VS Code Key Binding docs](https://code.visualstudio.com/docs/getstarted/keybindings).
+For information on key bindings, including how to add your own, see [Key Bindings](/docs/key-bindings/)
 
 ## Flutter: Hot Reload
 

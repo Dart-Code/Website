@@ -57,12 +57,12 @@ Dart Code can be installed from [the Visual Studio Code Marketplace](https://mar
 
 ## Settings
 
-A full list of settings is [available here](/docs/settings).
+A full list of settings is [available here](/docs/settings/).
 
 
 ## Refactorings and Code Fixes
 
-A full list of supporting refactors is [available here](/docs/refactorings-and-code-fixes).
+A full list of supporting refactors is [available here](/docs/refactorings-and-code-fixes/).
 
 
 ## Analytics

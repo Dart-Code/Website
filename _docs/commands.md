@@ -9,13 +9,13 @@ Dart Code adds a number of commands to the command palette (`Ctrl`+`Shift`+`P` o
 * TOC
 {:toc}
 
-## Keybinding Commands
+## Adding Key Bindings for Commands
 
-For commands that do not already have their own key bindings you can add your own by following the steps in the [VS Code Key Binding docs](https://code.visualstudio.com/docs/getstarted/keybindings).
+For information on key bindings, including how to add your own, see [Key Bindings](/docs/key-bindings/)
 
 ## Dart: Change SDK
 
-If you have configured the [`dart.sdkPaths` setting](/docs/settings#dartsdkpaths) then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions) for more info.
+If you have configured the [`dart.sdkPaths` setting](/docs/settings/#dartsdkpaths) then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions/) for more info.
 
 ## Dart: Organize Directives
 
@@ -55,11 +55,11 @@ For more information on using packages [see the Flutter website](https://flutter
 
 ## Flutter: Change Device
 
-If you have multiple devices or simulators connected then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices) for more info.
+If you have multiple devices or simulators connected then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices/) for more info.
 
 ## Flutter: Change SDK
 
-If you have configured the [`dart.flutterSdkPaths` setting](/docs/settings#dartfluttersdkpaths) then this command will allow you to quick switch between Flutter SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions) for more info.
+If you have configured the [`dart.flutterSdkPaths` setting](/docs/settings/#dartfluttersdkpaths) then this command will allow you to quick switch between Flutter SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions/) for more info.
 
 ## Flutter: Get Packages
 
