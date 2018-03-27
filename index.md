@@ -15,10 +15,13 @@ mobile apps, and [AngularDart](https://angulardart.org) web apps.
 
 ## Installation
 
-Dart Code can be installed from [the Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension) or by clicking the button below:
+You must have [the VS Code Editor](https://code.visualstudio.com/) in order to install Dart Code.
 
-[Install Dart Code](vscode:extension/Dart-Code.dart-code)
-{:.button}
+[Get VS Code Editor](https://code.visualstudio.com/)
+[Get Dart Code Extension](vscode:extension/Dart-Code.dart-code)
+{:.buttons}
+
+If you have problems with the links above you can install Dart Code from [the Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
 
 ## Features
 

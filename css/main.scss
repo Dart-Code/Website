@@ -113,9 +113,13 @@ main {
 		}
 	}
 
-	.button a {
+	.buttons {
+		text-align: center;
+	}
+
+	.button a, .buttons a {
 		min-width: 200px;
-		font-size: 20px;
+		font-size: 18px;
 		padding: 10px;
 		text-align: center;
 		display: inline-block;
