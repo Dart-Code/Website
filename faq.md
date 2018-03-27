@@ -17,7 +17,7 @@ Dart Code generally will try to find Dart and/or Flutter from your `PATH` variab
 
 ## Where can I find a list of Key Bindings?
 
-Much of Dart Code's functionality inherits key bindings from VS Code though we do also add some of our own. For a list of key bindings added by Dart Code or that we consider useful, see [the key binding docs](/docs/keybindings/).
+Much of Dart Code's functionality inherits key bindings from VS Code though we do also add some of our own. For a list of key bindings added by Dart Code or that we consider useful, see [the key binding docs](/docs/key-bindings/).
 
 ## How do I switch between multiple devices for Flutter development?
 
