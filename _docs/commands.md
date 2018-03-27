@@ -15,7 +15,7 @@ For commands that do not already have their own key bindings you can add your ow
 
 ## Dart: Change SDK
 
-If you have configured the [`dart.sdkPaths` setting](/docs/settings#dartsdkpaths) then this command will allow you to quick switch between Dart SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions) for more info.
+If you have configured the [`dart.sdkPaths` setting](/docs/settings#dartsdkpaths) then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions) for more info.
 
 ## Dart: Organize Directives
 
@@ -23,7 +23,7 @@ This command removes unused imports and sorts directives in the current Dart fil
 
 ## Dart: Show Type Hierarchy
 
-This commands displays the hierarchy for the current types in a pick list.
+This commands display the hierarchy for the current types in a pick list.
 
 ## Dart: Sort Members
 
@@ -55,7 +55,7 @@ For more information on using packages [see the Flutter website](https://flutter
 
 ## Flutter: Change Device
 
-If you have multiple devices or simulators connected then this command will allow you to quick switch between Dart SDKs. See [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices) for more info.
+If you have multiple devices or simulators connected then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices) for more info.
 
 ## Flutter: Change SDK
 
