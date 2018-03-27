@@ -65,7 +65,7 @@ A full list of settings is [available here](/docs/settings/).
 
 ## Refactorings and Code Fixes
 
-A full list of supporting refactors is [available here](/docs/refactorings-and-code-fixes/).
+A full list of supported refactors is [available here](/docs/refactorings-and-code-fixes/).
 
 
 ## Analytics
