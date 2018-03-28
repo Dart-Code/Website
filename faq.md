@@ -23,6 +23,6 @@ Much of Dart Code's functionality inherits key bindings from VS Code though we d
 
 If you have multiple devices/simulators you can quickly switch them from the status bar. For more info, see [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices/) in the docs.
 
-## How do I hide Flutter's Slow Mode Banner?
+## How do I hide Flutter's Debug Mode Banner?
 
-The Slow Mode Banner can be toggled from the command palette. For more info, see [documentation for the `Flutter: Toggle Slow Mode Banner` command](/docs/debugging-commands/#flutter-toggle-slow-mode-banner).
+The Debug Mode Banner (previously Slow Mode Banner) can be toggled from the command palette. For more info, see [documentation for the `Flutter: Toggle Debug-Mode Banner` command](/docs/debugging-commands/#flutter-toggle-debug-mode-banner).
