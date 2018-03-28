@@ -53,8 +53,8 @@ This command toggles painting different colors in areas of the screen as they ar
 
 This command toggles the speed of animations between normal and one sixth normal speed to help troubleshoot when something isn't animating as expected.
 
-## Flutter: Toggle Slow Mode Banner
+## Flutter: Toggle Debug Mode Banner
 
-When taking screenshots of your Flutter application during development it may be convenient to hide the **Slow Mode** banner without having to rebuild your app. If you're running your Flutter app via the VS Code debugger then you can use the `Flutter: Toggle Slow Mode Banner` command to show or hide the banner.
+When taking screenshots of your Flutter application during development it may be convenient to hide the **Debug** banner without having to rebuild your app. If you're running your Flutter app via the VS Code debugger then you can use the `Flutter: Toggle Debug-Mode Banner` command to show or hide the banner.
 
 <!-- TODO: SCREENSHOT -->
