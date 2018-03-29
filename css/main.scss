@@ -186,6 +186,23 @@ main {
 	ul {
 		padding-left: 16px;
 	}
+
+	h1,h2,h3,h4,h5.h6 {
+		a {
+			display: none;
+			margin-left: 5px;
+			color: #ccc;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		&:hover a {
+			display: inline;
+		}
+		&:target a {
+			color: $dart-blue-dark;
+		}
+	}
 }
 
 footer {
