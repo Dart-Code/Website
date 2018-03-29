@@ -177,6 +177,12 @@ main {
 		}
 	}
 
+	:target {
+		background-color: $dart-green-light;
+		margin-left: -8px;
+		padding: 5px 5px 5px 8px;
+	}
+
 	ul {
 		padding-left: 16px;
 	}
