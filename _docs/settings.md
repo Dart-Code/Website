@@ -7,7 +7,6 @@ Dart Code has a number of configurable settings that can be modified in your Use
 * TOC
 {:toc}
 
-<!-- TODO: Add log settings -->
 <!-- TODO: Add a validation script that compares master package.json to this list -->
 
 # Window Scoped Settings
@@ -101,3 +100,33 @@ Some colors in Dart Code can be customised using the `workbench.colourCustomizat
 ## dart.closingLabels
 
 The color of the "closing label" annotations against constructor, method invocations and lists that span multiple lines. If not supplied, the colour for `tab.inactiveForeground` will be used.
+
+# Logging
+
+There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/). Each of these settings takes a file path and the containing folder must have already been created.
+
+## dart.analyzerInstrumentationLogFile
+
+This enables very detailed logging in the analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
+
+## dart.analyzerLogFile
+
+This enables logging of communication between Dart Code and the analysis server. Messages are truncated after a few thousand characters but this is useful to when trying to understand how Dart Code is interacting with the analysis server. For more information on capturing logs, see [Analyzer Logging](/docs/logging/#analyzer).
+
+## dart.flutterDaemonLogFile
+
+This enables logging of the `flutter daemon` communication which is the service that provides information about connected devices that is used in the status bar. For more information on capturing logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
+
+## dart.flutterRunLogFile
+
+This enables logging of `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. For more information on capturing logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
+
+## dart.flutterTestLogFile
+
+This enables logging of `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. For more information on capturing logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+
+## dart.observatoryLogFile
+
+This enables logging of communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. For more information on capturing logs, see [Observatory Logging](/docs/logging/#observatory).
+
+<!-- TODO: Other daiagnotics like analyzer observatory, etc. -->
