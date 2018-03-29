@@ -2,9 +2,10 @@
 title: Enabling Logging
 ---
 
-# Logging
-
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [](). Each of these settings takes a file path and the containing folder must have already been created.
+
+* TOC
+{:toc}
 
 ## Analysis Server Instrumentation Logging
 {:#analyzer-instrumentation}
