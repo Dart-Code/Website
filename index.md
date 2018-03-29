@@ -25,37 +25,39 @@ If you have problems with the links above you can install Dart Code from [the Vi
 
 ## Features
 
-- Debug Dart command line apps
-- Debug Flutter mobile apps
-- Support for flutter `hot reload` (use the debugger `Restart` button)
-- Select from multiple devices for Flutter debugging (select from the status bar)
-- Support for debugging "just my code" or SDK/libraries too (`dart.debugSdkLibraries` and `dart.debugExternalLibraries`)
-- Automatically finds Dart and Flutter SDKs from `PATH` or workspace folders
-- Notification of new stable Dart SDK releases
+- Edit and Debug Flutter mobile apps
+- Edit and Debug Dart command line apps
+- [Automatic hot reloads for Flutter](/docs/settings/#dartflutterhotreloadonsave)
+- [Refactorings and Code fixes (lightbulb)](/docs/refactorings-and-code-fixes/)
+- [Quickly switch between devices for Flutter](/docs/quickly-switching-between-flutter-devices/)
+- [Flutter Doctor command](/docs/commands/#flutter-run-flutter-doctor)
+- [Flutter Get Packages command](/docs/commands/#flutter-get-packages)
+- [Flutter Upgrade Packages command](/docs/commands/#flutter-upgrade-packages)
+- [Automatically gets packages when `pubspec.yaml` is saved](/docs/settings/#dartrunpubgetonpubspecchanges)
+- Prompts for full restarts when a hot reload does not re-execute all code
+- [Automatically finds SDKs from `PATH`](/docs/configuring-path-and-environment-variables/)
+- [Notification of new stable Dart SDK releases](/docs/settings/#dartcheckforsdkupdates)
+- [Sort Members command](/docs/commands/#dart-sort-members)
+- Support for debugging "just my code" or SDK/libraries too ([`dart.debugSdkLibraries`](/docs/settings/#dartdebugsdklibraries) and [`dart.debugExternalLibraries`](/docs/settings/#dartdebugexternallibraries))
+- [Prompts to get packages when out of date](/docs/settings/#dartprompttogetpackages)
 - Syntax highlighting
 - Code completion
 - Snippets
-- Realtime errors/warnings/TODOs reported in problems window and with squiggles
-- Hovers/tooltip information
+- Realtime errors/warnings/TODOs
+- Documentation in hovers/tooltips
 - Go to Definition
 - Find References
-- Code fixes/lightbulb
-- Type hierarchy
 - Rename refactoring
-- Organize directives
-- Sort members
-- Flutter Doctor command
 - Format document
 - Support for format-on-save (`editor.formatOnSave`)
 - Support for format-on-type (`editor.formatOnType`)
-- Workspace-wide symbol search
-- Automatic closing braces/quotes
-- Document symbol list/search with highlighting
-- Generation of analysis error reports for easy reporting to the Dart team 
-- `pub get` and `pub upgrade` commands (and flutter equivilents)
-- Automatically run `pub get` when `pubspec.yaml` is saved
-- Supports strong mode and linting (configured in `analysis_options.yaml` or `.analysis_options`)
-- Other references to symbol under cursor are highlighted
+- Workspace symbol search
+- Document symbol search
+- [Organize Directives command](/docs/commands/#dart-organize-directives)
+- [Automatically Organize Directives on save](/docs/settings/#dartorganizedirectivesonsave)
+- [Pub Get Packages command](/docs/commands/#pub-get-packages)
+- [Pub Upgrade Packages command](/docs/commands/#pub-upgrade-packages)
+- [Type Hierarchy](/docs/commands/#dart-show-type-hierarchy)
 
 
 ## Settings
