@@ -9,7 +9,7 @@ title: Frequently Asked Questions
 <!-- TODO -->
 <!-- TODO -->
 
-## How do I perform a Full Restart?
+## How do I perform a Full Restart of my Flutter app?
 
 The [`Full Restart` command](/docs/debugging-commands/#flutter-full-restart) is [bound to `Ctrl`+`F5`](/docs/key-bindings/) by default.
 
