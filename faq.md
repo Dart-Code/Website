@@ -9,6 +9,12 @@ title: Frequently Asked Questions
 <!-- TODO -->
 <!-- TODO -->
 
+## How do I perform a Full Restart?
+
+The [`Full Restart` command](/docs/debugging-commands/#flutter-full-restart) is [bound to `Ctrl`+`F5`](/docs/key-bindings/) by default.
+
+Please 👍 on [Microsoft/vscode#45116](https://github.com/Microsoft/vscode/issues/45116) to help support making the debug toolbar in VS Code customisable so we can add a dedicated button to avoid this question being frequently asked!
+
 ## Why can't Dart Code find my Dart/Flutter SDK?
 
 Dart Code generally will try to find Dart and/or Flutter from your `PATH` variable. Depending on how you launch VS Code it amy not inherit the `PATH` from your terminal. For information on how best to set your `PATH` see [Configuring PATH and Environment Variables](/docs/configuring-path-and-environment-variables/).
