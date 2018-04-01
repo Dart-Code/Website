@@ -283,6 +283,21 @@ main {
 			}
 		}
 	}
+
+	#test-branches {
+		li span {
+			margin-left: 5px;
+			color: #666;
+
+			&.today {
+				font-weight: bold;
+			}
+
+			&.days-ago:after {
+				content: " days ago";
+			}
+		}
+	}
 }
 
 footer {

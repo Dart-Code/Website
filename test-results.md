@@ -7,6 +7,9 @@ body-class: big-screen
 
 <div id="test-results-loading" class="loading"></div>
 
+<ul id="test-branches" class="hide">
+</ul>
+
 <table id="test-results" class="hide">
 	<thead>
 		<tr>

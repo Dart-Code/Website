@@ -1,4 +1,5 @@
 var bucketRoot = "https://test-results.dartcode.org/";
+var githubApiRoot = "https://api.github.com/repos/Dart-Code/Dart-Code/";
 var results = [];
 var outstandingRequests = 0;
 var queryString = window.location.search.substring(1);
@@ -6,21 +7,29 @@ var queryString = window.location.search.substring(1);
 if (queryString && queryString.indexOf("/") !== -1) {
 	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, console.error);
 } else {
-	// TODO: Display list
+	getJson(githubApiRoot + "branches", handleBranchList, console.error);
 }
 
-function getXml(url, success, error) {
+function get(url, success, error) {
 	var request = new XMLHttpRequest();
 	request.open("GET", url);
 	request.onerror = error;
 	request.onload = function () {
 		if (this.status >= 200 && this.status < 400) {
-			success(this.responseXML);
+			success(this);
 		} else {
 			error(this.statusText);
 		}
 	};
 	request.send();
+}
+
+function getXml(url, success, error) {
+	get(url, function (request) { success(request.responseXML); }, error);
+}
+
+function getJson(url, success, error) {
+	get(url, function (request) { success(JSON.parse(request.response)); }, error);
 }
 
 function handleFileListing(xml) {
@@ -116,7 +125,7 @@ function updateResults() {
 			}
 		}
 	}
-	document.getElementById("test-results-loading").classList.add("hide");
+	hideLoading();
 	table.classList.remove("hide");
 }
 
@@ -132,4 +141,44 @@ function addRow(table, pad, cols, label, className) {
 
 	table.appendChild(row);
 	return row;
+}
+
+function hideLoading() {
+	document.getElementById("test-results-loading").classList.add("hide");
+}
+
+function handleBranchList(branches) {
+	var list = document.getElementById("test-branches");
+	for (let branch of branches) {
+		outstandingRequests++;
+		let branchName = branch.name;
+		let hash = branch.commit.sha;
+		getXml(bucketRoot + "?max-keys=1&prefix=" + escape(branchName + "/" + hash), function (xml) {
+			// The first result will show the list.
+			hideLoading();
+			list.classList.remove("hide");
+
+			// Check we had some results for this branch
+			var contentsNode = xml.querySelector("Contents");
+			if (contentsNode) {
+				var li = list.appendChild(document.createElement("li"));
+				var a = li.appendChild(document.createElement("a"));
+				a.textContent = branchName;
+				a.href = "?" + branchName + "/" + hash;
+
+				// Get the date...
+				var date = new Date(Date.parse(contentsNode.querySelector("LastModified").textContent));
+				var span = li.appendChild(document.createElement("span"));
+				var daysAgo = Math.floor(((new Date()).getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+				if (daysAgo == 0) {
+					daysAgo = "today";
+					span.classList.add("today");
+				} else if (daysAgo == 1)
+					daysAgo = "yesterday";
+				else
+					span.classList.add("days-ago");
+				span.textContent = daysAgo;
+			}
+		}, console.error);
+	}
 }
