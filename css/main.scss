@@ -316,17 +316,17 @@ a {
 
 .loading {
 	display: inline-block;
-    border: 3px solid $dart-green-light;
-    border-top: 3px solid $dart-blue-dark;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    animation: spin 2s linear infinite;
+	border: 3px solid $dart-green-light;
+	border-top: 3px solid $dart-blue-dark;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
 	0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+	100% { transform: rotate(360deg); }
 }
 
 .hide {
@@ -334,7 +334,7 @@ a {
 }
 
 @media all and (max-width: 900px) {
-    body {
+	body {
 		margin: 10px 10px 0;
 		grid-template-rows: auto auto auto 1fr auto;
 		grid-template-columns: auto;
