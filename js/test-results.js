@@ -1,7 +1,13 @@
 var bucketRoot = "https://test-results.dartcode.org/";
 var results = [];
 var outstandingRequests = 0;
-getXml(bucketRoot, handleFileListing, console.error);
+var queryString = window.location.search.substring(1);
+
+if (queryString && queryString.indexOf("/") !== -1) {
+	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, console.error);
+} else {
+	// TODO: Display list
+}
 
 function getXml(url, success, error) {
 	var request = new XMLHttpRequest();
@@ -25,22 +31,17 @@ function handleFileListing(xml) {
 		var pathSegments = path.split("/");
 		var testSegments = pathSegments[3].substring(0, pathSegments[3].lastIndexOf(".")).split("_");
 
-		var branch = pathSegments[0];
-		var commit = pathSegments[1];
 		var os = pathSegments[2];
 		var suite = testSegments.slice(0, testSegments.length - 2).join(" ");
 		var dartVersion = testSegments[testSegments.length - 2];
 		var codeVersion = testSegments[testSegments.length - 1];
-
-		if ("?" + branch + "/" + commit !== window.location.search)
-			continue;
 
 		matchedFiles++;
 		loadResults(bucketRoot + path, suite, dartVersion, codeVersion, os);
 	}
 
 	if (matchedFiles === 0) {
-		// TODO: Handle no matched files, or drawing file list.
+		// TODO: Handle no matched files (this is an error, since no filter was handled earlier).
 	}
 }
 
