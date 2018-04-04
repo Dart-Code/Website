@@ -60,9 +60,19 @@ If you have problems with the links above you can install Dart Code from [the Vi
 - [Type Hierarchy](/docs/commands/#dart-show-type-hierarchy)
 
 
-## Settings
+## Extension Settings
 
 A full list of settings is [available here](/docs/settings/).
+
+
+## Frequently Asked Questions
+
+A list of frequently asked questions is [available here](/faq/).
+
+
+## Key Bindings
+
+A list of useful key bindings is [available here](/docs/key-bindings/).
 
 
 ## Refactorings and Code Fixes
@@ -80,7 +90,7 @@ This extension reports some analytics such as:
 - Crashes in the Dart analysis server
 - Platform and Dart/Flutter SDK versions
 
-Reporting can be disabled via the `dart.allowAnalytics` setting.
+Reporting can be disabled via the [`dart.allowAnalytics` setting](/docs/settings/#dartallowanalytics).
 
 
 ## Release Notes
