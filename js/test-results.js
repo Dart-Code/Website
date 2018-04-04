@@ -91,7 +91,8 @@ function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xm
 
 		testResults[dartVersion + "_" + codeVersion + "_" + os] = {
 			time: test.getAttribute("time"),
-			failure: test.querySelector("failure") ? test.querySelector("failure").textContent : undefined
+			failure: test.querySelector("failure") ? test.querySelector("failure").textContent || true : undefined,
+			skipped: test.querySelector("skipped") ? test.querySelector("skipped").textContent || true : undefined
 		};
 	}
 }
@@ -134,7 +135,13 @@ function updateResults() {
 						for (var os of ["win", "osx", "linux"]) {
 							var id = dartVersion + "_" + codeVersion + "_" + os;
 							var result = test[id];
-							var resultClassName = result ? (result.failure ? "fail" : "pass") : "unknown";
+							var resultClassName = "unknown";
+							if (result && result.failure)
+								resultClassName = "fail";
+							else if (result && result.skipped)
+								resultClassName = "skipped";
+							else if (result)
+								resultClassName = "pass";
 							row.appendChild(document.createElement("td")).className = resultClassName;
 
 							// Add to column header.

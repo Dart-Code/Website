@@ -11,7 +11,8 @@ $vscode-background: #1E1E1E;
 $vscode-foreground: #D4D4D4;
 $pass: green;
 $fail: #f33;
-$unknown: #ff9;
+$skipped: orange;
+$unknown: darkorange;
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -237,6 +238,8 @@ main {
 
 		th {
 			text-align: left;
+			padding-top: 3px;
+			padding-bottom: 3px;
 
 			&.h {
 				text-align: center;
@@ -252,15 +255,15 @@ main {
 			}
 
 			&.pass {
-				padding-bottom: 3px;
 				border-bottom: 3px solid $pass;
 			}
+			&.skipped {
+				border-top: 3px solid $skipped;
+			}
 			&.unknown {
-				padding-bottom: 3px;
-				border-bottom: 3px solid $unknown;
+				border-top: 3px solid $unknown;
 			}
 			&.fail {
-				padding-bottom: 3px;
 				border-bottom: 3px solid $fail;
 			}
 		}
@@ -281,6 +284,8 @@ main {
 				&:after {
 					content: "?";
 				}
+			}&.skipped {
+				background-color: $skipped;
 			}
 			&.fail {
 				background-color: $fail;
