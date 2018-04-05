@@ -38,15 +38,17 @@ function handleFileListing(xml) {
 	for (var file of xml.querySelectorAll("Contents")) {
 		var path = file.querySelector("Key").textContent;
 		var pathSegments = path.split("/");
+		var branch = pathSegments[0];
+		var hash = pathSegments[1];
+		var os = pathSegments[2];
 		var testSegments = pathSegments[3].substring(0, pathSegments[3].lastIndexOf(".")).split("_");
 
-		var os = pathSegments[2];
 		var suite = testSegments.slice(0, testSegments.length - 2).join(" ");
 		var dartVersion = testSegments[testSegments.length - 2];
 		var codeVersion = testSegments[testSegments.length - 1];
 
 		matchedFiles++;
-		loadResults(bucketRoot + path, suite, dartVersion, codeVersion, os);
+		loadResults(path, branch, hash, os, suite, dartVersion, codeVersion, os);
 	}
 
 	if (matchedFiles === 0) {
@@ -54,10 +56,10 @@ function handleFileListing(xml) {
 	}
 }
 
-function loadResults(path, suite, dartVersion, codeVersion, os) {
+function loadResults(path, branch, hash, os, suite, dartVersion, codeVersion, os) {
 	outstandingRequests++;
-	getXml(path, function (xml) {
-		handleTestResults(suite, dartVersion, codeVersion, os, xml);
+	getXml(bucketRoot + path, function (xml) {
+		handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xml);
 		outstandingRequests--;
 		if (outstandingRequests == 0) {
 			updateResults();
@@ -65,10 +67,10 @@ function loadResults(path, suite, dartVersion, codeVersion, os) {
 	}, console.error);
 }
 
-function handleTestResults(suite, dartVersion, codeVersion, os, xml) {
+function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xml) {
 	var suiteResults = results.find((r) => r.suite == suite);
 	if (!suiteResults) {
-		suiteResults = { suite: suite, testClasses: [] };
+		suiteResults = { suite: suite, branch: branch, hash: hash, testClasses: [] };
 		results.push(suiteResults);
 	}
 
@@ -99,7 +101,26 @@ function updateResults() {
 	var tbody = table.querySelector("tbody");
 	var totalCols = 18;
 	for (var suite of results) {
-		addRow(tbody, 0, totalCols, suite.suite, "suite");
+		var row = addRow(tbody, 0, 3, suite.suite, "suite");
+		for (var codeVersion of ["stable", "insiders"]) {
+			for (var dartVersion of ["stable", "dev"]) {
+				// Don't show dev/dev for simplicity.
+				if (codeVersion == "insiders" && dartVersion == "dev")
+					continue;
+				row.appendChild(document.createElement("td"));
+				for (var os of ["win", "osx", "linux"]) {
+					// TODO: Finish... We have multiple files here (types of files, but also multiple files for multiple runs)..
+					// Maybe link to a list of files using the same API we use above?
+					// TODO: Why is icon rotated?
+					// var a = row.appendChild(document.createElement("td")).appendChild(document.createElement("a"));
+					// a.href = bucketRoot + ["logs", suite.branch, suite.hash, os, ".dart_code_logs", suite.name].join("/");
+					// var img = a.appendChild(document.createElement("img"));
+					// img.className = "x";
+					// img.src = "/images/log.svg";
+				}
+				row.appendChild(document.createElement("td"));
+			}
+		}
 		for (var testClass of suite.testClasses) {
 			addRow(tbody, 1, totalCols - 1, testClass.className);
 			for (var test of testClass.tests) {

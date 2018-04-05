@@ -224,6 +224,15 @@ main {
 		.suite {
 			text-transform: capitalize;
 			font-weight: bold;
+
+			td {
+				padding-top: 10px;
+			}
+		}
+
+		img {
+			width: 16px;
+			height: 16px;
 		}
 
 		th {
@@ -236,11 +245,6 @@ main {
 			&.r {
 				width: 18px;
 				height: 18px;
-	
-				img {
-					width: 16px;
-					height: 16px;
-				}
 			}
 
 			&.i {
