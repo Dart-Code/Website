@@ -17,6 +17,10 @@ Window scoped settings must be applied in your User Settings or at the workspace
 
 Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes. Defaults to `true`.
 
+## dart.analyzeAngularTemplates
+
+Whether to enable analysis for AngularDart templates (requires the [angular_analyzer_plugin](https://github.com/dart-lang/angular_analyzer_plugin)).
+
 ## dart.closingLabels
 
 Whether to show annotations against constructor, method invocations and lists that span multiple lines. Defaults to `true`.
@@ -24,6 +28,10 @@ Whether to show annotations against constructor, method invocations and lists th
 ## dart.checkForSdkUpdates
 
 Whether to check you are using the latest version of the Dart SDK at startup. Defaults to `true`.
+
+## dart.flutterSelectDeviceWhenConnected
+
+Whether to set newly connected devices as the current device in Flutter projects.
 
 ## dart.insertArgumentPlaceholders
 
@@ -84,6 +92,10 @@ If you often switch between multiple Dart SDKs, setting this option to an array 
 ## dart.flutterSdkPaths
 
 If you often switch between multiple Flutter SDKs/channels, setting this option to an array of Flutter SDK folders or folders that contain multiple Flutter SDKs in sub-folders will allow fast switching by clicking the Flutter SDK version in the status bar.
+
+## dart.organizeDirectivesOnSave
+
+Whether to automatically execute [Organize Directives](/docs/commands/#dart-organize-directives) when saving files. Defaults to `false`.
 
 ## dart.showLintNames
 

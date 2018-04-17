@@ -19,7 +19,11 @@ If you have configured the [`dart.sdkPaths` setting](/docs/settings/#dartsdkpath
 
 ## Dart: Organize Directives
 
-This command removes unused imports and sorts directives in the current Dart file according to [the Dart Style Guide](https://www.dartlang.org/guides/language/effective-dart/style). 
+This command removes unused imports and sorts directives in the current Dart file according to [the Dart Style Guide](https://www.dartlang.org/guides/language/effective-dart/style).
+
+## Dart: Go to Super Method
+
+This command goes to the `super` implementation of the method under the caret.
 
 ## Dart: Show Type Hierarchy
 

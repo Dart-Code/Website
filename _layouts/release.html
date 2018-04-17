@@ -3,5 +3,9 @@ layout: template
 ---
 
 <main>
+	{% if page.provisional %}
+		<h3 class="callout title">Provisional Release Notes</h3>
+		<p class="callout body">These release notes are provisional and may change before this version is published.</p>
+	{% endif %}
 	{{ content }}
 </main>
