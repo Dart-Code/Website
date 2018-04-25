@@ -133,8 +133,8 @@ function updateResults() {
 				for (var codeVersion of ["stable", "insiders"]) {
 					for (var dartVersion of ["stable", "dev"]) {
 						// Don't show dev/dev for simplicity.
-						if (codeVersion == "insiders" && dartVersion == "dev")
-							continue;
+						// if (codeVersion == "insiders" && dartVersion == "dev")
+						// 	continue;
 						row.appendChild(document.createElement("td"));
 						for (var os of ["win", "osx", "linux"]) {
 							var id = dartVersion + "_" + codeVersion + "_" + os;
