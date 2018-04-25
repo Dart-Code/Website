@@ -7,7 +7,11 @@ var queryString = window.location.search.substring(1);
 if (queryString && queryString.indexOf("/") !== -1) {
 	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, console.error);
 } else {
-	getJson(githubApiRoot + "branches", handleBranchList, console.error);
+	getJson(githubApiRoot + "branches", handleBranchList, function (e) {
+		hideLoading();
+		document.querySelector("main").appendChild(document.createTextNode("Failed to load branches. Have you blown your GH API quota? :("));
+		console.error(e);
+	});
 }
 
 function get(url, success, error) {
@@ -177,25 +181,31 @@ function hideLoading() {
 
 function handleBranchList(branches) {
 	var list = document.getElementById("test-branches");
+	var listStale = document.getElementById("test-branches-stale");
 	for (let branch of branches) {
 		outstandingRequests++;
 		let branchName = branch.name;
 		let hash = branch.commit.sha;
 		getXml(bucketRoot + "?max-keys=1&prefix=" + escape(branchName + "/" + hash), function (xml) {
+			var hasResults = !!xml.querySelector("Contents");
+
 			// The first result will show the list.
 			hideLoading();
 			list.classList.remove("hide");
 
-			// Check we had some results for this branch
-			var contentsNode = xml.querySelector("Contents");
-			if (contentsNode) {
-				var li = list.appendChild(document.createElement("li"));
+			var li = list.appendChild(document.createElement("li"));
+
+			if (hasResults) {
 				var a = li.appendChild(document.createElement("a"));
 				a.textContent = branchName;
 				a.href = "?" + branchName + "/" + hash;
+			} else {
+				li.textContent = branchName;
+			}
 
+			getJson(branch.commit.url, function (b) {
 				// Get the date...
-				var date = new Date(Date.parse(contentsNode.querySelector("LastModified").textContent));
+				var date = new Date(Date.parse(b.commit.committer.date));
 				var span = li.appendChild(document.createElement("span"));
 				var daysAgo = Math.floor(((new Date()).getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 				if (daysAgo == 0) {
@@ -206,7 +216,12 @@ function handleBranchList(branches) {
 				else
 					span.classList.add("days-ago");
 				span.textContent = daysAgo;
-			}
+
+				if (daysAgo > 14) {
+					document.getElementById("stale").classList.remove("hide");
+					listStale.appendChild(li);
+				}
+			});
 		}, console.error);
 	}
 }
