@@ -203,9 +203,7 @@ function handleBranchList(branches) {
 				li.textContent = branchName;
 			}
 
-			getJson(branch.commit.url, function (b) {
-				// Get the date...
-				var date = new Date(Date.parse(b.commit.committer.date));
+			function addDate(date) {
 				var span = li.appendChild(document.createElement("span"));
 				var daysAgo = Math.floor(((new Date()).getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 				if (daysAgo == 0) {
@@ -221,7 +219,16 @@ function handleBranchList(branches) {
 					document.getElementById("stale").classList.remove("hide");
 					listStale.appendChild(li);
 				}
-			});
+			}
+
+			// If we have rest results, use their date (to avoid burning GH API).
+			if (hasResults) {
+				addDate(new Date(Date.parse(xml.querySelector("Contents LastModified").textContent)));
+			} else { // Otherwise, try GH.
+				getJson(branch.commit.url, function (json) {
+					addDate(new Date(Date.parse(json.commit.committer.date)));
+				}, console.error);
+			}
 		}, console.error);
 	}
 }
