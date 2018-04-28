@@ -180,12 +180,20 @@ function hideLoading() {
 }
 
 function handleBranchList(branches) {
-	var list = document.getElementById("test-branches");
-	var listStale = document.getElementById("test-branches-stale");
+	let list = document.getElementById("test-branches");
+	let listStale = document.getElementById("test-branches-stale");
 	for (let branch of branches) {
 		outstandingRequests++;
 		let branchName = branch.name;
 		let hash = branch.commit.sha;
+
+		let li = list.appendChild(document.createElement("li"));
+
+		let badges = li.appendChild(document.createElement("div"));
+		badges.classList.add("badges");
+		badges.appendChild(document.createElement("img")).src = "https://img.shields.io/travis/Dart-Code/Dart-Code/" + escape(branchName) + ".svg?label=mac+%26+linux";
+		badges.appendChild(document.createElement("img")).src = "https://img.shields.io/appveyor/ci/DanTup/Dart-Code/" + escape(branchName) + ".svg?label=windows&amp;logoWidth=-1";
+
 		getXml(bucketRoot + "?max-keys=1&prefix=" + escape(branchName + "/" + hash), function (xml) {
 			var hasResults = !!xml.querySelector("Contents");
 
@@ -193,14 +201,12 @@ function handleBranchList(branches) {
 			hideLoading();
 			list.classList.remove("hide");
 
-			var li = list.appendChild(document.createElement("li"));
-
 			if (hasResults) {
 				var a = li.appendChild(document.createElement("a"));
 				a.textContent = branchName;
 				a.href = "?" + branchName + "/" + hash;
 			} else {
-				li.textContent = branchName;
+				li.appendChild(document.createTextNode(branchName));
 			}
 
 			function addDate(date) {

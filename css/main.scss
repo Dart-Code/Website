@@ -296,16 +296,36 @@ main {
 }
 
 .test-results-page {
-	li span {
-		margin-left: 5px;
-		color: #666;
-
-		&.today {
-			font-weight: bold;
+	ul {
+		padding: 0;
+	}
+	li {
+		list-style: none;
+		padding: 5px 0;
+		position: relative;
+		line-height: 20px;
+		.badges {
+			text-align: right;
+			position: absolute;
+			width: 500px;
+			left: -505px;
+			img {
+				box-shadow: none;
+				vertical-align: middle;
+				margin-left: 5px;
+			}
 		}
+		span {
+			margin-left: 5px;
+			color: #666;
 
-		&.days-ago:after {
-			content: " days ago";
+			&.today {
+				font-weight: bold;
+			}
+
+			&.days-ago:after {
+				content: " days ago";
+			}
 		}
 	}
 }
