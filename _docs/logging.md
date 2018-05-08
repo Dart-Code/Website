@@ -15,8 +15,6 @@ The [`dart.analyzerInstrumentationLogFile` setting](/docs/settings/#dartanalyzer
 To capture an analysis server instrumentation log file please do the following:
 
 {% capture steps %}
-1. Restart VS Code
-1. Open a Dart of Flutter project
 1. Reproduce the issue
 {% endcapture %}
 {% include debug-info.md
@@ -33,8 +31,6 @@ The [`dart.analyzerLogFile` setting](/docs/settings/#dartanalyzerlogfile) enable
 To capture an analysis server log file please do the following:
 
 {% capture steps %}
-1. Restart VS Code
-1. Open a Dart of Flutter project
 1. Reproduce the issue
 {% endcapture %}
 {% include debug-info.md
@@ -51,8 +47,6 @@ The [`dart.flutterDaemonLogFile` setting](/docs/settings/#dartflutterdaemonlogfi
 To capture a `flutter daemon` log file please do the following:
 
 {% capture steps %}
-1. Restart VS Code
-1. Open a Flutter project
 1. Reproduce the issue
 {% endcapture %}
 {% include debug-info.md
@@ -69,7 +63,6 @@ The [`dart.flutterRunLogFile` setting](/docs/settings/#dartflutterrunlogfile) en
 To capture a `flutter run` log file please do the following:
 
 {% capture steps %}
-1. Open your main entry file (eg. `lib/main.dart`)
 1. Press `F5` to run/debug the application
 1. Reproduce the issue
 {% endcapture %}
