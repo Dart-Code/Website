@@ -26,7 +26,7 @@ You can easily configure your own key bindings, including binding to commands pr
 - `Ctrl`+`F5` - Start Without Debugging
 - `Shift`+`F5` - Stop Debugging
 - `Ctrl`+`Shift`+`F5` (macOS: `Cmd`+`Shift`+`F5`) - Restart Debugging (Hot Reload when debugging Flutter apps)
-- `Ctrl`+`F5` - Full Restart (when debugging Flutter apps and in a debug session)
+- `Ctrl`+`F5` - Hot Restart (when debugging Flutter apps and in a debug session)
 - `F9` - Toggle Breakpoint
 - `F10` - Step Over
 - `F11` - Step In

@@ -34,7 +34,6 @@ If you have problems with the links above you can install Dart Code from [the Vi
 - [Flutter Get Packages command](/docs/commands/#flutter-get-packages)
 - [Flutter Upgrade Packages command](/docs/commands/#flutter-upgrade-packages)
 - [Automatically gets packages when `pubspec.yaml` is saved](/docs/settings/#dartrunpubgetonpubspecchanges)
-- Prompts for full restarts when a hot reload does not re-execute all code
 - [Automatically finds SDKs from `PATH`](/docs/configuring-path-and-environment-variables/)
 - [Notification of new stable Dart SDK releases](/docs/settings/#dartcheckforsdkupdates)
 - [Sort Members command](/docs/commands/#dart-sort-members)
@@ -86,7 +85,7 @@ This extension reports some analytics such as:
 
 - Extension load and analysis times
 - Whether you have disabled some settings (such as showing TODOs in Problems Window or Closing Labels)
-- Frequency of use of features like Hot Reload, Full Restart and Open Observatory
+- Frequency of use of features like Hot Reload, Hot Restart and Open Observatory
 - Crashes in the Dart analysis server
 - Platform and Dart/Flutter SDK versions
 

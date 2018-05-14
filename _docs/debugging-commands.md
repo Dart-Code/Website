@@ -17,9 +17,9 @@ For information on key bindings, including how to add your own, see [Key Binding
 
 This command invokes injects updated source code into the Dart VM on your device/simulator to allow instant updates without having to restart your application. For more information on hot reload visit [flutter.io/hot-reload](https://flutter.io/hot-reload/). `Flutter: Hot Reload` is automatically executed whenever you save a source file if you're in a Flutter debugging session and there are no compile errors (this can be disabled with the [`dart.flutterHotReloadOnSave` setting](/docs/settings/#dartflutterhotreloadonsave)).
 
-## Flutter: Full Restart
+## Flutter: Hot Restart
 
-Certain types of changes are not supported by hot reload ([see here](https://flutter.io/hot-reload/#limitations)) so you must perform a full restart. Full restarts deploy latest source code to your device/simulator and restarts your application. Although slower than a hot reload a full restart is still usually very fast (a few seconds), much quicker than stopping the debug session and rebuilding/deploying.
+Certain types of changes are not supported by hot reload ([see here](https://flutter.io/hot-reload/#limitations)) so you must perform a hot restart. Hot restarts deploy latest source code to your device/simulator and restarts your application. Although slightly slower than a hot reload a hot restart is still usually very fast (a few seconds), much quicker than stopping the debug session and rebuilding/deploying.
 
 ## Dart: Open Observatory
 
