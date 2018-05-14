@@ -40,6 +40,9 @@ function handleFileListing(xml) {
 	var files = [];
 	var matchedFiles = 0;
 	for (var file of xml.querySelectorAll("Contents")) {
+		var size = parseInt(file.querySelector("Size").textContent, 10);
+		if (size === 0)
+			continue;
 		var path = file.querySelector("Key").textContent;
 		var pathSegments = path.split("/");
 		var branch = pathSegments[0];
