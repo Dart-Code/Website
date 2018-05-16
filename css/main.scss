@@ -127,24 +127,6 @@ main {
 			padding: 0;
 		}
 	}
-
-	.buttons {
-		text-align: center;
-	}
-
-	.button a, .buttons a {
-		min-width: 200px;
-		font-size: 18px;
-		padding: 10px;
-		text-align: center;
-		display: inline-block;
-		background-color: $dart-blue-dark;
-		color: #fff;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
 	
 	.language-dart pre.highlight {
 		tab-size: 2;
@@ -285,12 +267,57 @@ main {
 				&:after {
 					content: "?";
 				}
-			}&.skipped {
+			}
+			&.skipped {
 				background-color: $skipped;
 			}
 			&.fail {
 				background-color: $fail;
 			}
+		}
+	}
+
+	.buttons {
+		text-align: center;
+	}
+
+	.download-box {
+		border: 1px solid #ccc;
+		width: 160px;
+		padding: 10px;
+		display: inline-block;
+		text-align: center;
+		color: #666;
+		font-size: 12px;
+		line-height: 1.6em;
+		margin: 0 10px;
+
+		&:hover {
+			text-decoration: none;
+			background-color: #eee;
+		}
+
+		.name {
+			display: block;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 1.6em;
+			color: black;
+		}
+	}
+
+	.logo {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 100px;
+		margin-bottom: 10px;
+		display: block;
+		&.dart-logo {
+			background-image: url("../images/dart.svg");
+		}
+		&.flutter-logo {
+			background-image: url("../images/flutter.svg");		
 		}
 	}
 }

@@ -8,20 +8,28 @@ title: ""
 
 ## Introduction
 
-Dart Code extends [VS Code](https://code.visualstudio.com/) with support for the
-[Dart](https://www.dartlang.org/) programming language, and provides tools for
-effectively editing, refactoring, running, and reloading [Flutter](https://flutter.io/)
-mobile apps, and [AngularDart](https://angulardart.org) web apps.
+The Dart and Flutter extensions extend [VS Code](https://code.visualstudio.com/) with support for the
+[Dart](https://www.dartlang.org/) programming language and provides tools for
+effectively editing, refactoring, running, and reloading [Flutter](https://flutter.io/) mobile apps, and [AngularDart](https://angulardart.org) web apps.
 
 ## Installation
 
-You must have [the VS Code Editor](https://code.visualstudio.com/) in order to install Dart Code.
+You must have [the VS Code Editor](https://code.visualstudio.com/) in order to install Dart Code. Click the buttons below to open the extension pages in VS Code.
 
-[Get VS Code Editor](https://code.visualstudio.com/)
-[Get Dart Code Extension](vscode:extension/Dart-Code.dart-code)
-{:.buttons}
+<div class="buttons">
+	<a href="vscode:extension/Dart-Code.dart-code" class="download-box">
+		<span class="logo dart-logo"></span>
+		<span class="name">Dart</span>
+		Dart language support and debugger for VS Code.
+	</a>
+	<a href="vscode:extension/Dart-Code.flutter" class="download-box">
+		<span class="logo flutter-logo"></span>
+		<span class="name">Flutter</span>
+		Flutter support and debugger for VS Code.
+	</a>
+</div>
 
-If you have problems with the links above you can install Dart Code from [the Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) or by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
+If you have problems with the links above you can install also find the [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) and [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) in the marketplace or by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
 
 ## Features
 
