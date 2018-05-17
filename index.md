@@ -14,7 +14,7 @@ effectively editing, refactoring, running, and reloading [Flutter](https://flutt
 
 ## Installation
 
-You must have [the VS Code Editor](https://code.visualstudio.com/) in order to install Dart Code. Click the buttons below to open the extension pages in VS Code.
+You must have [the VS Code Editor](https://code.visualstudio.com/) in order to install Dart Code. Click the buttons below to open the extension pages in VS Code. Installing the Flutter extension automatically installs the Dart extension.
 
 <div class="buttons">
 	<a href="vscode:extension/Dart-Code.dart-code" class="download-box">
