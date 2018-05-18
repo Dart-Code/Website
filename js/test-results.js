@@ -132,7 +132,7 @@ function updateResults() {
 		for (var testClass of suite.testClasses) {
 			addRow(tbody, 1, totalCols - 1, testClass.className);
 			for (var test of testClass.tests) {
-				var row = addRow(tbody, 2, 1, test.testName);
+				var row = addRow(tbody, 2, 1, test.testName, undefined, "test-name");
 				for (var codeVersion of ["stable", "insiders"]) {
 					for (var dartVersion of ["stable", "dev"]) {
 						// Don't show dev/dev for simplicity.
@@ -164,15 +164,16 @@ function updateResults() {
 	table.classList.remove("hide");
 }
 
-function addRow(table, pad, cols, label, className) {
+function addRow(table, pad, cols, label, rowClassName, cellClassName) {
 	var row = table.appendChild(document.createElement("tr"));
-	row.className = className;
+	row.className = rowClassName;
 	for (var i = 0; i < pad; i++)
 		row.appendChild(document.createElement("td"));
 
 	var cell = row.appendChild(document.createElement("td"));
 	cell.textContent = label;
 	cell.colSpan = cols;
+	cell.className = cellClassName;
 
 	table.appendChild(row);
 	return row;
