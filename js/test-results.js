@@ -143,13 +143,17 @@ function updateResults() {
 							var id = dartVersion + "_" + codeVersion + "_" + os;
 							var result = test[id];
 							var resultClassName = "unknown";
-							if (result && result.failure)
+							var tooltip = "";
+							if (result && result.failure) {
 								resultClassName = "fail";
-							else if (result && result.skipped)
+								tooltip = result.failure;
+							} else if (result && result.skipped)
 								resultClassName = "skipped";
 							else if (result)
 								resultClassName = "pass";
-							row.appendChild(document.createElement("td")).className = resultClassName;
+							var cell = row.appendChild(document.createElement("td"));
+							cell.className = resultClassName;
+							cell.title = tooltip;
 
 							// Add to column header.
 							document.getElementById(id).classList.add(resultClassName);
