@@ -147,16 +147,27 @@ function updateResults() {
 							if (result && result.failure) {
 								resultClassName = "fail";
 								tooltip = result.failure;
-							} else if (result && result.skipped)
+							} else if (result && result.skipped) {
 								resultClassName = "skipped";
-							else if (result)
+							} else if (result) {
 								resultClassName = "pass";
+							} else if (test.testName === "\"after each\" hook"
+								|| test.testName === "\"before each\" hook"
+								|| test.testName === "\"before\" hook"
+								|| test.testName === "\"after\" hook") {
+								// If we get here (unknown) but it's just for a hook, then don't
+								// record it as unknown, since it wasn't expected to run - we've
+								// just got it in the list because it failed somewhere else.
+								resultClassName = undefined;
+							}
+
 							var cell = row.appendChild(document.createElement("td"));
 							cell.className = resultClassName;
 							cell.title = tooltip;
 
 							// Add to column header.
-							document.getElementById(id).classList.add(resultClassName);
+							if (resultClassName)
+								document.getElementById(id).classList.add(resultClassName);
 						}
 						row.appendChild(document.createElement("td"));
 					}
