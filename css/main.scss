@@ -230,7 +230,6 @@ main {
 
 		th {
 			text-align: left;
-			padding-top: 3px;
 			padding-bottom: 3px;
 
 			&.h {
@@ -248,13 +247,6 @@ main {
 
 			&.pass {
 				border-bottom: 3px solid $pass;
-			}
-			&.skipped {
-				border-top: 3px solid $skipped;
-			}
-			&.unknown {
-				border-top: 3px solid $unknown;
-				opacity: 0.2;
 			}
 			&.fail {
 				border-bottom: 3px solid $fail;
