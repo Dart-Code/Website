@@ -254,6 +254,7 @@ main {
 			}
 			&.unknown {
 				border-top: 3px solid $unknown;
+				opacity: 0.2;
 			}
 			&.fail {
 				border-bottom: 3px solid $fail;
@@ -276,6 +277,7 @@ main {
 				&:after {
 					content: "?";
 				}
+				opacity: 0.2;
 			}
 			&.skipped {
 				background-color: $skipped;
