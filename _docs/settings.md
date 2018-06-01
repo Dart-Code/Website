@@ -29,6 +29,18 @@ Whether to show annotations against constructor, method invocations and lists th
 
 Whether to check you are using the latest version of the Dart SDK at startup. Defaults to `true`.
 
+## dart.flutterCreateOrganization
+
+Used in Java package names and as prefix in the iOS bundle identifier.
+
+## dart.flutterCreateIOSLanguage
+
+The programming language to use for IOS apps (`objc` or `swift`).
+
+## dart.flutterCreateAndroidLanguage
+
+The programming language to use for Android apps (`java` or `kotlin`).
+
 ## dart.flutterSelectDeviceWhenConnected
 
 Whether to set newly connected devices as the current device in Flutter projects.
