@@ -29,7 +29,7 @@ You must have [the VS Code Editor](https://code.visualstudio.com/) in order to i
 	</a>
 </div>
 
-If you have problems with the links above you can install also find the [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) and [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) in the marketplace or by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
+If you have any problems with the links above you can also find the [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) and [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) in the marketplace or by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
 
 ## Features
 
