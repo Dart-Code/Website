@@ -1,5 +1,5 @@
 <ul>
-	{% for item in include.items %}
+	{% for item in include.items | where_exp:"item","item.hidden != true" %}
 		<li {% if page.url == item.url %}class="current"{% endif %}><a href="{{ item.url | escape }}">{{ item.title | escape }}</a></li>
 	{% endfor %}
 </ul>
