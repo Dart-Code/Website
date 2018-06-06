@@ -151,10 +151,10 @@ function updateResults() {
 								resultClassName = "skipped";
 							} else if (result) {
 								resultClassName = "pass";
-							} else if (test.testName === "\"after each\" hook"
-								|| test.testName === "\"before each\" hook"
-								|| test.testName === "\"before\" hook"
-								|| test.testName === "\"after\" hook") {
+							} else if (test.testName.indexOf("\"after each\" hook") === 0
+								|| test.testName.indexOf("\"before each\" hook") === 0
+								|| test.testName.indexOf("\"before\" hook") === 0
+								|| test.testName.indexOf("\"after\" hook") === 0) {
 								// If we get here (unknown) but it's just for a hook, then don't
 								// record it as unknown, since it wasn't expected to run - we've
 								// just got it in the list because it failed somewhere else.
