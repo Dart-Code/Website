@@ -53,6 +53,10 @@ Whether to insert argument placeholders during code completions. Defaults to `tr
 
 The maximum length of a line of code. This is used by the document formatter. Defaults to `80`.
 
+## dart.normalizeWindowsDriveLetters
+
+Whether to force all drive letters in paths to uppercase. This should reduce spurious errors from tools that are accidentally case-sensitive with Windows paths. Defaults to `true`.
+
 ## dart.pubAdditionalArgs
 
 Additional args to pass to `pub get` and `pub upgrade` commands (eg. `--packages-dir`).
