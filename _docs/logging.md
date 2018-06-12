@@ -17,7 +17,7 @@ You'll be prompted to select a location/filename for the log file and then a not
 
 <img src="/images/capture_logs_notification.png" width="550" height="180" />
 
-When you click `Stop Logging` the resulting log file will be opened in the editor for you to review before you attach to a GitHub issue. Currently this file will include all types of logging (Analysis Server, Observatory, Flutter Run, Flutter Test, Flutter Daemon) so you should start it as close to reproducing your issue as possible. The option to select which log sources to capture may be added in a future update.
+When you click `Stop Logging` the resulting log file will be opened in the editor for you to review before you attach to a GitHub issue. Please review the logs for any sensitive data (it may include parts of your files) before sharing. This log file will currently include all types of logging (Analysis Server, Observatory, Flutter Run, Flutter Test, Flutter Daemon) so you should start it as close to reproducing your issue as possible. The option to select which log sources to capture may be added in a future update.
 
 ## Individual Logs
 
