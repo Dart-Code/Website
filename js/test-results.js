@@ -144,9 +144,11 @@ function updateResults() {
 							var result = test[id];
 							var resultClassName = "unknown";
 							var tooltip = "";
+							var linkToLog = false;
 							if (result && result.failure) {
 								resultClassName = "fail";
 								tooltip = result.failure;
+								linkToLog = true;
 							} else if (result && result.skipped) {
 								resultClassName = "skipped";
 							} else if (result) {
@@ -165,6 +167,11 @@ function updateResults() {
 							cell.className = resultClassName;
 							cell.title = tooltip;
 
+							if (linkToLog) {
+								var link = cell.appendChild(document.createElement("a"));
+								link.href = bucketRoot + ["logs", suite.branch, suite.hash, os, filenameSafe(suite.suite + "_" + dartVersion + "_" + codeVersion), filenameSafe(testClass.className + " " + test.testName) + ".txt"].join("/");
+							}
+
 							// Add to column header.
 							if (resultClassName)
 								document.getElementById(id).classList.add(resultClassName);
@@ -177,6 +184,11 @@ function updateResults() {
 	}
 	hideLoading();
 	table.classList.remove("hide");
+}
+
+// This same logic exists in test helper script that names the log.
+function filenameSafe(testName) {
+	return testName.replace(/[^a-z0-9]+/gi, "_").toLowerCase();
 }
 
 function addRow(table, pad, cols, label, rowClassName, cellClassName) {

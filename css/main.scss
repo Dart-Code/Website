@@ -277,6 +277,11 @@ main {
 			&.fail {
 				background-color: $fail;
 			}
+			a {
+				display: block;
+				width: 18px;
+				height: 18px;
+			}
 		}
 	}
 
