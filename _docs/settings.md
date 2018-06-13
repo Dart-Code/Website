@@ -89,6 +89,10 @@ Whether SDK libraries should be marked as debuggable. Defaults to `false`.
 
 Whether libraries should be marked as debuggable. Defaults to `false`.
 
+## dart.evaluateGettersInDebugViews
+
+Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views). Defaults to `true`.
+
 ## dart.flutterHotReloadOnSave
 
 Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files. Defaults to `true`.
