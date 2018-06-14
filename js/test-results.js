@@ -151,6 +151,7 @@ function updateResults() {
 								linkToLog = true;
 							} else if (result && result.skipped) {
 								resultClassName = "skipped";
+								linkToLog = true;
 							} else if (result) {
 								resultClassName = "pass";
 							} else if (test.testName.indexOf("\"after each\" hook") === 0
