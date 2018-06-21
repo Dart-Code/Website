@@ -137,6 +137,10 @@ The color of the "closing label" annotations against constructor, method invocat
 
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/). Each of these settings takes a file path and the containing folder must have already been created.
 
+## dart.extensionLogFile
+
+This enables a low-traffic log file for basic extension and editor issues. For more information on capturing logs, see [Extension Logging](/docs/logging/#extension).
+
 ## dart.analyzerInstrumentationLogFile
 
 This enables very detailed logging in the analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
@@ -156,6 +160,10 @@ This enables logging of `flutter run` which is used to launch Flutter applicatio
 ## dart.flutterTestLogFile
 
 This enables logging of `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. For more information on capturing logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+
+## dart.pubTestLogFile
+
+This enables logging of `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. For more information on capturing logs, see [Pub Test Logging](/docs/logging/#pub-test).
 
 ## dart.observatoryLogFile
 

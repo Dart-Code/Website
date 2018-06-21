@@ -21,6 +21,22 @@ When you click `Stop Logging` the resulting log file will be opened in the edito
 
 ## Individual Logs
 
+### General Extension Logging
+{:#extension}
+
+The [`dart.extensionLogFile` setting](/docs/settings/#dartextensionlogfile) enables a low-traffic log file for basic extension and editor issues.
+
+To capture an extension log file please do the following:
+
+{% capture steps %}
+1. Reproduce the issue
+{% endcapture %}
+{% include debug-info.md
+	setting="dart.extensionLogFile"
+	sampleFilename="extension"
+	steps=steps
+%}
+
 ### Analysis Server Instrumentation Logging
 {:#analyzer-instrumentation}
 
@@ -101,6 +117,24 @@ To capture a `flutter test` log file please do the following:
 {% include debug-info.md
 	setting="dart.flutterTestLogFile"
 	sampleFilename="flutterTest"
+	steps=steps
+%}
+
+### Dart Test Logging
+{:#dart-test}
+
+The [`dart.pubTestLogFile` setting](/docs/settings/#dartpubtestlogfile) enables logging of Dart test runs. This is useful when trying to diagnose issues with unit test executions.
+
+To capture a Dart test log file please do the following:
+
+{% capture steps %}
+1. Open the file containing your tests
+1. Press `F5` to run/debug the tests
+1. Wait for the run to complete
+{% endcapture %}
+{% include debug-info.md
+	setting="dart.pubTestLogFile"
+	sampleFilename="pubTest"
 	steps=steps
 %}
 
