@@ -21,6 +21,8 @@ When you click `Stop Logging` the resulting log file will be opened in the edito
 
 ## Individual Logs
 
+Inidividual log files can be enabled by setting the corresponding [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings).
+
 ### General Extension Logging
 {:#extension}
 

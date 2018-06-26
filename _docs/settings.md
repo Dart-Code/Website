@@ -2,7 +2,7 @@
 title: Settings
 ---
 
-Dart Code has a number of configurable settings that can be modified in your User Settings (`Ctrl`+`,` or `Cmd`+`,`) or Workspace Settings files.
+Dart Code has a number of configurable settings that can be modified in your [User Settings or Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings) files.
 
 * TOC
 {:toc}
