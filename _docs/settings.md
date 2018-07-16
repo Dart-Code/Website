@@ -65,6 +65,10 @@ Additional args to pass to `pub get` and `pub upgrade` commands (eg. `--packages
 
 Whether to automatically run `pub get` whenever pubspec.yaml is saved. Defaults to `true`.
 
+## dart.openTestView
+
+An array to control when the test runner will automatically be displayed. Defaults to `["testRunStart"]`.
+
 ## dart.promptToGetPackages
 
 Whether to prompt to get packages when opening a project with out of date packages. Defaults to `true`.
