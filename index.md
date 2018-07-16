@@ -61,7 +61,7 @@ If you have any problems with the links above you can also find the [Dart extens
 - Workspace symbol search
 - Document symbol search
 - [Organize Directives command](/docs/commands/#dart-organize-directives)
-- [Automatically Organize Directives on save](/docs/settings/#dartorganizedirectivesonsave)
+- [Organize Imports command](/docs/commands/#dart-organize-imports)
 - [Pub Get Packages command](/docs/commands/#pub-get-packages)
 - [Pub Upgrade Packages command](/docs/commands/#pub-upgrade-packages)
 - [Type Hierarchy](/docs/commands/#dart-show-type-hierarchy)
