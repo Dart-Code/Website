@@ -1,7 +1,0 @@
----
-title: Recommended Settings
----
-
-<!-- TODO -->
-
-...
