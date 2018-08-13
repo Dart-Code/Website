@@ -31,6 +31,7 @@ The [`dart.extensionLogFile` setting](/docs/settings/#dartextensionlogfile) enab
 To capture an extension log file please do the following:
 
 {% capture steps %}
+1. Restart VS Code
 1. Reproduce the issue
 {% endcapture %}
 {% include debug-info.md
