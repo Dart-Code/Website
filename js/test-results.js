@@ -144,16 +144,15 @@ function updateResults() {
 							var result = test[id];
 							var resultClassName = "unknown";
 							var tooltip = "";
-							var linkToLog = false;
+							var linkToLog = true;
 							if (result && result.failure) {
 								resultClassName = "fail";
 								tooltip = result.failure;
-								linkToLog = true;
 							} else if (result && result.skipped) {
 								resultClassName = "skipped";
-								linkToLog = true;
 							} else if (result) {
 								resultClassName = "pass";
+								linkToLog = false;
 							} else if (test.testName.indexOf("\"after each\" hook") === 0
 								|| test.testName.indexOf("\"before each\" hook") === 0
 								|| test.testName.indexOf("\"before\" hook") === 0
