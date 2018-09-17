@@ -269,6 +269,7 @@ main {
 				position: relative;
 				&:after {
 					content: "?";
+					pointer-events: none;
 					position: absolute;
 					width: 20px;
 					height: 20px;
