@@ -266,8 +266,16 @@ main {
 				background-color: $unknown;
 				color: #666;
 				text-align: center;
+				position: relative;
 				&:after {
 					content: "?";
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					top: 0;
+					left: 0;
+					line-height: 20px;
+					text-align: center;
 				}
 				opacity: 0.2;
 			}
