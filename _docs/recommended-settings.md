@@ -6,9 +6,6 @@ There are some settings in VS Code that you may wish to change from the defaults
 
 ```js
 {
-	// Enables breadcrumbs along the top of the editor.
-	"breadcrumbs.enabled": true,
-
 	// Causes the debug view to automatically appear when a breakpoint is hit.
 	"debug.openDebug": "openOnDebugBreak",
 
