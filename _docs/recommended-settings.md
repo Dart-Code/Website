@@ -9,7 +9,8 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// Causes the debug view to automatically appear when a breakpoint is hit.
 	"debug.openDebug": "openOnDebugBreak",
 
-	// Automatically format code on save and during typing of certain characters (like `;` and `}`).
+	// Automatically format code on save and during typing of certain characters
+	// (like `;` and `}`).
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	
