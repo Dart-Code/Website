@@ -13,11 +13,13 @@ When you're ready to reproduce your issue, run the `Dart: Capture Logs` in the c
 
 <img src="/images/capture_logs_command.png" width="700" height="100" />
 
-You'll be prompted to select a location/filename for the log file and then a notification will appear informing you that logs are being captured.
+You'll be prompted to select which types of events to log. If you're not sure which component is causing the issue, just leave them all ticked. While the logs are being captured a notification will be shown.
 
 <img src="/images/capture_logs_notification.png" width="550" height="180" />
 
-When you click `Stop Logging` the resulting log file will be opened in the editor for you to review before you attach to a GitHub issue. Please review the logs for any sensitive data (it may include parts of your files) before sharing.
+When you click `Stop Logging` the resulting log file will be opened in the editor for you. Please review the logs for any sensitive data (it may include parts of your files) before sharing.
+
+{% include email-logs-info.md %}
 
 ## Individual Logs
 
