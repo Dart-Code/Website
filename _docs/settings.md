@@ -129,8 +129,6 @@ Whether to show the names of linter rules in the problems panel to make it easie
 
 Whether to show TODOs in the Problems list. Defaults to `true`.
 
-Note: Flutter projects have a default analysis_options.yaml file that hides TODOs so you will first need to override that to see TODOs.
-
 # Custom Colors
 
 Some colors in Dart Code can be customised using the `workbench.colourCustomizations` section in settings. Supported colors are:
