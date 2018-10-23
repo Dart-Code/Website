@@ -121,10 +121,6 @@ If you often switch between multiple Flutter SDKs/channels, setting this option 
 
 Whether to automatically execute [Organize Directives](/docs/commands/#dart-organize-directives) when saving files. Defaults to `false`.
 
-## dart.showLintNames
-
-Whether to show the names of linter rules in the problems panel to make it easier to `// ignore:`. Defaults to `false`.
-
 ## dart.showTodos
 
 Whether to show TODOs in the Problems list. Defaults to `true`.
