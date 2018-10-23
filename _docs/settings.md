@@ -29,6 +29,10 @@ Whether to show annotations against constructor, method invocations and lists th
 
 Whether to check you are using the latest version of the Dart SDK at startup. Defaults to `true`.
 
+## dart.doNotFormat
+
+An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test folders.
+
 ## dart.flutterCreateOrganization
 
 Used in Java package names and as prefix in the iOS bundle identifier.
