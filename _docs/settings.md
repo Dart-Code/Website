@@ -129,6 +129,10 @@ Whether to automatically execute [Organize Directives](/docs/commands/#dart-orga
 
 Whether to show TODOs in the Problems list. Defaults to `true`.
 
+## dart.showIgnoreQuickFixes
+
+Whether to show quick fixes for ignoring hints and lints. Defaults to `false`.
+
 # Custom Colors
 
 Some colors in Dart Code can be customised using the `workbench.colourCustomizations` section in settings. Supported colors are:
