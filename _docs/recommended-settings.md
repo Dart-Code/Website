@@ -24,6 +24,11 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// to highlight only exact references to the selected variable.
 	"editor.selectionHighlight": false,
 
+	// By default, VS Code prevents code completion from popping open when in "snippet mode"
+	// (editing placeholders in inserted code). Setting this option to `false` stops that
+	// and allows completion to open as normal, as if you weren't in a snippet placeholder.
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+
 	// Allows pressing <TAB> to complete snippets such as `for` even when the completion
 	// list is not visible.
 	"editor.tabCompletion": true,
