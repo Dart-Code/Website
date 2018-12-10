@@ -31,7 +31,7 @@ There are some settings in VS Code that you may wish to change from the defaults
 
 	// Allows pressing <TAB> to complete snippets such as `for` even when the completion
 	// list is not visible.
-	"editor.tabCompletion": true,
+	"editor.tabCompletion": "onlySnippets",
 
 	// By default, VS Code will popualte code completion with words found in the current
 	// file when a language service does not provide its own completions. This results in
