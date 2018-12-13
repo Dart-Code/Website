@@ -44,6 +44,8 @@ function handleFileListing(xml) {
 		if (size === 0)
 			continue;
 		var path = file.querySelector("Key").textContent;
+		if (path.indexOf(".xml") === -1)
+			continue;
 		var pathSegments = path.split("/");
 		var branch = pathSegments[0];
 		var hash = pathSegments[1];
