@@ -57,7 +57,7 @@ This commands runs `flutter doctor` and shows the results in the `Output` pane.
 
 For more information on using packages [see the Flutter website](https://flutter.io/using-packages/).
 
-## Flutter: Change Device
+## Flutter: Select Device
 
 If you have multiple devices or simulators connected then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between Flutter Devices](/docs/quickly-switching-between-flutter-devices/) for more info.
 
