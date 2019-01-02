@@ -47,10 +47,6 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2em;
 }
 
-h2 {
-	margin-top: 30px;
-}
-
 p, pre {
 	margin: 20px 0;
 }
@@ -65,6 +61,14 @@ header {
 		font-size: 65px;
 		line-height: 1em;
 		margin-left: -4px;
+	}
+
+	.imgs {
+		display: inline-block;
+		margin-left: 30px;
+		img {
+			vertical-align: middle;
+		}
 	}
 }
 
@@ -85,7 +89,7 @@ nav {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-		
+
 		a {
 			padding-left: 6px;
 			display: block;
@@ -116,7 +120,7 @@ main {
 		border-radius: 3px;
 		padding: 0.1em 0.4em;
 	}
-	
+
 	pre.highlight {
 		background-color: $vscode-background;
 		color: $vscode-foreground;
@@ -126,23 +130,23 @@ main {
 		tab-size: 4;
 		max-width: 660px;
 		white-space: pre-wrap;
-	
+
 		code {
 			background-color: inherit;
 			padding: 0;
 		}
 	}
-	
+
 	.language-dart pre.highlight {
 		tab-size: 2;
 	}
-	
+
 	& > :not(aside) {
 		pre.highlight, img:not(.x) {
 			box-shadow: 2px 2px 5px #999999;
 		}
 	}
-	
+
 	img {
 		max-width: 100%;
 		height: auto;
@@ -153,7 +157,7 @@ main {
 		padding: 15px 20px;
 		position: relative;
 		max-width: 648px;
-	
+
 		// This is to get the full bar without the corners merging into the border
 		&:before {
 			content: "";
@@ -239,7 +243,7 @@ main {
 			&.h {
 				text-align: center;
 			}
-			
+
 			&.r {
 				width: 18px;
 				height: 18px;
@@ -262,7 +266,7 @@ main {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
-	
+
 			&.pass {
 				background-color: $pass;
 			}
@@ -338,7 +342,7 @@ main {
 			background-image: url("../images/dart.svg");
 		}
 		&.flutter-logo {
-			background-image: url("../images/flutter.svg");		
+			background-image: url("../images/flutter.svg");
 		}
 	}
 }
@@ -447,7 +451,7 @@ a {
 			font-size: 45px;
 		}
 	}
-	
+
 	nav {
 		margin-top: 0;
 
