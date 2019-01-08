@@ -13,7 +13,7 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// (like `;` and `}`).
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
-	
+
 	// Draw a guide line at 80 characters, where Dart's formatting will wrap code.
 	"[dart]": {
 		"editor.rulers": [80]
@@ -29,6 +29,12 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// and allows completion to open as normal, as if you weren't in a snippet placeholder.
 	"editor.suggest.snippetsPreventQuickSuggestions": false,
 
+	// By default, VS Code will pre-select the most recently used item from code completion.
+	// This is usually not the most relevant thing so setting it to "first" will always select
+	// top item or setting it to "recentlyUsedByPrefix" will filter the recently used items
+	// based on the text immediately preceeding where completion was invoked.
+	"editor.suggestSelection": "recentlyUsedByPrefix",
+
 	// Allows pressing <TAB> to complete snippets such as `for` even when the completion
 	// list is not visible.
 	"editor.tabCompletion": "onlySnippets",
@@ -42,5 +48,6 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// Force all files to have a trailing newline for consistency and reduced diffs when
 	// adding new lines at the bottom of the file.
 	"files.insertFinalNewline": true,
+
 }
 ```
