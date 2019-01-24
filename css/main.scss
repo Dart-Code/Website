@@ -217,6 +217,13 @@ main {
 		}
 	}
 
+	#test-results-warnings {
+		background-color: #ffcc00;
+		margin-bottom: 20px;
+		padding: 10px;
+		border-radius: 5px;
+	}
+
 	#test-results {
 		min-width: 100%;
 

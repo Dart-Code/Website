@@ -83,6 +83,7 @@ function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xm
 		results.push(suiteResults);
 	}
 
+	var testsSeenInThisFile = {};
 	for (var test of xml.querySelectorAll("testcase")) {
 		var className = test.getAttribute("classname");
 		var classResults = suiteResults.testClasses.find((r) => r.className == className);
@@ -92,6 +93,12 @@ function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xm
 		}
 
 		var testName = test.getAttribute("name");
+		var uniqueResultName = dartVersion + "_" + codeVersion + "_" + os + "_" + className + "_" + testName;
+		if (testsSeenInThisFile[uniqueResultName]) {
+			showWarning("Test '" + uniqueResultName + "' has already been seen!");
+		} else {
+			testsSeenInThisFile[uniqueResultName] = true;
+		}
 		var testResults = classResults.tests.find((r) => r.testName == testName);
 		if (!testResults) {
 			testResults = { testName: testName };
@@ -270,4 +277,10 @@ function handleBranchList(branches) {
 			}
 		}, console.error);
 	}
+}
+
+function showWarning(message) {
+	var warnings = document.querySelector("#test-results-warnings");
+	warnings.appendChild(document.createElement("div")).appendChild(document.createTextNode(message));
+	warnings.classList.remove("hide");
 }
