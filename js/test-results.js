@@ -5,12 +5,12 @@ var outstandingRequests = 0;
 var queryString = window.location.search.substring(1);
 
 if (queryString && queryString.indexOf("/") !== -1) {
-	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, console.error);
+	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, showWarning);
 } else {
 	getJson(githubApiRoot + "branches", handleBranchList, function (e) {
 		hideLoading();
-		document.querySelector("main").appendChild(document.createTextNode("Failed to load branches. Have you blown your GH API quota? :("));
-		console.error(e);
+		showWarning("Failed to load branches. Have you blown your GH API quota? :(");
+		showWarning(e);
 	});
 }
 
@@ -73,7 +73,7 @@ function loadResults(path, branch, hash, os, suite, dartVersion, codeVersion, os
 		if (outstandingRequests == 0) {
 			updateResults();
 		}
-	}, console.error);
+	}, showWarning);
 }
 
 function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xml) {
@@ -273,9 +273,9 @@ function handleBranchList(branches) {
 			} else { // Otherwise, try GH.
 				getJson(branch.commit.url, function (json) {
 					addDate(new Date(Date.parse(json.commit.committer.date)));
-				}, console.error);
+				}, showWarning);
 			}
-		}, console.error);
+		}, showWarning);
 	}
 }
 
