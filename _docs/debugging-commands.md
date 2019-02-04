@@ -21,6 +21,10 @@ This command invokes injects updated source code into the Dart VM on your device
 
 Certain types of changes are not supported by hot reload ([see here](https://flutter.io/hot-reload/#limitations)) so you must perform a hot restart. Hot restarts deploy latest source code to your device/simulator and restarts your application. Although slightly slower than a hot reload a hot restart is still usually very fast (a few seconds), much quicker than stopping the debug session and rebuilding/deploying.
 
+## Flutter: Inspect Widget
+
+This command enables Flutter Widget Inspection.   Click on a widget in your application and it will navigate VS Code to the location in your source code where the widget is defined.   To select another widget, click on the magnifying glass and select another widget.    To cancel out of Flutter  Widget Inspection, a separate command `Flutter: Cancel Widget Inspection` is enabled that will cancel out of widget inspection.
+
 ## Dart: Open Observatory
 
 This command will open the Observatory debugger application in your web browser. For more information on using this tool to debug your Flutter application visit [flutter.io/debugging](https://flutter.io/debugging/#dart-observatory-statement-level-single-stepping-debugger-and-profiler).
