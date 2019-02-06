@@ -135,11 +135,11 @@ Whether to show quick fixes for ignoring hints and lints. Defaults to `false`.
 
 # Custom Colors
 
-Some colors in Dart Code can be customised using the `workbench.colourCustomizations` section in settings. Supported colors are:
+Some colors in Dart Code can be customized using the `workbench.colorCustomizations` section in settings. Supported colors are:
 
 ## dart.closingLabels
 
-The color of the "closing label" annotations against constructor, method invocations and lists that span multiple lines. If not supplied, the colour for `tab.inactiveForeground` will be used.
+The color of the "closing label" annotations against constructor, method invocations and lists that span multiple lines. If not supplied, the color for `tab.inactiveForeground` will be used.
 
 # Logging
 
