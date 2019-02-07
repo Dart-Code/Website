@@ -27,7 +27,7 @@ This command enables Flutter Widget Inspection.   Click on a widget in your appl
 
 Here's a quick demo of it in action:
 
-<img src="/images/demo/flutter-inspect.gif" />
+![Flutter: Inspect Widget command](/images/demo/flutter-inspect.gif)
 
 ## Dart: Open Observatory
 
