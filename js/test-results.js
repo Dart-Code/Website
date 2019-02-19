@@ -37,7 +37,6 @@ function getJson(url, success, error) {
 }
 
 function handleFileListing(xml) {
-	var files = [];
 	var matchedFiles = 0;
 	for (var file of xml.querySelectorAll("Contents")) {
 		var size = parseInt(file.querySelector("Size").textContent, 10);
