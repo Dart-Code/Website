@@ -71,9 +71,11 @@ void printSettings(
       print('**Options:** '
           '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join(', ')}` '
           'or `${formatValue(enumValues.last)}`.');
+      print('<br />');
     }
     if (hasDefault) {
       print('**Default:** `${formatValue(options['default'])}`.');
+      print('<br />');
     }
     print(improveDocs(name, options['description']));
     print('');

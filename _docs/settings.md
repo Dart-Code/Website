@@ -13,14 +13,17 @@ Window scoped settings must be applied in your User Settings or at the workspace
 
 ## dart.allowAnalytics
 **Default:** `true`.
+<br />
 Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes.
 
 ## dart.analysisServerFolding
 **Default:** `true`.
+<br />
 Whether to use folding data from the Dart analysis server instead of the built-in VS Code indent-based folding.
 
 ## dart.analyzeAngularTemplates
 **Default:** `true`.
+<br />
 Whether to enable analysis for AngularDart templates (requires the [angular_analyzer_plugin](https://github.com/dart-lang/angular_analyzer_plugin)).
 
 ## dart.analyzerAdditionalArgs
@@ -38,19 +41,24 @@ Additional args to pass to the build_runner when building/watching/serving.
 
 ## dart.checkForSdkUpdates
 **Default:** `true`.
+<br />
 Whether to check you are using the latest version of the Dart SDK at startup.
 
 ## dart.closingLabels
 **Default:** `true`.
+<br />
 Whether to show annotations against constructor, method invocations and lists that span multiple lines.
 
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
+<br />
 **Default:** `"light"`.
+<br />
 The theme to use for Dart DevTools.
 
 ## dart.enableSdkFormatter
 **Default:** `true`.
+<br />
 Whether to enable the dart_style formatter included with the Dart SDK.
 
 ## dart.env
@@ -58,10 +66,12 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 
 ## dart.flutterCreateAndroidLanguage
 **Options:** `"java"` or `"kotlin"`.
+<br />
 The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
+<br />
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
@@ -69,6 +79,7 @@ The organization responsible for your new Flutter project, in reverse domain nam
 
 ## dart.flutterHotReloadOnSave
 **Default:** `true`.
+<br />
 Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files.
 
 ## dart.flutterScreenshotPath
@@ -82,34 +93,42 @@ An array of strings that are either Flutter SDKs or folders that contains multip
 
 ## dart.flutterSelectDeviceWhenConnected
 **Default:** `true`.
+<br />
 Whether to set newly connected devices as the current device in Flutter projects.
 
 ## dart.maxLogLineLength
 **Default:** `2000`.
+<br />
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
 ## dart.normalizeWindowsDriveLetters
 **Default:** `true`.
+<br />
 Whether to always force Windows drive letters to uppercase when interacting with other tools. This should reduce spurious errors from tools that are accidentally case-sensitive with Windows paths.
 
 ## dart.openTestView
 **Default:** `[testRunStart]`.
+<br />
 When to automatically switch focus to the test list (array to support multiple values).
 
 ## dart.previewBuildRunnerTasks
 **Default:** `false`.
+<br />
 Whether to register Pub Build Runner tasks with VS Code.
 
 ## dart.previewToStringInDebugViews
 **Default:** `false`.
+<br />
 Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 15 or fewer values for performance reasons.
 
 ## dart.promptToRunIfErrors
 **Default:** `true`.
+<br />
 Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they're the script being run.
 
 ## dart.reportAnalyzerErrors
 **Default:** `true`.
+<br />
 Whether to offer to report analysis server exceptions when they occur.
 
 ## dart.sdkPath
@@ -120,27 +139,34 @@ An array of strings that are either Dart SDKs or folders that contains multiple 
 
 ## dart.showIgnoreQuickFixes
 **Default:** `false`.
+<br />
 Whether to show quick fixes for ignoring hints and lints.
 
 ## dart.showTestCodeLens
 **Default:** `true`.
+<br />
 Whether to show Code Lens actions in the editor for quick running/debugging tests.
 
 ## dart.showTodos
 **Default:** `true`.
+<br />
 Whether to show TODOs in the Problems list.
 
 ## dart.theme
 **Options:** `"dark"` or `"light"`.
+<br />
 **Default:** `"dark"`.
+<br />
 The theme to use for Icon previews in Hovers. VS Code does not offer an API to check whether the current theme is Dart or Light so this must be configured manually.
 
 ## dart.triggerSignatureHelpAutomatically
 **Default:** `false`.
+<br />
 Whether to automatically trigger signature help when pressing keys such as , and (.
 
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
+<br />
 Whether to show a warning when modifying files outside of the workspace.
 
 # Resource Scoped Settings
@@ -152,10 +178,12 @@ An array of paths to be excluded from Dart analysis. This option should usually 
 
 ## dart.debugExternalLibraries
 **Default:** `false`.
+<br />
 Whether to mark external pub package libraries as debuggable, enabling stepping into them while debugging.
 
 ## dart.debugSdkLibraries
 **Default:** `false`.
+<br />
 Whether to mark SDK libraries as debuggable, enabling stepping into them while debugging.
 
 ## dart.doNotFormat
@@ -163,10 +191,12 @@ An array of glob patterns that should be excluded for formatting. The pattern is
 
 ## dart.enableCompletionCommitCharacters
 **Default:** `false`.
+<br />
 Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and [.
 
 ## dart.evaluateGettersInDebugViews
 **Default:** `true`.
+<br />
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterTrackWidgetCreation
@@ -174,14 +204,17 @@ Whether to pass --track-widget-creation to Flutter apps (required to support 'In
 
 ## dart.insertArgumentPlaceholders
 **Default:** `true`.
+<br />
 Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled.
 
 ## dart.lineLength
 **Default:** `80`.
+<br />
 The maximum length of a line of code. This is used by the document formatter.
 
 ## dart.promptToGetPackages
 **Default:** `true`.
+<br />
 Whether to prompt to get packages when opening a project with out of date packages.
 
 ## dart.pubAdditionalArgs
@@ -189,6 +222,7 @@ Additional args to pass to `pub get` and `pub upgrade` commands (eg. --packages-
 
 ## dart.runPubGetOnPubspecChanges
 **Default:** `true`.
+<br />
 Whether to automatically run `pub get` whenever pubspec.yaml is saved.
 
 ## dart.vmAdditionalArgs
