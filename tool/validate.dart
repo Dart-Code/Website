@@ -67,16 +67,13 @@ void printSettings(
     final enumValues = options['enum'];
 
     print('## $name');
-    print('');
     if (enumValues != null && enumValues is List) {
       print('**Options:** '
           '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join(', ')}` '
           'or `${formatValue(enumValues.last)}`.');
-      print('');
     }
     if (hasDefault) {
       print('**Default:** `${formatValue(options['default'])}`.');
-      print('');
     }
     print(improveDocs(name, options['description']));
     print('');
