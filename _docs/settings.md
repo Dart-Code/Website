@@ -15,71 +15,95 @@ Window scoped settings must be applied in your User Settings or at the workspace
 
 ## dart.allowAnalytics
 
-Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes. Defaults to `true`.
+**Default:** `true`.
+
+Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes.
 
 ## dart.analyzeAngularTemplates
+
+**Default:** `true`.
 
 Whether to enable analysis for AngularDart templates (requires the [angular_analyzer_plugin](https://github.com/dart-lang/angular_analyzer_plugin)).
 
 ## dart.checkForSdkUpdates
 
-Whether to check you are using the latest version of the Dart SDK at startup. Defaults to `true`.
+**Default:** `true`.
+
+Whether to check you are using the latest version of the Dart SDK at startup.
 
 ## dart.closingLabels
 
-Whether to show annotations against constructor, method invocations and lists that span multiple lines. Defaults to `true`.
+**Default:** `true`.
+
+Whether to show annotations against constructor, method invocations and lists that span multiple lines.
 
 ## dart.flutterCreateAndroidLanguage
 
-The programming language to use for Android apps (`java` or `kotlin`).
+**Options:** `"java"` or `"kotlin"`.
+
+The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateIOSLanguage
 
-The programming language to use for IOS apps (`objc` or `swift`).
+**Options:** `"objc"` or `"swift"`.
+
+The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
 
-Used in Java package names and as prefix in the iOS bundle identifier.
+The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterHotReloadOnSave
 
-Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files. Defaults to `true`.
+**Default:** `true`.
+
+Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files.
 
 ## dart.flutterSdkPath
 
-Override the detected Flutter SDK to allow you to run from another location.
+The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project folder, FLUTTER_ROOT environment variable and the PATH environment variable.
 
 ## dart.flutterSdkPaths
 
-If you often switch between multiple Flutter SDKs/channels, setting this option to an array of Flutter SDK folders or folders that contain multiple Flutter SDKs in sub-folders will allow fast switching by clicking the Flutter SDK version in the status bar.
+An array of strings that are either Flutter SDKs or folders that contains multiple Flutter SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.flutterSelectDeviceWhenConnected
+
+**Default:** `true`.
 
 Whether to set newly connected devices as the current device in Flutter projects.
 
 ## dart.normalizeWindowsDriveLetters
 
-Whether to force all drive letters in paths to uppercase. This should reduce spurious errors from tools that are accidentally case-sensitive with Windows paths. Defaults to `true`.
+**Default:** `true`.
+
+Whether to always force Windows drive letters to uppercase when interacting with other tools. This should reduce spurious errors from tools that are accidentally case-sensitive with Windows paths.
 
 ## dart.openTestView
 
-An array to control when the test runner will automatically be displayed. Defaults to `["testRunStart"]`.
+**Default:** `[testRunStart]`.
+
+When to automatically switch focus to the test list (array to support multiple values).
 
 ## dart.sdkPath
 
-If the Dart SDK is not automatically found on your machine from your `PATH` you can enter the path to it here.
+The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the PATH environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
 
 ## dart.sdkPaths
 
-If you often switch between multiple Dart SDKs, setting this option to an array of Dart SDK folders or folders that contain multiple Dart SDKs in sub-folders will allow fast switching by clicking the Dart SDK version in the status bar.
+An array of strings that are either Dart SDKs or folders that contains multiple Dart SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.showIgnoreQuickFixes
 
-Whether to show quick fixes for ignoring hints and lints. Defaults to `false`.
+**Default:** `false`.
+
+Whether to show quick fixes for ignoring hints and lints.
 
 ## dart.showTodos
 
-Whether to show TODOs in the Problems list. Defaults to `true`.
+**Default:** `true`.
+
+Whether to show TODOs in the Problems list.
 
 # Resource Scoped Settings
 
@@ -87,11 +111,15 @@ Resource scoped settings can be set in individual workspace folder settings and 
 
 ## dart.debugExternalLibraries
 
-Whether libraries should be marked as debuggable. Defaults to `false`.
+**Default:** `false`.
+
+Whether to mark external pub package libraries as debuggable, enabling stepping into them while debugging.
 
 ## dart.debugSdkLibraries
 
-Whether SDK libraries should be marked as debuggable. Defaults to `false`.
+**Default:** `false`.
+
+Whether to mark SDK libraries as debuggable, enabling stepping into them while debugging.
 
 ## dart.doNotFormat
 
@@ -99,74 +127,84 @@ An array of glob patterns that should be excluded for formatting. The pattern is
 
 ## dart.evaluateGettersInDebugViews
 
-Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views). Defaults to `true`.
+**Default:** `true`.
+
+Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.insertArgumentPlaceholders
 
-Whether to insert argument placeholders during code completions. Defaults to `true`.
+**Default:** `true`.
+
+Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled.
 
 ## dart.lineLength
 
-The maximum length of a line of code. This is used by the document formatter. Defaults to `80`.
+**Default:** `80`.
+
+The maximum length of a line of code. This is used by the document formatter.
 
 ## dart.promptToGetPackages
 
-Whether to prompt to get packages when opening a project with out of date packages. Defaults to `true`.
+**Default:** `true`.
+
+Whether to prompt to get packages when opening a project with out of date packages.
 
 ## dart.pubAdditionalArgs
 
-Additional args to pass to `pub get` and `pub upgrade` commands (eg. `--packages-dir`).
+Additional args to pass to `pub get` and `pub upgrade` commands (eg. --packages-dir).
 
 ## dart.runPubGetOnPubspecChanges
 
-Whether to automatically run `pub get` whenever pubspec.yaml is saved. Defaults to `true`.
+**Default:** `true`.
+
+Whether to automatically run `pub get` whenever pubspec.yaml is saved.
 
 ## dart.vmAdditionalArgs
 
-Additional args to pass to the Dart VM when running/debugging apps.
+Additional args to pass to the Dart VM when running/debugging command line apps.
 
-# Custom Colors
+# Custom Color Settings
 
 Some colors in Dart Code can be customized using the `workbench.colorCustomizations` section in settings. Supported colors are:
 
 ## dart.closingLabels
 
-The color of the "closing label" annotations against constructor, method invocations and lists that span multiple lines. If not supplied, the color for `tab.inactiveForeground` will be used.
+The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for `tab.inactiveForeground` will be used.
 
-# Logging
+# Diagnostic Settings
 
-There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/). Each of these settings takes a file path and the containing folder must have already been created.
+There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/).
 
 ## dart.analyzerInstrumentationLogFile
 
-This enables very detailed logging in the analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
+The path to a log file for very detailed logging in the Dart analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
 
 ## dart.analyzerLogFile
 
-This enables logging of communication between Dart Code and the analysis server. Messages are truncated after a few thousand characters but this is useful to when trying to understand how Dart Code is interacting with the analysis server. For more information on capturing logs, see [Analyzer Logging](/docs/logging/#analyzer).
+The path to a log file for communication between Dart Code and the analysis server. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
 
 ## dart.extensionLogFile
 
-This enables a low-traffic log file for basic extension and editor issues. For more information on capturing logs, see [Extension Logging](/docs/logging/#extension).
+The path to a low-traffic log file for basic extension and editor issues. For more information on capturing these logs, see [Extension Logging](/docs/logging/#extension).
 
 ## dart.flutterDaemonLogFile
 
-This enables logging of the `flutter daemon` communication which is the service that provides information about connected devices that is used in the status bar. For more information on capturing logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
+The path to a log file for the `flutter daemon` communication which is the service that provides information about connected devices used to show in the status bar. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
 
 ## dart.flutterRunLogFile
 
-This enables logging of `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. For more information on capturing logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
+The path to a log file for `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
 
 ## dart.flutterTestLogFile
 
-This enables logging of `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. For more information on capturing logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+The path to a log file for `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
 
 ## dart.observatoryLogFile
 
-This enables logging of communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. For more information on capturing logs, see [Observatory Logging](/docs/logging/#observatory).
+The path to a log file for communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. For more information on capturing these logs, see [Observatory Logging](/docs/logging/#observatory).
 
 ## dart.pubTestLogFile
 
-This enables logging of `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. For more information on capturing logs, see [Pub Test Logging](/docs/logging/#pub-test).
+The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
 
 <!-- TODO: Other daiagnotics like analyzer observatory, etc. -->
