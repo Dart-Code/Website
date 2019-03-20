@@ -20,7 +20,10 @@ main() {
       packageManifest['contributes']['configuration']['properties'];
   final List<dynamic> colorOptions = packageManifest['contributes']['colors'];
 
-  final isDiagnostics = (String key) => key.endsWith('LogFile');
+  final isDiagnostics = (String key) =>
+      key.endsWith('LogFile') ||
+      key.endsWith('DiagnosticsPort') ||
+      key.endsWith('analyzerObservatoryPort');
   final isWindowScoped = (String key) =>
       configOptions[key]['scope'] != 'resource' && !(isDiagnostics(key));
   final isResourceScoped = (String key) =>
