@@ -59,30 +59,27 @@ void printSettings(
 
   for (var name in settingNames) {
     final options = configOptions[name];
-    // If not already in docs.
-    if (settingsContent.contains('## $name')) {
-      // Check whether we'll need to note a default value.
-      final defaultValue = options['default'];
-      final hasDefault = defaultValue != null &&
-          (defaultValue is! List || defaultValue.length != 0);
+    // Check whether we'll need to note a default value.
+    final defaultValue = options['default'];
+    final hasDefault = defaultValue != null &&
+        (defaultValue is! List || defaultValue.length != 0);
 
-      final enumValues = options['enum'];
+    final enumValues = options['enum'];
 
-      print('## $name');
-      print('');
-      if (enumValues != null && enumValues is List) {
-        print('**Options:** '
-            '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join(', ')}` '
-            'or `${formatValue(enumValues.last)}`.');
-        print('');
-      }
-      if (hasDefault) {
-        print('**Default:** `${formatValue(options['default'])}`.');
-        print('');
-      }
-      print(improveDocs(name, options['description']));
+    print('## $name');
+    print('');
+    if (enumValues != null && enumValues is List) {
+      print('**Options:** '
+          '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join(', ')}` '
+          'or `${formatValue(enumValues.last)}`.');
       print('');
     }
+    if (hasDefault) {
+      print('**Default:** `${formatValue(options['default'])}`.');
+      print('');
+    }
+    print(improveDocs(name, options['description']));
+    print('');
   }
 }
 
