@@ -2,6 +2,9 @@ name: Dart Code
 desc: Dart & Flutter support for Visual Studio Code
 permalink: /:name/
 excerpt_separator: ""
+exclude:
+  - pubspec.yaml
+  - tool/
 collections:
   docs:
     output: true
