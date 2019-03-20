@@ -1,4 +1,5 @@
 name: dart_code_website
 
 dependencies:
+  http:
   path:
