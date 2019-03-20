@@ -73,13 +73,13 @@ If the Dart SDK is not automatically found on your machine from your `PATH` you 
 
 If you often switch between multiple Dart SDKs, setting this option to an array of Dart SDK folders or folders that contain multiple Dart SDKs in sub-folders will allow fast switching by clicking the Dart SDK version in the status bar.
 
-## dart.showTodos
-
-Whether to show TODOs in the Problems list. Defaults to `true`.
-
 ## dart.showIgnoreQuickFixes
 
 Whether to show quick fixes for ignoring hints and lints. Defaults to `false`.
+
+## dart.showTodos
+
+Whether to show TODOs in the Problems list. Defaults to `true`.
 
 # Resource Scoped Settings
 
