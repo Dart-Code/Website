@@ -7,7 +7,12 @@ var queryString = window.location.search.substring(1);
 if (queryString && queryString.indexOf("/") !== -1) {
 	getXml(bucketRoot + "?prefix=" + escape(queryString), handleFileListing, showWarning);
 } else {
-	getJson(githubApiRoot + "branches", handleBranchList, function (e) {
+	getJson(githubApiRoot + "branches", function (branches) {
+		handleBranchList(branches);
+		// Page 2, since per_page doesn't seem to work here.
+		// We may want to fix this when we hit 60 branches :)
+		getJson(githubApiRoot + "branches?page=2", handleBranchList);
+	}, function (e) {
 		hideLoading();
 		showWarning("Failed to load branches. Have you blown your GH API quota? :(");
 		showWarning(e);
