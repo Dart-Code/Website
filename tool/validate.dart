@@ -44,9 +44,6 @@ void printSettings(
   String description,
   bool Function(String key) filter,
 ) {
-  final settingsFile = File('../_docs/settings.md');
-  final settingsContent = settingsFile.readAsStringSync();
-
   final settingNames = configOptions.keys.where(filter).toList()..sort();
 
   if (settingNames.isEmpty) {
