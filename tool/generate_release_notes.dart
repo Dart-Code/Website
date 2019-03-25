@@ -18,27 +18,36 @@ main() async {
   print('# $name');
   print('');
 
-  final Map<String, Map<int, String>> issuesByLabel = {};
+  final Map<String, Map<int, dynamic>> issuesByLabel = {};
   final List<dynamic> issues =
       await fetchJson('issues?milestone=$key&state=closed&per_page=100');
   if (issues.length >= 100) {
     print('100 ITEMS RETURNED, THERE MAY BE MORE!');
   }
   for (final issue in issues) {
-    final primaryLabel = (issue['labels'] as List<dynamic>)
+    final labels = issue['labels'] as List<dynamic>;
+    final primaryLabel = labels
         .map((l) => l['name'] as String)
         .firstWhere((l) => l.startsWith('in '), orElse: () => 'in other');
 
+    // Non-functional changes don't go in release notes.
+    if (labels.any((l) => l['name'] == 'is non-functional')) {
+      continue;
+    }
+
     issuesByLabel.putIfAbsent(primaryLabel, () => {});
-    issuesByLabel[primaryLabel][issue['number'] as int] = issue['title'];
+    issuesByLabel[primaryLabel][issue['number'] as int] = issue;
   }
 
   issuesByLabel.forEach((label, issues) {
     final category = label.substring(3, 4).toUpperCase() + label.substring(4);
     print('## $category Changes');
     print('');
-    issues.forEach((issueNumber, title) {
-      print('- #$issueNumber: $title');
+    issues.forEach((issueNumber, issue) {
+      final title = issue['title'] as String;
+      final isPr = issue['pull_request'] != null;
+      print(
+          '- ${isPr ? 'PR ' : ''}[#$issueNumber](https://github.com/Dart-Code/Dart-Code/issues/$issueNumber): $title');
     });
     print('');
   });
