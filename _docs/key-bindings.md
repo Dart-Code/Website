@@ -22,6 +22,7 @@ You can easily configure your own key bindings, including binding to commands pr
 
 ## Debug Key Bindings
 
+- `Ctrl`+`Alt`+`D` - Launch Dart DevTools
 - `F5` - Start Debugging
 - `Ctrl`+`F5` - Start Without Debugging
 - `Shift`+`F5` - Stop Debugging
