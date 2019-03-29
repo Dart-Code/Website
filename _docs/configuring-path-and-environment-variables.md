@@ -2,7 +2,7 @@
 title: Configuring PATH and Environment Variables
 ---
 
-By default, Dart Code will try to locate Dart and Flutter SDKs from your `PATH` variable. Additionally, Flutter may use environment variables to locate some dependencies (such as `ANDROID_HOME` for the Android SDK). It's common to set `PATH` and environment variables in a terminal script like `.bash_profile` or `.bashrc` however these changes often only apply yo terminal sessions so if you launch VS Code from a launcher/dock you may find that Dart Code is unaware of them.
+By default, Dart Code will try to locate Dart and Flutter SDKs from your `PATH` variable. Additionally, Flutter may use environment variables to locate some dependencies (such as `ANDROID_HOME` for the Android SDK). It's common to set `PATH` and environment variables in a terminal script like `.bash_profile` or `.bashrc` however these changes often only apply to terminal sessions so if you launch VS Code from a launcher/dock you may find that Dart Code is unaware of them.
 
 If you have issues with Dart Code not locating your Dart or Flutter SDKs (or Flutter Doctor saying it cannot locate your Android SDK) try the suggestions below.
 
