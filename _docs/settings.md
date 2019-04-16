@@ -36,6 +36,11 @@ The path to a custom Dart analysis server.
 An SSH host to run the analysis server.
 This can be useful when modifying code on a remote machine using SSHFS.
 
+## dart.autoImportCompletions
+**Default:** `true`.
+<br />
+Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them.
+
 ## dart.buildRunnerAdditionalArgs
 Additional args to pass to the build_runner when building/watching/serving.
 
@@ -52,7 +57,7 @@ Whether to show annotations against constructor, method invocations and lists th
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
 <br />
-**Default:** `"light"`.
+**Default:** `"dark"`.
 <br />
 The theme to use for Dart DevTools.
 
@@ -62,15 +67,21 @@ The theme to use for Dart DevTools.
 Whether to enable the dart_style formatter included with the Dart SDK.
 
 ## dart.env
+**Default:** `{}`.
+<br />
 Additional environment variables to be added to all Dart/Flutter processes spawned by the Dart and Flutter extensions.
 
 ## dart.flutterCreateAndroidLanguage
 **Options:** `"java"` or `"kotlin"`.
 <br />
+**Default:** `"java"`.
+<br />
 The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
+<br />
+**Default:** `"objc"`.
 <br />
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
@@ -200,7 +211,9 @@ Whether to automatically commit the selected completion item when pressing certa
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterTrackWidgetCreation
-Whether to pass --track-widget-creation to Flutter apps (required to support 'Inspect Widget'). If this setting is not set, it will default to true for Flutter >= 10.2 and false for any previous versions of Flutter. The setting is always ignored when running in Profile or Release mode.
+**Default:** `true`.
+<br />
+Whether to pass --track-widget-creation to Flutter apps (required to support 'Inspect Widget'). This setting is always ignored when running in Profile or Release mode.
 
 ## dart.insertArgumentPlaceholders
 **Default:** `true`.
