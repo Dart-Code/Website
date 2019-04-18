@@ -26,17 +26,47 @@ void printGetters(
     final options = configOptions[name];
 
     final getterName = name.replaceFirst('dart.', '');
-    final typeString = _getTypeString(options);
+    final types = _getTypes(options);
     final defaultValue = options['default'] is List
         ? '[${options['default'].map(_formatValue).join(', ')}]'
         : _formatValue(options['default']);
 
+    final getCall = getConfigCall(types, getterName, defaultValue);
+
     print(
-        'get $getterName(): ${typeString.replaceFirst("null", "undefined")} { return this.getConfig<$typeString>("$getterName", $defaultValue); }');
+        'get $getterName(): ${_asTypeString(types).replaceFirst("null", "undefined")} { return ${getCall}; }');
   }
 }
 
-String _getTypeString(options) {
+String getConfigCall(
+  List<String> types,
+  String name,
+  String defaultValue,
+) {
+  final lname = name.toLowerCase();
+  final isString = types.contains("string");
+  final isStringArray = types.contains("string[]");
+
+  var call = 'this.getConfig<${_asTypeString(types)}>("$name", $defaultValue)';
+
+  // For files and paths, resolve ~ to homedir.
+  if (isString && (lname.endsWith("path") || lname.endsWith("file"))) {
+    call = 'resolvePaths($call)';
+  }
+
+  // For arrays of paths, we need to map through resolvePaths.
+  if (isStringArray && lname.endsWith("paths")) {
+    call = '$call.map(resolvePaths)';
+  }
+
+  // For log files, we can create the folders.
+  if (isString && lname.endsWith("logfile")) {
+    call = 'createFolderForFile($call)';
+  }
+  return call;
+}
+
+List<String> _getTypes(options) {
   List<String> rawTypes;
   if (options['type'] is List) {
     rawTypes = options['type'].cast<String>();
@@ -48,7 +78,7 @@ String _getTypeString(options) {
     throw 'Unable to handle type!';
   }
   final validTypes = rawTypes.map((t) => _improveType(t, options)).toList();
-  return validTypes.join(' | ');
+  return validTypes;
 }
 
 const _typeMappings = {
@@ -56,10 +86,15 @@ const _typeMappings = {
 };
 String _improveType(dynamic type, options) {
   if (type == "array") {
-    final itemTypes = _getTypeString(options['items']);
-    return itemTypes.contains(' | ') ? 'Array<$itemTypes>' : '$itemTypes[]';
+    final itemTypes = _getTypes(options['items']);
+    final itemTypesString = _asTypeString(itemTypes);
+    return itemTypes.length > 1
+        ? 'Array<$itemTypesString>'
+        : '$itemTypesString[]';
   }
   return _typeMappings[type as String] ?? type as String;
 }
 
 String _formatValue(dynamic val) => val is String ? '"$val"' : val.toString();
+
+String _asTypeString(List<String> types) => types.join(' | ');
