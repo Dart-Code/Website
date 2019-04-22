@@ -265,6 +265,9 @@ The path to a log file for communication between Dart Code and the analysis serv
 ## dart.analyzerObservatoryPort
 The port number to be used for the Dart analysis server observatory.
 
+## dart.devToolsLogFile
+The path to a low-traffic log file for the Dart DevTools service.
+
 ## dart.extensionLogFile
 The path to a low-traffic log file for basic extension and editor issues. For more information on capturing these logs, see [Extension Logging](/docs/logging/#extension).
 
