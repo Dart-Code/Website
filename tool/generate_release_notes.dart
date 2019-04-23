@@ -47,7 +47,7 @@ main() async {
       final title = issue['title'] as String;
       final isPr = issue['pull_request'] != null;
       print(
-          '- ${isPr ? 'PR ' : ''}[#$issueNumber](https://github.com/Dart-Code/Dart-Code/issues/$issueNumber): $title');
+          '- ${isPr ? 'PR ' : ''}[#$issueNumber](https://github.com/Dart-Code/Dart-Code/issues/$issueNumber): ${title.endsWith(".") ? title : '$title.'}');
     });
     print('');
   });
