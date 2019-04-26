@@ -17,10 +17,6 @@ For information on key bindings, including how to add your own, see [Key Binding
 
 If you have configured the [`dart.sdkPaths` setting](/docs/settings/#dartsdkpaths) then this command will allow you to quickly switch between Dart SDKs. See [Quickly Switching Between SDK Versions](/docs/quickly-switching-between-sdk-versions/) for more info.
 
-## Dart: Organize Imports
-
-This command removes unused imports and sorts directives in the current Dart file according to [the Dart Style Guide](https://www.dartlang.org/guides/language/effective-dart/style).
-
 ## Dart: Go to Super Method
 
 This command goes to the `super` implementation of the method under the caret.
