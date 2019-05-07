@@ -54,6 +54,9 @@ Whether to check you are using the latest version of the Dart SDK at startup.
 <br />
 Whether to show annotations against constructor, method invocations and lists that span multiple lines.
 
+## dart.devToolsPort
+The port number to be used for the Dart DevTools.
+
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
 <br />
@@ -70,6 +73,11 @@ Whether to enable the dart_style formatter included with the Dart SDK.
 **Default:** `{}`.
 <br />
 Additional environment variables to be added to all Dart/Flutter processes spawned by the Dart and Flutter extensions.
+
+## dart.flutterAdbConnectOnChromeOs
+**Default:** `false`.
+<br />
+Whether to automatically run 'adb connect 100.115.92.2:5555' when spawning the Flutter Daemon when running on Chrome OS.
 
 ## dart.flutterCreateAndroidLanguage
 **Options:** `"java"` or `"kotlin"`.
@@ -91,7 +99,12 @@ The organization responsible for your new Flutter project, in reverse domain nam
 ## dart.flutterHotReloadOnSave
 **Default:** `true`.
 <br />
-Whether to automatically send a 'hot reload' request during a Flutter debug session when saving files.
+Whether to automatically send a Hot Reload request during a Flutter debug session when saving files.
+
+## dart.flutterHotRestartOnSave
+**Default:** `false`.
+<br />
+Whether to automatically send a Hot Restart request during a Flutter debug session when saving files if Hot Reload is not available.
 
 ## dart.flutterScreenshotPath
 The path to a directory to save Flutter screenshots.
@@ -175,6 +188,10 @@ The theme to use for Icon previews in Hovers. VS Code does not offer an API to c
 <br />
 Whether to automatically trigger signature help when pressing keys such as , and (.
 
+## dart.useKnownChromeOSPorts
+**Default:** `true`.
+<br />
+Whether to use specific ports for Observatory and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
 <br />
@@ -246,7 +263,6 @@ Additional args to pass to the Dart VM when running/debugging command line apps.
 Some colors in Dart Code can be customized using the `workbench.colorCustomizations` section in settings. Supported colors are:
 
 ## dart.closingLabels
-
 The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for `tab.inactiveForeground` will be used.
 
 # Diagnostic Settings
@@ -285,3 +301,6 @@ The path to a log file for communication between Dart Code and Observatory (the 
 
 ## dart.pubTestLogFile
 The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
+
+## dart.webDaemonLogFile
+The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web applications.
