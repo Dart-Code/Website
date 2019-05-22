@@ -140,6 +140,16 @@ When to automatically switch focus to the test list (array to support multiple v
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
 
+## dart.previewFlutterUiGuides
+**Default:** `false`.
+<br />
+Whether to enable the Flutter UI Guides preview. See [Dart-Code/issues/1731](https://github.com/Dart-Code/Dart-Code/issues/1731) for details.
+
+## dart.previewFlutterUiGuidesCustomTracking
+**Default:** `false`.
+<br />
+Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline). See [Dart-Code/issues/1731](https://github.com/Dart-Code/Dart-Code/issues/1731) for details.
+
 ## dart.previewToStringInDebugViews
 **Default:** `false`.
 <br />
@@ -176,13 +186,6 @@ Whether to show Code Lens actions in the editor for quick running/debugging test
 <br />
 Whether to show TODOs in the Problems list.
 
-## dart.theme
-**Options:** `"dark"` or `"light"`.
-<br />
-**Default:** `"dark"`.
-<br />
-The theme to use for Icon previews in Hovers. VS Code does not offer an API to check whether the current theme is Dart or Light so this must be configured manually.
-
 ## dart.triggerSignatureHelpAutomatically
 **Default:** `false`.
 <br />
@@ -192,6 +195,7 @@ Whether to automatically trigger signature help when pressing keys such as , and
 **Default:** `true`.
 <br />
 Whether to use specific ports for Observatory and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
+
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
 <br />
