@@ -125,11 +125,6 @@ Whether to set newly connected devices as the current device in Flutter projects
 <br />
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
-## dart.normalizeWindowsDriveLetters
-**Default:** `true`.
-<br />
-Whether to always force Windows drive letters to uppercase when interacting with other tools. This should reduce spurious errors from tools that are accidentally case-sensitive with Windows paths.
-
 ## dart.openTestView
 **Default:** `[testRunStart]`.
 <br />
@@ -139,6 +134,11 @@ When to automatically switch focus to the test list (array to support multiple v
 **Default:** `false`.
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
+
+## dart.previewFlutterOutline
+**Default:** `false`.
+<br />
+Whether to enable the Flutter Outline tree in the side bar.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
@@ -246,6 +246,11 @@ Whether to insert argument placeholders during code completions. This feature is
 <br />
 The maximum length of a line of code. This is used by the document formatter.
 
+## dart.previewFlutterStructuredErrors
+**Default:** `false`.
+<br />
+Whether to enable Flutter's structured error support for improve error display.
+
 ## dart.promptToGetPackages
 **Default:** `true`.
 <br />
@@ -258,6 +263,11 @@ Additional args to pass to `pub get` and `pub upgrade` commands (eg. --packages-
 **Default:** `true`.
 <br />
 Whether to automatically run `pub get` whenever pubspec.yaml is saved.
+
+## dart.showDartDeveloperLogs
+**Default:** `true`.
+<br />
+Whether to show logs from dart:developer's log() function in the debug console.
 
 ## dart.vmAdditionalArgs
 Additional args to pass to the Dart VM when running/debugging command line apps.
