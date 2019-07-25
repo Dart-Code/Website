@@ -47,6 +47,10 @@ This command simplifies creation of new Flutter projects. You will be asked for 
 
 For more information on getting started with your first app, see the [Get Started: Test Drive](https://flutter.io/get-started/test-drive/#vscode) section of the Flutter website.
 
+## Flutter: Open Widget Sample
+
+This commands provides easy access to all Flutter widget sample applications. You will be shown a list of all available samples, and selecting one will open the sample in VS Code ready for you to run by pressing `F5`.
+
 ## Flutter: Run Flutter Doctor
 
 This commands runs `flutter doctor` and shows the results in the `Output` pane.
