@@ -72,7 +72,10 @@ function handleFileListing(xml) {
 function loadResults(path, branch, hash, os, suite, dartVersion, codeVersion, os) {
 	outstandingRequests++;
 	getXml(bucketRoot + path, function (xml) {
-		handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xml);
+		if (xml)
+			handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xml);
+		else
+			showWarning("Invalid XML in " + bucketRoot + path);
 		outstandingRequests--;
 		if (outstandingRequests == 0) {
 			updateResults();
