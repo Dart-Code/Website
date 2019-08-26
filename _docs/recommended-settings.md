@@ -2,11 +2,12 @@
 title: Recommended Settings
 ---
 
-There are some settings in VS Code that you may wish to change from the defaults for a better experience editing Flutter code. You can set these globally in your User Settings, or scope them only to Dart files by running the `Preferences: Configure Language-Specific Settings...` command from the VS Code command palette.
+There are some settings in VS Code that you may wish to change from the defaults for a better experience editing Flutter code. You can set these globally by adding the below JSON to your VS Code User Settings or apply the Dart-specific ones by running the **Dart: Use Recommended Settings** command.
 
 ```js
 {
-	// Causes the debug view to automatically appear when a breakpoint is hit.
+	// Causes the debug view to automatically appear when a breakpoint is hit. This
+	// setting is global and not configurable per-language.
 	"debug.openDebug": "openOnDebugBreak",
 
 	"[dart]": {
