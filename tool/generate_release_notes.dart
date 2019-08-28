@@ -41,7 +41,7 @@ main() async {
 
   issuesByLabel.forEach((label, issues) {
     final category = label.substring(3, 4).toUpperCase() + label.substring(4);
-    print('## $category Changes');
+    print('## $category');
     print('');
     issues.forEach((issueNumber, issue) {
       final title = issue['title'] as String;
