@@ -11,6 +11,9 @@ Dart Code has a number of configurable settings that can be modified in your [Us
 
 Window scoped settings must be applied in your User Settings or at the workspace level and will apply for all projects open in a window (for example, `dart.sdkPath` is used to launch an analyzer that is used for the whole window).
 
+## dart.additionalAnalyzerFileExtensions
+Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).
+
 ## dart.allowAnalytics
 **Default:** `true`.
 <br />
@@ -79,17 +82,22 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 <br />
 Whether to automatically run 'adb connect 100.115.92.2:5555' when spawning the Flutter Daemon when running on Chrome OS.
 
+## dart.flutterAndroidX
+**Default:** `false`.
+<br />
+Whether to pass the --androidx flag when running the **Flutter: New Project** command.
+
 ## dart.flutterCreateAndroidLanguage
 **Options:** `"java"` or `"kotlin"`.
 <br />
-**Default:** `"java"`.
+**Default:** `"kotlin"`.
 <br />
 The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
 <br />
-**Default:** `"objc"`.
+**Default:** `"swift"`.
 <br />
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
@@ -105,6 +113,11 @@ Whether to automatically send a Hot Reload request during a Flutter debug sessio
 **Default:** `false`.
 <br />
 Whether to automatically send a Hot Restart request during a Flutter debug session when saving files if Hot Reload is not available.
+
+## dart.flutterOutline
+**Default:** `true`.
+<br />
+Whether to show the Flutter Outline tree in the side bar.
 
 ## dart.flutterScreenshotPath
 The path to a directory to save Flutter screenshots.
@@ -134,11 +147,6 @@ When to automatically switch focus to the test list (array to support multiple v
 **Default:** `false`.
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
-
-## dart.previewFlutterOutline
-**Default:** `false`.
-<br />
-Whether to enable the Flutter Outline tree in the side bar.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
@@ -231,6 +239,14 @@ Whether to automatically commit the selected completion item when pressing certa
 <br />
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
+## dart.flutterAdditionalArgs
+Additional args to pass to all flutter commands.
+
+## dart.flutterStructuredErrors
+**Default:** `true`.
+<br />
+Whether to use Flutter's structured error support for improve error display.
+
 ## dart.flutterTrackWidgetCreation
 **Default:** `true`.
 <br />
@@ -246,18 +262,13 @@ Whether to insert argument placeholders during code completions. This feature is
 <br />
 The maximum length of a line of code. This is used by the document formatter.
 
-## dart.previewFlutterStructuredErrors
-**Default:** `false`.
-<br />
-Whether to enable Flutter's structured error support for improve error display.
-
 ## dart.promptToGetPackages
 **Default:** `true`.
 <br />
 Whether to prompt to get packages when opening a project with out of date packages.
 
 ## dart.pubAdditionalArgs
-Additional args to pass to `pub get` and `pub upgrade` commands (eg. --packages-dir).
+Additional args to pass to all pub commands.
 
 ## dart.runPubGetOnPubspecChanges
 **Default:** `true`.
