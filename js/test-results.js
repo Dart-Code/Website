@@ -121,49 +121,45 @@ function handleTestResults(branch, hash, os, suite, dartVersion, codeVersion, xm
 }
 
 function updateResults() {
+	var bigSuites = ["dart only", "flutter only"];
 	var table = document.querySelector("#test-results");
 	var tbody = table.querySelector("tbody");
-	var totalCols = 18;
-	for (var suite of results) {
-		var row = addRow(tbody, 0, 3, suite.suite, "suite");
-		for (var codeVersion of ["stable", "insiders"]) {
-			for (var dartVersion of ["stable", "dev"]) {
-				// Don't show dev/dev for simplicity.
-				if (codeVersion == "insiders" && dartVersion == "dev")
-					continue;
-				row.appendChild(document.createElement("td"));
-				for (var os of ["win", "osx", "linux"]) {
-					// TODO: Finish... We have multiple files here (types of files, but also multiple files for multiple runs)..
-					// Maybe link to a list of files using the same API we use above?
-					// TODO: Why is icon rotated?
-					// var a = row.appendChild(document.createElement("td")).appendChild(document.createElement("a"));
-					// a.href = bucketRoot + ["logs", suite.branch, suite.hash, os, ".dart_code_logs", suite.name].join("/");
-					// var img = a.appendChild(document.createElement("img"));
-					// img.className = "x";
-					// img.src = "/images/log.svg";
-				}
-				row.appendChild(document.createElement("td"));
-			}
-		}
-		for (var testClass of suite.testClasses) {
-			addRow(tbody, 1, totalCols - 1, testClass.className);
-			for (var test of testClass.tests) {
-				var row = addRow(tbody, 2, 1, test.testName, undefined, "test-name");
-				for (var codeVersion of ["stable", "insiders"]) {
-					for (var dartVersion of ["stable", "dev"]) {
-						// Don't show dev/dev for simplicity.
-						// if (codeVersion == "insiders" && dartVersion == "dev")
-						// 	continue;
-						row.appendChild(document.createElement("td"));
-						for (var os of ["win", "osx", "linux"]) {
+	results = results.sort((s1, s2) => bigSuites.indexOf(s1.suite) !== -1 ? -1 : 0);
+	for (var codeVersion of ["stable", "insiders"]) {
+		for (var dartVersion of ["stable", "dev"]) {
+			addRow(tbody, 0, 3, dartVersion + " Dart, " + codeVersion + " Code", undefined, "section-channel");
+			for (var os of ["win", "osx", "linux"]) {
+				// addRow(tbody, 0, 2, os, "section-os", undefined);
+				var sharedRow;
+				var suiteIndex = 0;
+				for (var suite of results) {
+					suiteIndex++;
+					var isBigSuite = bigSuites.indexOf(suite.suite) !== -1;
+					var row;
+					if (isBigSuite) {
+						row = addRow(tbody, 0, 1, os + " " + suite.suite.replace(/ only/, ""), "", "suite");
+					} else {
+						if (!sharedRow) {
+							sharedRow = addRow(tbody, 0, 1, "other", "", "suite");
+						}
+						row = sharedRow;
+					}
+					var testClassIndex = 0;
+					for (var testClass of suite.testClasses) {
+						testClassIndex++;
+						var testIndex = 0;
+						for (var test of testClass.tests) {
+							testIndex++;
 							var id = dartVersion + "_" + codeVersion + "_" + os;
 							var result = test[id];
 							var resultClassName = "unknown";
-							var tooltip = "";
+							var tooltip = testClass.className + " " + test.testName;
 							var linkToLog = true;
+							let textContent = undefined;
 							if (result && result.failure) {
 								resultClassName = "fail";
-								tooltip = result.failure;
+								tooltip += "\n\n" + result.failure;
+								textContent = suiteIndex.toString() + ":" + testClassIndex.toString() + ":" + testIndex.toString();
 							} else if (result && result.skipped) {
 								resultClassName = "skipped";
 							} else if (result) {
@@ -177,22 +173,22 @@ function updateResults() {
 								// record it as unknown, since it wasn't expected to run - we've
 								// just got it in the list because it failed somewhere else.
 								resultClassName = undefined;
+							} else {
+								textContent = "?";
 							}
 
-							var cell = row.appendChild(document.createElement("td"));
-							cell.className = resultClassName;
-							cell.title = tooltip;
+							var box = row.appendChild(document.createElement("div"));
+							box.className = "box " + resultClassName;
+							box.title = tooltip.trim();
 
+							let link;
 							if (linkToLog) {
-								var link = cell.appendChild(document.createElement("a"));
+								link = box.appendChild(document.createElement("a"));
 								link.href = bucketRoot + ["logs", suite.branch, suite.hash, os, filenameSafe(suite.suite + "_" + dartVersion + "_" + codeVersion), filenameSafe(testClass.className + " " + test.testName) + ".txt"].join("/");
 							}
 
-							// Add to column header.
-							if (resultClassName)
-								document.getElementById(id).classList.add(resultClassName);
+							(link || box).textContent = textContent;
 						}
-						row.appendChild(document.createElement("td"));
 					}
 				}
 			}
