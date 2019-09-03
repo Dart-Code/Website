@@ -228,54 +228,89 @@ main {
 	#test-results {
 		min-width: 100%;
 
-		tr {
-			vertical-align: top;
+		tr:hover .test-name {
+			background-color: $dart-green-light;
 		}
 
-		a {
-			text-decoration: none;
-			color: #fff;
-		}
-
-		.section-channel {
+		.suite {
 			text-transform: capitalize;
 			font-weight: bold;
-			font-size: 1.5em;
-			padding-top: 10px;
-			white-space: nowrap;
-		}
-		.suite {
-			white-space: nowrap;
+
+			td {
+				padding-top: 10px;
+			}
 		}
 
-		.spacer {
-			min-width: 30px;
+		.test-name {
+			padding: 1px 3px;
 		}
 
-		div.box {
-			height: 18px;
-			display: inline-block;
-			margin: 0 1px 3px 0;
-			vertical-align: top;
-			font-size: 12px;
-			line-height: 18px;
-			padding: 0 2px;
+		img {
+			width: 16px;
+			height: 16px;
+		}
+
+		th {
+			text-align: left;
+			padding-bottom: 3px;
+
+			&.h {
+				text-align: center;
+			}
+
+			&.r {
+				width: 18px;
+				height: 18px;
+			}
+
+			&.i {
+				width: 20px;
+			}
+
+			&.pass {
+				border-bottom: 3px solid $pass;
+			}
+			&.fail {
+				border-bottom: 3px solid $fail;
+			}
+		}
+		td {
+			empty-cells: show;
+			max-width: 100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 
 			&.pass {
 				background-color: $pass;
 			}
 			&.unknown {
 				background-color: $unknown;
+				color: #666;
+				text-align: center;
+				position: relative;
+				&:after {
+					content: "?";
+					pointer-events: none;
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					top: 0;
+					left: 0;
+					line-height: 20px;
+					text-align: center;
+				}
+				opacity: 0.2;
 			}
 			&.skipped {
 				background-color: $skipped;
 			}
 			&.fail {
-				padding: 0 2px;
 				background-color: $fail;
 			}
 			a {
 				display: block;
+				width: 18px;
 				height: 18px;
 			}
 		}
