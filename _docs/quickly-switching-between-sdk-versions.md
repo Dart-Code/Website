@@ -3,6 +3,8 @@ title: Quickly Switching Between SDK Versions
 ---
 
 To quickly switch between Dart or Flutter SDKs you need to provide Dart Code with a list of paths or containers for your SDKs. This can be done using the `dart.sdkPaths` and `dart.flutterSdkPaths` settings. Each setting is an array of paths that should either be SDK folders themselves or be a folder that contains SDK folders.
+
+Note: Switching SDKs this way is unable to affect the `PATH` in the VS Code terminal. Prefer to use built-in functionality over running commands manually in terminal to ensure you get the selected version.
 	
 
 ```js
