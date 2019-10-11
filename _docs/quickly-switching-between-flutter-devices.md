@@ -20,4 +20,4 @@ Selecting a new device will apply from the next debugging session.
 ### Device Not Listed?
 
 {:.callout.body}
-If your device or simulator is not listed then Flutter may not have detected it. If using a phyiscal device please ensure USB debugging is enabled and/or disconnect and reconnect your device. If using a simulator try restarting it. Run `flutter doctor -v` for additional troubleshooting.
+If your device or simulator is not listed then Flutter may not have detected it. If using a physical device please ensure USB debugging is enabled and/or disconnect and reconnect your device. If using a simulator try restarting it. Run `flutter doctor -v` for additional troubleshooting.
