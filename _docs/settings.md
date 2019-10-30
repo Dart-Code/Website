@@ -60,12 +60,22 @@ Whether to show annotations against constructor, method invocations and lists th
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
 
+## dart.devToolsReuseWindows
+**Default:** `true`.
+<br />
+Whether to try to reuse existing DevTools windows instead of launching new ones. Only works for instances of DevTools launched by the DevTools server on the local machine.
+
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
 <br />
 **Default:** `"dark"`.
 <br />
 The theme to use for Dart DevTools.
+
+## dart.enableMachineLearningCodeCompletion
+**Default:** `false`.
+<br />
+Controls wether to use a machine-learned model for improved code completion rankings and suggestions.
 
 ## dart.enableSdkFormatter
 **Default:** `true`.
@@ -138,6 +148,13 @@ Whether to set newly connected devices as the current device in Flutter projects
 <br />
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
+## dart.openDevTools
+**Options:** `"never", "flutter"` or `"always"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to automatically open DevTools at the start of a debug session.
+
 ## dart.openTestView
 **Default:** `[testRunStart]`.
 <br />
@@ -147,6 +164,11 @@ When to automatically switch focus to the test list (array to support multiple v
 **Default:** `false`.
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
+
+## dart.previewFlutterGutterIcons
+**Default:** `false`.
+<br />
+Whether to enable Flutter icons and colors in the editor gutter.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
