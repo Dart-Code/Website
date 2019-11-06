@@ -23,7 +23,7 @@ When you click `Stop Logging` the resulting log file will be opened in the edito
 
 ## Individual Logs
 
-Inidividual log files can be enabled by setting the corresponding [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings).
+Individual log files can be enabled by setting the corresponding [VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings).
 
 ### General Extension Logging
 {:#extension}
@@ -61,7 +61,7 @@ To capture an analysis server instrumentation log file please do the following:
 ### Analysis Server Logging
 {:#analyzer}
 
-The [`dart.analyzerLogFile` setting](/docs/settings/#dartanalyzerlogfile) enables logging of communication between Dart Code and the analysis server. Messages are truncated after a few thousand characters but this is useful to when trying to understand how Dart Code is interacting with the analysis server.
+The [`dart.analyzerLogFile` setting](/docs/settings/#dartanalyzerlogfile) enables logging of communication between Dart Code and the analysis server. Messages are truncated after a few thousand characters but this is useful when trying to understand how Dart Code is interacting with the analysis server.
 
 To capture an analysis server log file please do the following:
 

@@ -23,7 +23,7 @@ This command will attempt to finish the current line you’re editing by adding 
 
 ## Dart: New Project
 
-This command simplifies creation of new Dart projects by using [stagehand](https://pub.dev/packages/stagehand). You will be asked to select a project typem, enter a name for your project and pick a folder to create it in. The folder will be created and opened and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+This command simplifies creation of new Dart projects by using [stagehand](https://pub.dev/packages/stagehand). You will be asked to select a project type, enter a name for your project and pick a folder to create it in. The folder will be created and opened and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
 
 ## Dart: Change SDK
 
@@ -71,7 +71,7 @@ For more information on using packages [see the Dart website](https://www.dartla
 
 ## Flutter: New Project
 
-This command simplifies creation of new Flutter projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+This command simplifies the creation of new Flutter projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
 
 For more information on getting started with your first app, see the [Get Started: Test Drive](https://flutter.io/get-started/test-drive/#vscode) section of the Flutter website.
 

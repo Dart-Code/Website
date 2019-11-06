@@ -23,7 +23,7 @@ Certain types of changes are not supported by hot reload ([see here](https://flu
 
 ## Flutter: Inspect Widget
 
-This command enables Flutter Widget Inspection.   Click on a widget in your application and it will navigate VS Code to the location in your source code where the widget is constucted.   To select another widget, click on the magnifying glass and select another widget.    To cancel out of Flutter  Widget Inspection, a separate command `Flutter: Cancel Widget Inspection` is enabled that will cancel out of widget inspection.
+This command enables Flutter Widget Inspection.   Click on a widget in your application and it will navigate VS Code to the location in your source code where the widget is constructed.   To select another widget, click on the magnifying glass and select another widget.    To cancel out of Flutter  Widget Inspection, a separate command `Flutter: Cancel Widget Inspection` is enabled that will cancel out of widget inspection.
 
 Here's a quick demo of it in action:
 
@@ -35,7 +35,7 @@ This command will open the Observatory debugger application in your web browser.
 
 ## Flutter: Open Observatory Timeline
 
-This command opens the Timeline view of the Obersvatory tool which can be useful for debugging performance issues.
+This command opens the Timeline view of the Observatory tool which can be useful for debugging performance issues.
 
 ## Flutter: Toggle Baseline Painting
 
