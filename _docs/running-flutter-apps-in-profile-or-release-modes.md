@@ -17,7 +17,7 @@ From [Dart Code v2.12](/releases/v2-12/) you can run Flutter apps in Profile and
 
 Now when you press `F5` to launch the application, the corresponding launch mode will be used.
 
-By default, when running in `profile` mode memory usage will automatically by shown on the status bar. You can control this by setting the `showMemoryUsage` option in the launch config. You can also enable this for debug builds but be aware that the values reported will not be indicative of the final release build of your application.
+By default, when running in `profile` mode memory usage will automatically be shown on the status bar. You can control this by setting the `showMemoryUsage` option in the launch config. You can also enable this for debug builds but be aware that the values reported will not be indicative of the final release build of your application.
 
 ## Related Links
 

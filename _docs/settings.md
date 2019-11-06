@@ -63,7 +63,7 @@ The port number to be used for the Dart DevTools.
 ## dart.devToolsReuseWindows
 **Default:** `true`.
 <br />
-Whether to try to reuse existing DevTools windows instead of launching new ones. Only works for instances of DevTools launched by the DevTools server on the local machine.
+Whether to try to reuse existing DevTools windows instead of launching new ones. It only works for instances of DevTools launched by the DevTools server on the local machine.
 
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
@@ -112,7 +112,7 @@ The programming language to use for Android apps when creating new projects usin
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
-The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+The organization is responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterHotReloadOnSave
 **Default:** `true`.

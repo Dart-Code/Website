@@ -4,7 +4,7 @@ title: Installing an Alpha/Beta Preview Release
 
 There are often preview releases of Dart Code available for testing ahead of general release to the VS Code extension marketplace. To install one follow the instructions below.
 
-**Note:** VS Code will still automatically update locally-installed extensions so once the marketplace contains a version that is *newer* than the one you installed, it may upgrade you. This is normally the desired behaviour (you'll be moved back to the stable version of what you werepreviewing once it is released) but it's worth noting in case you explicitly install an older version and find VS Code reverted you to the (newer) stable version.
+**Note:** VS Code will still automatically update locally-installed extensions so once the marketplace contains a version that is *newer* than the one you installed, it may upgrade you. This is normally the desired behavior (you'll be moved back to the stable version of what you were previewing once it is released) but it's worth noting in case you explicitly install an older version and find VS Code reverted you to the (newer) stable version.
 
 If you'd like to see a simpler way to opt-in to beta releases, please put a 👍 on [this VS Code Feature Request](https://github.com/Microsoft/vscode/issues/15756).
 

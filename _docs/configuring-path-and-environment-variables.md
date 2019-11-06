@@ -14,7 +14,7 @@ In Windows, setting your `PATH` and environment variables can be done by opening
 
 ## macOS
 
-The most reliable place to set `PATH`s seems to be in a file inside the `/etc/path.d/` folder. It doesn't matter what you call the file as all files inside this folder will be processes for paths. For example you may wish to create a file at `/etc/path.d/dart` and add paths to your SDK(s) (one-per-line).
+The most reliable place to set `PATH`s seems to be in a file inside the `/etc/path.d/` folder. It doesn't matter what you call the file as all files inside this folder will be processed for paths. For example, you may wish to create a file at `/etc/path.d/dart` and add paths to your SDK(s) (one-per-line).
 
 Setting environment variables in a way that applies in all cases [appears to be complicated](https://stackoverflow.com/a/5444960) so you may wish to install your Android SDK in the default location to avoid the need to set `ANDROID_HOME`.
 
