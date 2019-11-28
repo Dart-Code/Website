@@ -57,13 +57,23 @@ Whether to check you are using the latest version of the Dart SDK at startup.
 <br />
 Whether to show annotations against constructor, method invocations and lists that span multiple lines.
 
+## dart.debugExternalLibraries
+**Default:** `false`.
+<br />
+Whether to mark external pub package libraries as debuggable, enabling stepping into them while debugging.
+
+## dart.debugSdkLibraries
+**Default:** `false`.
+<br />
+Whether to mark SDK libraries as debuggable, enabling stepping into them while debugging.
+
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
 
 ## dart.devToolsReuseWindows
 **Default:** `true`.
 <br />
-Whether to try to reuse existing DevTools windows instead of launching new ones. It only works for instances of DevTools launched by the DevTools server on the local machine.
+Whether to try to reuse existing DevTools windows instead of launching new ones. Only works for instances of DevTools launched by the DevTools server on the local machine.
 
 ## dart.devToolsTheme
 **Options:** `"dark"` or `"light"`.
@@ -75,7 +85,7 @@ The theme to use for Dart DevTools.
 ## dart.enableMachineLearningCodeCompletion
 **Default:** `false`.
 <br />
-Controls wether to use a machine-learned model for improved code completion rankings and suggestions.
+Controls whether to use a machine-learned model for improved code completion rankings and suggestions.
 
 ## dart.enableSdkFormatter
 **Default:** `true`.
@@ -112,17 +122,22 @@ The programming language to use for Android apps when creating new projects usin
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
-The organization is responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+
+## dart.flutterGutterIcons
+**Default:** `true`.
+<br />
+Whether to show Flutter icons and colors in the editor gutter.
 
 ## dart.flutterHotReloadOnSave
 **Default:** `true`.
 <br />
-Whether to automatically send a Hot Reload request during a Flutter debug session when saving files.
+Whether to automatically send a Hot Reload request during debug session when saving files.
 
 ## dart.flutterHotRestartOnSave
-**Default:** `false`.
+**Default:** `true`.
 <br />
-Whether to automatically send a Hot Restart request during a Flutter debug session when saving files if Hot Reload is not available.
+Whether to automatically send a Hot Restart request during a debug session when saving files if Hot Reload is not available but Hot Restart is.
 
 ## dart.flutterOutline
 **Default:** `true`.
@@ -165,10 +180,10 @@ When to automatically switch focus to the test list (array to support multiple v
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
 
-## dart.previewFlutterGutterIcons
+## dart.previewDebuggerStepBack
 **Default:** `false`.
 <br />
-Whether to enable Flutter icons and colors in the editor gutter.
+Whether to enable the debuggers 'Step Back' functionality. This is behind a flag while VS Code does not support enabling it separately to the 'Reverse Continue' button.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
@@ -179,6 +194,16 @@ Whether to enable the Flutter UI Guides preview. See [Dart-Code/issues/1731](htt
 **Default:** `false`.
 <br />
 Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline). See [Dart-Code/issues/1731](https://github.com/Dart-Code/Dart-Code/issues/1731) for details.
+
+## dart.previewHotReloadOnSaveWatcher
+**Default:** `false`.
+<br />
+Whether to perform hot-reload-on-save based on a filesystem watcher for Dart files rather than using VS Code's onDidSave event. This allows reloads to trigger when external tools modify Dart source files.
+
+## dart.previewNewCompletionPlaceholders
+**Default:** `false`.
+<br />
+Whether to enable new behaviour for code completion to include @required arguments as placeholders (when using dart.insertArgumentPlaceholders).
 
 ## dart.previewToStringInDebugViews
 **Default:** `false`.
@@ -237,16 +262,6 @@ Resource scoped settings can be set in individual workspace folder settings and 
 
 ## dart.analysisExcludedFolders
 An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level.
-
-## dart.debugExternalLibraries
-**Default:** `false`.
-<br />
-Whether to mark external pub package libraries as debuggable, enabling stepping into them while debugging.
-
-## dart.debugSdkLibraries
-**Default:** `false`.
-<br />
-Whether to mark SDK libraries as debuggable, enabling stepping into them while debugging.
 
 ## dart.doNotFormat
 An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test folders.
