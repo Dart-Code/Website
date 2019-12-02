@@ -353,16 +353,16 @@ The path to a low-traffic log file for basic extension and editor issues. For mo
 The path to a log file for the `flutter daemon` communication which is the service that provides information about connected devices used to show in the status bar. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
 
 ## dart.flutterRunLogFile
-The path to a log file for `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
+The path to a log file for `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
 
 ## dart.flutterTestLogFile
-The path to a log file for `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+The path to a log file for `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
 
 ## dart.observatoryLogFile
-The path to a log file for communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. For more information on capturing these logs, see [Observatory Logging](/docs/logging/#observatory).
+The path to a log file for communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Observatory Logging](/docs/logging/#observatory).
 
 ## dart.pubTestLogFile
-The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
+The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
 
 ## dart.webDaemonLogFile
-The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web applications.
+The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web applications. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs.
