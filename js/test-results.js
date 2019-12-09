@@ -236,10 +236,10 @@ function handleBranchList(branches) {
 
 		let li = list.appendChild(document.createElement("li"));
 
-		let badges = li.appendChild(document.createElement("div"));
-		badges.classList.add("badges");
-		badges.appendChild(document.createElement("img")).src = "https://img.shields.io/travis/Dart-Code/Dart-Code/" + escape(branchName) + ".svg?label=mac+%26+linux";
-		badges.appendChild(document.createElement("img")).src = "https://img.shields.io/appveyor/ci/DanTup/Dart-Code/" + escape(branchName) + ".svg?label=windows&amp;logoWidth=-1";
+		// let badges = li.appendChild(document.createElement("div"));
+		// badges.classList.add("badges");
+		// badges.appendChild(document.createElement("img")).src = "https://img.shields.io/travis/Dart-Code/Dart-Code/" + escape(branchName) + ".svg?label=mac+%26+linux";
+		// badges.appendChild(document.createElement("img")).src = "https://img.shields.io/appveyor/ci/DanTup/Dart-Code/" + escape(branchName) + ".svg?label=windows&amp;logoWidth=-1";
 
 		getXml(bucketRoot + "?max-keys=1&prefix=" + escape(branchName + "/" + hash), function (xml) {
 			var hasResults = !!xml.querySelector("Contents");
