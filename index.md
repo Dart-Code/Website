@@ -2,10 +2,6 @@
 title: ""
 ---
 
-<aside markdown="1">
-[![Linux &amp; Mac build status](https://img.shields.io/travis/Dart-Code/Dart-Code/master.svg?label=mac+%26+linux)](https://travis-ci.org/Dart-Code/Dart-Code) [![Windows build status](https://img.shields.io/appveyor/ci/DanTup/Dart-Code/master.svg?label=windows&amp;logoWidth=-1)](https://ci.appveyor.com/project/DanTup/dart-code) [![Contribute to Dart Code](https://img.shields.io/badge/help-contribute-551A8B.svg)](https://github.com/Dart-Code/Dart-Code/blob/master/CONTRIBUTING.md)
-</aside>
-
 ## Introduction
 
 The Dart and Flutter extensions extend [VS Code](https://code.visualstudio.com/) with support for the
