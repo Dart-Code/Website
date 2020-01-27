@@ -1,0 +1,5 @@
+{
+	"name": "GitHub Pages",
+	"dockerFile": "Dockerfile",
+	"appPort": 8123
+}

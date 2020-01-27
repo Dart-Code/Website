@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "jekyll serve",
+			"type": "shell",
+			"command": "jekyll",
+			"args": [
+				"serve",
+				"--incremental",
+				"--port",
+				"8123"
+			],
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
