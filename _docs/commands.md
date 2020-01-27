@@ -43,11 +43,11 @@ This command displays the hierarchy for the current types in a pick list.
 
 ## Dart: Rerun Last Debug Session
 
-This command will re-run the last Dart debug session that has run. This can be useful if you ran a specific test from the Code Lens links or test tree and want to quickly re-run it without navigating back there.
+This command will re-run the last Dart debug session that has run. This can be useful if you ran a specific test from the CodeLens links or test tree and want to quickly re-run it without navigating back there.
 
 ## Dart: Run Test At Cursor / Debug Test At Cursor
 
-If the cursor is within a test method, these commands will execute the test (the same as clicking the **Run** or **Debug** Code Lens link).
+If the cursor is within a test method, these commands will execute the test (the same as clicking the **Run** or **Debug** CodeLens link).
 
 ## Dart: Sort Members
 

@@ -219,7 +219,7 @@ An array of strings that are either Dart SDKs or folders that contains multiple 
 ## dart.showDartPadSampleCodeLens
 **Default:** `true`.
 <br />
-Whether to show Code Lens actions in the editor for opening online DartPad samples.
+Whether to show CodeLens actions in the editor for opening online DartPad samples.
 
 ## dart.showIgnoreQuickFixes
 **Default:** `false`.
@@ -229,7 +229,7 @@ Whether to show quick fixes for ignoring hints and lints.
 ## dart.showTestCodeLens
 **Default:** `true`.
 <br />
-Whether to show Code Lens actions in the editor for quick running/debugging tests.
+Whether to show CodeLens actions in the editor for quick running/debugging tests.
 
 ## dart.showTodos
 **Default:** `true`.
