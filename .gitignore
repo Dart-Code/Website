@@ -1,6 +1,7 @@
 _site/
-.jekyll-metadata
+.dart_tool/
 .DS_Store
-**_TODO.*
+.jekyll-metadata
 .packages
+**_TODO.*
 pubspec.lock
