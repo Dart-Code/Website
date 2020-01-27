@@ -82,11 +82,6 @@ Whether to try to reuse existing DevTools windows instead of launching new ones.
 <br />
 The theme to use for Dart DevTools.
 
-## dart.enableMachineLearningCodeCompletion
-**Default:** `false`.
-<br />
-Controls whether to use a machine-learned model for improved code completion rankings and suggestions.
-
 ## dart.enableSdkFormatter
 **Default:** `true`.
 <br />
@@ -163,6 +158,11 @@ Whether to set newly connected devices as the current device in Flutter projects
 <br />
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
+## dart.notifyAnalyzerErrors
+**Default:** `true`.
+<br />
+Whether to show a notification the first few times an analysis server exception occurs.
+
 ## dart.openDevTools
 **Options:** `"never", "flutter"` or `"always"`.
 <br />
@@ -180,11 +180,6 @@ When to automatically switch focus to the test list (array to support multiple v
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
 
-## dart.previewDebuggerStepBack
-**Default:** `false`.
-<br />
-Whether to enable the debuggers 'Step Back' functionality. This is behind a flag while VS Code does not support enabling it separately to the 'Reverse Continue' button.
-
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
 <br />
@@ -201,7 +196,7 @@ Whether to enable custom tracking of Flutter UI guidelines (to hide some latency
 Whether to perform hot-reload-on-save based on a filesystem watcher for Dart files rather than using VS Code's onDidSave event. This allows reloads to trigger when external tools modify Dart source files.
 
 ## dart.previewNewCompletionPlaceholders
-**Default:** `false`.
+**Default:** `true`.
 <br />
 Whether to enable new behaviour for code completion to include @required arguments as placeholders (when using dart.insertArgumentPlaceholders).
 
@@ -215,16 +210,16 @@ Whether to call toString() on objects when rendering them in debug views (such a
 <br />
 Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they're the script being run.
 
-## dart.reportAnalyzerErrors
-**Default:** `true`.
-<br />
-Whether to offer to report analysis server exceptions when they occur.
-
 ## dart.sdkPath
 The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the PATH environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
 
 ## dart.sdkPaths
 An array of strings that are either Dart SDKs or folders that contains multiple Dart SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
+
+## dart.showDartPadSampleCodeLens
+**Default:** `true`.
+<br />
+Whether to show Code Lens actions in the editor for opening online DartPad samples.
 
 ## dart.showIgnoreQuickFixes
 **Default:** `false`.
