@@ -124,6 +124,7 @@ function updateResults() {
 	var table = document.querySelector("#test-results");
 	var tbody = table.querySelector("tbody");
 	var totalCols = 18;
+	results.sort((s1, s2) => s1.suite.localeCompare(s2.suite));
 	for (var suite of results) {
 		var row = addRow(tbody, 0, 3, suite.suite, "suite");
 		for (var codeVersion of ["stable", "insiders"]) {
