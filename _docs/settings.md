@@ -19,6 +19,11 @@ Additional file extensions that should be analyzed (usually used in combination 
 <br />
 Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes.
 
+## dart.allowTestsOutsideTestFolder
+**Default:** `false`.
+<br />
+Whether to consider files ending '_test.dart' that are outside of the test folder as tests. This should be enabled if you put tests inside the 'lib' folder of your Flutter application so they will be run with `flutter test` and not `flutter run`.
+
 ## dart.analysisServerFolding
 **Default:** `true`.
 <br />
@@ -116,6 +121,11 @@ The programming language to use for Android apps when creating new projects usin
 <br />
 The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
 
+## dart.flutterCreateOffline
+**Default:** `false`.
+<br />
+Whether to use offline mode when creating new projects with the **Flutter: New Project** command.
+
 ## dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
@@ -194,6 +204,11 @@ Whether to enable custom tracking of Flutter UI guidelines (to hide some latency
 **Default:** `false`.
 <br />
 Whether to perform hot-reload-on-save based on a filesystem watcher for Dart files rather than using VS Code's onDidSave event. This allows reloads to trigger when external tools modify Dart source files.
+
+## dart.previewLsp
+**Default:** `false`.
+<br />
+Whether to run the analyzer in LSP mode (experimental, requires restart).
 
 ## dart.previewNewCompletionPlaceholders
 **Default:** `true`.
