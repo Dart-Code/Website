@@ -10,54 +10,171 @@ The list of refactors comes from the Dart analysis server and therefore may chan
 
 Note: These IDs are only provided by recent versions of the Dart analysis server and will not work with older/v1 builds.
 
-- `refactor.addShowCombinator` - Add explicit 'show' combinator
-- `refactor.addTypeAnnotation` - Add type annotation
+- `quickfix.add.async` - Add 'async' modifier
+- `quickfix.add.await` - Add 'await' keyword
+- `quickfix.add.const` - Add 'const' modifier
+- `quickfix.add.curlyBraces` - Add curly braces
+- `quickfix.add.diagnosticPropertyReference` - Add a debug reference to this property
+- `quickfix.add.fieldFormalParameters` - Add final field formal parameters
+- `quickfix.add.missingEnumCaseClauses` - Add missing case clauses
+- `quickfix.add.missingParameterNamed` - Add named parameter '...'
+- `quickfix.add.missingParameterPositional` - Add optional positional parameter
+- `quickfix.add.missingParameterRequired` - Add required parameter
+- `quickfix.add.missingRequiredArgument` - Add required argument '...'
+- `quickfix.add.returnType` - Add return type
+- `quickfix.add.static` - Add 'static' modifier
+- `quickfix.add.superConstructorInvocation` - Add super constructor ... invocation
+- `quickfix.add.typeAnnotation` - Add type annotation
+- `quickfix.change.argumentName` - Change to '...'
+- `quickfix.change.to` - Change to '...'
+- `quickfix.change.toStaticAccess` - Change access to static using '...'
+- `quickfix.change.typeAnnotation` - Change '...' to '{1}' type annotation
+- `quickfix.convert.toContains` - Convert to using 'contains'
+- `quickfix.convert.toExpressionBody` - Convert to expression body
+- `quickfix.convert.toForElement` - Convert to a 'for' element
+- `quickfix.convert.toGenericFunctionSyntax` - Convert into 'Function' syntax
+- `quickfix.convert.toIfElement` - Convert to an 'if' element
+- `quickfix.convert.toIntLiteral` - Convert to an int literal
+- `quickfix.convert.toLineComment` - Convert to line documentation comment
+- `quickfix.convert.toListLiteral` - Convert to list literal
+- `quickfix.convert.toMapLiteral` - Convert to map literal
+- `quickfix.convert.toNamedArguments` - Convert to named arguments
+- `quickfix.convert.toRelativeImport` - Convert to relative import
+- `quickfix.convert.toSetLiteral` - Convert to set literal
+- `quickfix.convert.toSingleQuotedString` - Convert to single quoted string
+- `quickfix.convert.toSpread` - Convert to a spread
+- `quickfix.convert.toWhereType` - Convert to a use 'whereType'
+- `quickfix.create.class` - Create class '...'
+- `quickfix.create.constructor` - Create constructor '...'
+- `quickfix.create.constructorForFinalFields` - Create constructor for final fields
+- `quickfix.create.constructorSuper` - Create constructor to call ...
+- `quickfix.create.field` - Create field '...'
+- `quickfix.create.file` - Create file '...'
+- `quickfix.create.function` - Create function '...'
+- `quickfix.create.getter` - Create getter '...'
+- `quickfix.create.localVariable` - Create local variable '...'
+- `quickfix.create.method` - Create method '...'
+- `quickfix.create.mixin` - Create mixin '...'
+- `quickfix.create.noSuchMethod` - Create 'noSuchMethod' method
+- `quickfix.create.setter` - Create setter '...'
+- `quickfix.extendClassForMixin` - Extend the class '...'
+- `quickfix.flutter.wrap.text` - Wrap in a 'Text' widget
+- `quickfix.import.libraryPrefix` - Use imported library '...' with prefix '{1}'
+- `quickfix.import.libraryProject1` - Import library '...'
+- `quickfix.import.libraryProject2` - Import library '...'
+- `quickfix.import.libraryProject3` - Import library '...'
+- `quickfix.import.librarySdk` - Import library '...'
+- `quickfix.import.libraryShow` - Update library '...' import
+- `quickfix.inlineInvocation` - Inline invocation of '...'
+- `quickfix.inlineTypedef` - Inline the definition of '...'
+- `quickfix.makeClassAbstract` - Make class '...' abstract
+- `quickfix.makeFieldNotFinal` - Make field '...' not final
+- `quickfix.makeFinal` - Make final
+- `quickfix.makeVariableNotFinal` - Make variable '...' not final
+- `quickfix.moveTypeArgumentsToClass` - Move type arguments to after class name
+- `quickfix.qualifyReference` - Use '...'
+- `quickfix.remove.annotation` - Remove the '...' annotation
+- `quickfix.remove.argument` - Remove argument
+- `quickfix.remove.await` - Remove await
+- `quickfix.remove.const` - Remove const
+- `quickfix.remove.deadCode` - Remove dead code
+- `quickfix.remove.duplicateCase` - Remove duplicate case statement
+- `quickfix.remove.emptyCatch` - Remove empty catch clause
+- `quickfix.remove.emptyConstructorBody` - Remove empty constructor body
+- `quickfix.remove.emptyElse` - Remove empty else clause
+- `quickfix.remove.emptyStatement` - Remove empty statement
+- `quickfix.remove.initializer` - Remove initializer
+- `quickfix.remove.interpolationBraces` - Remove unnecessary interpolation braces
+- `quickfix.remove.methodDeclaration` - Remove method declaration
+- `quickfix.remove.nameFromCombinator` - Remove name from '...'
+- `quickfix.remove.operator` - Remove the operator
+- `quickfix.remove.parametersInGetterDeclaration` - Remove parameters in getter declaration
+- `quickfix.remove.parenthesisInGetterInvocation` - Remove parentheses in getter invocation
+- `quickfix.remove.thisExpression` - Remove this expression
+- `quickfix.remove.typeAnnotation` - Remove type annotation
+- `quickfix.remove.typeArguments` - Remove type arguments
+- `quickfix.remove.unnecessaryConst` - Remove unnecessary const keyword
+- `quickfix.remove.unnecessaryNew` - Remove unnecessary new keyword
+- `quickfix.remove.unusedCatchClause` - Remove unused 'catch' clause
+- `quickfix.remove.unusedCatchStack` - Remove unused stack trace variable
+- `quickfix.remove.unusedElement` - Remove unused element
+- `quickfix.remove.unusedField` - Remove unused field
+- `quickfix.remove.unusedLabel` - Remove unused label
+- `quickfix.remove.unusedLocalVariable` - Remove unused local variable
+- `quickfix.removeSetting` - Remove '...'
+- `quickfix.rename.toCamelCase` - Rename to '...'
+- `quickfix.replace.finalWithConst` - Replace 'final' with 'const'
+- `quickfix.replace.newWithConst` - Replace 'new' with 'const'
+- `quickfix.replace.nullWithClosure` - Replace 'null' with a closure
+- `quickfix.replace.returnTypeFuture` - Return 'Future' from 'async' function
+- `quickfix.replace.varWithDynamic` - Replace 'var' with 'dynamic'
+- `quickfix.replace.withBrackets` - Replace with { }
+- `quickfix.replace.withEightDigitHex` - Replace with '...'
+- `quickfix.replace.withExtensionName` - Replace with '...'
+- `quickfix.replace.withIdentifier` - Replace with identifier
+- `quickfix.replace.withInterpolation` - Replace with interpolation
+- `quickfix.replace.withIsEmpty` - Replace with 'isEmpty'
+- `quickfix.replace.withIsNotEmpty` - Replace with 'isNotEmpty'
+- `quickfix.replace.withVar` - Replace type annotation with 'var'
+- `quickfix.sort.childPropertyLast` - Move child property to end of arguments
+- `quickfix.sort.directives` - Sort directives
+- `quickfix.updateSdkConstraints` - Update the SDK constraints
+- `quickfix.use.const` - Change to constant
+- `quickfix.use.rethrow` - Replace throw with rethrow
+- `quickfix.wrap.future` - Wrap in 'Future.value'
+- `refactor.add.diagnosticPropertyReference` - Add a debug reference to this property
+- `refactor.add.returnType` - Add return type
+- `refactor.add.showCombinator` - Add explicit 'show' combinator
+- `refactor.add.typeAnnotation` - Add type annotation
 - `refactor.assignToVariable` - Assign value to new local variable
 - `refactor.convert.blockComment` - Convert to block documentation comment
 - `refactor.convert.bodyToAsync` - Convert to async function body
 - `refactor.convert.bodyToBlock` - Convert to block body
 - `refactor.convert.bodyToExpression` - Convert to expression body
-- `refactor.convert.conditionalToIfElse` - Replace conditional with 'if-else'
+- `refactor.convert.classToMixin` - Convert class to a mixin
 - `refactor.convert.finalFieldToGetter` - Convert to getter
-- `refactor.convert.forEachToForIndex` - Convert to for-index loop
 - `refactor.convert.getterToFinalField` - Convert to final field
-- `refactor.convert.ifElseToConditional` - Replace 'if-else' with conditional ('c ? x : y')
-- `refactor.convert.isNot` - Convert to is!
-- `refactor.convert.isNotEmpty` - Convert to 'isNotEmpty'
 - `refactor.convert.lineComment` - Convert to line documentation comment
 - `refactor.convert.partOfToPartUri` - Convert to use a URI
 - `refactor.convert.toConstructorFieldParameter` - Convert to field formal parameter
 - `refactor.convert.toConstructorNormalParameter` - Convert to normal parameter
 - `refactor.convert.toDoubleQuotedString` - Convert to double quoted string
+- `refactor.convert.toForElement` - Convert to a 'for' element
 - `refactor.convert.toGenericFunctionSyntax` - Convert into 'Function' syntax
+- `refactor.convert.toIfElement` - Convert to an 'if' element
+- `refactor.convert.toIntLiteral` - Convert to an int literal
+- `refactor.convert.toMultilineString` - Convert to multiline string
 - `refactor.convert.toSingleQuotedString` - Convert to single quoted string
+- `refactor.convert.toSpread` - Convert to a spread
 - `refactor.encapsulateField` - Encapsulate field
 - `refactor.exchangeOperands` - Exchange operands
-- `refactor.flutter.convert.childToChildren` - Convert to children:
 - `refactor.flutter.convert.toStatefulWidget` - Convert to StatefulWidget
 - `refactor.flutter.move.down` - Move widget down
 - `refactor.flutter.move.up` - Move widget up
-- `refactor.flutter.removeWidget` - Remove widget
+- `refactor.flutter.removeWidget` - Remove this widget
 - `refactor.flutter.swap.withChild` - Swap with child
 - `refactor.flutter.swap.withParent` - Swap with parent
-- `refactor.flutter.wrap.center` - Center widget
+- `refactor.flutter.wrap.center` - Wrap with Center
 - `refactor.flutter.wrap.column` - Wrap with Column
-- `refactor.flutter.wrap.generic` - Wrap with new widget
-- `refactor.flutter.wrap.padding` - Add padding
+- `refactor.flutter.wrap.container` - Wrap with Container
+- `refactor.flutter.wrap.generic` - Wrap with widget...
+- `refactor.flutter.wrap.padding` - Wrap with Padding
 - `refactor.flutter.wrap.row` - Wrap with Row
+- `refactor.flutter.wrap.streamBuilder` - Wrap with StreamBuilder
+- `refactor.inline` - Inline invocation of '...'
 - `refactor.introduceLocalCast` - Introduce new local with tested type
 - `refactor.invertIf` - Invert 'if' statement
 - `refactor.joinVariableDeclaration` - Join variable declaration
 - `refactor.joinWithInnerIf` - Join 'if' statement with inner 'if' statement
 - `refactor.joinWithOuterIf` - Join 'if' statement with outer 'if' statement
-- `refactor.removeTypeAnnotation` - Remove type annotation
+- `refactor.replace.withVar` - Replace type annotation with 'var'
+- `refactor.shadowField` - Create a local variable that shadows the field
+- `refactor.sort.child.properties.last` - Move child property to end of arguments
 - `refactor.splitIfConjunction` - Split && condition
 - `refactor.splitVariableDeclaration` - Split variable declaration
 - `refactor.surround.block` - Surround with block
-- `refactor.surround.doWhile` - Surround with 'do-while'
+- `refactor.surround.curlyBraces` - Use curly braces
 - `refactor.surround.forEach` - Surround with 'for'
-- `refactor.surround.forIn` - Surround with 'for-in'
 - `refactor.surround.if` - Surround with 'if'
-- `refactor.surround.tryCatch` - Surround with 'try-catch'
-- `refactor.surround.tryFinally` - Surround with 'try-finally'
+- `refactor.surround.setState` - Surround with 'setState'
 - `refactor.surround.while` - Surround with 'while'
