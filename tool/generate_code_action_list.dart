@@ -16,7 +16,9 @@ main() {
 
   ids.sort((c1, c2) => c1.id.compareTo(c2.id));
 
-  printCodeActions(ids);
+  printCodeActionsList(ids);
+  print('');
+  printCodeActionsMetadata(ids);
 }
 
 List<CodeAction> extractIDs(File file, String type) {
@@ -36,9 +38,16 @@ List<CodeAction> extractIDs(File file, String type) {
   }).toList();
 }
 
-printCodeActions(List<CodeAction> actions) {
+printCodeActionsList(List<CodeAction> actions) {
   for (final action in actions) {
     print('- `${action.id}` - ${action.name}');
+  }
+}
+
+printCodeActionsMetadata(List<CodeAction> actions) {
+  for (final action in actions) {
+    print(
+        '{ "kind": "${action.id}", "title": "${action.name.replaceAll('"', r'\"')}" },');
   }
 }
 
