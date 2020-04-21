@@ -143,7 +143,7 @@ String improveDocs(String key, String description) {
   };
   description = description
       .replaceAll('(requires the angular_analyzer_plugin)',
-          '(requires the [angular_analyzer_plugin](https://github.com/dart-lang/angular_analyzer_plugin))')
+          '(requires the [Angular analyzer plugin enabled](https://github.com/dart-lang/angular/tree/master/angular_analyzer_plugin#installing-by-angular-version----for-angular-developers-recommended)')
       .replaceAll(' **/test/** ', ' `[ "**/test/**" ]` ');
 
   for (var s in code) {

@@ -32,7 +32,7 @@ Whether to use folding data from the Dart analysis server instead of the built-i
 ## dart.analyzeAngularTemplates
 **Default:** `true`.
 <br />
-Whether to enable analysis for AngularDart templates (requires the [angular_analyzer_plugin](https://github.com/dart-lang/angular_analyzer_plugin)).
+Whether to enable analysis for AngularDart templates (requires the [Angular analyzer plugin enabled](https://github.com/dart-lang/angular/tree/master/angular_analyzer_plugin#installing-by-angular-version----for-angular-developers-recommended)).
 
 ## dart.analyzerAdditionalArgs
 Additional arguments to pass to the Dart analysis server.
