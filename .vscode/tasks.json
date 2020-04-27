@@ -7,7 +7,6 @@
 			"command": "jekyll",
 			"args": [
 				"serve",
-				"--incremental",
 				"--port",
 				"8123"
 			],
