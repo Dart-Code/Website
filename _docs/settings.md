@@ -37,9 +37,6 @@ Whether to enable analysis for AngularDart templates (requires the [Angular anal
 ## dart.analyzerAdditionalArgs
 Additional arguments to pass to the Dart analysis server.
 
-## dart.analyzerPath
-The path to a custom Dart analysis server.
-
 ## dart.analyzerSshHost
 An SSH host to run the analysis server.
 This can be useful when modifying code on a remote machine using SSHFS.
@@ -97,6 +94,11 @@ Whether to enable the dart_style formatter included with the Dart SDK.
 <br />
 Additional environment variables to be added to all Dart/Flutter processes spawned by the Dart and Flutter extensions.
 
+## dart.evaluateToStringInDebugViews
+**Default:** `true`.
+<br />
+Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 15 or fewer values for performance reasons.
+
 ## dart.flutterAdbConnectOnChromeOs
 **Default:** `false`.
 <br />
@@ -129,6 +131,9 @@ Whether to use offline mode when creating new projects with the **Flutter: New P
 ## dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
+## dart.flutterCustomEmulators
+Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
+
 ## dart.flutterGutterIcons
 **Default:** `true`.
 <br />
@@ -148,15 +153,6 @@ Whether to automatically send a Hot Restart request during a debug session when 
 **Default:** `true`.
 <br />
 Whether to show the Flutter Outline tree in the side bar.
-
-## dart.flutterScreenshotPath
-The path to a directory to save Flutter screenshots.
-
-## dart.flutterSdkPath
-The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project folder, FLUTTER_ROOT environment variable and the PATH environment variable.
-
-## dart.flutterSdkPaths
-An array of strings that are either Flutter SDKs or folders that contains multiple Flutter SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.flutterSelectDeviceWhenConnected
 **Default:** `true`.
@@ -208,28 +204,17 @@ Whether to perform hot-reload-on-save based on a filesystem watcher for Dart fil
 ## dart.previewLsp
 **Default:** `false`.
 <br />
-Whether to run the analyzer in LSP mode (experimental, requires restart).
+EXPERIMENTAL: Whether to run the analyzer in LSP mode (requires restart).
 
 ## dart.previewNewCompletionPlaceholders
 **Default:** `true`.
 <br />
 Whether to enable new behaviour for code completion to include @required arguments as placeholders (when using dart.insertArgumentPlaceholders).
 
-## dart.previewToStringInDebugViews
-**Default:** `false`.
-<br />
-Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 15 or fewer values for performance reasons.
-
 ## dart.promptToRunIfErrors
 **Default:** `true`.
 <br />
 Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they're the script being run.
-
-## dart.sdkPath
-The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the PATH environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
-
-## dart.sdkPaths
-An array of strings that are either Dart SDKs or folders that contains multiple Dart SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.showDartPadSampleCodeLens
 **Default:** `true`.
@@ -240,6 +225,11 @@ Whether to show CodeLens actions in the editor for opening online DartPad sample
 **Default:** `false`.
 <br />
 Whether to show quick fixes for ignoring hints and lints.
+
+## dart.showMainCodeLens
+**Default:** `true`.
+<br />
+Whether to show CodeLens actions in the editor for quick running/debugging scripts with main methods.
 
 ## dart.showTestCodeLens
 **Default:** `true`.
@@ -273,6 +263,9 @@ Resource scoped settings can be set in individual workspace folder settings and 
 ## dart.analysisExcludedFolders
 An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level.
 
+## dart.analyzerPath
+The path to a custom Dart analysis server.
+
 ## dart.doNotFormat
 An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test folders.
 
@@ -288,6 +281,15 @@ Whether to evaluate getters in order to display them in debug views (such as the
 
 ## dart.flutterAdditionalArgs
 Additional args to pass to all flutter commands.
+
+## dart.flutterScreenshotPath
+The path to a directory to save Flutter screenshots.
+
+## dart.flutterSdkPath
+The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project folder, FLUTTER_ROOT environment variable and the PATH environment variable.
+
+## dart.flutterSdkPaths
+An array of strings that are either Flutter SDKs or folders that contains multiple Flutter SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.flutterStructuredErrors
 **Default:** `true`.
@@ -321,6 +323,12 @@ Additional args to pass to all pub commands.
 **Default:** `true`.
 <br />
 Whether to automatically run `pub get` whenever pubspec.yaml is saved.
+
+## dart.sdkPath
+The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the PATH environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
+
+## dart.sdkPaths
+An array of strings that are either Dart SDKs or folders that contains multiple Dart SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
 
 ## dart.showDartDeveloperLogs
 **Default:** `true`.
