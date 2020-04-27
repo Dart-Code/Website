@@ -13,7 +13,11 @@ main() {
   print('/// WINDOW SCOPED');
   printGetters(config, (key) => config[key]['scope'] != 'resource');
   print('/// RESOURCE SCOPED');
-  printGetters(config, (key) => config[key]['scope'] == 'resource');
+  printGetters(
+      config,
+      (key) =>
+          config[key]['scope'] == 'resource' ||
+          config[key]['scope'] == 'machine-overridable');
 }
 
 void printGetters(

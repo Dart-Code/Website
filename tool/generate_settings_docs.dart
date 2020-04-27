@@ -25,9 +25,13 @@ main() {
       key.endsWith('DiagnosticsPort') ||
       key.endsWith('analyzerObservatoryPort');
   final isWindowScoped = (String key) =>
-      configOptions[key]['scope'] != 'resource' && !(isDiagnostics(key));
+      configOptions[key]['scope'] != 'resource' &&
+      configOptions[key]['scope'] != 'machine-overridable' &&
+      !(isDiagnostics(key));
   final isResourceScoped = (String key) =>
-      configOptions[key]['scope'] == 'resource' && !(isDiagnostics(key));
+      (configOptions[key]['scope'] == 'resource' ||
+          configOptions[key]['scope'] == 'machine-overridable') &&
+      !(isDiagnostics(key));
 
   printSettings(configOptions, 'Window Scoped Settings',
       windowScopedDescription, isWindowScoped);
