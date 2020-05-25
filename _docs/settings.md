@@ -32,7 +32,7 @@ Whether to use folding data from the Dart analysis server instead of the built-i
 ## dart.analyzeAngularTemplates
 **Default:** `true`.
 <br />
-Whether to enable analysis for AngularDart templates (requires the [Angular analyzer plugin enabled](https://github.com/dart-lang/angular/tree/master/angular_analyzer_plugin#installing-by-angular-version----for-angular-developers-recommended)).
+Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in analysis_options.yaml).
 
 ## dart.analyzerAdditionalArgs
 Additional arguments to pass to the Dart analysis server.
@@ -62,12 +62,12 @@ Whether to show annotations against constructor, method invocations and lists th
 ## dart.debugExternalLibraries
 **Default:** `false`.
 <br />
-Whether to mark external pub package libraries as debuggable, enabling stepping into them while debugging.
+Whether to mark external pub package libraries (including package:flutter) as debuggable, enabling stepping into them while debugging.
 
 ## dart.debugSdkLibraries
 **Default:** `false`.
 <br />
-Whether to mark SDK libraries as debuggable, enabling stepping into them while debugging.
+Whether to mark Dart SDK libraries (dart:*) as debuggable, enabling stepping into them while debugging.
 
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
