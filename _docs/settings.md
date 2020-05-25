@@ -211,6 +211,11 @@ EXPERIMENTAL: Whether to run the analyzer in LSP mode (requires restart).
 <br />
 Whether to enable new behaviour for code completion to include @required arguments as placeholders (when using dart.insertArgumentPlaceholders).
 
+## dart.previewUpdateImportsOnRename
+**Default:** `false`.
+<br />
+EXPERIMENTAL: Whether to automatically update imports when moving/renaming files. Currently only works for single-file moves/renames.
+
 ## dart.promptToRunIfErrors
 **Default:** `true`.
 <br />
