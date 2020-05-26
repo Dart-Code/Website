@@ -234,7 +234,7 @@ Whether to show quick fixes for ignoring hints and lints.
 ## dart.showMainCodeLens
 **Default:** `true`.
 <br />
-Whether to show CodeLens actions in the editor for quick running/debugging scripts with main methods.
+Whether to show CodeLens actions in the editor for quick running/debugging scripts with main functions.
 
 ## dart.showTestCodeLens
 **Default:** `true`.
