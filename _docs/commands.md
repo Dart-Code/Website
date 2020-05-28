@@ -73,7 +73,7 @@ For more information on using packages [see the Dart website](https://www.dartla
 
 This command simplifies the creation of new Flutter projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
 
-For more information on getting started with your first app, see the [Get Started: Test Drive](https://flutter.io/get-started/test-drive/#vscode) section of the Flutter website.
+For more information on getting started with your first app, see the [Get Started: Test Drive](https://flutter.dev/get-started/test-drive/#vscode) section of the Flutter website.
 
 ## Flutter: Open Widget Sample
 
@@ -83,7 +83,7 @@ This commands provides easy access to all Flutter widget sample applications. Yo
 
 This commands runs `flutter doctor` and shows the results in the `Output` pane.
 
-For more information on using packages [see the Flutter website](https://flutter.io/using-packages/).
+For more information on using packages [see the Flutter website](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
 ## Flutter: Clean Project
 
@@ -101,7 +101,7 @@ If you have configured the [`dart.flutterSdkPaths` setting](/docs/settings/#dart
 
 This command fetches Flutter packages listed in your `pubspec.yaml` and their dependencies for the current project. If invoked in a standard Dart project this command will instead run `Pub: Get Packages`.
 
-For more information on using packages [see the Flutter website](https://flutter.io/using-packages/).
+For more information on using packages [see the Flutter website](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
 ## Flutter: Upgrade Packages
 

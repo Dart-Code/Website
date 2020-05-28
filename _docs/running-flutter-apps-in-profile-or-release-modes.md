@@ -21,6 +21,6 @@ By default, when running in `profile` mode memory usage will automatically be sh
 
 ## Related Links
 
-- [Flutter Performance Profiling](https://flutter.io/ui-performance/)
+- [Flutter Performance Profiling](https://flutter.dev/docs/perf/rendering/ui-performance)
 - [Flutter's Modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes)
 

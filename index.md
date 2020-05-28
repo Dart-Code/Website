@@ -6,7 +6,7 @@ title: ""
 
 The Dart and Flutter extensions extend [VS Code](https://code.visualstudio.com/) with support for the
 [Dart](https://www.dartlang.org/) programming language and provides tools for
-effectively editing, refactoring, running, and reloading [Flutter](https://flutter.io/) mobile apps, and [AngularDart](https://angulardart.org) web apps.
+effectively editing, refactoring, running, and reloading [Flutter](https://flutter.dev/) mobile apps, and [AngularDart](https://angulardart.org) web apps.
 
 ## Installation
 
