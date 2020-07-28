@@ -41,6 +41,9 @@ Additional arguments to pass to the Dart analysis server.
 An SSH host to run the analysis server.
 This can be useful when modifying code on a remote machine using SSHFS.
 
+## dart.analyzerVmServicePort
+The port number to be used for the Dart analysis server VM service.
+
 ## dart.autoImportCompletions
 **Default:** `true`.
 <br />
@@ -58,6 +61,13 @@ Whether to check you are using the latest version of the Dart SDK at startup.
 **Default:** `true`.
 <br />
 Whether to show annotations against constructor, method invocations and lists that span multiple lines.
+
+## dart.debugExtensionBackendProtocol
+**Options:** `"sse"` or `"ws"`.
+<br />
+**Default:** `"ws"`.
+<br />
+The protocol to use for the Dart Debug Extension backend service. Using WebSockets can improve performance but may fail when connecting through some proxy servers.
 
 ## dart.debugExternalLibraries
 **Default:** `false`.
@@ -89,6 +99,11 @@ The theme to use for Dart DevTools.
 <br />
 Whether to enable the dart_style formatter included with the Dart SDK.
 
+## dart.enableSnippets
+**Default:** `true`.
+<br />
+Whether to include Dart and Flutter snippets in code completion.
+
 ## dart.env
 **Default:** `{}`.
 <br />
@@ -97,7 +112,7 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 ## dart.evaluateToStringInDebugViews
 **Default:** `true`.
 <br />
-Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 15 or fewer values for performance reasons.
+Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 100 or fewer values for performance reasons.
 
 ## dart.flutterAdbConnectOnChromeOs
 **Default:** `false`.
@@ -181,10 +196,20 @@ Whether to automatically open DevTools at the start of a debug session.
 <br />
 When to automatically switch focus to the test list (array to support multiple values).
 
+## dart.previewBazelWorkspaceCustomScripts
+**Default:** `false`.
+<br />
+EXPERIMENTAL: Whether to look for custom script definitions at dart/config/intellij-plugins/flutter.json in Bazel workspaces. Currently supported for macOS and Linux only.
+
 ## dart.previewBuildRunnerTasks
 **Default:** `false`.
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
+
+## dart.previewEmbeddedDevTools
+**Default:** `false`.
+<br />
+EXPERIMENTAL: Whether to load DevTools embedded inside VS Code.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
@@ -206,16 +231,6 @@ Whether to perform hot-reload-on-save based on a filesystem watcher for Dart fil
 <br />
 EXPERIMENTAL: Whether to run the analyzer in LSP mode (requires restart).
 
-## dart.previewNewCompletionPlaceholders
-**Default:** `true`.
-<br />
-Whether to enable new behaviour for code completion to include @required arguments as placeholders (when using dart.insertArgumentPlaceholders).
-
-## dart.previewUpdateImportsOnRename
-**Default:** `false`.
-<br />
-EXPERIMENTAL: Whether to automatically update imports when moving/renaming files. Currently only works for single-file moves/renames.
-
 ## dart.promptToRunIfErrors
 **Default:** `true`.
 <br />
@@ -227,7 +242,7 @@ Whether to prompt before running if there are errors in your project. Test scrip
 Whether to show CodeLens actions in the editor for opening online DartPad samples.
 
 ## dart.showIgnoreQuickFixes
-**Default:** `false`.
+**Default:** `true`.
 <br />
 Whether to show quick fixes for ignoring hints and lints.
 
@@ -251,10 +266,15 @@ Whether to show TODOs in the Problems list.
 <br />
 Whether to automatically trigger signature help when pressing keys such as , and (.
 
+## dart.updateImportsOnRename
+**Default:** `true`.
+<br />
+Whether to automatically update imports when moving/renaming files. Currently only works for single-file moves/renames.
+
 ## dart.useKnownChromeOSPorts
 **Default:** `true`.
 <br />
-Whether to use specific ports for Observatory and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
+Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
 
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
@@ -363,9 +383,6 @@ The path to a log file for very detailed logging in the Dart analysis server tha
 ## dart.analyzerLogFile
 The path to a log file for communication between Dart Code and the analysis server. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
 
-## dart.analyzerObservatoryPort
-The port number to be used for the Dart analysis server observatory.
-
 ## dart.devToolsLogFile
 The path to a low-traffic log file for the Dart DevTools service.
 
@@ -381,11 +398,11 @@ The path to a log file for `flutter run` which is used to launch Flutter applica
 ## dart.flutterTestLogFile
 The path to a log file for `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
 
-## dart.observatoryLogFile
-The path to a log file for communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Observatory Logging](/docs/logging/#observatory).
-
 ## dart.pubTestLogFile
 The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
+
+## dart.vmServiceLogFile
+The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs.
 
 ## dart.webDaemonLogFile
 The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web applications. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs.
