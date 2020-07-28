@@ -41,7 +41,8 @@ You can open your launch configuration file by running the **Debug: Open launch.
 		// Set to "test" in an app with tests to run all tests.
 		"program": "bin/main.dart",
 
-		// Any custom environment variables to set when running the app.
+		// Any custom environment variables to set when running the app with this
+		// launch config.
 		"env": {
 			"RELEASE_MODE": true
 		}
