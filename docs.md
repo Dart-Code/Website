@@ -2,4 +2,5 @@
 title: Docs
 ---
 
-{% include nav.html items=site.docs %}
+{% assign docs = site.docs | sort: "title" %}
+{% include nav.html items=docs %}

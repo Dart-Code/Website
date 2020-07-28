@@ -2,7 +2,7 @@
 title: Running Flutter Apps in Profile or Release Modes
 ---
 
-From [Dart Code v2.12](/releases/v2-12/) you can run Flutter apps in Profile and Release modes. To do this you need to create a `launch.json` if you don't already have one (by clicking `Add Configuration` in the dropdown on the Debug Side Bar). In the launch config for your flutter app set the `flutterMode` property to one of `debug`, `profile` or `release`:
+From [Dart Code v2.12](/releases/v2-12/) you can run Flutter apps in Profile and Release modes. To do this you need to create a `launch.json` if you don't already have one (by clicking `Add Configuration` in the dropdown on the Run Side Bar). In the launch config for your flutter app set the `flutterMode` property to one of `debug`, `profile` or `release`:
 
 ```js
 "configurations": [

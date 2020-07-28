@@ -1,5 +1,5 @@
 ---
-title: Dart/Flutter VS Code Settings
+title: Settings
 ---
 
 There are a number of settings for the Dart and Flutter extensions that can be modified in VS Code's [User Settings or Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).

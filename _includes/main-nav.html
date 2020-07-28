@@ -5,7 +5,7 @@
 	<li {% if page.url contains "/releases/" %}class="current"{% endif %}>
 		<a href="/releases/">Releases</a>
 		{% if page.url contains "/releases/" %}
-			{% assign releases = site.releases | sort: "sort_order" | reverse | slice: 0, 10 %}
+			{% assign releases = site.releases | sort: "sort_order" | reverse | slice: 0, 35 %}
 			{% include nav.html items=releases %}
 		{% endif %}
 	</li>

@@ -14,12 +14,14 @@ When [capturing logs using the **Dart: Capture Logs** command](/docs/logging/#ca
 Alternatively, you can add `-v` to the `args` field in your launch configuration (`.vscode/launch.json`):
 
 ```js
-{
-	"name": "Flutter",
-	"request": "launch",
-	"type": "dart",
-	"args": [
-		"-v"
-	]
-}
+"configurations": [
+	{
+		"name": "Flutter",
+		"request": "launch",
+		"type": "dart",
+		"args": [
+			"-v"
+		]
+	}
+]
 ```
