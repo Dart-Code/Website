@@ -8,7 +8,7 @@ title: Refactorings and Code Fixes
 
 The list of refactors comes from the Dart analysis server and therefore may change over time. Once this list is available somewhere centrally the readme will be updated to link there.
 
-Note: These IDs are only provided by recent versions of the Dart analysis server and will not work with older/v1 builds.
+Note: These IDs are only provided by recent versions of the Dart analysis server and may not work with older builds.
 
 - `quickfix.add.async` - Add 'async' modifier
 - `quickfix.add.await` - Add 'await' keyword
@@ -16,11 +16,13 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.curlyBraces` - Add curly braces
 - `quickfix.add.diagnosticPropertyReference` - Add a debug reference to this property
 - `quickfix.add.fieldFormalParameters` - Add final field formal parameters
+- `quickfix.add.late` - Add 'late' modifier
 - `quickfix.add.missingEnumCaseClauses` - Add missing case clauses
 - `quickfix.add.missingParameterNamed` - Add named parameter '...'
 - `quickfix.add.missingParameterPositional` - Add optional positional parameter
-- `quickfix.add.missingParameterRequired` - Add required parameter
+- `quickfix.add.missingParameterRequired` - Add required positional parameter
 - `quickfix.add.missingRequiredArgument` - Add required argument '...'
+- `quickfix.add.required` - Add 'required' keyword
 - `quickfix.add.returnType` - Add return type
 - `quickfix.add.static` - Add 'static' modifier
 - `quickfix.add.superConstructorInvocation` - Add super constructor ... invocation
@@ -39,6 +41,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.toListLiteral` - Convert to list literal
 - `quickfix.convert.toMapLiteral` - Convert to map literal
 - `quickfix.convert.toNamedArguments` - Convert to named arguments
+- `quickfix.convert.toOnType` - Convert to 'on ...'
 - `quickfix.convert.toRelativeImport` - Convert to relative import
 - `quickfix.convert.toSetLiteral` - Convert to set literal
 - `quickfix.convert.toSingleQuotedString` - Convert to single quoted string
@@ -72,6 +75,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.makeFinal` - Make final
 - `quickfix.makeVariableNotFinal` - Make variable '...' not final
 - `quickfix.moveTypeArgumentsToClass` - Move type arguments to after class name
+- `quickfix.organize.imports` - Organize Imports
 - `quickfix.qualifyReference` - Use '...'
 - `quickfix.remove.annotation` - Remove the '...' annotation
 - `quickfix.remove.argument` - Remove argument
@@ -101,9 +105,12 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.unusedField` - Remove unused field
 - `quickfix.remove.unusedLabel` - Remove unused label
 - `quickfix.remove.unusedLocalVariable` - Remove unused local variable
+- `quickfix.remove.unusedParameter` - Remove the unused parameter
 - `quickfix.removeSetting` - Remove '...'
 - `quickfix.rename.toCamelCase` - Rename to '...'
+- `quickfix.replace.cascadeWithDot` - Replace '..' with '.'
 - `quickfix.replace.finalWithConst` - Replace 'final' with 'const'
+- `quickfix.replace.finalWithListFilled` - Replace with 'List.filled'
 - `quickfix.replace.newWithConst` - Replace 'new' with 'const'
 - `quickfix.replace.nullWithClosure` - Replace 'null' with a closure
 - `quickfix.replace.returnTypeFuture` - Return 'Future' from 'async' function
@@ -117,7 +124,6 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.withIsNotEmpty` - Replace with 'isNotEmpty'
 - `quickfix.replace.withVar` - Replace type annotation with 'var'
 - `quickfix.sort.childPropertyLast` - Move child property to end of arguments
-- `quickfix.sort.directives` - Sort directives
 - `quickfix.updateSdkConstraints` - Update the SDK constraints
 - `quickfix.use.const` - Change to constant
 - `quickfix.use.rethrow` - Replace throw with rethrow
@@ -135,6 +141,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.convert.finalFieldToGetter` - Convert to getter
 - `refactor.convert.getterToFinalField` - Convert to final field
 - `refactor.convert.lineComment` - Convert to line documentation comment
+- `refactor.convert.packageToRelativeImport` - Convert to a relative import
 - `refactor.convert.partOfToPartUri` - Convert to use a URI
 - `refactor.convert.toConstructorFieldParameter` - Convert to field formal parameter
 - `refactor.convert.toConstructorNormalParameter` - Convert to normal parameter
