@@ -2,7 +2,7 @@
 title: Running Dart CLI Scripts in the Terminal
 ---
 
-You can run Dart CLI scripts in the built-in terminal with `F5` by creating a launch configuration (using the **Debug: Open launch.json** command) and setting the `"console"` option to `"terminal"`:
+You can run Dart CLI scripts in the built-in terminal with `F5` by creating a [launch configuration](/docs/launch-configuration/) (using the **Debug: Open launch.json** command) and setting the `"console"` option to `"terminal"`:
 
 ```js
 "configurations": [
