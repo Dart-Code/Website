@@ -106,3 +106,7 @@ For more information on using packages [see the Flutter website](https://flutter
 ## Flutter: Upgrade Packages
 
 This command upgrades Flutter packages to the latest version allowed by the constraints in your `pubspec.yaml` for the current project. If invoked in a standard Dart project this command will instead run `Pub: Upgrade Packages`.
+
+## Flutter: Save Screenshot
+
+This commands runs `flutter screenshot` to take a screenshot of the app running in the current debug session. *Note:* this command will **not** be available in the command palette unless there is a active debug session.
