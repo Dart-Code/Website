@@ -35,7 +35,7 @@ There are some settings in VS Code that you may wish to change from the defaults
 		//
 		// "first" will always select top item
 		// "recentlyUsedByPrefix" will filter the recently used items based on the
-		//     text immediately preceeding where completion was invoked.
+		//     text immediately preceding where completion was invoked.
 		"editor.suggestSelection": "first",
 
 		// Allows pressing <TAB> to complete snippets such as `for` even when the
