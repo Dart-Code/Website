@@ -15,7 +15,7 @@ For information on key bindings, including how to add your own, see [Key Binding
 
 ## Dart: Capture Logs
 
-This command simplifies capturing logs for diagnosing issues. See the [/docs/logging/](logging) page for more info.
+This command simplifies capturing logs for diagnosing issues. See the [/docs/logging/](/docs/logging/) page for more info.
 
 ## Dart: Complete Statement
 
