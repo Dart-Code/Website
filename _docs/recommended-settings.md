@@ -9,15 +9,17 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// Causes the debug view to automatically appear when a breakpoint is hit. This
 	// setting is global and not configurable per-language.
 	"debug.openDebug": "openOnDebugBreak",
+	"dart.previewFlutterUiGuides": true,
+        "dart.devToolsTheme": "dark",
 
 	"[dart]": {
 		// Automatically format code on save and during typing of certain characters
 		// (like `;` and `}`).
-		"editor.formatOnSave": true,
-		"editor.formatOnType": true,
+		"editor.formatOnSave": false,
+		"editor.formatOnType": false,
 
 		// Draw a guide line at 80 characters, where Dart's formatting will wrap code.
-		"editor.rulers": [80],
+		"editor.rulers": [180],
 
 		// Disables built-in highlighting of words that match your selection. Without
 		// this, all instances of the selected text will be highlighted, interfering
