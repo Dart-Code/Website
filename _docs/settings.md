@@ -81,6 +81,13 @@ Whether to mark external pub package libraries (including package:flutter) as de
 <br />
 Whether to mark Dart SDK libraries (dart:*) as debuggable, enabling stepping into them while debugging.
 
+## dart.devToolsBrowser
+**Options:** `"chrome"` or `"default"`.
+<br />
+**Default:** `"chrome"`.
+<br />
+Whether to launch external DevTools windows using Chrome or the system default browser.
+
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
 
@@ -95,6 +102,11 @@ Whether to try to reuse existing DevTools windows instead of launching new ones.
 **Default:** `"dark"`.
 <br />
 The theme to use for Dart DevTools.
+
+## dart.embedDevTools
+**Default:** `true`.
+<br />
+Whether to load DevTools embedded inside VS Code.
 
 ## dart.enableSdkFormatter
 **Default:** `true`.
@@ -208,10 +220,10 @@ EXPERIMENTAL: Whether to look for custom script definitions at dart/config/intel
 <br />
 Whether to register Pub Build Runner tasks with VS Code.
 
-## dart.previewEmbeddedDevTools
+## dart.previewCommitCharacters
 **Default:** `false`.
 <br />
-EXPERIMENTAL: Whether to load DevTools embedded inside VS Code.
+EXPERIMENTAL: Whether to enable commit characters for the LSP server. In a future release, the `dart.enableCompletionCommitCharacters` setting will also apply to LSP.
 
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
@@ -242,6 +254,11 @@ Whether to prompt before running if there are errors in your project. Test scrip
 **Default:** `true`.
 <br />
 Whether to show CodeLens actions in the editor for opening online DartPad samples.
+
+## dart.showDevToolsDebugToolBarButtons
+**Default:** `true`.
+<br />
+Whether to show DevTools buttons in the Debug ToolBar.
 
 ## dart.showIgnoreQuickFixes
 **Default:** `true`.
@@ -278,6 +295,11 @@ Whether to automatically update imports when moving/renaming files. Currently on
 <br />
 Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
 
+## dart.warnWhenEditingFilesInPubCache
+**Default:** `true`.
+<br />
+Whether to show a warning when modifying files in Pub's cache folder.
+
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
 <br />
@@ -299,7 +321,7 @@ An array of glob patterns that should be excluded for formatting. The pattern is
 ## dart.enableCompletionCommitCharacters
 **Default:** `false`.
 <br />
-Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and [.
+Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and [. This setting does not currently apply to LSP, see dart.previewCommitCharacters.
 
 ## dart.evaluateGettersInDebugViews
 **Default:** `true`.
