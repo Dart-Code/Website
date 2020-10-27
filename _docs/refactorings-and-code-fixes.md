@@ -73,13 +73,16 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.makeClassAbstract` - Make class '...' abstract
 - `quickfix.makeFieldNotFinal` - Make field '...' not final
 - `quickfix.makeFinal` - Make final
+- `quickfix.makeReturnTypeNullable` - Make the return type nullable
 - `quickfix.makeVariableNotFinal` - Make variable '...' not final
+- `quickfix.makeVariableNullable` - Make '...' nullable
 - `quickfix.moveTypeArgumentsToClass` - Move type arguments to after class name
 - `quickfix.organize.imports` - Organize Imports
 - `quickfix.qualifyReference` - Use '...'
 - `quickfix.remove.annotation` - Remove the '...' annotation
 - `quickfix.remove.argument` - Remove argument
 - `quickfix.remove.await` - Remove await
+- `quickfix.remove.comparison` - Remove comparison
 - `quickfix.remove.const` - Remove const
 - `quickfix.remove.deadCode` - Remove dead code
 - `quickfix.remove.duplicateCase` - Remove duplicate case statement
@@ -122,6 +125,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.withInterpolation` - Replace with interpolation
 - `quickfix.replace.withIsEmpty` - Replace with 'isEmpty'
 - `quickfix.replace.withIsNotEmpty` - Replace with 'isNotEmpty'
+- `quickfix.replace.withNotNullAware` - Replace with '...'
 - `quickfix.replace.withVar` - Replace type annotation with 'var'
 - `quickfix.sort.childPropertyLast` - Move child property to end of arguments
 - `quickfix.updateSdkConstraints` - Update the SDK constraints
@@ -167,6 +171,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.flutter.wrap.generic` - Wrap with widget...
 - `refactor.flutter.wrap.padding` - Wrap with Padding
 - `refactor.flutter.wrap.row` - Wrap with Row
+- `refactor.flutter.wrap.sizedBox` - Wrap with SizedBox
 - `refactor.flutter.wrap.streamBuilder` - Wrap with StreamBuilder
 - `refactor.inline` - Inline invocation of '...'
 - `refactor.introduceLocalCast` - Introduce new local with tested type
