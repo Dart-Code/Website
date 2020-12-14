@@ -69,11 +69,27 @@ This command upgrades Pub packages to the latest version allowed by the constrai
 
 For more information on using packages [see the Dart website](https://www.dartlang.org/tools/pub/get-started).
 
-## Flutter: New Project
+## Flutter: New Application Project
 
-This command simplifies the creation of new Flutter projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+This command simplifies the creation of new Flutter application projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
 
 For more information on getting started with your first app, see the [Get Started: Test Drive](https://flutter.dev/get-started/test-drive/#vscode) section of the Flutter website.
+
+## Flutter: New Module Project
+
+This command simplifies the creation of new Flutter module projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+
+## Flutter: New Package Project
+
+This command simplifies the creation of new Flutter package projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+
+For more information on getting started with your first package, see the [Developing Packages: Introduction](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#package-introduction) section of the Flutter website.
+
+## Flutter: New Plugin Project
+
+This command simplifies the creation of new Flutter plugin projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
+
+For more information on getting started with your first plugin, see the [Developing Packages: Plugins](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin) section of the Flutter website.
 
 ## Flutter: Open Widget Sample
 
