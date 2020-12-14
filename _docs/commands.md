@@ -79,6 +79,8 @@ For more information on getting started with your first app, see the [Get Starte
 
 This command simplifies the creation of new Flutter module projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
 
+For more information on building a module to use in an existing iOS/Android app, see the [Add Flutter to existing app](https://flutter.dev/docs/development/add-to-app) section of the Flutter website.
+
 ## Flutter: New Package Project
 
 This command simplifies the creation of new Flutter package projects. You will be asked for a name for your project and a folder to create it in. The folder will be created and opened automatically and all required files created automatically. A notification will appear once the creation process is complete and your project is ready to run.
