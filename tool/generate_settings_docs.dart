@@ -79,7 +79,8 @@ void printSettings(
       print('**Default:** `${formatValue(options['default'])}`.');
       print('<br />');
     }
-    print(improveDocs(name, options['description']));
+    print(improveDocs(
+        name, options['markdownDescription'] ?? options['description']));
     print('');
   }
 }
@@ -101,7 +102,8 @@ void printColorSettings(
     // Check whether we'll need to note a default value.
     print('## ${color['id']}');
     print('');
-    print(improveDocs(color['id'], color['description']));
+    print(improveDocs(
+        color['id'], color['markdownDescription'] ?? color['description']));
     print('');
   }
 }
