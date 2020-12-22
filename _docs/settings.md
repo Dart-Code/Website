@@ -24,7 +24,7 @@ Whether to send analytics such as startup timings, frequency of use of features 
 ## dart.allowTestsOutsideTestFolder
 **Default:** `false`.
 <br />
-Whether to consider files ending '_test.dart' that are outside of the test folder as tests. This should be enabled if you put tests inside the 'lib' folder of your Flutter application so they will be run with `flutter test` and not `flutter run`.
+Whether to consider files ending `_test.dart` that are outside of the test directory as tests. This should be enabled if you put tests inside the `lib` directory of your Flutter app so they will be run with `flutter test` and not `flutter run`.
 
 ## dart.analysisServerFolding
 **Default:** `true`.
@@ -34,7 +34,7 @@ Whether to use folding data from the Dart analysis server instead of the built-i
 ## dart.analyzeAngularTemplates
 **Default:** `true`.
 <br />
-Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in analysis_options.yaml).
+Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in `analysis_options.yaml`).
 
 ## dart.analyzerAdditionalArgs
 Additional arguments to pass to the Dart analysis server.
@@ -52,7 +52,7 @@ The port number to be used for the Dart analysis server VM service.
 Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them.
 
 ## dart.buildRunnerAdditionalArgs
-Additional args to pass to the build_runner when building/watching/serving.
+Additional args to pass to the `build_runner` when building/watching/serving.
 
 ## dart.checkForSdkUpdates
 **Default:** `true`.
@@ -74,12 +74,12 @@ The protocol to use for the Dart Debug Extension backend service. Using WebSocke
 ## dart.debugExternalLibraries
 **Default:** `false`.
 <br />
-Whether to mark external pub package libraries (including package:flutter) as debuggable, enabling stepping into them while debugging.
+Whether to mark external pub package libraries (including `package:flutter`) as debuggable, enabling stepping into them while debugging.
 
 ## dart.debugSdkLibraries
 **Default:** `false`.
 <br />
-Whether to mark Dart SDK libraries (dart:*) as debuggable, enabling stepping into them while debugging.
+Whether to mark Dart SDK libraries (`dart:*`) as debuggable, enabling stepping into them while debugging.
 
 ## dart.devToolsBrowser
 **Options:** `"chrome"` or `"default"`.
@@ -106,12 +106,12 @@ The theme to use for Dart DevTools.
 ## dart.embedDevTools
 **Default:** `true`.
 <br />
-Whether to load DevTools embedded inside VS Code.
+Whether to load [Dart DevTools](https://dart.dev/tools/dart-devtools) embedded inside VS Code.
 
 ## dart.enableSdkFormatter
 **Default:** `true`.
 <br />
-Whether to enable the dart_style formatter included with the Dart SDK.
+Whether to enable the automatic [dart_style](https://pub.dev/packages/dart_style) formatter for Dart code.
 
 ## dart.enableSnippets
 **Default:** `true`.
@@ -131,12 +131,7 @@ Whether to call toString() on objects when rendering them in debug views (such a
 ## dart.flutterAdbConnectOnChromeOs
 **Default:** `false`.
 <br />
-Whether to automatically run 'adb connect 100.115.92.2:5555' when spawning the Flutter Daemon when running on Chrome OS.
-
-## dart.flutterAndroidX
-**Default:** `false`.
-<br />
-Whether to pass the --androidx flag when running the **Flutter: New Project** command.
+Whether to automatically run `adb connect 100.115.92.2:5555` when spawning the Flutter daemon when running on Chrome OS.
 
 ## dart.flutterCreateAndroidLanguage
 **Options:** `"java"` or `"kotlin"`.
@@ -150,7 +145,7 @@ The programming language to use for Android apps when creating new projects usin
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for IOS apps when creating new projects using the **Flutter: New Project** command.
+The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOffline
 **Default:** `false`.
@@ -158,7 +153,7 @@ The programming language to use for IOS apps when creating new projects using th
 Whether to use offline mode when creating new projects with the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
-The organization responsible for your new Flutter project, in reverse domain name notation. This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCustomEmulators
 Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
@@ -171,7 +166,7 @@ Whether to show Flutter icons and colors in the editor gutter.
 ## dart.flutterHotReloadOnSave
 **Default:** `true`.
 <br />
-Whether to automatically send a Hot Reload request during debug session when saving files.
+Whether to automatically send a Hot Reload request during a debug session when saving files.
 
 ## dart.flutterHotRestartOnSave
 **Default:** `true`.
@@ -181,12 +176,30 @@ Whether to automatically send a Hot Restart request during a debug session when 
 ## dart.flutterOutline
 **Default:** `true`.
 <br />
-Whether to show the Flutter Outline tree in the side bar.
+Whether to show the Flutter Outline tree in the sidebar.
 
 ## dart.flutterSelectDeviceWhenConnected
 **Default:** `true`.
 <br />
 Whether to set newly connected devices as the current device in Flutter projects.
+
+## dart.flutterWebRenderer
+**Options:** `"auto"`, `"html"` or `"canvaskit"`.
+<br />
+**Default:** `"auto"`.
+<br />
+Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers) used for Flutter web apps.
+
+- `auto` - allow Flutter to pick the best renderer based on the users device.
+- `html` - always use the HTML renderer.
+- `canvaskit` - always use the CanvasKit renderer.
+
+## dart.hotReloadProgress
+**Options:** `"notification"` or `"statusBar"`.
+<br />
+**Default:** `"notification"`.
+<br />
+Determines how to display Hot Restart and Hot Reload progress.
 
 ## dart.maxLogLineLength
 **Default:** `2000`.
@@ -199,7 +212,7 @@ The maximum length of a line in the log file. Lines longer than this will be tru
 Whether to show a notification the first few times an analysis server exception occurs.
 
 ## dart.openDevTools
-**Options:** `"never", "flutter"` or `"always"`.
+**Options:** `"never"`, `"flutter"` or `"always"`.
 <br />
 **Default:** `"never"`.
 <br />
@@ -213,12 +226,7 @@ When to automatically switch focus to the test list (array to support multiple v
 ## dart.previewBazelWorkspaceCustomScripts
 **Default:** `false`.
 <br />
-EXPERIMENTAL: Whether to look for custom script definitions at dart/config/intellij-plugins/flutter.json in Bazel workspaces. Currently supported for macOS and Linux only.
-
-## dart.previewBuildRunnerTasks
-**Default:** `false`.
-<br />
-Whether to register Pub Build Runner tasks with VS Code.
+EXPERIMENTAL: Whether to look for custom script definitions at `dart/config/intellij-plugins/flutter.json` in Bazel workspaces. Currently supported for macOS and Linux only.
 
 ## dart.previewCommitCharacters
 **Default:** `false`.
@@ -228,22 +236,22 @@ EXPERIMENTAL: Whether to enable commit characters for the LSP server. In a futur
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
 <br />
-Whether to enable the Flutter UI Guides preview. See [Dart-Code/issues/1731](https://github.com/Dart-Code/Dart-Code/issues/1731) for details.
+Whether to enable the [Flutter UI Guides preview](https://dartcode.org/releases/v3-1/#preview-flutter-ui-guides).
 
 ## dart.previewFlutterUiGuidesCustomTracking
 **Default:** `false`.
 <br />
-Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline). See [Dart-Code/issues/1731](https://github.com/Dart-Code/Dart-Code/issues/1731) for details.
+Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).
 
 ## dart.previewHotReloadOnSaveWatcher
 **Default:** `false`.
 <br />
-Whether to perform hot-reload-on-save based on a filesystem watcher for Dart files rather than using VS Code's onDidSave event. This allows reloads to trigger when external tools modify Dart source files.
+Whether to perform hot reload on save based on a filesystem watcher for Dart files rather than using VS Code's `onDidSave` event. This allows reloads to trigger when external tools modify Dart source files.
 
 ## dart.previewLsp
 **Default:** `false`.
 <br />
-EXPERIMENTAL: Whether to run the analyzer in LSP mode (requires restart).
+Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/) (requires restart).
 
 ## dart.promptToRunIfErrors
 **Default:** `true`.
@@ -258,7 +266,7 @@ Whether to show CodeLens actions in the editor for opening online DartPad sample
 ## dart.showDevToolsDebugToolBarButtons
 **Default:** `true`.
 <br />
-Whether to show DevTools buttons in the Debug ToolBar.
+Whether to show DevTools buttons in the Debug toolbar.
 
 ## dart.showIgnoreQuickFixes
 **Default:** `true`.
@@ -268,12 +276,12 @@ Whether to show quick fixes for ignoring hints and lints.
 ## dart.showMainCodeLens
 **Default:** `true`.
 <br />
-Whether to show CodeLens actions in the editor for quick running/debugging scripts with main functions.
+Whether to show CodeLens actions in the editor for quick running / debugging scripts with main functions.
 
 ## dart.showTestCodeLens
 **Default:** `true`.
 <br />
-Whether to show CodeLens actions in the editor for quick running/debugging tests.
+Whether to show CodeLens actions in the editor for quick running / debugging tests.
 
 ## dart.showTodos
 **Default:** `true`.
@@ -288,7 +296,7 @@ Whether to automatically trigger signature help when pressing keys such as , and
 ## dart.updateImportsOnRename
 **Default:** `true`.
 <br />
-Whether to automatically update imports when moving/renaming files. Currently only works for single-file moves/renames.
+Whether to automatically update imports when moving or renaming files. Currently only supports single file moves / renames.
 
 ## dart.useKnownChromeOSPorts
 **Default:** `true`.
@@ -298,7 +306,7 @@ Whether to use specific ports for the VM service and DevTools when running in Ch
 ## dart.warnWhenEditingFilesInPubCache
 **Default:** `true`.
 <br />
-Whether to show a warning when modifying files in Pub's cache folder.
+Whether to show a warning when modifying files in the [system package cache](https://dart.dev/tools/pub/glossary#system-cache) directory.
 
 ## dart.warnWhenEditingFilesOutsideWorkspace
 **Default:** `true`.
@@ -310,18 +318,23 @@ Whether to show a warning when modifying files outside of the workspace.
 Resource scoped settings can be set in individual workspace folder settings and apply to resources within that workspace folder (for example each workspace folder could have its own `dart.lineLength`).
 
 ## dart.analysisExcludedFolders
-An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level.
+An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level. Excluded folders will also be ignored when detecting project types.
 
 ## dart.analyzerPath
 The path to a custom Dart analysis server.
 
+## dart.completeFunctionCalls
+**Default:** `true`.
+<br />
+Whether to insert parentheses and parameter placeholders during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.
+
 ## dart.doNotFormat
-An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test folders.
+An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `**/test/**` to skip formatting for all test directories.
 
 ## dart.enableCompletionCommitCharacters
 **Default:** `false`.
 <br />
-Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and [. This setting does not currently apply to LSP, see dart.previewCommitCharacters.
+Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and \[. This setting does not currently apply to LSP, see `dart.previewCommitCharacters`.
 
 ## dart.evaluateGettersInDebugViews
 **Default:** `true`.
@@ -329,31 +342,40 @@ Whether to automatically commit the selected completion item when pressing certa
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterAdditionalArgs
-Additional args to pass to all flutter commands.
+Additional args to pass to all `flutter` commands.
+
+## dart.flutterAttachAdditionalArgs
+Additional args to pass to the `flutter attach` command.
+
+## dart.flutterRunAdditionalArgs
+Additional args to pass to the `flutter run` command.
 
 ## dart.flutterScreenshotPath
 The path to a directory to save Flutter screenshots.
 
 ## dart.flutterSdkPath
-The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project folder, FLUTTER_ROOT environment variable and the PATH environment variable.
+The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project directory, `FLUTTER_ROOT` environment variable and the `PATH` environment variable.
 
 ## dart.flutterSdkPaths
-An array of strings that are either Flutter SDKs or folders that contains multiple Flutter SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
+An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs. When set, the version number in the status bar can be used to quickly switch between SDKs.
 
 ## dart.flutterStructuredErrors
 **Default:** `true`.
 <br />
-Whether to use Flutter's structured error support for improve error display.
+Whether to use Flutter's [structured error support](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9) for improved error display.
+
+## dart.flutterTestAdditionalArgs
+Additional args to pass to the `flutter test` command.
 
 ## dart.flutterTrackWidgetCreation
 **Default:** `true`.
 <br />
-Whether to pass --track-widget-creation to Flutter apps (required to support 'Inspect Widget'). This setting is always ignored when running in Profile or Release mode.
+Whether to pass `--track-widget-creation` to Flutter apps (required to support 'Inspect Widget'). This setting is always ignored when running in Profile or Release mode.
 
 ## dart.insertArgumentPlaceholders
 **Default:** `true`.
 <br />
-Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled.
+Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled. This setting does not apply to LSP, instead see the `dart.completeFunctionCalls` setting.
 
 ## dart.lineLength
 **Default:** `80`.
@@ -371,18 +393,18 @@ Additional args to pass to all pub commands.
 ## dart.runPubGetOnPubspecChanges
 **Default:** `true`.
 <br />
-Whether to automatically run `pub get` whenever pubspec.yaml is saved.
+Whether to automatically run `pub get` whenever `pubspec.yaml` is saved.
 
 ## dart.sdkPath
-The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the PATH environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
+The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
 
 ## dart.sdkPaths
-An array of strings that are either Dart SDKs or folders that contains multiple Dart SDKs in sub-folders. When set, the version number in the status bar will be clickable to quickly switch between SDKs.
+An array of paths that either directly point to a Dart SDK or the parent directory of multiple Dart SDKs. When set, the version number in the status bar can be used to quickly switch between SDKs.
 
 ## dart.showDartDeveloperLogs
 **Default:** `true`.
 <br />
-Whether to show logs from dart:developer's log() function in the debug console.
+Whether to show logs from the `dart:developer` `log()` function in the debug console.
 
 ## dart.vmAdditionalArgs
 Additional args to pass to the Dart VM when running/debugging command line apps.
@@ -399,7 +421,7 @@ The color of the 'closing label' annotations shown against constructor, method i
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/).
 
 ## dart.analyzerDiagnosticsPort
-The port number to be used for the Dart analysis server diagnostic server.
+The port number to be used for the Dart analyzer diagnostic server.
 
 ## dart.analyzerInstrumentationLogFile
 The path to a log file for very detailed logging in the Dart analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
@@ -414,19 +436,19 @@ The path to a low-traffic log file for the Dart DevTools service.
 The path to a low-traffic log file for basic extension and editor issues. For more information on capturing these logs, see [Extension Logging](/docs/logging/#extension).
 
 ## dart.flutterDaemonLogFile
-The path to a log file for the `flutter daemon` communication which is the service that provides information about connected devices used to show in the status bar. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
+The path to a log file for the `flutter daemon` service, which provides information about connected devices to show in the status bar. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
 
 ## dart.flutterRunLogFile
-The path to a log file for `flutter run` which is used to launch Flutter applications from VS Code. This is useful when trying to diagnose issues with applications launching (or failing to) on simulators and devices. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
+The path to a log file for `flutter run`, which is used to launch Flutter apps from VS Code. This is useful when trying to diagnose issues with apps launching (or failing to) on simulators and devices. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
 
 ## dart.flutterTestLogFile
-The path to a log file for `flutter test` which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+The path to a log file for `flutter test`, which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
 
 ## dart.pubTestLogFile
-The path to a log file for `pub run test` runs. This is useful when trying to diagnose issues with unit test executions. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
+The path to a log file for Dart test runs. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
 
 ## dart.vmServiceLogFile
-The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs.
+The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs.
 
 ## dart.webDaemonLogFile
-The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web applications. Use ${name} in the log file name to prevent concurrent debug sessions overwriting each others logs.
+The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web apps. Use `${name`} in the log file name to prevent concurrent debug sessions overwriting each others logs.

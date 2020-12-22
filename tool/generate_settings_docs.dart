@@ -71,7 +71,7 @@ void printSettings(
     print('## $name');
     if (enumValues != null && enumValues is List) {
       print('**Options:** '
-          '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join(', ')}` '
+          '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join('`, `')}` '
           'or `${formatValue(enumValues.last)}`.');
       print('<br />');
     }
@@ -151,7 +151,7 @@ String improveDocs(String key, String description) {
   description = description
       .replaceAll('(requires the angular_analyzer_plugin)',
           '(requires the [Angular analyzer plugin enabled](https://github.com/dart-lang/angular/tree/master/angular_analyzer_plugin#installing-by-angular-version----for-angular-developers-recommended)')
-      .replaceAll(' **/test/** ', ' `[ "**/test/**" ]` ');
+      .replaceAll('**/test/**', '[ "**/test/**" ]');
 
   for (var s in code) {
     description = description.replaceAll(
