@@ -143,20 +143,20 @@ To capture a Dart test log file please do the following:
 	steps=steps
 %}
 
-### Observatory (Debugger) Logging
-{:#observatory}
+### VM Service (Debugger) Logging
+{:#vmservice}
 
-The [`dart.observatoryLogFile` setting](/docs/settings/#dartobservatorylogfile) enables logging of communication between Dart Code and Observatory (the VM debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints.
+The [`dart.vmServiceLogFile` setting](/docs/settings/#dartvmservicelogfile) enables logging of communication between Dart Code and the VM service (the debugger). This is useful when trying to diagnose issues with debugging such as missed breakpoints.
 
-To capture an observatory log file please do the following:
+To capture a VM service log file please do the following:
 
 {% capture steps %}
 1. Press `F5` to start debugging and reproduce your issue (for example, run the code that misses the breakpoint)
 1. Stop debugging
 {% endcapture %}
 {% include debug-info.md
-	setting="dart.observatoryLogFile"
-	sampleFilename="observatory"
+	setting="dart.vmServiceLogFile"
+	sampleFilename="vmService"
 	steps=steps
 %}
 
