@@ -13,7 +13,7 @@ In addition to the available commands, there are also user settings to allow cap
 
 When you’re ready to reproduce your issue, run `Dart: Capture Logs` in the command palette, or any of the other commands below if you know which is most appropriate for your scenario.
 
-<img src="/images/capture_logs_commands.png" width="619" height="149" />
+<img src="/images/capture_logs_commands.png" width="625" height="160" />
 
 You'll be prompted to select which types of events to log. If you're not sure which component is causing the issue, just leave them all ticked.
 
