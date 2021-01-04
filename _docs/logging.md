@@ -20,7 +20,7 @@ You'll be prompted to select which types of events to log. If you're not sure wh
 All logging commands, and what they do or do not capture, are listed below.
 
 ### Capture Logs
-A pickable list of events, with the capability to capture all events.
+A pickable list of events, with the capability to capture everything.
 
 ### Capture Analysis Server Logs
 Only captures _Analyzer_ and _CommandProcess_ events.
