@@ -2,18 +2,36 @@
 title: Enabling Logging
 ---
 
-The simplest way to capture logs is using the `Dart: Capture Logs` command, however there are also user settings to allow capturing detailed logs for an individual component over a longer period.
+The simplest way to capture logs is using the `Dart: Capture Logs` command, however there are further commands that restrict the logging to certain sub-systems to help make finding issues easier due to reducing unwanted noise.
+
+In addition to the available commands, there are also user settings to allow capturing detailed logs for an individual component over a longer period.
 
 * TOC
 {:toc}
 
-## Capture Logs Command
+## Capture Logs Commands
 
-When you're ready to reproduce your issue, run the `Dart: Capture Logs` in the command palette.
+When you’re ready to reproduce your issue, run `Dart: Capture Logs` in the command palette, or any of the other commands below if you know which is most appropriate for your scenario.
 
-<img src="/images/capture_logs_command.png" width="700" height="100" />
+<img src="/images/capture_logs_commands.png" width="619" height="149" />
 
-You'll be prompted to select which types of events to log. If you're not sure which component is causing the issue, just leave them all ticked. While the logs are being captured a notification will be shown.
+You'll be prompted to select which types of events to log. If you're not sure which component is causing the issue, just leave them all ticked.
+
+All logging commands, and what they do or do not capture, are listed below.
+
+### Capture Logs
+A pickable list of events, with the capability to capture all events.
+
+### Capture Analysis Server Logs
+Only captures _Analyzer_ and _CommandProcess_ events.
+
+### Capture Debugging Logs
+Captures all events except _Analyzer_.
+
+### Capture Extension Logs
+Only captures _CommandProcess_, _DevTools_, and _FlutterDaemon_ events.
+
+While the logs are being captured a notification will be shown.
 
 <img src="/images/capture_logs_notification.png" width="550" height="180" />
 
@@ -159,4 +177,3 @@ To capture a VM service log file please do the following:
 	sampleFilename="vmService"
 	steps=steps
 %}
-
