@@ -18,7 +18,7 @@ However there are some things you can't do without a launch configuration, such 
 - Run Dart (non-Flutter) web apps
 - Create [custom CodeLens](/docs/custom-codelens/) actions for running apps
 
-You can open your launch configuration file by running the **Debug: Open launch.json** command from the VS Code command palette. Below is an commented example of what can be done with launch configurations.
+You can open your launch configuration file by clickong on the **Debug** side bar and then either the cog icon at the top, or the **create a launch.json file** link below the big blue button, depending on whether you already have one or not.
 
 ```js
 "configurations": [
