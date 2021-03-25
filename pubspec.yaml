@@ -1,5 +1,8 @@
 name: dart_code_website
 
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
 dependencies:
   http:
   path:
