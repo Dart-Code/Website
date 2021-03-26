@@ -49,7 +49,7 @@ The port number to be used for the Dart analysis server VM service.
 ## dart.autoImportCompletions
 **Default:** `true`.
 <br />
-Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them.
+Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them (requires restart).
 
 ## dart.buildRunnerAdditionalArgs
 Additional args to pass to the `build_runner` when building/watching/serving.
@@ -69,7 +69,7 @@ Whether to show annotations against constructor, method invocations and lists th
 <br />
 **Default:** `"ws"`.
 <br />
-The protocol to use for the Dart Debug Extension backend service. Using WebSockets can improve performance but may fail when connecting through some proxy servers.
+The protocol to use for the Dart Debug Extension backend service and injected client. Using WebSockets can improve performance but may fail when connecting through some proxy servers.
 
 ## dart.debugExternalLibraries
 **Default:** `false`.
@@ -111,7 +111,7 @@ Whether to load [Dart DevTools](https://dart.dev/tools/dart-devtools) embedded i
 ## dart.enableSdkFormatter
 **Default:** `true`.
 <br />
-Whether to enable the automatic [dart_style](https://pub.dev/packages/dart_style) formatter for Dart code.
+Whether to enable the [dart_style](https://pub.dev/packages/dart_style) formatter for Dart code.
 
 ## dart.enableSnippets
 **Default:** `true`.
@@ -138,19 +138,19 @@ Whether to automatically run `adb connect 100.115.92.2:5555` when spawning the F
 <br />
 **Default:** `"kotlin"`.
 <br />
-The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
+The programming language to use for Android apps when creating new projects using the 'Flutter: New Application Project' command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command.
+The programming language to use for iOS apps when creating new projects using the 'Flutter: New Application Project' command.
 
 ## dart.flutterCreateOffline
 **Default:** `false`.
 <br />
-Whether to use offline mode when creating new projects with the **Flutter: New Project** command.
+Whether to use offline mode when creating new projects with the 'Flutter: New Application Project' command.
 
 ## dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
@@ -164,9 +164,15 @@ Custom emulators to show in the emulator list for easier launching. If IDs match
 Whether to show Flutter icons and colors in the editor gutter.
 
 ## dart.flutterHotReloadOnSave
-**Default:** `true`.
+**Options:** `"never"`, `"always"` or `"manual"`.
+<br />
+**Default:** `"manual"`.
 <br />
 Whether to automatically send a Hot Reload request during a debug session when saving files.
+
+- `never` - do not reload when saving.
+- `always` - reload for all saves, manual or automatic.
+- `manual` - only reload for manual saves (requires pressing Save explicitly if using autosave).
 
 ## dart.flutterHotRestartOnSave
 **Default:** `true`.
@@ -182,6 +188,16 @@ Whether to show the Flutter Outline tree in the sidebar.
 **Default:** `true`.
 <br />
 Whether to set newly connected devices as the current device in Flutter projects.
+
+## dart.flutterShowWebServerDevice
+**Options:** `"remote"` or `"always"`.
+<br />
+**Default:** `"remote"`.
+<br />
+When to show the Flutter headless web-server device. This requires using the Dart Debug extension for Chrome and is usually only used for remote environments where Chrome is not available such as browser/cloud-based IDEs (requires restart).
+
+- `remote` - only show when connected to a remote.
+- `always` - always show, even for local sessions.
 
 ## dart.flutterWebRenderer
 **Options:** `"auto"`, `"html"` or `"canvaskit"`.
@@ -200,6 +216,11 @@ Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers
 **Default:** `"notification"`.
 <br />
 Determines how to display Hot Restart and Hot Reload progress.
+
+## dart.lspSnippetTextEdits
+**Default:** `true`.
+<br />
+Whether to enable [Snippet support in LSP TextEdits](https://github.com/rust-analyzer/rust-analyzer/blob/979e788957ced1957ee9ac1da70fb97abf9fe2b1/docs/dev/lsp-extensions.md#snippet-textedit).
 
 ## dart.maxLogLineLength
 **Default:** `2000`.
@@ -249,14 +270,17 @@ Whether to enable custom tracking of Flutter UI guidelines (to hide some latency
 Whether to perform hot reload on save based on a filesystem watcher for Dart files rather than using VS Code's `onDidSave` event. This allows reloads to trigger when external tools modify Dart source files.
 
 ## dart.previewLsp
-**Default:** `false`.
-<br />
 Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/) (requires restart).
 
 ## dart.promptToRunIfErrors
 **Default:** `true`.
 <br />
 Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they're the script being run.
+
+## dart.shareDevToolsWithFlutter
+**Default:** `true`.
+<br />
+Whether to eagerly run DevTools for Flutter workspaces and share the spawned server with `flutter run`.
 
 ## dart.showDartPadSampleCodeLens
 **Default:** `true`.
@@ -273,10 +297,20 @@ Whether to show DevTools buttons in the Debug toolbar.
 <br />
 Whether to show quick fixes for ignoring hints and lints.
 
+## dart.showInspectorNotificationsForWidgetErrors
+**Default:** `true`.
+<br />
+Whether to show notifications for widget errors that offer Inspect Widget links. This requires that the `dart.shareDevToolsWithFlutter` setting is also enabled.
+
 ## dart.showMainCodeLens
 **Default:** `true`.
 <br />
 Whether to show CodeLens actions in the editor for quick running / debugging scripts with main functions.
+
+## dart.showSkippedTests
+**Default:** `true`.
+<br />
+Whether to show skipped tests in the test tree.
 
 ## dart.showTestCodeLens
 **Default:** `true`.
@@ -329,7 +363,7 @@ The path to a custom Dart analysis server.
 Whether to insert parentheses and parameter placeholders during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.
 
 ## dart.doNotFormat
-An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `**/test/**` to skip formatting for all test directories.
+An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test directories.
 
 ## dart.enableCompletionCommitCharacters
 **Default:** `false`.
