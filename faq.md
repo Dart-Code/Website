@@ -11,7 +11,7 @@ title: Frequently Asked Questions
 
 ## How do I perform a Restart of my Flutter app?
 
-The [`Hot Restart` command](/docs/debugging-commands/#flutter-hot-restart) is [bound to `Ctrl`+`F5`](/docs/key-bindings/) by default.
+The [**Flutter: Hot Restart** command](/docs/debugging-commands/#flutter-hot-restart) is [bound to `Ctrl`+`F5`](/docs/key-bindings/) by default.
 
 Please 👍 on [Microsoft/vscode#45116](https://github.com/Microsoft/vscode/issues/45116) to help support making the debug toolbar in VS Code customizable so we can add a dedicated button to avoid this question being frequently asked!
 
