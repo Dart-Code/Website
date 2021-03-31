@@ -2,7 +2,7 @@
 title: Enabling Logging
 ---
 
-The simplest way to capture logs is using the `Dart: Capture Logs` command, however there are further commands that restrict the logging to certain sub-systems to help make finding issues easier due to reducing unwanted noise.
+The simplest way to capture logs is using the **Dart: Capture Logs** command, however there are further commands that restrict the logging to certain sub-systems to help make finding issues easier due to reducing unwanted noise.
 
 In addition to the available commands, there are also user settings to allow capturing detailed logs for an individual component over a longer period.
 

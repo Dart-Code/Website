@@ -4,7 +4,7 @@ title: Key Bindings
 
 Many of the key bindings you'll use for Dart Code come from VS Code itself. You can find a PDF reference guide of these by clicking **Help -> Keyboard Shortcut Reference**. Below is a list of shortcuts that were added by Dart Code or from VS Code that may find useful for Dart and Flutter development.
 
-You can easily configure your own key bindings, including binding to commands provided by Dart Code by running the `Preferences: Open Keyboard Shortcuts` command from the command palette and following the instructions in the [VS Code Key Binding docs](https://code.visualstudio.com/docs/getstarted/keybindings).
+You can easily configure your own key bindings, including binding to commands provided by Dart Code by running the **Preferences: Open Keyboard Shortcuts** command from the command palette and following the instructions in the [VS Code Key Binding docs](https://code.visualstudio.com/docs/getstarted/keybindings).
 
 ## Editor Key Bindings
 

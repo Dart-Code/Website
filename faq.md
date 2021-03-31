@@ -31,4 +31,4 @@ If you have multiple devices/simulators you can quickly switch them from the sta
 
 ## How do I hide Flutter's Debug Mode Banner?
 
-The Debug Mode Banner (previously Slow Mode Banner) can be toggled from the command palette. For more info, see [documentation for the `Flutter: Toggle Debug-Mode Banner` command](/docs/debugging-commands/#flutter-toggle-debug-mode-banner).
+The Debug Mode Banner (previously Slow Mode Banner) can be toggled from the command palette. For more info, see [documentation for the **Flutter: Toggle Debug-Mode Banner** command](/docs/debugging-commands/#flutter-toggle-debug-mode-banner).
