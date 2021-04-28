@@ -17,7 +17,7 @@ Please 👍 on [Microsoft/vscode#45116](https://github.com/Microsoft/vscode/issu
 
 ## Why can't Dart Code find my Dart/Flutter SDK?
 
-Dart Code generally will try to find Dart and/or Flutter from your `PATH` variable. Depending on how you launch VS Code it amy not inherit the `PATH` from your terminal. For information on how best to set your `PATH` see [Configuring PATH and Environment Variables](/docs/configuring-path-and-environment-variables/).
+Dart Code generally will try to find Dart and/or Flutter from your `PATH` variable. Depending on how you launch VS Code it may not inherit the `PATH` from your terminal. For information on how best to set your `PATH` see [Configuring PATH and Environment Variables](/docs/configuring-path-and-environment-variables/).
 
 **Note:** If Dart Code detects that you have a Flutter project open then it will prefer to use the version of the Dart SDK that is bundled in the Flutter SDK, otherwise it will prefer to use a version of Dart directly from your `PATH`.
 
