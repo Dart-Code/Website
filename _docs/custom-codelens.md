@@ -11,6 +11,7 @@ For example, to add CodeLens for a launch config that sets a `RELEASE_MODE=true`
 	"name": "Current File (release mode)",
 	"type": "dart",
 	"request": "launch",
+	"args": [], // Additional args to pass
 
 	// If codeLens is defined, this launch configuration can be launched from custom
 	// CodeLens links in the editor (see the page linked above for more info).
