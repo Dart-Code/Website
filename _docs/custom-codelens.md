@@ -46,3 +46,5 @@ For example, to add CodeLens for a launch config that sets a `RELEASE_MODE=true`
 This will insert additional CodeLens links into tests, groups and main functions:
 
 <img src="/images/release_notes/v3.11/code_lens_improvements.png" width="700" height="90" />
+
+If you set the `title` to `Run` or `Debug` (or `${debugType}` which will resolve to one of those strings) then the default Run/Debug CodeLens links will be hidden so that you can provide your own default configuration.
