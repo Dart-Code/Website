@@ -67,6 +67,7 @@ void printSettings(
         (defaultValue is! List || defaultValue.length != 0);
 
     final enumValues = options['enum'];
+    final enumDescriptions = options['enumDescriptions'];
 
     print('## $name');
     if (enumValues != null && enumValues is List) {
@@ -81,6 +82,12 @@ void printSettings(
     }
     print(improveDocs(
         name, options['markdownDescription'] ?? options['description']));
+    if (enumDescriptions != null && enumDescriptions is List) {
+      print('');
+      for (var i = 0; i < enumValues.length; i++) {
+        print('- `${enumValues[i]}` - ${enumDescriptions[i]}.');
+      }
+    }
     print('');
   }
 }
