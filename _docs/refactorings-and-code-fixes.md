@@ -44,6 +44,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.toExpressionBody.multi` - Convert to expression bodies everywhere in file
 - `quickfix.convert.toForElement` - Convert to a 'for' element
 - `quickfix.convert.toForElement.multi` - Convert to 'for' elements everywhere in file
+- `quickfix.convert.toForLoop` - Convert 'forEach' to a 'for' loop
+- `quickfix.convert.toForLoop.multi` - Convert 'forEach' to a 'for' loop everywhere in file
 - `quickfix.convert.toGenericFunctionSyntax` - Convert into 'Function' syntax
 - `quickfix.convert.toGenericFunctionSyntax.multi` - Convert to 'Function' syntax everywhere in file
 - `quickfix.convert.toIfElement` - Convert to an 'if' element
@@ -126,6 +128,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.parametersInGetterDeclaration` - Remove parameters in getter declaration
 - `quickfix.remove.parenthesisInGetterInvocation` - Remove parentheses in getter invocation
 - `quickfix.remove.questionMark.multi` - Remove unnecessary question marks in file
+- `quickfix.remove.returnedValue` - Remove invalid returned value
+- `quickfix.remove.returnedValue.multi` - Remove invalid returned values in file
 - `quickfix.remove.thisExpression` - Remove this expression
 - `quickfix.remove.thisExpression.multi` - Remove unnecessary this expressions everywhere in file
 - `quickfix.remove.typeAnnotation` - Remove type annotation
@@ -185,7 +189,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.withIsNotEmpty.multi` - Replace with 'isNotEmpty' everywhere in file
 - `quickfix.replace.withNotNullAware` - Replace with '...'
 - `quickfix.replace.withVar` - Replace type annotation with 'var'
-- `quickfix.replace.withVar.multi` - Replace unnecessary type annotations with 'var' in file
+- `quickfix.replace.withVar.multi` - Replace type annotations with 'var' in file
 - `quickfix.sort.childPropertyLast` - Move child property to end of arguments
 - `quickfix.sort.childPropertyLast.multi` - Move child properties to ends of arguments everywhere in file
 - `quickfix.updateSdkConstraints` - Update the SDK constraints
@@ -230,6 +234,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.flutter.removeWidget` - Remove this widget
 - `refactor.flutter.swap.withChild` - Swap with child
 - `refactor.flutter.swap.withParent` - Swap with parent
+- `refactor.flutter.wrap.builder` - Wrap with Builder
 - `refactor.flutter.wrap.center` - Wrap with Center
 - `refactor.flutter.wrap.column` - Wrap with Column
 - `refactor.flutter.wrap.container` - Wrap with Container
