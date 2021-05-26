@@ -51,6 +51,19 @@ The port number to be used for the Dart analysis server VM service.
 <br />
 Whether to include symbols that have not been imported in the code completion list and automatically insert the required import when selecting them (requires restart).
 
+## dart.automaticCommentSlashes
+**Options:** `"none"`, `"tripleSlash"` or `"all"`.
+<br />
+**Default:** `"tripleSlash"`.
+<br />
+Determines when to insert comment slashes when pressing `<enter>` in the editor (requires restart).
+
+When using `tripleSlash`, double-slashes will still be included when breaking existing double-slash comments across additional lines.
+
+- `none` - Never insert slashes automatically.
+- `tripleSlash` - Insert `///` when pressing `<enter>` at the end of a triple-slash comment.
+- `all` - Insert `///` when pressing `<enter>` at the end of a triple-slash comment and also `//` when pressing `<enter>` at the end of a double-slash comment.
+
 ## dart.buildRunnerAdditionalArgs
 Additional args to pass to the `build_runner` when building/watching/serving.
 
@@ -58,6 +71,16 @@ Additional args to pass to the `build_runner` when building/watching/serving.
 **Default:** `true`.
 <br />
 Whether to check you are using the latest version of the Dart SDK at startup.
+
+## dart.cliConsole
+**Options:** `"debugConsole"` or `"terminal"`.
+<br />
+**Default:** `"debugConsole"`.
+<br />
+Whether to run Dart CLI apps in the Debug Console or the VS Code integrated terminal. The Debug Console has more functionality because the process is controlled by the debug adapter, but is unable to accept input from the user via stdin.
+
+- `debugConsole` - Run in the Debug Console pane, using the input as a REPL to evaluate expressions.
+- `terminal` - Run in the VS Code integrated terminal where input will be sent to stdin .
 
 ## dart.closingLabels
 **Default:** `true`.
@@ -70,6 +93,9 @@ Whether to show annotations against constructor, method invocations and lists th
 **Default:** `"ws"`.
 <br />
 The protocol to use for the Dart Debug Extension backend service and injected client. Using WebSockets can improve performance but may fail when connecting through some proxy servers.
+
+- `sse` - Server-Sent Events.
+- `ws` - WebSockets.
 
 ## dart.debugExternalLibraries
 **Default:** `false`.
@@ -87,6 +113,9 @@ Whether to mark Dart SDK libraries (`dart:*`) as debuggable, enabling stepping i
 **Default:** `"chrome"`.
 <br />
 Whether to launch external DevTools windows using Chrome or the system default browser.
+
+- `chrome` - Locate and launch Google Chrome from your system.
+- `default` - Use your systems default web browser.
 
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
@@ -170,9 +199,9 @@ Whether to show Flutter icons and colors in the editor gutter.
 <br />
 Whether to automatically send a Hot Reload request during a debug session when saving files.
 
-- `never` - do not reload when saving.
-- `always` - reload for all saves, manual or automatic.
-- `manual` - only reload for manual saves (requires pressing Save explicitly if using autosave).
+- `never` - Do not reload when saving.
+- `always` - Reload for all saves, manual or automatic.
+- `manual` - Only reload for manual saves (requires pressing Save explicitly if using autosave).
 
 ## dart.flutterHotRestartOnSave
 **Default:** `true`.
@@ -189,6 +218,16 @@ Whether to show the Flutter Outline tree in the sidebar.
 <br />
 Whether to set newly connected devices as the current device in Flutter projects.
 
+## dart.flutterShowEmulators
+**Options:** `"local"` or `"always"`.
+<br />
+**Default:** `"local"`.
+<br />
+When to show the Flutter emulators. These are usually hidden for remote workspaces because it is usually not possible to see or interact with emulators in a remote session. If you are using remoting/containers in a way that you can interact with launched emulator processes, you may wish to set this to 'always'.
+
+- `local` - Only show for local workspaces.
+- `always` - Always show, even for remote sessions.
+
 ## dart.flutterShowWebServerDevice
 **Options:** `"remote"` or `"always"`.
 <br />
@@ -196,8 +235,8 @@ Whether to set newly connected devices as the current device in Flutter projects
 <br />
 When to show the Flutter headless web-server device. This requires using the Dart Debug extension for Chrome and is usually only used for remote environments where Chrome is not available such as browser/cloud-based IDEs (requires restart).
 
-- `remote` - only show when connected to a remote.
-- `always` - always show, even for local sessions.
+- `remote` - Only show for remote workspaces (includes browser-based workspaces).
+- `always` - Always show, even for local sessions.
 
 ## dart.flutterWebRenderer
 **Options:** `"auto"`, `"html"` or `"canvaskit"`.
@@ -206,9 +245,9 @@ When to show the Flutter headless web-server device. This requires using the Dar
 <br />
 Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers) used for Flutter web apps.
 
-- `auto` - allow Flutter to pick the best renderer based on the users device.
-- `html` - always use the HTML renderer.
-- `canvaskit` - always use the CanvasKit renderer.
+- `auto` - Allow Flutter to pick the best renderer based on the users device.
+- `html` - Always use the HTML renderer.
+- `canvaskit` - Always use the CanvasKit renderer.
 
 ## dart.hotReloadProgress
 **Options:** `"notification"` or `"statusBar"`.
@@ -216,6 +255,9 @@ Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers
 **Default:** `"notification"`.
 <br />
 Determines how to display Hot Restart and Hot Reload progress.
+
+- `notification` - Hot reload progress will be shown in a toast notification.
+- `statusBar` - Hot reload progress will be shown only in the status bar.
 
 ## dart.lspSnippetTextEdits
 **Default:** `true`.
@@ -237,7 +279,11 @@ Whether to show a notification the first few times an analysis server exception 
 <br />
 **Default:** `"never"`.
 <br />
-Whether to automatically open DevTools at the start of a debug session.
+Whether to automatically open DevTools at the start of a debug session. If embedded DevTools is enabled, this will launch the Widget Inspector embedded for Flutter projects, or launch DevTools externally in a browser for Dart projects.
+
+- `never` - Do not automatically launch DevTools when starting a debug session.
+- `flutter` - Automatically launch DevTools when starting a Flutter debug session.
+- `always` - Automatically launch DevTools when starting any debug session.
 
 ## dart.openTestView
 **Default:** `[testRunStart]`.
@@ -257,12 +303,12 @@ EXPERIMENTAL: Whether to enable commit characters for the LSP server. In a futur
 ## dart.previewFlutterUiGuides
 **Default:** `false`.
 <br />
-Whether to enable the [Flutter UI Guides preview](https://dartcode.org/releases/v3-1/#preview-flutter-ui-guides).
+EXPERIMENTAL: Whether to enable the [Flutter UI Guides preview](https://dartcode.org/releases/v3-1/#preview-flutter-ui-guides).
 
 ## dart.previewFlutterUiGuidesCustomTracking
 **Default:** `false`.
 <br />
-Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).
+EXPERIMENTAL: Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).
 
 ## dart.previewHotReloadOnSaveWatcher
 **Default:** `false`.
