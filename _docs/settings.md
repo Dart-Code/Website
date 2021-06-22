@@ -422,13 +422,13 @@ Whether to automatically commit the selected completion item when pressing certa
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterAdditionalArgs
-Additional args to pass to all `flutter` commands.
+Additional args to pass to all `flutter` commands including `flutter daemon`. Do not use this to pass arguments to your Flutter app, use the `args` field in a `launch.json` or the `dart.flutterRunAdditionalArgs` setting.
 
 ## dart.flutterAttachAdditionalArgs
-Additional args to pass to the `flutter attach` command.
+Additional args to pass to the `flutter attach` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterRunAdditionalArgs
-Additional args to pass to the `flutter run` command.
+Additional args to pass to the `flutter run` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterScreenshotPath
 The path to a directory to save Flutter screenshots.
@@ -445,7 +445,7 @@ An array of paths that either directly point to a Flutter SDK or the parent dire
 Whether to use Flutter's [structured error support](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9) for improved error display.
 
 ## dart.flutterTestAdditionalArgs
-Additional args to pass to the `flutter test` command.
+Additional args to pass to the `flutter test` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterTrackWidgetCreation
 **Default:** `true`.
@@ -468,7 +468,7 @@ The maximum length of a line of code. This is used by the document formatter.
 Whether to prompt to get packages when opening a project with out of date packages.
 
 ## dart.pubAdditionalArgs
-Additional args to pass to all pub commands.
+Additional args to pass to all `pub` commands.
 
 ## dart.runPubGetOnPubspecChanges
 **Default:** `true`.
