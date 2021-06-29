@@ -73,14 +73,15 @@ Additional args to pass to the `build_runner` when building/watching/serving.
 Whether to check you are using the latest version of the Dart SDK at startup.
 
 ## dart.cliConsole
-**Options:** `"debugConsole"` or `"terminal"`.
+**Options:** `"debugConsole"`, `"terminal"` or `"externalTerminal"`.
 <br />
 **Default:** `"debugConsole"`.
 <br />
-Whether to run Dart CLI apps in the Debug Console or the VS Code integrated terminal. The Debug Console has more functionality because the process is controlled by the debug adapter, but is unable to accept input from the user via stdin.
+Whether to run Dart CLI apps in the Debug Console or a terminal. The Debug Console has more functionality because the process is controlled by the debug adapter, but is unable to accept input from the user via stdin.
 
 - `debugConsole` - Run in the Debug Console pane, using the input as a REPL to evaluate expressions.
-- `terminal` - Run in the VS Code integrated terminal where input will be sent to stdin .
+- `terminal` - Run in the VS Code integrated terminal where input will be sent to stdin.
+- `externalTerminal` - Run in an external terminal where input will be sent to stdin.
 
 ## dart.closingLabels
 **Default:** `true`.
