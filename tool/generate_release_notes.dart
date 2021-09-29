@@ -36,7 +36,7 @@ main() async {
     }
 
     issuesByLabel.putIfAbsent(primaryLabel, () => {});
-    issuesByLabel[primaryLabel][issue['number'] as int] = issue;
+    issuesByLabel[primaryLabel]![issue['number'] as int] = issue;
   }
 
   issuesByLabel.forEach((label, issues) {
@@ -56,8 +56,8 @@ main() async {
 Future<dynamic> fetchJson(String uri) async {
   final client = http.Client();
   try {
-    final resp = await client
-        .get('https://api.github.com/repos/Dart-Code/Dart-Code/$uri');
+    final resp = await client.get(
+        Uri.parse('https://api.github.com/repos/Dart-Code/Dart-Code/$uri'));
     return jsonDecode(resp.body);
   } finally {
     client.close();

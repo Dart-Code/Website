@@ -28,12 +28,12 @@ List<CodeAction> extractIDs(File file, String type) {
       .allMatches(fileContents);
   return matches.map((match) {
     final id = match
-        .group(1)
+        .group(1)!
         .replaceAll('dart.assist.', 'refactor.')
         .replaceAll('dart.fix.', 'quickfix.')
         .replaceAll('analysisOptions.assist.', 'refactor.')
         .replaceAll('analysisOptions.fix.', 'quickfix.');
-    final name = match.group(2).replaceAll('{0}', '...');
+    final name = match.group(2)!.replaceAll('{0}', '...');
     return CodeAction(id, name);
   }).toList();
 }

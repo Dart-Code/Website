@@ -96,7 +96,7 @@ String _improveType(dynamic type, options) {
         ? 'Array<$itemTypesString>'
         : '$itemTypesString[]';
   }
-  return _typeMappings[type as String] ?? type as String;
+  return _typeMappings[type as String] ?? type;
 }
 
 String _formatValue(dynamic val) => val is String ? '"$val"' : val.toString();

@@ -115,7 +115,7 @@ void printColorSettings(
   }
 }
 
-String formatValue(Object val) {
+String formatValue(Object? val) {
   if (val is String) {
     return '"$val"';
   } else {
