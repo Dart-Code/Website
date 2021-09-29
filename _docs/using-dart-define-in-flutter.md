@@ -2,7 +2,7 @@
 title: Using --dart-define in Flutter
 ---
 
-You can pass additional `--dart-define` values to Flutter by specifying them in the `args` field of your launch configuration (`launch.json`):
+You can pass additional `--dart-define` values to Flutter by specifying them in the `toolArgs` field of your launch configuration (`launch.json`):
 
 
 ```js
@@ -11,7 +11,7 @@ You can pass additional `--dart-define` values to Flutter by specifying them in 
 		"name": "Flutter",
 		"request": "launch",
 		"type": "dart",
-		"args": [
+		"toolArgs": [
 			"--dart-define",
 			"MY_VAR=MY_VALUE",
 			"--dart-define",
@@ -27,3 +27,5 @@ Using the example above, you can print `MY_VALUE` and `MY_OTHER_VALUE` by using 
 print(const String.fromEnvironment('MY_VAR'));
 print(const String.fromEnvironment('MY_OTHER_VAR'));
 ```
+
+For Dart apps, you should [use `--define`](/docs/using-define-in-dart/).
