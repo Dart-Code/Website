@@ -98,7 +98,7 @@ The protocol to use for the Dart Debug Extension backend service and injected cl
 - `sse` - Server-Sent Events.
 - `ws` - WebSockets.
 
-## dart.debugExternalLibraries
+## dart.debugExternalPackageLibraries
 **Default:** `false`.
 <br />
 Whether to mark external pub package libraries (including `package:flutter`) as debuggable, enabling stepping into them while debugging.
@@ -143,6 +143,11 @@ Whether to load [Dart DevTools](https://dart.dev/tools/dart-devtools) embedded i
 <br />
 Whether to enable the [dart_style](https://pub.dev/packages/dart_style) formatter for Dart code.
 
+## dart.enableServerSnippets
+**Default:** `false`.
+<br />
+This setting is currently unused and should be left set to 'false'. It will be updated and enabled by default in the future.
+
 ## dart.enableSnippets
 **Default:** `true`.
 <br />
@@ -168,22 +173,22 @@ Whether to automatically run `adb connect 100.115.92.2:5555` when spawning the F
 <br />
 **Default:** `"kotlin"`.
 <br />
-The programming language to use for Android apps when creating new projects using the 'Flutter: New Application Project' command.
+The programming language to use for Android apps when creating new projects using the 'Flutter: New Project' command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for iOS apps when creating new projects using the 'Flutter: New Application Project' command.
+The programming language to use for iOS apps when creating new projects using the 'Flutter: New Project' command.
 
 ## dart.flutterCreateOffline
 **Default:** `false`.
 <br />
-Whether to use offline mode when creating new projects with the 'Flutter: New Application Project' command.
+Whether to use offline mode when creating new projects with the 'Flutter: New Project' command.
 
 ## dart.flutterCreateOrganization
-The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the 'Flutter: New Project' command.
 
 ## dart.flutterCustomEmulators
 Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
@@ -270,6 +275,11 @@ Whether to enable [Snippet support in LSP TextEdits](https://github.com/rust-ana
 <br />
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
+## dart.normalizeFileCasing
+**Default:** `false`.
+<br />
+Whether to normalize file casings before sending them to the LSP server. This may fix issues with file_names lints not disappearing after renaming a file if the VS Code API continues to use the original casing.
+
 ## dart.notifyAnalyzerErrors
 **Default:** `true`.
 <br />
@@ -323,6 +333,13 @@ Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-s
 **Default:** `true`.
 <br />
 Whether to prompt before running if there are errors in your project. Test scripts will be excluded from the check unless they're the script being run.
+
+## dart.renameFilesWithClasses
+**Options:** `"never"`, `"prompt"` or `"always"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to rename files when renaming classes with matching names (for example renaming 'class Person' inside 'person.dart'). If set to 'prompt', will ask each time before renaming. If set to 'always', the file will automatically be renamed. This setting requires using LSP and a Dart SDK of at least v2.15.
 
 ## dart.shareDevToolsWithFlutter
 **Default:** `true`.
@@ -380,9 +397,14 @@ Whether to automatically trigger signature help when pressing keys such as , and
 Whether to automatically update imports when moving or renaming files. Currently only supports single file moves / renames.
 
 ## dart.useKnownChromeOSPorts
-**Default:** `true`.
+**Default:** `false`.
 <br />
 Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
+
+## dart.useVsCodeTestRunner
+**Default:** `true`.
+<br />
+Whether to use the built-in VS Code test runner. Otherwises uses the legacy custom test runner.
 
 ## dart.warnWhenEditingFilesInPubCache
 **Default:** `true`.
@@ -497,6 +519,9 @@ Some colors in Dart Code can be customized using the `workbench.colorCustomizati
 ## dart.closingLabels
 The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for `tab.inactiveForeground` will be used.
 
+## dart.flutterUiGuides
+The color of the Flutter UI Guidelines shown in the editor.
+
 # Diagnostic Settings
 
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/).
@@ -509,6 +534,9 @@ The path to a log file for very detailed logging in the Dart analysis server tha
 
 ## dart.analyzerLogFile
 The path to a log file for communication between Dart Code and the analysis server. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
+
+## dart.dapLogFile
+The path to a log file for communication with the DAP debug adapters. This is useful when trying to diagnose issues with debugging such as missed breakpoints.
 
 ## dart.devToolsLogFile
 The path to a low-traffic log file for the Dart DevTools service.
