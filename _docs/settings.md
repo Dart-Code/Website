@@ -429,7 +429,7 @@ The path to a custom Dart analysis server.
 ## dart.completeFunctionCalls
 **Default:** `true`.
 <br />
-Whether to insert parentheses and parameter placeholders during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.
+Whether to insert parentheses and placeholders for positional and required arguments during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.
 
 ## dart.doNotFormat
 An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test directories.
