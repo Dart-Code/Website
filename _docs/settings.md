@@ -285,6 +285,11 @@ Whether to normalize file casings before sending them to the LSP server. This ma
 <br />
 Whether to show a notification the first few times an analysis server exception occurs.
 
+## dart.onlyAnalyzeProjectsWithOpenFiles
+**Default:** `false`.
+<br />
+Whether to ignore workspace folders and perform analysis based on the open files, as if no workspace was open at all. This allows opening large folders without causing them to be completely analyzed.
+
 ## dart.openDevTools
 **Options:** `"never"`, `"flutter"` or `"always"`.
 <br />
