@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>{% if page.title != "" %}{{ page.title | escape }} - {% endif %}{{ site.name }} - {{ site.desc }}</title>
+	{% if page.no_index %}<meta name="robots" content="noindex" />{% endif %}
 	<link rel="stylesheet" href="/css/main.css" />
 	<link rel="stylesheet" href="/css/code.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">

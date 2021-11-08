@@ -1,11 +1,10 @@
 ---
-title: Releases
+title: All Releases
+no_index: true
 ---
 
-{% assign items = site.releases | where_exp:"item","item.hidden != true" | sort: "sort_order" | reverse %}
+{% assign items = site.releases | where_exp:"item","item.hidden != true" | where_exp:"item","item.provisional != true" | sort: "sort_order" | reverse %}
 
-<ul>
-	{% for item in items %}
-		<li {% if page.url == item.url %}class="current"{% endif %}><a href="{{ item.url | escape }}">{{ item.title | escape }}</a> {{ item.excerpt }}</li>
-	{% endfor %}
-</ul>
+{% for item in items %}
+{{ item.content }}
+{% endfor %}
