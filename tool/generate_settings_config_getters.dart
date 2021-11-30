@@ -7,8 +7,10 @@ main() {
 
   final packageFile = File('../../Dart-Code/package.json');
   final packageManifest = jsonDecode(packageFile.readAsStringSync());
-  final Map<String, dynamic> config =
-      packageManifest['contributes']['configuration']['properties'];
+  final configs = (packageManifest['contributes']['configuration'] as List)
+      .cast<Map<String, dynamic>>();
+  final config = <String, dynamic>{};
+  configs.forEach((c) => config.addAll(c['properties']));
 
   print('/// WINDOW SCOPED');
   printGetters(config, (key) => config[key]['scope'] != 'resource');
