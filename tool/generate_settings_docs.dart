@@ -17,8 +17,10 @@ main() {
 
   final packageFile = File('../../Dart-Code/package.json');
   final packageManifest = jsonDecode(packageFile.readAsStringSync());
-  final Map<String, dynamic> configOptions =
-      packageManifest['contributes']['configuration']['properties'];
+  final configs = (packageManifest['contributes']['configuration'] as List)
+      .cast<Map<String, dynamic>>();
+  final configOptions = <String, dynamic>{};
+  configs.forEach((c) => configOptions.addAll(c['properties']));
   final List<dynamic> colorOptions = packageManifest['contributes']['colors'];
 
   final isDiagnostics = (String key) =>
