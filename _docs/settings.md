@@ -203,7 +203,7 @@ Whether to show Flutter icons and colors in the editor gutter.
 <br />
 **Default:** `"manual"`.
 <br />
-Whether to automatically send a Hot Reload request during a debug session when saving files.
+Whether to automatically send a Hot Reload request to Flutter apps during a debug session when saving files. Dart apps are controlled by the hotReloadOnSave setting.
 
 - `never` - Do not reload when saving.
 - `always` - Reload for all saves, manual or automatic.
@@ -254,6 +254,17 @@ Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers
 - `auto` - Allow Flutter to pick the best renderer based on the users device.
 - `html` - Always use the HTML renderer.
 - `canvaskit` - Always use the CanvasKit renderer.
+
+## dart.hotReloadOnSave
+**Options:** `"never"`, `"always"` or `"manual"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to automatically send a Hot Reload request to Dart apps during a debug session when saving files. Flutter apps are controlled by the flutterHotReloadOnSave setting.
+
+- `never` - Do not reload when saving.
+- `always` - Reload for all saves, manual or automatic.
+- `manual` - Only reload for manual saves (requires pressing Save explicitly if using autosave).
 
 ## dart.hotReloadProgress
 **Options:** `"notification"` or `"statusBar"`.
@@ -331,9 +342,6 @@ EXPERIMENTAL: Whether to enable custom tracking of Flutter UI guidelines (to hid
 <br />
 Whether to perform hot reload on save based on a filesystem watcher for Dart files rather than using VS Code's `onDidSave` event. This allows reloads to trigger when external tools modify Dart source files.
 
-## dart.previewLsp
-Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/) (requires restart).
-
 ## dart.promptToRunIfErrors
 **Default:** `true`.
 <br />
@@ -359,7 +367,7 @@ Whether to show CodeLens actions in the editor for opening online DartPad sample
 ## dart.showDevToolsDebugToolBarButtons
 **Default:** `true`.
 <br />
-Whether to show DevTools buttons in the Debug toolbar.
+Whether to show DevTools buttons in the floating Debug toolbar.
 
 ## dart.showIgnoreQuickFixes
 **Default:** `true`.
@@ -401,15 +409,10 @@ Whether to automatically trigger signature help when pressing keys such as , and
 <br />
 Whether to automatically update imports when moving or renaming files. Currently only supports single file moves / renames.
 
-## dart.useKnownChromeOSPorts
-**Default:** `false`.
-<br />
-Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).
-
-## dart.useVsCodeTestRunner
+## dart.useLsp
 **Default:** `true`.
 <br />
-Whether to use the built-in VS Code test runner. Otherwises uses the legacy custom test runner.
+Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/). Some features are not supported if this setting is disabled and in a future release LSP will be the only supported option.
 
 ## dart.warnWhenEditingFilesInPubCache
 **Default:** `true`.
@@ -431,6 +434,9 @@ An array of paths to be excluded from Dart analysis. This option should usually 
 ## dart.analyzerPath
 The path to a custom Dart analysis server.
 
+## dart.cliAdditionalArgs
+Additional args to pass to the `dart` command when running CLI scripts. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+
 ## dart.completeFunctionCalls
 **Default:** `true`.
 <br />
@@ -450,13 +456,13 @@ Whether to automatically commit the selected completion item when pressing certa
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterAdditionalArgs
-Additional args to pass to all `flutter` commands including `flutter daemon`. Do not use this to pass arguments to your Flutter app, use the `args` field in a `launch.json` or the `dart.flutterRunAdditionalArgs` setting.
+Additional args to pass to all `flutter` commands including `flutter daemon`. Do not use this to pass arguments to your Flutter app, use the `args` field in a `launch.json` or the `#dart.flutterRunAdditionalArgs#` setting.
 
 ## dart.flutterAttachAdditionalArgs
-Additional args to pass to the `flutter attach` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+Additional args to pass to the `flutter attach` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterRunAdditionalArgs
-Additional args to pass to the `flutter run` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+Additional args to pass to the `flutter run` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterScreenshotPath
 The path to a directory to save Flutter screenshots.
@@ -473,7 +479,7 @@ An array of paths that either directly point to a Flutter SDK or the parent dire
 Whether to use Flutter's [structured error support](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9) for improved error display.
 
 ## dart.flutterTestAdditionalArgs
-Additional args to pass to the `flutter test` command. Using the `args` field in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+Additional args to pass to the `flutter test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.flutterTrackWidgetCreation
 **Default:** `true`.
@@ -514,8 +520,22 @@ An array of paths that either directly point to a Dart SDK or the parent directo
 <br />
 Whether to show logs from the `dart:developer` `log()` function in the debug console.
 
+## dart.suppressTestTimeouts
+**Options:** `"never"`, `"debug"` or `"always"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to suppress test timeouts when running/debugging tests. This currently works by increasing the default timeout to 1d but will not affect tests that have explicit (non-factor) timeouts set with @timeout.
+
+- `never` - Do not suppress test timeouts.
+- `debug` - Suppress test timeouts when Debugging.
+- `always` - Suppress test timeouts both when Running and Debugging.
+
+## dart.testAdditionalArgs
+Additional args to pass to the `dart test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+
 ## dart.vmAdditionalArgs
-Additional args to pass to the Dart VM when running/debugging command line apps.
+Additional args to pass to the Dart VM when running/debugging command line apps or Dart test scripts.
 
 # Custom Color Settings
 
@@ -543,6 +563,9 @@ The path to a log file for communication between Dart Code and the analysis serv
 ## dart.dapLogFile
 The path to a log file for communication with the DAP debug adapters. This is useful when trying to diagnose issues with debugging such as missed breakpoints.
 
+## dart.dartTestLogFile
+The path to a log file for Dart test runs. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs.
+
 ## dart.devToolsLogFile
 The path to a low-traffic log file for the Dart DevTools service.
 
@@ -557,9 +580,6 @@ The path to a log file for `flutter run`, which is used to launch Flutter apps f
 
 ## dart.flutterTestLogFile
 The path to a log file for `flutter test`, which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
-
-## dart.pubTestLogFile
-The path to a log file for Dart test runs. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs. For more information on capturing these logs, see [Pub Test Logging](/docs/logging/#pub-test).
 
 ## dart.vmServiceLogFile
 The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use `${name}` in the log file name to prevent concurrent debug sessions overwriting each others logs.
