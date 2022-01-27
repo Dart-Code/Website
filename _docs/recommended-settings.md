@@ -2,7 +2,7 @@
 title: Recommended Settings
 ---
 
-There are some settings in VS Code that you may wish to change from the defaults for a better experience editing Flutter code. You can set copy these from the JSON to your VS Code User Settings or by run the **Dart: Use Recommended Settings** command from the VS Code command palette.
+There are some settings in VS Code that you may wish to change from the defaults for a better experience editing Flutter code. You can set copy these from the JSON to your VS Code User Settings or by run the **Dart: Use Recommended Settings** command from the VS Code command palette (note: to avoid cluttering the command palette, this command - like many others - only shows up when a Dart project is open).
 
 ```js
 {
