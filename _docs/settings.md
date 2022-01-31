@@ -399,10 +399,10 @@ Whether to show CodeLens actions in the editor for quick running / debugging tes
 <br />
 Whether to show TODOs in the Problems list.
 
-## dart.triggerSignatureHelpAutomatically
-**Default:** `false`.
+## dart.updateDevTools
+**Default:** `true`.
 <br />
-Whether to automatically trigger signature help when pressing keys such as , and (.
+Whether to update DevTools if you are not using the latest version. This only applies to SDKs prior to Dart v2.15, since DevTools is included in the SDK since v2.15.
 
 ## dart.updateImportsOnRename
 **Default:** `true`.
