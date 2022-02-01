@@ -14,7 +14,7 @@ You can easily configure your own key bindings, including binding to commands pr
 - `Ctrl`+`Space` - Open Code Completion
 - `Ctrl`+`.` (macOS: `Cmd`+`.`) - Open Quick Fixes
 - `F2` - Rename Symbol
-- `Shift`+`Alt`+`F` (macOS: `Cmd`+`Shift`+`F`) - Format Document
+- `Shift`+`Alt`+`F` (macOS: `Shift`+`Option`+`F`) - Format Document
 - `F12` - Go To Definition
 - `Shift`+`F12` - Find References
 - `Alt`+`Shift`+`O` - Organize Directives
