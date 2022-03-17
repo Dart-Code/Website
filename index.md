@@ -29,8 +29,8 @@ If you have any problems with the links above you can also find the [Dart extens
 
 ## Features
 
-- Edit and Debug Flutter mobile apps
-- Edit and Debug Dart command line apps
+- Edit and Debug Flutter mobile apps (launch using `F5` or the `Debug` menu)
+- Edit and Debug Dart command line apps (launch using `F5` or the `Debug` menu)
 - [Automatic hot reloads for Flutter](/docs/settings/#dartflutterhotreloadonsave)
 - [Refactorings and Code fixes (lightbulb)](/docs/refactorings-and-code-fixes/)
 - [Quickly switch between devices for Flutter](/docs/quickly-switching-between-flutter-devices/)
@@ -41,11 +41,11 @@ If you have any problems with the links above you can also find the [Dart extens
 - [Automatically finds SDKs from `PATH`](/docs/configuring-path-and-environment-variables/)
 - [Notification of new stable Dart SDK releases](/docs/settings/#dartcheckforsdkupdates)
 - [Sort Members command](/docs/commands/#dart-sort-members)
-- Support for debugging "just my code" or SDK/libraries too ([`dart.debugSdkLibraries`](/docs/settings/#dartdebugsdklibraries) and [`dart.debugExternalLibraries`](/docs/settings/#dartdebugexternallibraries))
+- Support for debugging "just my code" or SDK/libraries too ([`dart.debugSdkLibraries`](/docs/settings/#dartdebugsdklibraries) and [`dart.debugExternalPackageLibraries`](/docs/settings/#dartdebugexternalpackagelibraries))
 - [Prompts to get packages when out of date](/docs/settings/#dartprompttogetpackages)
 - Syntax highlighting
 - Code completion
-- Snippets
+- [Snippets](https://github.com/Dart-Code/Dart-Code/tree/master/snippets)
 - Realtime errors/warnings/TODOs
 - Documentation in hovers/tooltips
 - Go to Definition
@@ -56,7 +56,7 @@ If you have any problems with the links above you can also find the [Dart extens
 - Support for format-on-type (`editor.formatOnType`)
 - Workspace symbol search
 - Document symbol search
-- Organize Imports support
+- [Organize Imports command](/docs/commands/#dart-organize-imports)
 - [Pub Get Packages command](/docs/commands/#pub-get-packages)
 - [Pub Upgrade Packages command](/docs/commands/#pub-upgrade-packages)
 - [Type Hierarchy](/docs/commands/#dart-show-type-hierarchy)
@@ -87,12 +87,11 @@ A full list of supported refactors is [available here](/docs/refactorings-and-co
 This extension reports some analytics such as:
 
 - Extension load and analysis times
-- Whether you have disabled some settings (such as showing TODOs in Problems Window or Closing Labels)
-- Frequency of use of features like Hot Reload, Hot Restart and Open Observatory
-- Crashes in the Dart analysis server
-- Platform and Dart/Flutter SDK versions
+- Version numbers for the Dart/Flutter extensions and SDKs
+- The values of some settings (such as Flutter UI Guidelines and Format-on-Save)
+- Frequency of use of features like Hot Reload and Hot Restart
 
-Reporting can be disabled via the [`dart.allowAnalytics` setting](/docs/settings/#dartallowanalytics).
+Reporting can be disabled via VS Code's standard **Telemtry: Telemetry Level** setting.
 
 
 ## Release Notes
