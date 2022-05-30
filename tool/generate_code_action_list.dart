@@ -24,7 +24,7 @@ main() {
 List<CodeAction> extractIDs(File file, String type) {
   final fileContents = file.readAsStringSync();
   final matches = RegExp(
-          '${RegExp.escape(type)}[\\s\\n]*\\([\\s\\n]*\'([\\w.]+)\',[\\s\\n]*[\\d\\w\\.]+,[\\s\\n]*["\']([\\w. \\{\\}\'"&]+)["\']\\)')
+          '${RegExp.escape(type)}[\\s\\n]*\\([\\s\\n]*\'([\\w.]+)\',[\\s\\n]*[\\d\\w\\.]+,[\\s\\n]*["\']([\\w. \\{\\}\'"&]+)["\']')
       .allMatches(fileContents);
   return matches.map((match) {
     final id = match
