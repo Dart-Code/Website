@@ -16,11 +16,6 @@ Window scoped settings must be applied in your User Settings or at the workspace
 ## dart.additionalAnalyzerFileExtensions
 Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).
 
-## dart.allowAnalytics
-**Default:** `true`.
-<br />
-Whether to send analytics such as startup timings, frequency of use of features and analysis server crashes.
-
 ## dart.allowTestsOutsideTestFolder
 **Default:** `false`.
 <br />
@@ -118,6 +113,18 @@ Whether to launch external DevTools windows using Chrome or the system default b
 - `chrome` - Locate and launch Google Chrome from your system.
 - `default` - Use your systems default web browser.
 
+## dart.devToolsLocation
+**Options:** `"beside"`, `"active"` or `"external"`.
+<br />
+**Default:** `"beside"`.
+<br />
+
+Which editor/column to open [Dart DevTools](https://dart.dev/tools/dart-devtools) in.
+
+- `beside` - Open DevTools in beside the active editor.
+- `active` - Open DevTools over the top of the active editor.
+- `external` - Open DevTools externally in its own browser window.
+
 ## dart.devToolsPort
 The port number to be used for the Dart DevTools.
 
@@ -133,20 +140,15 @@ Whether to try to reuse existing DevTools windows instead of launching new ones.
 <br />
 The theme to use for Dart DevTools.
 
-## dart.embedDevTools
-**Default:** `true`.
-<br />
-Whether to load [Dart DevTools](https://dart.dev/tools/dart-devtools) embedded inside VS Code.
-
 ## dart.enableSdkFormatter
 **Default:** `true`.
 <br />
 Whether to enable the [dart_style](https://pub.dev/packages/dart_style) formatter for Dart code.
 
 ## dart.enableServerSnippets
-**Default:** `false`.
+**Default:** `true`.
 <br />
-This setting is currently unused and should be left set to 'false'. It will be updated and enabled by default in the future.
+Whether to use code snippets from the Dart Analysis Server instead of those included in the extension. Server snippets are context and language-version aware and should be preferred.
 
 ## dart.enableSnippets
 **Default:** `true`.
@@ -182,11 +184,6 @@ The programming language to use for Android apps when creating new projects usin
 <br />
 The programming language to use for iOS apps when creating new projects using the 'Flutter: New Project' command.
 
-## dart.flutterCreateOffline
-**Default:** `false`.
-<br />
-Whether to use offline mode when creating new projects with the 'Flutter: New Project' command.
-
 ## dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the 'Flutter: New Project' command.
 
@@ -199,15 +196,17 @@ Custom emulators to show in the emulator list for easier launching. If IDs match
 Whether to show Flutter icons and colors in the editor gutter.
 
 ## dart.flutterHotReloadOnSave
-**Options:** `"never"`, `"always"` or `"manual"`.
+**Options:** `"never"`, `"manual"`, `"manualIfDirty"`, `"all"` or `"allIfDirty"`.
 <br />
 **Default:** `"manual"`.
 <br />
 Whether to automatically send a Hot Reload request to Flutter apps during a debug session when saving files. Dart apps are controlled by the hotReloadOnSave setting.
 
 - `never` - Do not reload when saving.
-- `always` - Reload for all saves, manual or automatic.
-- `manual` - Only reload for manual saves (requires pressing Save explicitly if using autosave).
+- `manual` - Reload for explicit manual saves (requires pressing Save explicitly if using autosave).
+- `manualIfDirty` - Reload for explicit manual saves (requires pressing Save explicitly if using autosave) only if the saved file had changes.
+- `all` - Reload for all saves, manual or automatic.
+- `allIfDirty` - Reload for all saves, manual or automatic only if the saved file had changes.
 
 ## dart.flutterHotRestartOnSave
 **Default:** `true`.
@@ -225,7 +224,7 @@ Whether to show the Flutter Outline tree in the sidebar.
 Whether to set newly connected devices as the current device in Flutter projects.
 
 ## dart.flutterShowEmulators
-**Options:** `"local"` or `"always"`.
+**Options:** `"local"`, `"always"` or `"never"`.
 <br />
 **Default:** `"local"`.
 <br />
@@ -233,6 +232,7 @@ When to show the Flutter emulators. These are usually hidden for remote workspac
 
 - `local` - Only show for local workspaces.
 - `always` - Always show, even for remote sessions.
+- `never` - Never show emulators.
 
 ## dart.flutterShowWebServerDevice
 **Options:** `"remote"` or `"always"`.
@@ -256,15 +256,17 @@ Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers
 - `canvaskit` - Always use the CanvasKit renderer.
 
 ## dart.hotReloadOnSave
-**Options:** `"never"`, `"always"` or `"manual"`.
+**Options:** `"never"`, `"manual"`, `"manualIfDirty"`, `"all"` or `"allIfDirty"`.
 <br />
 **Default:** `"never"`.
 <br />
 Whether to automatically send a Hot Reload request to Dart apps during a debug session when saving files. Flutter apps are controlled by the flutterHotReloadOnSave setting.
 
 - `never` - Do not reload when saving.
-- `always` - Reload for all saves, manual or automatic.
-- `manual` - Only reload for manual saves (requires pressing Save explicitly if using autosave).
+- `manual` - Reload for explicit manual saves (requires pressing Save explicitly if using autosave).
+- `manualIfDirty` - Reload for explicit manual saves (requires pressing Save explicitly if using autosave) only if the saved file had changes.
+- `all` - Reload for all saves, manual or automatic.
+- `allIfDirty` - Reload for all saves, manual or automatic only if the saved file had changes.
 
 ## dart.hotReloadProgress
 **Options:** `"notification"` or `"statusBar"`.
@@ -281,6 +283,11 @@ Determines how to display Hot Restart and Hot Reload progress.
 <br />
 Whether to enable [Snippet support in LSP TextEdits](https://github.com/rust-analyzer/rust-analyzer/blob/979e788957ced1957ee9ac1da70fb97abf9fe2b1/docs/dev/lsp-extensions.md#snippet-textedit).
 
+## dart.maxCompletionItems
+**Default:** `100000`.
+<br />
+The maximum number of completion items to return from a code completion request. Updated results will be fetched as additional characters are typed. Lower numbers may improved performance. Only affects LSP for > Dart SDK 2.17.
+
 ## dart.maxLogLineLength
 **Default:** `2000`.
 <br />
@@ -295,6 +302,11 @@ Whether to normalize file casings before sending them to the LSP server. This ma
 **Default:** `true`.
 <br />
 Whether to show a notification the first few times an analysis server exception occurs.
+
+## dart.offline
+**Default:** `false`.
+<br />
+Whether to use the --offline switch for commands like `pub get` and 'Flutter: New Project'.
 
 ## dart.onlyAnalyzeProjectsWithOpenFiles
 **Default:** `false`.
@@ -341,6 +353,16 @@ EXPERIMENTAL: Whether to enable custom tracking of Flutter UI guidelines (to hid
 **Default:** `false`.
 <br />
 Whether to perform hot reload on save based on a filesystem watcher for Dart files rather than using VS Code's `onDidSave` event. This allows reloads to trigger when external tools modify Dart source files.
+
+## dart.previewSdkDaps
+**Default:** `false`.
+<br />
+PREVIEW: Whether to use the new debug adapters shipped in the Dart and Flutter SDKs. This setting will only apply if your SDK is new enough to include an appropriate version of the DAP server.
+
+## dart.projectSearchDepth
+**Default:** `3`.
+<br />
+How many levels (including the workspace roots) down the workspace to search for Dart/Flutter projects. Increasing this number may help detect Flutter projects that are deeply nested in your workspace but slow down all operations that search for projects, including extension activation.
 
 ## dart.promptToRunIfErrors
 **Default:** `true`.
@@ -468,15 +490,10 @@ Additional args to pass to the `flutter run` command. Using the `args`/`toolArgs
 The path to a directory to save Flutter screenshots.
 
 ## dart.flutterSdkPath
-The location of the Flutter SDK to use. If blank, Dart Code will attempt to find it from the project directory, `FLUTTER_ROOT` environment variable and the `PATH` environment variable.
+The location of the Flutter SDK to use. If blank (or not a valid SDK), Dart Code will attempt to find it from the project directory, `FLUTTER_ROOT` environment variable and the `PATH` environment variable.
 
 ## dart.flutterSdkPaths
-An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs. When set, the version number in the status bar can be used to quickly switch between SDKs.
-
-## dart.flutterStructuredErrors
-**Default:** `true`.
-<br />
-Whether to use Flutter's [structured error support](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9) for improved error display.
+An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs that can be used for fast SDK switching. These paths are not used directly when searching for an SDK. When this setting is populated, the version number in the status bar can be used to quickly switch between SDKs.
 
 ## dart.flutterTestAdditionalArgs
 Additional args to pass to the `flutter test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
@@ -510,10 +527,10 @@ Additional args to pass to all `pub` commands.
 Whether to automatically run `pub get` whenever `pubspec.yaml` is saved.
 
 ## dart.sdkPath
-The location of the Dart SDK to use for analyzing and executing code. If blank, Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
+The location of the Dart SDK to use for analyzing and executing code. If blank (or not a valid SDK), Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
 
 ## dart.sdkPaths
-An array of paths that either directly point to a Dart SDK or the parent directory of multiple Dart SDKs. When set, the version number in the status bar can be used to quickly switch between SDKs.
+An array of paths that either directly point to a Dart SDK or the parent directory of multiple Dart SDKs that can be used for fast SDK switching. These paths are not used directly when searching for an SDK. When this setting is populated, the SDK version number in the status bar can be used to quickly switch between SDKs.
 
 ## dart.showDartDeveloperLogs
 **Default:** `true`.
@@ -525,7 +542,7 @@ Whether to show logs from the `dart:developer` `log()` function in the debug con
 <br />
 **Default:** `"never"`.
 <br />
-Whether to suppress test timeouts when running/debugging tests. This currently works by increasing the default timeout to 1d but will not affect tests that have explicit (non-factor) timeouts set with @timeout.
+Whether to suppress test timeouts when running/debugging tests. To work properly this requires package:test version 1.20.1 or newer. For older versions, the default timeout will be increased to 1d but this will not affect tests that have explicit (non-factor) timeouts set with @timeout.
 
 - `never` - Do not suppress test timeouts.
 - `debug` - Suppress test timeouts when Debugging.
