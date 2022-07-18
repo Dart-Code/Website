@@ -26,3 +26,5 @@ You can run Dart CLI scripts in the built-in terminal with `F5` by creating a [l
 ```
 
 This will cause the application to run in the built-in terminal allowing it to read `stdin` and handle keyboard input. This comes with a trade-off, as the debug adapter is no longer able to influence the output (for example to link stack traces to source locations).
+
+Alternatively, you can set the [`dart.cliConsole`](/docs/settings/#dartcliconsole) setting either in your Workspace Settings (to apply to a whole project) or User Settings to apply to all projects.
