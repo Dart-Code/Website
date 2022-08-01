@@ -29,9 +29,9 @@ Here's a quick demo of it in action:
 
 ![Flutter: Inspect Widget command](/images/demo/flutter-inspect.gif)
 
-## Dart: Open Dev Tools
+## Dart: Open DevTools
 
-This command will open the Dev Tools application in your web browser. For more information on using this tool to debug your Flutter application visit [flutter.dev/.../debugging](https://flutter.dev/docs/testing/debugging#devtools).
+This command will open the DevTools application in your web browser. For more information on using this tool to debug your Flutter application visit [flutter.dev/.../debugging](https://flutter.dev/docs/testing/debugging#devtools).
 
 ## Flutter: Open Observatory Timeline
 
