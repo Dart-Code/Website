@@ -10,6 +10,12 @@ There are some settings in VS Code that you may wish to change from the defaults
 	// setting is global and not configurable per-language.
 	"debug.openDebug": "openOnDebugBreak",
 
+	// By default, VS Code will only switch to the Debug Console when you start
+	// debugging the first time in a session. This setting tells VS Code to always
+	// switch to the Debug Console when starting a session, so you can see the
+	// programs output.
+	"debug.internalConsoleOptions": "openOnSessionStart",
+
 	"[dart]": {
 		// Automatically format code on save and during typing of certain characters
 		// (like `;` and `}`).
