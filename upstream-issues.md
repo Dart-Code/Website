@@ -29,6 +29,12 @@ Similar to the above, but to improve VS Code's own handling of `file://` URIs wi
 This would allow copy/pasting code between files without having another step to add the relevant `import`s to make the code valid.
 
 
+## Add Command to Outline Nodes
+[github.com/microsoft/vscode#49925](https://github.com/microsoft/vscode/issues/49925)
+
+This would allow adding some actions (such as "Move to New File") to the Outline tree.
+
+
 ## Support Refactors that Require User Input
 [github.com/microsoft/vscode#1164](https://github.com/microsoft/vscode/issues/1164)
 
