@@ -361,6 +361,18 @@ main {
 	}
 }
 
+.upstream-issues {
+	h2 {
+		margin-bottom: 0;
+	}
+	h2 + p {
+		margin: 0;
+	}
+	h2 + p + p {
+		margin-top: 10px;
+	}
+}
+
 .test-results-page {
 	ul {
 		padding: 0;

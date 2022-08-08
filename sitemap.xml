@@ -7,6 +7,7 @@ layout: empty
 	<url><loc>https://dartcode.org/faq/</loc></url>
 	<url><loc>https://dartcode.org/docs/</loc></url>
 	<url><loc>https://dartcode.org/releases/</loc></url>
+	<url><loc>https://dartcode.org/upstream-issues/</loc></url>
 	{% for p in site.docs %}<url><loc>https://dartcode.org{{ p.url | replace: "/index", "" | escape }}</loc></url>{% endfor %}
 	{% for p in site.releases %}<url><loc>https://dartcode.org{{ p.url | replace: "/index", "" | escape }}</loc></url>{% endfor %}
 </urlset>
