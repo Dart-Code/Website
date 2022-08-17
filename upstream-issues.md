@@ -36,7 +36,7 @@ This would allow adding some actions (such as "Move to New File") to the Outline
 
 
 ## Support Refactors that Require User Input
-[github.com/microsoft/vscode#1164](https://github.com/microsoft/vscode/issues/1164)
+[github.com/microsoft/language-server-protocol#1164](https://github.com/microsoft/language-server-protocol/issues/1164)
 
 Currently LSP has no support for servers to ask for user input (for example, for input when refactoring) and requires a lot of custom messages.
 
