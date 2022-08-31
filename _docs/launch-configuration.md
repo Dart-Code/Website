@@ -52,6 +52,13 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 			"--dart-define", "MY_VAR=foo"
 		],
 
+		// Setting "templateFor" to a relative path will cause this config to be used for
+		// all default Run/Debug CodeLens links and running tests from the test runner.
+		// - Setting an empty string "" will apply it to the whole project (this is different
+		//   to not being set, where it will not be used as a template at all).
+		// - Setting it to "test" will apply only to files inside the "test" folder, etc.
+		"templateFor": "test",
+
 		// "debugConsole" or "terminal". If set to "terminal", will run in the built-in
 		// terminal and will support reading from `stdin`. However some other debug
 		// features may be limited.
