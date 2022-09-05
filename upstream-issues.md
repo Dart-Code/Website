@@ -5,6 +5,14 @@ body-class: upstream-issues
 
 Many feature requests for Dart-Code require some implementation in upstream repositories such as VS Code or LSP. Some of these projects use the count of 👍's as a way to gauge demand (and in the case of VS Code require a certain number to avoid being closed). Below are a list of some features and links to upstream issues they depend on. Please consider adding 👍's on the upstream issues for any features you'd like to see in Dart-Code!
 
+New items are always added to the top of the list.
+
+## Seperate Symbols for Breadcrumb/Sticky Scroll/Outline from Go-to-Symbol-in-Editor
+[github.com/microsoft/vscode#160106](https://github.com/microsoft/vscode/issues/160106)
+
+Currently, the same items must appear in the Go-to-Symbol-in-Editor list as the Outline, Stick Scroll and Breadcrumb. Some items would be nice to show in the latter, but do not appear well in the flat symbol list. It would be useful to have a way to separate these.
+
+
 ## Better Rendering for Flutter UI Guides
 [github.com/microsoft/vscode#73780](https://github.com/microsoft/vscode/issues/73780)
 
