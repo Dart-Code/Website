@@ -7,10 +7,11 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
-## Seperate Symbols for Breadcrumb/Sticky Scroll/Outline from Go-to-Symbol-in-Editor
-[github.com/microsoft/vscode#160106](https://github.com/microsoft/vscode/issues/160106)
 
-Currently, the same items must appear in the Go-to-Symbol-in-Editor list as the Outline, Stick Scroll and Breadcrumb. Some items would be nice to show in the latter, but do not appear well in the flat symbol list. It would be useful to have a way to separate these.
+## A seperate TODOs pane to keep TODO comments out of the Problems list
+[github.com/microsoft/vscode#162455](https://github.com/microsoft/vscode/issues/162455)
+
+Currently, TODO comments show up in the Problems list because there's nowhere else to show them. In projects with lots of TODOs (perhaps from other developers) this makes the Problems list hard to use. The only option is to disable TODOs (`"dart.showTodos": false`). It would be better if they could be shown seperately instead.
 
 
 ## Better Rendering for Flutter UI Guides
