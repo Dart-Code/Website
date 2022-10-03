@@ -23,6 +23,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.enumConstant` - Add enum constant '...'
 - `quickfix.add.eolAtEndOfFile` - Add EOL at end of file
 - `quickfix.add.explicitCast` - Add cast
+- `quickfix.add.extensionOverride` - Add an extension override for '...'
 - `quickfix.add.fieldFormalParameters` - Add final field formal parameters
 - `quickfix.add.keyToConstructors` - Add 'key' to constructors
 - `quickfix.add.late` - Add 'late' modifier
@@ -148,6 +149,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.annotation` - Remove the '...' annotation
 - `quickfix.remove.argument` - Remove argument
 - `quickfix.remove.argument.multi` - Remove arguments in file
+- `quickfix.remove.assertion` - Remove the assertion
 - `quickfix.remove.assignment` - Remove assignment
 - `quickfix.remove.assignment.multi` - Remove unnecessary assignments everywhere in file
 - `quickfix.remove.await` - Remove await
@@ -158,6 +160,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.constructorName` - Remove 'new'
 - `quickfix.remove.constructorName.multi` - Remove constructor names in file
 - `quickfix.remove.deadCode` - Remove dead code
+- `quickfix.remove.defaultValue` - Remove the default value
 - `quickfix.remove.deprecatedNewInCommentReference` - Remove deprecated new keyword
 - `quickfix.remove.deprecatedNewInCommentReference.multi` - Remove deprecated new keyword in file
 - `quickfix.remove.duplicateCase` - Remove duplicate case statement
@@ -189,6 +192,9 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.parenthesisInGetterInvocation` - Remove parentheses in getter invocation
 - `quickfix.remove.questionMark` - Remove the
 - `quickfix.remove.questionMark.multi` - Remove unnecessary question marks in file
+- `quickfix.remove.removePrint` - Remove print statement
+- `quickfix.remove.removePrint.multi` - Remove print statements in file
+- `quickfix.remove.required` - Remove 'required'
 - `quickfix.remove.returnedValue` - Remove invalid returned value
 - `quickfix.remove.returnedValue.multi` - Remove invalid returned values in file
 - `quickfix.remove.thisExpression` - Remove 'this' expression
@@ -202,6 +208,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.unnecessaryConst.multi` - Remove unnecessary const keywords everywhere in file
 - `quickfix.remove.unnecessaryContainer` - Remove unnecessary 'Container'
 - `quickfix.remove.unnecessaryContainer.multi` - Remove unnecessary 'Container's in file
+- `quickfix.remove.unnecessaryFinal` - Remove unnecessary 'final'
+- `quickfix.remove.unnecessaryFinal.multi` - Remove all unnecessary 'final's in file
 - `quickfix.remove.unnecessaryLate` - Remove unnecessary late keyword
 - `quickfix.remove.unnecessaryLate.multi` - Remove unnecessary late keywords everywhere in file
 - `quickfix.remove.unnecessaryNew` - Remove unnecessary new keyword
@@ -229,6 +237,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.var` - Remove 'var'
 - `quickfix.removeLint` - Remove '...'
 - `quickfix.removeSetting` - Remove '...'
+- `quickfix.rename.methodParameter` - Rename '...' to '{1}'
 - `quickfix.rename.toCamelCase` - Rename to '...'
 - `quickfix.rename.toCamelCase.multi` - Rename to camel case everywhere in file
 - `quickfix.replace.booleanWithBool` - Replace 'boolean' with 'bool'
@@ -277,6 +286,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.withVar.multi` - Replace type annotations with 'var' in file
 - `quickfix.sort.childPropertyLast` - Move child property to end of arguments
 - `quickfix.sort.childPropertyLast.multi` - Move child properties to ends of arguments everywhere in file
+- `quickfix.sort.combinators` - Sort combinators
+- `quickfix.sort.combinators.multi` - Sort combinators everywhere in file
 - `quickfix.sort.sortConstructorFirst` - Move before other members
 - `quickfix.sort.sortConstructorFirst.multi` - Move all constructors before other members
 - `quickfix.sort.sortUnnamedConstructorFirst` - Move before named constructors
@@ -288,6 +299,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.use.rethrow` - Replace throw with rethrow
 - `quickfix.use.rethrow.multi` - Replace throw with rethrow where possible in file
 - `quickfix.wrap.future` - Wrap in 'Future.value'
+- `quickfix.wrap.unawaited` - Wrap in 'unawaited'
 - `refactor.add.diagnosticPropertyReference` - Add a debug reference to this property
 - `refactor.add.returnType` - Add return type
 - `refactor.add.showCombinator` - Add explicit 'show' combinator
@@ -326,6 +338,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.encapsulateField` - Encapsulate field
 - `refactor.exchangeOperands` - Exchange operands
 - `refactor.flutter.convert.toStatefulWidget` - Convert to StatefulWidget
+- `refactor.flutter.convert.toStatelessWidget` - Convert to StatelessWidget
 - `refactor.flutter.move.down` - Move widget down
 - `refactor.flutter.move.up` - Move widget up
 - `refactor.flutter.removeWidget` - Remove this widget
