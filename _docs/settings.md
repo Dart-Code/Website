@@ -24,7 +24,7 @@ Whether to consider files ending `_test.dart` that are outside of the test direc
 ## dart.analysisServerFolding
 **Default:** `true`.
 <br />
-Whether to use folding data from the Dart analysis server instead of the built-in VS Code indent-based folding.
+Whether to use folding data from the Dart Analysis Server instead of the built-in VS Code indent-based folding.
 
 ## dart.analyzeAngularTemplates
 **Default:** `true`.
@@ -32,14 +32,14 @@ Whether to use folding data from the Dart analysis server instead of the built-i
 Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in `analysis_options.yaml`).
 
 ## dart.analyzerAdditionalArgs
-Additional arguments to pass to the Dart analysis server.
+Additional arguments to pass to the Dart Analysis Server.
 
 ## dart.analyzerSshHost
-An SSH host to run the analysis server.
+An SSH host to run the Analysis Server.
 This can be useful when modifying code on a remote machine using SSHFS.
 
 ## dart.analyzerVmServicePort
-The port number to be used for the Dart analysis server VM service.
+The port number to be used for the Dart Analysis Server VM service. This setting is intended for use by Dart Analysis Server developers.
 
 ## dart.autoImportCompletions
 **Default:** `true`.
@@ -118,7 +118,6 @@ Whether to launch external DevTools windows using Chrome or the system default b
 <br />
 **Default:** `"beside"`.
 <br />
-
 Which editor/column to open [Dart DevTools](https://dart.dev/tools/dart-devtools) in.
 
 - `beside` - Open DevTools in beside the active editor.
@@ -175,20 +174,33 @@ Whether to automatically run `adb connect 100.115.92.2:5555` when spawning the F
 <br />
 **Default:** `"kotlin"`.
 <br />
-The programming language to use for Android apps when creating new projects using the 'Flutter: New Project' command.
+The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for iOS apps when creating new projects using the 'Flutter: New Project' command.
+The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCreateOrganization
-The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the 'Flutter: New Project' command.
+The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
 ## dart.flutterCustomEmulators
 Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
+
+## dart.flutterGenerateLocalizationsOnSave
+**Options:** `"never"`, `"manual"`, `"manualIfDirty"`, `"all"` or `"allIfDirty"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to automatically run the Generate Localizations command for Flutter apps when saving .arb files.
+
+- `never` - Do not generate localizations when saving.
+- `manual` - Generate localizations for explicit manual saves (requires pressing Save explicitly if using autosave).
+- `manualIfDirty` - Generate localizations for explicit manual saves (requires pressing Save explicitly if using autosave) only if the saved file had changes.
+- `all` - Generate localizations for all saves, manual or automatic.
+- `allIfDirty` - Generate localizations for all saves, manual or automatic only if the saved file had changes.
 
 ## dart.flutterGutterIcons
 **Default:** `true`.
@@ -207,11 +219,6 @@ Whether to automatically send a Hot Reload request to Flutter apps during a debu
 - `manualIfDirty` - Reload for explicit manual saves (requires pressing Save explicitly if using autosave) only if the saved file had changes.
 - `all` - Reload for all saves, manual or automatic.
 - `allIfDirty` - Reload for all saves, manual or automatic only if the saved file had changes.
-
-## dart.flutterHotRestartOnSave
-**Default:** `true`.
-<br />
-Whether to automatically send a Hot Restart request during a debug session when saving files if Hot Reload is not available but Hot Restart is.
 
 ## dart.flutterOutline
 **Default:** `true`.
@@ -301,12 +308,12 @@ Whether to normalize file casings before sending them to the LSP server. This ma
 ## dart.notifyAnalyzerErrors
 **Default:** `true`.
 <br />
-Whether to show a notification the first few times an analysis server exception occurs.
+Whether to show a notification the first few times an Analysis Server exception occurs.
 
 ## dart.offline
 **Default:** `false`.
 <br />
-Whether to use the --offline switch for commands like `pub get` and 'Flutter: New Project'.
+Whether to use the --offline switch for commands like `pub get` and **Flutter: New Project**.
 
 ## dart.onlyAnalyzeProjectsWithOpenFiles
 **Default:** `false`.
@@ -329,11 +336,6 @@ Whether to automatically open DevTools at the start of a debug session. If embed
 <br />
 When to automatically switch focus to the test list (array to support multiple values).
 
-## dart.previewBazelWorkspaceCustomScripts
-**Default:** `false`.
-<br />
-EXPERIMENTAL: Whether to look for custom script definitions at `dart/config/intellij-plugins/flutter.json` in Bazel workspaces. Currently supported for macOS and Linux only.
-
 ## dart.previewCommitCharacters
 **Default:** `false`.
 <br />
@@ -355,12 +357,10 @@ EXPERIMENTAL: Whether to enable custom tracking of Flutter UI guidelines (to hid
 Whether to perform hot reload on save based on a filesystem watcher for Dart files rather than using VS Code's `onDidSave` event. This allows reloads to trigger when external tools modify Dart source files.
 
 ## dart.previewSdkDaps
-**Default:** `false`.
-<br />
-PREVIEW: Whether to use the new debug adapters shipped in the Dart and Flutter SDKs. This setting will only apply if your SDK is new enough to include an appropriate version of the DAP server.
+PREVIEW: Whether to use the new debug adapters shipped in the Dart and Flutter SDKs. This setting will only apply if your SDK is new enough to include an appropriate version of the DAP server. Setting the value to `true` will opt-in to the new DAPs. Setting to `false` will opt-out. Leaving as `null` will allow the extension to decide when to enable the SDK DAPs as part of a progressive rollout.
 
 ## dart.projectSearchDepth
-**Default:** `3`.
+**Default:** `5`.
 <br />
 How many levels (including the workspace roots) down the workspace to search for Dart/Flutter projects. Increasing this number may help detect Flutter projects that are deeply nested in your workspace but slow down all operations that search for projects, including extension activation.
 
@@ -375,6 +375,18 @@ Whether to prompt before running if there are errors in your project. Test scrip
 **Default:** `"never"`.
 <br />
 Whether to rename files when renaming classes with matching names (for example renaming 'class Person' inside 'person.dart'). If set to 'prompt', will ask each time before renaming. If set to 'always', the file will automatically be renamed. This setting requires using LSP and a Dart SDK of at least v2.15.
+
+## dart.runPubGetOnNestedProjects
+**Options:** `"none"`, `"both"`, `"above"` or `"below"`.
+<br />
+**Default:** `"none"`.
+<br />
+Whether to automatically run `pub get` on nested projects above or below the one where the pubspec was changed.
+
+- `none` - Only run `pub get` for the project whose pubspec was changed.
+- `both` - Run `pub get` also in parent or child projects of the one whose pubspec was changed.
+- `above` - Run `pub get` also in parent projects of the one whose pubspec was changed.
+- `below` - Run `pub get` also in child projects of the one whose pubspec was changed.
 
 ## dart.shareDevToolsWithFlutter
 **Default:** `true`.
@@ -431,10 +443,10 @@ Whether to update DevTools if you are not using the latest version. This only ap
 <br />
 Whether to automatically update imports when moving or renaming files. Currently only supports single file moves / renames.
 
-## dart.useLsp
-**Default:** `true`.
+## dart.useLegacyAnalyzerProtocol
+**Default:** `false`.
 <br />
-Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/). Some features are not supported if this setting is disabled and in a future release LSP will be the only supported option.
+Whether to use the Dart Analyzer's original protocol instead of LSP. Some features are not supported when using the legacy protocol and support for it will eventually be removed. Please file issues on GitHub in the Dart-Code repo if you find yourself needing to enable this setting.
 
 ## dart.warnWhenEditingFilesInPubCache
 **Default:** `true`.
@@ -454,7 +466,7 @@ Resource scoped settings can be set in individual workspace folder settings and 
 An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level. Excluded folders will also be ignored when detecting project types.
 
 ## dart.analyzerPath
-The path to a custom Dart analysis server.
+The path to a custom Dart Analysis Server. This setting is intended for use by Dart Analysis Server developers.
 
 ## dart.cliAdditionalArgs
 Additional args to pass to the `dart` command when running CLI scripts. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
@@ -463,6 +475,20 @@ Additional args to pass to the `dart` command when running CLI scripts. Using th
 **Default:** `true`.
 <br />
 Whether to insert parentheses and placeholders for positional and required arguments during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.
+
+## dart.customDartDapPath
+The path to a custom Dart Debug Adapter. This setting is intended for use by Dart Debug Adapter developers.
+
+## dart.customDevTools
+Custom settings for launching DevTools. This setting is intended for use by Dart DevTools developers.
+
+## dart.customFlutterDapPath
+The path to a custom Flutter Debug Adapter. This setting is intended for use by Dart Debug Adapter developers.
+
+## dart.daemonPort
+**Default:** `false`.
+<br />
+EXPERIMENTAL: The port where `flutter daemon` can be accessed if daemon is run remotely. This setting is intended for use by Google developers.
 
 ## dart.doNotFormat
 An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test directories.
@@ -506,7 +532,7 @@ Whether to pass `--track-widget-creation` to Flutter apps (required to support '
 ## dart.insertArgumentPlaceholders
 **Default:** `true`.
 <br />
-Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled. This setting does not apply to LSP, instead see the `dart.completeFunctionCalls` setting.
+Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled.
 
 ## dart.lineLength
 **Default:** `80`.
@@ -522,9 +548,15 @@ Whether to prompt to get packages when opening a project with out of date packag
 Additional args to pass to all `pub` commands.
 
 ## dart.runPubGetOnPubspecChanges
-**Default:** `true`.
+**Options:** `"always"`, `"prompt"` or `"never"`.
 <br />
-Whether to automatically run `pub get` whenever `pubspec.yaml` is saved.
+**Default:** `"always"`.
+<br />
+Whether to run `pub get` whenever `pubspec.yaml` is saved.
+
+- `always` - Always run when pubspec is changed.
+- `prompt` - Prompt to run when pubspec is changed.
+- `never` - Never run when pubspec is changed.
 
 ## dart.sdkPath
 The location of the Dart SDK to use for analyzing and executing code. If blank (or not a valid SDK), Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference.
@@ -572,10 +604,10 @@ There are several settings for enabling logging of various services used by Dart
 The port number to be used for the Dart analyzer diagnostic server.
 
 ## dart.analyzerInstrumentationLogFile
-The path to a log file for very detailed logging in the Dart analysis server that may be useful when trying to diagnose analysis server issues. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
+The path to a log file for very detailed logging in the Dart Analysis Server that may be useful when trying to diagnose Analysis Server issues. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
 
 ## dart.analyzerLogFile
-The path to a log file for communication between Dart Code and the analysis server. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
+The path to a log file for communication between Dart Code and the Analysis Server. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
 
 ## dart.dapLogFile
 The path to a log file for communication with the DAP debug adapters. This is useful when trying to diagnose issues with debugging such as missed breakpoints.
