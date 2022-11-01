@@ -8,7 +8,7 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 New items are always added to the top of the list.
 
 
-## A seperate TODOs pane to keep TODO comments out of the Problems list
+## A separate TODOs pane to keep TODO comments out of the Problems list
 [github.com/microsoft/vscode#162455](https://github.com/microsoft/vscode/issues/162455)
 
 Currently, TODO comments show up in the Problems list because there's nowhere else to show them. In projects with lots of TODOs (perhaps from other developers) this makes the Problems list hard to use. The only option is to disable TODOs (`"dart.showTodos": false`). It would be better if they could be shown seperately instead.
