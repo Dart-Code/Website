@@ -8,6 +8,13 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 New items are always added to the top of the list.
 
 
+## Tooltips on Type Hierarchy tree nodes
+
+[github.com/microsoft/vscode#165840](https://github.com/microsoft/vscode/issues/165840)
+
+The upcoming Type Hierarchy feature shows limited information about types in the tree. It would be useful to show additional information such as the package a type is from, or the relationship between the nodes (`extends`, `implements`, `with`, `on`) but currently tooltips cannot be customised and just repeat the node label.
+
+
 ## A separate TODOs pane to keep TODO comments out of the Problems list
 [github.com/microsoft/vscode#162455](https://github.com/microsoft/vscode/issues/162455)
 
