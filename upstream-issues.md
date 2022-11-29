@@ -27,18 +27,6 @@ Currently, TODO comments show up in the Problems list because there's nowhere el
 The current implementation of Flutter UI Guides has many display issues because VS Code currently has no good APIs for drawing lines between code.
 
 
-## Clickable package: Links in Test Peek Output
-[github.com/microsoft/vscode#157500](https://github.com/microsoft/vscode/issues/157500)
-
-Being able to contribute link providers would allow URIs like `package:foo` to be made clickable links in the Test Peek output windows.
-
-
-## Clickable file: Links in Test Peek Output
-[github.com/microsoft/vscode#150702](https://github.com/microsoft/vscode/issues/150702)
-
-Similar to the above, but to improve VS Code's own handling of `file://` URIs with `:line:col` on the end.
-
-
 ## Bring Imports with Copy/Pasted Code
 [github.com/microsoft/vscode#30066](https://github.com/microsoft/vscode/issues/30066)
 
