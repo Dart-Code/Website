@@ -139,6 +139,17 @@ Whether to try to reuse existing DevTools windows instead of launching new ones.
 <br />
 The theme to use for Dart DevTools.
 
+## dart.documentation
+**Options:** `"full"`, `"summary"` or `"none"`.
+<br />
+**Default:** `"full"`.
+<br />
+What level of documentation to show in Hovers and Code Completion details. This setting is only supported for Dart SDKs after v2.18.
+
+- `full` - Show full documentation.
+- `summary` - Show short documentatin summary.
+- `none` - Do not show documentation.
+
 ## dart.enableSdkFormatter
 **Default:** `true`.
 <br />
@@ -186,6 +197,9 @@ The programming language to use for iOS apps when creating new projects using th
 ## dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
 
+## dart.flutterCreatePlatforms
+The platforms to enable for new projects created using the **Flutter: New Project** command. If unset, all platforms will be enabled.
+
 ## dart.flutterCustomEmulators
 Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
 
@@ -224,6 +238,11 @@ Whether to automatically send a Hot Reload request to Flutter apps during a debu
 **Default:** `true`.
 <br />
 Whether to show the Flutter Outline tree in the sidebar.
+
+## dart.flutterRememberSelectedDevice
+**Default:** `true`.
+<br />
+Whether to remember which device was last (explicitly) selected for each project. When the remembered device is selected, it will prevent newly-connected mobile devices from being automatically selected (regardless of the `#dart.flutterSelectDeviceWhenConnected#` setting).
 
 ## dart.flutterSelectDeviceWhenConnected
 **Default:** `true`.
@@ -431,7 +450,7 @@ Whether to show CodeLens actions in the editor for quick running / debugging tes
 ## dart.showTodos
 **Default:** `true`.
 <br />
-Whether to show TODOs in the Problems list.
+Whether to show TODOs in the Problems list. Can be a boolean to enable all TODO comments (TODO, FIXME, HACK, UNDONE) or an array of which types to enable. Older Dart SDKs may not support some TODO kinds.
 
 ## dart.updateDevTools
 **Default:** `true`.
@@ -486,8 +505,6 @@ Custom settings for launching DevTools. This setting is intended for use by Dart
 The path to a custom Flutter Debug Adapter. This setting is intended for use by Dart Debug Adapter developers.
 
 ## dart.daemonPort
-**Default:** `false`.
-<br />
 EXPERIMENTAL: The port where `flutter daemon` can be accessed if daemon is run remotely. This setting is intended for use by Google developers.
 
 ## dart.doNotFormat
@@ -504,7 +521,7 @@ Whether to automatically commit the selected completion item when pressing certa
 Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
 
 ## dart.flutterAdditionalArgs
-Additional args to pass to all `flutter` commands including `flutter daemon`. Do not use this to pass arguments to your Flutter app, use the `args` field in a `launch.json` or the `#dart.flutterRunAdditionalArgs#` setting.
+Additional args to pass to all `flutter` commands including `flutter daemon`. Do not use this to pass arguments to your Flutter app, use the `args` field in a `launch.json` or the `dart.flutterRunAdditionalArgs` setting.
 
 ## dart.flutterAttachAdditionalArgs
 Additional args to pass to the `flutter attach` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
@@ -537,12 +554,12 @@ Whether to insert argument placeholders during code completions. This feature is
 ## dart.lineLength
 **Default:** `80`.
 <br />
-The maximum length of a line of code. This is used by the document formatter.
+The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section if your settings to match.
 
 ## dart.promptToGetPackages
 **Default:** `true`.
 <br />
-Whether to prompt to get packages when opening a project with out of date packages.
+Whether to prompt to get/upgrade packages when opening a project with missing/out of date packages.
 
 ## dart.pubAdditionalArgs
 Additional args to pass to all `pub` commands.
