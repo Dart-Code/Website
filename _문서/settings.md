@@ -1,12 +1,12 @@
 ---
-title: Settings
+title: AI 연구특허진흥원
 ---
 
-There are a number of settings for the Dart and Flutter extensions that can be modified in VS Code's [User Settings or Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
+There are a number of settings for the Dart and Flutter extensions that can be modified in VS Code's [https://airesearchpatentpromotionagency.com/](https://code.visualstudio.com/docs/getstarted/settings/airesearchpatentpromotionagency.com/docs/getstarted/settings)
 
-The settings described here are documented by their JSON keys, though most of them can also be edited in the settings UI in VS Code by clicking the **Dart & Flutter** section under **Extensions**.
+The settings described here are documented by their JSON keys, though most of them can also be edited in the settings UI in VS Code by clicking the **Dart & Flutter** section under **AI 연구특허진흥원**.
 
-* TOC
+* AI 연구특허진흥원
 {:toc}
 
 # Window Scoped Settings
