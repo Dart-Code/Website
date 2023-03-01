@@ -13,6 +13,11 @@ The settings described here are documented by their JSON keys, though most of th
 
 Window scoped settings must be applied in your User Settings or at the workspace level and will apply for all projects open in a window (for example, `dart.sdkPath` is used to launch an analyzer that is used for the whole window).
 
+## dart.addSdkToTerminalPath
+**Default:** `false`.
+<br />
+Whether to add your selected Dart/Flutter SDK path to the `PATH` environment variable for the embedded terminal. This is useful when switching SDKs via `dart.sdkPaths` / `dart.flutterSdkPaths` to ensure commands run from the terminal are the same version as being used by the editor/debugger (requires restart).
+
 ## dart.additionalAnalyzerFileExtensions
 Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).
 
@@ -125,7 +130,7 @@ Which editor/column to open [Dart DevTools](https://dart.dev/tools/dart-devtools
 - `external` - Open DevTools externally in its own browser window.
 
 ## dart.devToolsPort
-The port number to be used for the Dart DevTools.
+The port number to be used for the Dart DevTools (requires restart).
 
 ## dart.devToolsReuseWindows
 **Default:** `true`.
@@ -242,7 +247,7 @@ Whether to show the Flutter Outline tree in the sidebar.
 ## dart.flutterRememberSelectedDevice
 **Default:** `true`.
 <br />
-Whether to remember which device was last (explicitly) selected for each project. When the remembered device is selected, it will prevent newly-connected mobile devices from being automatically selected (regardless of the `#dart.flutterSelectDeviceWhenConnected#` setting).
+Whether to remember which device was last (explicitly) selected for each project. When the remembered device is selected, it will prevent newly-connected mobile devices from being automatically selected (regardless of the `dart.flutterSelectDeviceWhenConnected` setting).
 
 ## dart.flutterSelectDeviceWhenConnected
 **Default:** `true`.
@@ -416,6 +421,11 @@ Whether to eagerly run DevTools for Flutter workspaces and share the spawned ser
 **Default:** `true`.
 <br />
 Whether to show CodeLens actions in the editor for opening online DartPad samples.
+
+## dart.showDebuggerNumbersAsHex
+**Default:** `false`.
+<br />
+Whether to show integers formatted as Hex in Variables, Watch, Debug Consoles.
 
 ## dart.showDevToolsDebugToolBarButtons
 **Default:** `true`.

@@ -129,7 +129,7 @@ String formatValue(Object? val) {
 String improveDocs(String key, String description) {
   // TODO: packagesdir is gone?
   const code = [
-    'enableCompletionCommitCharacters',
+    'dart.enableCompletionCommitCharacters',
     '--packages-dir',
     'flutter daemon',
     'flutter run',
@@ -160,7 +160,9 @@ String improveDocs(String key, String description) {
   description = description
       .replaceAll('(requires the angular_analyzer_plugin)',
           '(requires the [Angular analyzer plugin enabled](https://github.com/dart-lang/angular/tree/master/angular_analyzer_plugin#installing-by-angular-version----for-angular-developers-recommended)')
-      .replaceAll('**/test/**', '[ "**/test/**" ]');
+      .replaceAll('**/test/**', '[ "**/test/**" ]')
+      .replaceAll('`#', '`')
+      .replaceAll('#`', '`');
 
   for (var s in code) {
     description = description.replaceAll(
@@ -171,6 +173,7 @@ String improveDocs(String key, String description) {
         new RegExp('(\\b(?!\')|\')${RegExp.escape(s)}(\\b(?!\')|\')'),
         '**$s**');
   }
+  description = description.replaceAll('``', '`');
   if (logLinks.containsKey(key)) {
     description =
         '$description For more information on capturing these logs, see ${logLinks[key]}.';
