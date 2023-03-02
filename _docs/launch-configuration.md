@@ -47,9 +47,15 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 			"RELEASE_MODE": true
 		}
 
-		// Arguments to be passed to the Dart or Flutter app.
+		// Arguments to be passed to the Dart script being run (passed to `main()`).
 		"args": [
-			"--dart-define", "MY_VAR=foo"
+			"one", "two",
+		],
+		
+		// Arguments to be passed to the Dart or Flutter tool.
+		"toolArgs": [
+			"--dart-define", "MY_VAR=foo",
+			"--enable-experiment=patterns",
 		],
 
 		// Setting "templateFor" to a relative path will cause this config to be used for
