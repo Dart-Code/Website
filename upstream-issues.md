@@ -8,6 +8,13 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 New items are always added to the top of the list.
 
 
+## Editor Insets
+
+[github.com/microsoft/vscode#85682](https://github.com/microsoft/vscode/issues/85682)
+
+Editor Insets allow inserting content between lines in the editor. This might allow improved DartDoc previews, for example showing images and/or videos directly in the editor that are included in the markdown content.
+
+
 ## Tooltips on Type Hierarchy tree nodes
 
 [github.com/microsoft/vscode#165840](https://github.com/microsoft/vscode/issues/165840)
