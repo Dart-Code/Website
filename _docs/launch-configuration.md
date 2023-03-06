@@ -47,15 +47,34 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 			"RELEASE_MODE": true
 		}
 
-		// Arguments to be passed to the Dart script being run (passed to `main()`).
-		"args": [
-			"one", "two",
+		// Arguments to be passed to the Dart VM when running Dart CLI scripts.
+		// 
+		// These arguments appear between "dart" and "run":
+		//
+		//     dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)
+		"vmAdditionalArgs": [
+			"--vm_name=foo",
 		],
 		
 		// Arguments to be passed to the Dart or Flutter tool.
+		// 
+		// These arguments appear after "dart run" or "flutter run":
+		//
+		//     dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)
+		//     flutter run (toolArgs) -t lib/main.dart (args)
 		"toolArgs": [
 			"--dart-define", "MY_VAR=foo",
 			"--enable-experiment=patterns",
+		],
+
+		// Arguments to be passed to the Dart script being run (passed to `main()`).
+		//
+		// These arguments appear after the script being run.
+		//
+		//     dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)
+		//     flutter run (toolArgs) -t lib/main.dart (args)
+		"args": [
+			"one", "two",
 		],
 
 		// Setting "templateFor" to a relative path will cause this config to be used for
