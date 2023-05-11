@@ -20,22 +20,24 @@ Additionally, analytics will be disabled if you have opted-out using the legacy 
 
 The following events are recorded by the Dart-Code extension:
 
-- `ExtensionActivated`
-- `ExtensionRestart`
-- `ExtensionSdkDetectionFailure`
-- `DebuggerActivated`
+- `Extension_Activated`
+- `Extension_Restart`
+- `SdkDetectionFailure`
+- `Debugger_Activated`
   In addition to the common properties below, this event includes the following properties:
    - `debuggerPreference`: Whether debugging is to to 'just my code', or includes external package and SDK sources
    - `debuggerType`: The type (Dart, Flutter, DartTest, FlutterTest) of debug session being started
    - `debuggerRunType`: Whether the debug session is Run (without Debugging) or Debug
    - `debuggerAdapterType`: Whether debugging is using the SDK or legacy debug adapter implementation
-- `DebuggerOpenDevTools`
-- `FlutterSurveyShown`
-- `FlutterSurveyClicked`
-- `FlutterSurveyDismissed`
-- `FlutterOutlineActivated`
-- `CommandDartNewProject`
-- `CommandRestartAnalyzer`
+- `DevTools_Opened`
+- `FlutterSurvey_Shown`
+- `FlutterSurvey_Clicked`
+- `FlutterSurvey_Dismissed`
+- `FlutterOutline_Activated`
+- `Command_DartNewProject`
+- `Command_FlutterNewProject`
+- `Command_RestartAnalyzer`
+- `Command_ForceReanalyze`
 
 # Common Properties
 
