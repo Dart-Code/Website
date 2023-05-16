@@ -123,6 +123,16 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 			// (see the for field above).
 			"title": "${debugType} (release)"
 		},
+
+		// customTool is to support some specific complex configurations where instead of running
+		// "dart" or "flutter" when starting debug sessions, another tool/script should be invoked.
+		// Custom tools must be completely compatible with the process they are replacing (in many
+		// cases they may just be wrapper scripts).
+		//
+		// See https://github.com/dart-lang/sdk/tree/master/pkg/dds/tool/dap#readme for more details
+		// on how these values are used by the debug adapter.
+		"customTool": "my_custom_dart",
+		"customToolReplacesArgs": 1,
 	}
 ]
 ```
