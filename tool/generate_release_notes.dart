@@ -40,7 +40,10 @@ main() async {
   }
 
   issuesByLabel.forEach((label, issues) {
-    final category = label.substring(3, 4).toUpperCase() + label.substring(4);
+    var category = label.substring(3, 4).toUpperCase() + label.substring(4);
+    if (category == 'Other') {
+      category = 'Misc';
+    }
     print('## $category');
     print('');
     issues.forEach((issueNumber, issue) {
