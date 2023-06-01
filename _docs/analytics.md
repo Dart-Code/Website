@@ -36,6 +36,7 @@ The following events are recorded by the Dart-Code extension:
 - `FlutterOutline_Activated`
 - `Command_DartNewProject`
 - `Command_FlutterNewProject`
+- `Command_AddDependency`
 - `Command_RestartAnalyzer`
 - `Command_ForceReanalyze`
 
