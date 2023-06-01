@@ -14,7 +14,7 @@ The settings described here are documented by their JSON keys, though most of th
 Window scoped settings must be applied in your User Settings or at the workspace level and will apply for all projects open in a window (for example, `dart.sdkPath` is used to launch an analyzer that is used for the whole window).
 
 ## dart.addSdkToTerminalPath
-**Default:** `false`.
+**Default:** `true`.
 <br />
 Whether to add your selected Dart/Flutter SDK path to the `PATH` environment variable for the embedded terminal. This is useful when switching SDKs via `dart.sdkPaths` / `dart.flutterSdkPaths` to ensure commands run from the terminal are the same version as being used by the editor/debugger (requires restart).
 
@@ -37,11 +37,14 @@ Whether to use folding data from the Dart Analysis Server instead of the built-i
 Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in `analysis_options.yaml`).
 
 ## dart.analyzerAdditionalArgs
-Additional arguments to pass to the Dart Analysis Server.
+Additional arguments to pass to the Dart Analysis Server. This setting is can be useful for troubleshooting issues with the Dart Analysis Server.
 
 ## dart.analyzerSshHost
 An SSH host to run the Analysis Server.
 This can be useful when modifying code on a remote machine using SSHFS.
+
+## dart.analyzerVmAdditionalArgs
+Additional arguments to pass to the VM running the Dart Analysis Server. This setting is can be useful for troubleshooting issues with the Dart Analysis Server.
 
 ## dart.analyzerVmServicePort
 The port number to be used for the Dart Analysis Server VM service. This setting is intended for use by Dart Analysis Server developers.
@@ -180,6 +183,11 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 <br />
 Whether to call toString() on objects when rendering them in debug views (such as the Variables, Watch and Hovers views). Only applies to views of 100 or fewer values for performance reasons.
 
+## dart.experimentalRefactors
+**Default:** `false`.
+<br />
+Whether to enable experimental (possibly unfinished or unstable) refactors on the lightbulb menu. This setting is intended for use by Dart Analysis Server developers or users that want to try out and provide feedback on in-progress refactors.
+
 ## dart.flutterAdbConnectOnChromeOs
 **Default:** `false`.
 <br />
@@ -309,6 +317,11 @@ Determines how to display Hot Restart and Hot Reload progress.
 - `notification` - Hot reload progress will be shown in a toast notification.
 - `statusBar` - Hot reload progress will be shown only in the status bar.
 
+## dart.includeDependenciesInWorkspaceSymbols
+**Default:** `true`.
+<br />
+Whether to include symbols from the SDK and package dependencies in the "Go to Symbol in Workspace" (`cmd/ctrl`+`T`) list. This can only be disabled when using Dart 3.0 / Flutter 3.10 or later.
+
 ## dart.lspSnippetTextEdits
 **Default:** `true`.
 <br />
@@ -432,11 +445,6 @@ Whether to show integers formatted as Hex in Variables, Watch, Debug Consoles.
 <br />
 Whether to show DevTools buttons in the floating Debug toolbar.
 
-## dart.showIgnoreQuickFixes
-**Default:** `true`.
-<br />
-Whether to show quick fixes for ignoring hints and lints.
-
 ## dart.showInspectorNotificationsForWidgetErrors
 **Default:** `true`.
 <br />
@@ -461,6 +469,13 @@ Whether to show CodeLens actions in the editor for quick running / debugging tes
 **Default:** `true`.
 <br />
 Whether to show TODOs in the Problems list. Can be a boolean to enable all TODO comments (TODO, FIXME, HACK, UNDONE) or an array of which types to enable. Older Dart SDKs may not support some TODO kinds.
+
+## dart.testInvocationMode
+**Options:** `"name"` or `"line"`.
+<br />
+**Default:** `"name"`.
+<br />
+How to identify tests when running/debugging. `name` is compatible with older versions of `package:test` but cannot handle some complex/dynamic test names. `line` will prefer to run tests by their line numbers (when available) and fall back to `name` only if the line number is unavailable.
 
 ## dart.updateDevTools
 **Default:** `true`.
@@ -611,7 +626,11 @@ Whether to suppress test timeouts when running/debugging tests. To work properly
 Additional args to pass to the `dart test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ## dart.vmAdditionalArgs
-Additional args to pass to the Dart VM when running/debugging command line apps or Dart test scripts.
+Arguments to be passed to the Dart VM when running Dart CLI scripts.
+
+These arguments appear between "dart" and "run":
+
+`dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)`
 
 # Custom Color Settings
 
@@ -628,7 +647,7 @@ The color of the Flutter UI Guidelines shown in the editor.
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/).
 
 ## dart.analyzerDiagnosticsPort
-The port number to be used for the Dart analyzer diagnostic server.
+The port number to be used for the Dart analyzer diagnostic server. This setting is can be useful for troubleshooting issues with the Dart Analysis Server.
 
 ## dart.analyzerInstrumentationLogFile
 The path to a log file for very detailed logging in the Dart Analysis Server that may be useful when trying to diagnose Analysis Server issues. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
