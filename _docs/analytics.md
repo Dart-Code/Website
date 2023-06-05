@@ -29,6 +29,7 @@ The following events are recorded by the Dart-Code extension:
    - `debuggerType`: The type (Dart, Flutter, DartTest, FlutterTest) of debug session being started
    - `debuggerRunType`: Whether the debug session is Run (without Debugging) or Debug
    - `debuggerAdapterType`: Whether debugging is using the SDK or legacy debug adapter implementation
+   - `debuggerExceptionBreakMode`: Which pause-on-exception settings are used while debugging
 - `DevTools_Opened`
 - `FlutterSurvey_Shown`
 - `FlutterSurvey_Clicked`
