@@ -490,7 +490,7 @@ Whether to automatically update imports when moving or renaming files. Currently
 ## dart.useLegacyAnalyzerProtocol
 **Default:** `false`.
 <br />
-Whether to use the Dart Analyzer's original protocol instead of LSP. Some features are not supported when using the legacy protocol and support for it will eventually be removed. Please file issues on GitHub in the Dart-Code repo if you find yourself needing to enable this setting.
+Whether to use the Dart Analyzer's original protocol instead of LSP. Some features are not supported when using the legacy protocol and support for it will eventually be removed. Please file issues on GitHub in the Dart Code repo if you find yourself needing to enable this setting.
 
 ## dart.warnWhenEditingFilesInPubCache
 **Default:** `true`.

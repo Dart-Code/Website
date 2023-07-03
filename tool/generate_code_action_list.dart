@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:path/path.dart';
 
 const fixFilePath =
-    '../../Google/dart-sdk/sdk/pkg/analysis_server/lib/src/services/correction/fix.dart';
+    '../../../Google/dart-sdk/sdk/pkg/analysis_server/lib/src/services/correction/fix.dart';
 const assistFilePath =
-    '../../Google/dart-sdk/sdk/pkg/analysis_server/lib/src/services/correction/assist.dart';
+    '../../../Google/dart-sdk/sdk/pkg/analysis_server/lib/src/services/correction/assist.dart';
 
 main() {
   Directory.current = dirname(Platform.script.toFilePath());
@@ -14,7 +14,7 @@ main() {
     ...extractIDs(File(assistFilePath), 'AssistKind'),
   ];
 
-  ids.sort((c1, c2) => c1.id.compareTo(c2.id));
+  ids.sort((c1, c2) => c1.id != c2.id ? c1.id.compareTo(c2.id) : c1.name.compareTo(c2.name));
 
   printCodeActionsList(ids);
   print('');

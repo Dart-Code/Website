@@ -182,9 +182,10 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.break.multi` - Remove unnecessary breaks in file
 - `quickfix.remove.character` - Remove the 'U+...' code point
 - `quickfix.remove.comparison` - Remove comparison
-- `quickfix.remove.comparison.multi` - Remove type check everywhere in file
 - `quickfix.remove.comparison.multi` - Remove comparisons in file
+- `quickfix.remove.comparison.multi` - Remove type check everywhere in file
 - `quickfix.remove.const` - Remove const
+- `quickfix.remove.constructor` - Remove the constructor
 - `quickfix.remove.constructorName` - Remove 'new'
 - `quickfix.remove.constructorName.multi` - Remove constructor names in file
 - `quickfix.remove.deadCode` - Remove dead code
@@ -364,7 +365,6 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.wrap.future` - Wrap in 'Future.value'
 - `quickfix.wrap.unawaited` - Wrap in 'unawaited'
 - `refactor.add.diagnosticPropertyReference` - Add a debug reference to this property
-- `refactor.add.notNullAssert` - Add a not-null assertion
 - `refactor.add.returnType` - Add return type
 - `refactor.add.showCombinator` - Add explicit 'show' combinator
 - `refactor.add.typeAnnotation` - Add type annotation
