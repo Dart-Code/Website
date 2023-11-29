@@ -91,6 +91,9 @@ main() async {
 
   outputFile.writeAsStringSync(output.toString());
   print('Done!');
+  print('');
+  stderr.writeln(
+      "Don't forget to review the relies-on-sdk-changes issues for items shipped in a recent stable release!");
 }
 
 String _getPrimaryLabel(List<Object?> labels) {
