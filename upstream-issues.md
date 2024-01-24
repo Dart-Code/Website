@@ -8,6 +8,12 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 New items are always added to the top of the list.
 
 
+## Improved File Selection API
+
+[github.com/microsoft/vscode#203326](https://github.com/microsoft/vscode/issues/203326)
+
+Currently when selecting an existing file as a target for the "Move to File" refactor, VS Code shows a prompt "Do you want to replace it?". This is misleading because the file is not replaced, the items being moved are simply merged into it. Having a better API would allow this prompt to be avoided.
+
 ## Editor Insets
 
 [github.com/microsoft/vscode#85682](https://github.com/microsoft/vscode/issues/85682)
