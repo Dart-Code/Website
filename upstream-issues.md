@@ -21,13 +21,6 @@ Currently when selecting an existing file as a target for the "Move to File" ref
 Editor Insets allow inserting content between lines in the editor. This might allow improved DartDoc previews, for example showing images and/or videos directly in the editor that are included in the markdown content.
 
 
-## Tooltips on Type Hierarchy tree nodes
-
-[github.com/microsoft/vscode#165840](https://github.com/microsoft/vscode/issues/165840)
-
-The upcoming Type Hierarchy feature shows limited information about types in the tree. It would be useful to show additional information such as the package a type is from, or the relationship between the nodes (`extends`, `implements`, `with`, `on`) but currently tooltips cannot be customised and just repeat the node label.
-
-
 ## A separate TODOs pane to keep TODO comments out of the Problems list
 [github.com/microsoft/vscode#162455](https://github.com/microsoft/vscode/issues/162455)
 
@@ -58,28 +51,10 @@ This would allow adding some actions (such as "Move to New File") to the Outline
 Currently LSP has no support for servers to ask for user input (for example, for input when refactoring) and requires a lot of custom messages.
 
 
-## Automatically Set PATH in Terminals to Match the Current SDK
-[github.com/microsoft/vscode#99878](https://github.com/microsoft/vscode/issues/99878)
-
-It should be possible to set the `PATH` env in the built-in terminal to match the Dart/Flutter SDK selected in VS Code, but currently VS Code's support for setting `PATH` does not work correctly on macOS.
-
-
 ## Allow Docking Documentation in a Seperate Panel
 [github.com/microsoft/vscode#149270](https://github.com/microsoft/vscode/issues/149270)
 
 Flutter's very detailed dartdocs can often result in hovers obscuring the code you're trying to read. Being able to doc the documentation for hovers/code completion would avoid this.
-
-
-## Improve Handling of Save All for Triggering Hot Reloads
-[github.com/microsoft/vscode#86087](https://github.com/microsoft/vscode/issues/86087)
-
-VS Code does not currently expose a Save All event, so any events that should run after save (such as hot reload) need to perform their own debouncing, which introduces a delay when saving a single file.
-
-
-## Diagnostics Appear at the Very Bottom of Long Srollable Hovers
-[github.com/microsoft/vscode#73120](https://github.com/microsoft/vscode/issues/73120)
-
-When hovering over some squiggled code to read the diagnostic message, you may need to scroll down past a large amount of documentation because errors are rendered at the very bottom and not always visible.
 
 
 ## Signature Help Popup is Not Syntax Highlighted
@@ -122,18 +97,6 @@ This would allow improved formatting of diagnostic message ([for example lint ex
 [github.com/microsoft/vscode#102236](https://github.com/microsoft/vscode/issues/102236)
 
 Although the debug adapter protocol has support for stepping by line or instruction, VS Code does not expose any UI to select this.
-
-
-## Type-Aware Code Completion
-[github.com/microsoft/vscode#127516](https://github.com/microsoft/vscode/issues/127516)
-
-Currently VS Code ranks code completions as you type based on text heuristics with no knowledge of types which often puts less relevant items at the top. Being able to quickly filter completion to only things that are the right type would make it much easier to find the right symbols.
-
-
-## Snippet Markup in Quick-Fix/Refactor Edits
-[github.com/microsoft/language-server-protocol#724](https://github.com/microsoft/language-server-protocol/issues/724)
-
-Supporting snippet markup in Code Actions makes it easier to set things like cursor position during quick fixes/refactors. Currently Dart-Code is using non-standard middleware and [a proposal from the Rust analyzer team](https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/lsp-extensions.md#snippet-textedit) in order to set selections correctly.
 
 
 ## Syntax Highlighting in Code Completion Details
