@@ -7,15 +7,24 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
+## Allow Grouping of edits in Fix All in Workspace by default
+[github.com/microsoft/vscode#207580](https://github.com/microsoft/vscode/issues/207580)
+
+An upcoming feature "Fix All in Workspace" allows previewing changes before applying them. Dart provides groups for these edits but by default VS Code does not show them unless you use the context menu to enable grouping. It would be better if we could tell VS Code to group by default.
+
+
+## Support pre-ticking edits when previewing Fix All in Workspace
+[github.com/microsoft/vscode#207578](https://github.com/microsoft/vscode/issues/207578)
+
+An upcoming feature "Fix All in Workspace" allows previewing changes before applying them. By default, VS Code has all changes unticked and requires manually ticking each branch. It would be better if we could tell VS Code to pre-tick all changes.
+
 
 ## Improved File Selection API
-
 [github.com/microsoft/vscode#203326](https://github.com/microsoft/vscode/issues/203326)
 
 Currently when selecting an existing file as a target for the "Move to File" refactor, VS Code shows a prompt "Do you want to replace it?". This is misleading because the file is not replaced, the items being moved are simply merged into it. Having a better API would allow this prompt to be avoided.
 
 ## Editor Insets
-
 [github.com/microsoft/vscode#85682](https://github.com/microsoft/vscode/issues/85682)
 
 Editor Insets allow inserting content between lines in the editor. This might allow improved DartDoc previews, for example showing images and/or videos directly in the editor that are included in the markdown content.
