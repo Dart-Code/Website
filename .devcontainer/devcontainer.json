@@ -1,5 +1,5 @@
 {
-	"name": "GitHub Pages",
-	"dockerFile": "Dockerfile",
-	// "appPort": 8123
+	"name": "Jekyll",
+	"image": "mcr.microsoft.com/devcontainers/jekyll:1-bullseye",
+	"postCreateCommand": "jekyll --version"
 }
