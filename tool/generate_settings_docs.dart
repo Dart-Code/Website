@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:collection/collection.dart';
 import 'package:path/path.dart';
 
 const windowScopedDescription =
@@ -36,61 +37,70 @@ main() {
           configOptions[key]['scope'] == 'machine-overridable') &&
       !(isDiagnostics(key));
 
-  printSettings(configOptions, 'Window Scoped Settings',
-      windowScopedDescription, isWindowScoped);
-  printSettings(configOptions, 'Resource Scoped Settings',
-      resourceScopedDescription, isResourceScoped);
+  printSettings(configs, 'Window Scoped Settings', windowScopedDescription,
+      isWindowScoped);
+  printSettings(configs, 'Resource Scoped Settings', resourceScopedDescription,
+      isResourceScoped);
   printColorSettings(colorOptions, 'Custom Color Settings', colorsDescription);
-  printSettings(configOptions, 'Diagnostic Settings', diagnosticsDescription,
-      isDiagnostics);
+  printSettings(
+      configs, 'Diagnostic Settings', diagnosticsDescription, isDiagnostics);
 }
 
 void printSettings(
-  Map<String, dynamic> configOptions,
+  List<Map<String, dynamic>> configs,
   String title,
   String description,
   bool Function(String key) filter,
 ) {
-  final settingNames = configOptions.keys.where(filter).toList()..sort();
-
-  if (settingNames.isEmpty) {
-    return;
-  }
   print('# $title');
   print('');
   print(description);
   print('');
 
-  for (var name in settingNames) {
-    final options = configOptions[name];
-    // Check whether we'll need to note a default value.
-    final defaultValue = options['default'];
-    final hasDefault = defaultValue != null &&
-        (defaultValue is! List || defaultValue.length != 0);
+  for (var config in configs
+      .sortedBy((c) => c['title'] as String)
+      .sortedBy<num>((c) => c['order'] as int)) {
+    final sectionName = config['title'] as String;
+    final configOptions = config['properties'] as Map<String, dynamic>;
+    final settingNames = configOptions.keys.where(filter).toList()..sort();
 
-    final enumValues = options['enum'];
-    final enumDescriptions = options['enumDescriptions'];
-
-    print('## $name');
-    if (enumValues != null && enumValues is List) {
-      print('**Options:** '
-          '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join('`, `')}` '
-          'or `${formatValue(enumValues.last)}`.');
-      print('<br />');
+    if (settingNames.isEmpty) {
+      return;
     }
-    if (hasDefault) {
-      print('**Default:** `${formatValue(options['default'])}`.');
-      print('<br />');
-    }
-    print(improveDocs(
-        name, options['markdownDescription'] ?? options['description']));
-    if (enumDescriptions != null && enumDescriptions is List) {
-      print('');
-      for (var i = 0; i < enumValues.length; i++) {
-        print('- `${enumValues[i]}` - ${enumDescriptions[i]}.');
-      }
-    }
+    print('## $sectionName');
     print('');
+
+    for (final name in settingNames) {
+      final options = configOptions[name];
+      // Check whether we'll need to note a default value.
+      final defaultValue = options['default'];
+      final hasDefault = defaultValue != null &&
+          (defaultValue is! List || defaultValue.length != 0);
+
+      final enumValues = options['enum'];
+      final enumDescriptions = options['enumDescriptions'];
+
+      print('### $name');
+      if (enumValues != null && enumValues is List) {
+        print('**Options:** '
+            '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join('`, `')}` '
+            'or `${formatValue(enumValues.last)}`.');
+        print('<br />');
+      }
+      if (hasDefault) {
+        print('**Default:** `${formatValue(options['default'])}`.');
+        print('<br />');
+      }
+      print(improveDocs(
+          name, options['markdownDescription'] ?? options['description']));
+      if (enumDescriptions != null && enumDescriptions is List) {
+        print('');
+        for (var i = 0; i < enumValues.length; i++) {
+          print('- `${enumValues[i]}` - ${enumDescriptions[i]}.');
+        }
+      }
+      print('');
+    }
   }
 }
 
