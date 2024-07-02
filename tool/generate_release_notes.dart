@@ -70,7 +70,7 @@ main() async {
       category = 'Features/Fixes Enabled with Future SDKs';
       text =
           'The following items depend on changes to the Dart/Flutter SDKs that have not yet been released to stable channels. '
-          'They may be able to test in the current beta/master channels and will show up in future SDK releases.';
+          'They may be available to test in the current beta/master channels and will show up in future SDK releases.';
     } else {
       category = _getLabelTitle(label);
     }
