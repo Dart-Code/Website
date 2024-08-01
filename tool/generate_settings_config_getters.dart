@@ -67,7 +67,7 @@ String getConfigCall(
 
   // For log files, we can create the folders.
   if (isString && lname.endsWith("logfile")) {
-    call = 'createFolderForFile($call)';
+    call = 'createFolderForFile(insertWorkspaceName($call))';
   }
   return call;
 }
