@@ -6,10 +6,6 @@ There are some settings in VS Code that you may wish to change from the defaults
 
 ```js
 {
-	// Causes the debug view to automatically appear when a breakpoint is hit. This
-	// setting is global and not configurable per-language.
-	"debug.openDebug": "openOnDebugBreak",
-
 	// By default, VS Code will only switch to the Debug Console when you start
 	// debugging the first time in a session. This setting tells VS Code to always
 	// switch to the Debug Console when starting a session, so you can see the
@@ -29,14 +25,6 @@ There are some settings in VS Code that you may wish to change from the defaults
 		// this, all instances of the selected text will be highlighted, interfering
 		// with Dart's ability to highlight only exact references to the selected variable.
 		"editor.selectionHighlight": false,
-
-		// By default, VS Code will pre-select the most recently used item from code
-		// completion. This is usually not the most relevant item.
-		//
-		// "first" will always select top item
-		// "recentlyUsedByPrefix" will filter the recently used items based on the
-		//     text immediately preceding where completion was invoked.
-		"editor.suggestSelection": "first",
 
 		// Allows pressing <TAB> to complete snippets such as `for` even when the
 		// completion list is not visible.
