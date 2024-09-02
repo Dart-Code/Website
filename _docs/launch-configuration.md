@@ -129,8 +129,8 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 		// Custom tools must be completely compatible with the process they are replacing (in many
 		// cases they may just be wrapper scripts).
 		//
-		// See https://github.com/dart-lang/sdk/tree/master/pkg/dds/tool/dap#readme for more details
-		// on how these values are used by the debug adapter.
+		// See https://github.com/dart-lang/sdk/blob/main/third_party/pkg/dap/tool/README.md
+		// for more details on how these values are used by the debug adapter.
 		"customTool": "my_custom_dart",
 		"customToolReplacesArgs": 1,
 	}
