@@ -15,20 +15,28 @@ $skipped: orange;
 $unknown: darkorange;
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
 	line-height: 1.6em;
 	margin: 0;
 	display: grid;
 	min-height: 100%;
 	grid-column-gap: 20px;
 	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto 120px 700px auto;
+	grid-template-columns: auto 130px 700px auto;
 	grid-template-areas:
 		". . header ."
 		"line line line line"
 		". nav main ."
 		"footer footer footer footer";
+}
+
+body, th, td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
 }
 
 body.big-screen {
