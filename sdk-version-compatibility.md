@@ -4,6 +4,7 @@ title: SDK Version Compatibility
 
 <style>
 table th, table td {
+	text-align: left;
 	white-space: nowrap;
 	padding: 4px 12px 4px 0;
 }
