@@ -9,6 +9,7 @@
 			{% include nav.html items=releases %}
 		{% endif %}
 	</li>
+	<li {% if page.url contains "/sdk-version-compatibility/" %}class="current"{% endif %}><a href="/sdk-version-compatibility/">SDK Compatibility</a></li>
 	<li {% if page.url contains "/upstream-issues/" %}class="current"{% endif %}><a href="/upstream-issues/">Upstream Issues</a></li>
 </ul>
 <div class="gh-links">
