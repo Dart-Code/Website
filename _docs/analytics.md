@@ -41,11 +41,21 @@ The following events are recorded by the Dart-Code extension:
 - `Command_CloneSdk`
   In addition to the common properties below, this event includes the following properties:
    - `cloneSdkResult`: Whether the request to clone the SDK using Git was successful
+- `ExtensionRecommendation_Shown`
+  In addition to the common properties below, this event includes the following properties:
+   - `data`: The identifier of the extension that was promoted
+- `ExtensionRecommendation_Accepted`
+  In addition to the common properties below, this event includes the following properties:
+   - `data`: The identifier of the extension that was installed from the promotion notification
+- `ExtensionRecommendation_Rejected`
+  In addition to the common properties below, this event includes the following properties:
+   - `data`: The identifier of the extension that was rejected from the promotion notification
 - `Command_DartNewProject`
 - `Command_FlutterNewProject`
 - `Command_AddDependency`
 - `Command_RestartAnalyzer`
 - `Command_ForceReanalyze`
+- `Error_FlutterDaemonTimeout`
 
 # Common Properties
 
@@ -55,7 +65,6 @@ The following properties are included in all events:
  - `common.extname`: The name of the Dart extension
  - `common.extversion`: The version of the Dart extension
  - `common.vscodeversion`: The version of VS Code running the extension
- - `common.remotename`: The 'remoteName' from VS Code (such as 'ssh' or 'docker' for remote workspaces)
  - `isDevExtension`: Whether the extension is running in development mode (this usually means running from source checked out from the Dart Code repo)
  - `showTodos`: Whether TODOs in Dart code are being shown in the Problems list
  - `analyzerProtocol`: Whether the Dart analysis server is running using the LSP or Legacy communication protocol
@@ -65,6 +74,7 @@ The following properties are included in all events:
  - `flutterUiGuides`: Whether the Flutter 'UI Guides' are enabled and which kind of updates they are configured to use
  - `platform`: The platform/OS the extension is running on
  - `appName`: The name of the editor application (usually VS Code, but could be another editor that runs VS Code extensions such as from open-vsix)
+ - `hostKind`: A combination of the 'remoteName' and 'appHost' strings from VS Code (such as 'desktop', 'desktop-dev-container' or 'codespaces')
  - `dartVersion`: Which version of the Dart SDK is being used
  - `workspaceType`: Which type of project(s) are in the current workspace (Dart, Flutter)
  - `closingLabels`: Whether Dart's 'closing labels' hints are enabled
