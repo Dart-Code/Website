@@ -142,6 +142,18 @@ When using `tripleSlash`, double-slashes will still be included when breaking ex
 <br />
 Whether to show annotations against constructor, method invocations and lists that span multiple lines.
 
+### dart.closingLabelsPrefix
+**Default:** `" // "`.
+<br />
+The prefix to use in closing labels.
+
+### dart.closingLabelsTextStyle
+**Options:** `"normal"` or `"italic"`.
+<br />
+**Default:** `"normal"`.
+<br />
+The text style to use in closing labels. Using _Italic_ requires a font that supports italic text.
+
 ### dart.documentation
 **Options:** `"full"`, `"summary"` or `"none"`.
 <br />
@@ -227,7 +239,7 @@ The programming language to use for Android apps when creating new projects usin
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command.
+The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command. This is only supported up until Flutter 3.22 after which it will be ignored.
 
 ### dart.flutterCreateOrganization
 The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
@@ -310,7 +322,7 @@ When to show the Flutter headless web-server device. This requires using the Dar
 <br />
 **Default:** `"flutter-default"`.
 <br />
-Sets the [Web renderer](https://flutter.dev/docs/development/tools/web-renderers) used for Flutter web apps.
+Sets the [Web renderer](https://flutter.dev/to/web-renderers) used for Flutter web apps.
 
 - `flutter-default` - Use the default renderer for Flutter Web apps.
 - `canvaskit` - Always use the CanvasKit renderer.
@@ -334,6 +346,7 @@ Whether to automatically send a Hot Reload request to Dart apps during a debug s
 **Default:** `false`.
 <br />
 Whether to use the --offline switch for commands like `pub get` and **Flutter: New Project**.
+
 ## Logging
 
 ### dart.maxCompletionItems
@@ -345,6 +358,11 @@ The maximum number of completion items to return from a code completion request.
 The maximum length of a line in the log file. Lines longer than this will be truncated and suffixed with an ellipsis.
 
 ## Pub
+
+### dart.enablePub
+**Default:** `true`.
+<br />
+Whether to enable functionality for using Pub. Turning this setting off will prevent the extension from ever running pub and hide all commands relating to this. Use this if you are using an alternative package manager.
 
 ### dart.runPubGetOnNestedProjects
 **Options:** `"none"`, `"both"`, `"above"` or `"below"`.
@@ -469,6 +487,7 @@ Whether to show skipped tests in the test tree.
 **Default:** `"name"`.
 <br />
 How to identify tests when running/debugging. `name` is compatible with older versions of `package:test` but cannot handle some complex/dynamic test names. `line` will prefer to run tests by their line numbers (when available) and fall back to `name` only if the line number is unavailable.
+
 ## Other
 
 ### dart.env
@@ -556,6 +575,7 @@ Whether to use the legacy debug adapters even if the new debug adapters are avai
 # Resource Scoped Settings
 
 Resource scoped settings can be set in individual workspace folder settings and apply to resources within that workspace folder (for example each workspace folder could have its own `dart.lineLength`).
+
 ## Analyzer
 
 ### dart.analysisExcludedFolders
@@ -582,7 +602,7 @@ Whether to insert parentheses and placeholders for positional and required argum
 Whether to automatically commit the selected completion item when pressing certain keys such as . , ( and \[. This setting does not currently apply to LSP, see `dart.previewCommitCharacters`.
 
 ### dart.hotReloadPatterns
-An array of glob patterns that should trigger Hot Reload when saved. The pattern is matched against the absolute path of the file. Use `**/assets/**` to trigger reloading for everything in the assets directory.
+An array of glob patterns that should trigger Hot Reload when saved. The pattern is matched against the absolute path of the file. Use `**/assets/**` to trigger reloading for everything in the assets directory. Must always start with "**/" and use forward slashes (even on Windows) as backslashes are used for escaping.
 
 ### dart.insertArgumentPlaceholders
 **Default:** `true`.
@@ -593,6 +613,7 @@ Whether to insert argument placeholders during code completions. This feature is
 **Default:** `80`.
 <br />
 The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section if your settings to match.
+
 ## Flutter
 
 ### dart.flutterAdditionalArgs
@@ -623,8 +644,8 @@ The color of the Flutter UI Guidelines shown in the editor.
 # Diagnostic Settings
 
 There are several settings for enabling logging of various services used by Dart Code. For more information about setting these up and troubleshooting please see [Enabling Logging](/docs/logging/).
+
 ## Analyzer
 
 ### dart.analyzerDiagnosticsPort
 The port number to be used for the Dart analyzer diagnostic server. This setting is can be useful for troubleshooting issues with the Dart Analysis Server.
-
