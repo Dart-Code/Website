@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'package:path/path.dart';
+import 'package:path/path.dart' as path;
 
 const windowScopedDescription =
     'Window scoped settings must be applied in your User Settings or at the workspace level and will apply for all projects open in a window (for example, `dart.sdkPath` is used to launch an analyzer that is used for the whole window).';
@@ -14,9 +14,15 @@ const colorsDescription =
     'Some colors in Dart Code can be customized using the `workbench.colorCustomizations` section in settings. Supported colors are:';
 
 main() {
-  Directory.current = dirname(Platform.script.toFilePath());
+  Directory.current = path.dirname(Platform.script.toFilePath());
 
   final packageFile = File('../../Dart-Code/package.json');
+
+  final settingsDocFilePath =
+      path.normalize(path.absolute('../_docs/settings.md'));
+  final settingsDocFile = File(settingsDocFilePath);
+  print('Writing docs to ${settingsDocFile}');
+
   final packageManifest = jsonDecode(packageFile.readAsStringSync());
   final configs = (packageManifest['contributes']['configuration'] as List)
       .cast<Map<String, dynamic>>();
@@ -37,25 +43,46 @@ main() {
           configOptions[key]['scope'] == 'machine-overridable') &&
       !(isDiagnostics(key));
 
-  printSettings(configs, 'Window Scoped Settings', windowScopedDescription,
-      isWindowScoped);
-  printSettings(configs, 'Resource Scoped Settings', resourceScopedDescription,
-      isResourceScoped);
-  printColorSettings(colorOptions, 'Custom Color Settings', colorsDescription);
-  printSettings(
-      configs, 'Diagnostic Settings', diagnosticsDescription, isDiagnostics);
+  final output = StringBuffer();
+  appendHeader(output);
+  appendSettings(output, configs, 'Window Scoped Settings',
+      windowScopedDescription, isWindowScoped);
+  appendSettings(output, configs, 'Resource Scoped Settings',
+      resourceScopedDescription, isResourceScoped);
+  appendColorSettings(
+      output, colorOptions, 'Custom Color Settings', colorsDescription);
+  appendSettings(output, configs, 'Diagnostic Settings', diagnosticsDescription,
+      isDiagnostics);
+
+  settingsDocFile.writeAsStringSync(output.toString().trimRight() + '\n');
 }
 
-void printSettings(
+void appendHeader(StringBuffer output) {
+  output.writeln('''
+---
+title: Settings
+---
+
+There are a number of settings for the Dart and Flutter extensions that can be modified in VS Code's [User Settings or Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
+
+The settings described here are documented by their JSON keys, though most of them can also be edited in the settings UI in VS Code by clicking the **Dart & Flutter** section under **Extensions**.
+
+* TOC
+{:toc}
+''');
+}
+
+void appendSettings(
+  StringBuffer output,
   List<Map<String, dynamic>> configs,
   String title,
   String description,
   bool Function(String key) filter,
 ) {
-  print('# $title');
-  print('');
-  print(description);
-  print('');
+  output.writeln('# $title');
+  output.writeln('');
+  output.writeln(description);
+  output.writeln('');
 
   for (var config in configs
       .sortedBy((c) => c['title'] as String)
@@ -65,10 +92,10 @@ void printSettings(
     final settingNames = configOptions.keys.where(filter).toList()..sort();
 
     if (settingNames.isEmpty) {
-      return;
+      continue;
     }
-    print('## $sectionName');
-    print('');
+    output.writeln('## $sectionName');
+    output.writeln('');
 
     for (final name in settingNames) {
       final options = configOptions[name];
@@ -80,31 +107,32 @@ void printSettings(
       final enumValues = options['enum'];
       final enumDescriptions = options['enumDescriptions'];
 
-      print('### $name');
+      output.writeln('### $name');
       if (enumValues != null && enumValues is List) {
-        print('**Options:** '
+        output.writeln('**Options:** '
             '`${enumValues.sublist(0, enumValues.length - 1).map(formatValue).join('`, `')}` '
             'or `${formatValue(enumValues.last)}`.');
-        print('<br />');
+        output.writeln('<br />');
       }
       if (hasDefault) {
-        print('**Default:** `${formatValue(options['default'])}`.');
-        print('<br />');
+        output.writeln('**Default:** `${formatValue(options['default'])}`.');
+        output.writeln('<br />');
       }
-      print(improveDocs(
+      output.writeln(improveDocs(
           name, options['markdownDescription'] ?? options['description']));
       if (enumDescriptions != null && enumDescriptions is List) {
-        print('');
+        output.writeln('');
         for (var i = 0; i < enumValues.length; i++) {
-          print('- `${enumValues[i]}` - ${enumDescriptions[i]}.');
+          output.writeln('- `${enumValues[i]}` - ${enumDescriptions[i]}.');
         }
       }
-      print('');
+      output.writeln('');
     }
   }
 }
 
-void printColorSettings(
+void appendColorSettings(
+  StringBuffer output,
   List<dynamic> colorOptions,
   String title,
   String description,
@@ -112,18 +140,17 @@ void printColorSettings(
   if (colorOptions.isEmpty) {
     return;
   }
-  print('# $title');
-  print('');
-  print(description);
-  print('');
+  output.writeln('# $title');
+  output.writeln('');
+  output.writeln(description);
+  output.writeln('');
 
   for (var color in colorOptions) {
     // Check whether we'll need to note a default value.
-    print('## ${color['id']}');
-    print('');
-    print(improveDocs(
+    output.writeln('## ${color['id']}');
+    output.writeln(improveDocs(
         color['id'], color['markdownDescription'] ?? color['description']));
-    print('');
+    output.writeln('');
   }
 }
 

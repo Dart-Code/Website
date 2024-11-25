@@ -163,6 +163,11 @@ What level of documentation to show in Hovers and Code Completion details. When 
 - `summary` - Show short documentatin summary.
 - `none` - Do not show documentation.
 
+### dart.dtdEditorActiveLocationDelay
+**Default:** `200`.
+<br />
+How long (in ms) to delay sending editor location change events over the Dart Tooling Daemon. Increasing this results in less events which may improve performance, at the expensive of tools that use these events not updating as quickly after your location/editor changes (requires restart).
+
 ### dart.enableSdkFormatter
 **Default:** `true`.
 <br />
@@ -502,6 +507,11 @@ How many levels (including the workspace roots) down the workspace to search for
 
 ## Experimental
 
+### dart.experimentalDtdHandlers
+**Default:** `false`.
+<br />
+Whether to enable experimental (possibly unfinished or unstable) LSP handlers through DTD. This setting is passed to the analysis server in the connectToDtd request and therefore relies on DTD being supported and enabled for the analysis server (requires restart).
+
 ### dart.experimentalRefactors
 **Default:** `false`.
 <br />
@@ -582,7 +592,7 @@ Resource scoped settings can be set in individual workspace folder settings and 
 An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level. Excluded folders will also be ignored when detecting project types.
 
 ### dart.analyzerPath
-The path to a custom Dart Analysis Server. This setting is intended for use by Dart Analysis Server developers.
+The path to a custom Dart Analysis Server. This setting is intended for use by Dart Analysis Server developers. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
 
 ## DevTools
 
@@ -612,7 +622,7 @@ Whether to insert argument placeholders during code completions. This feature is
 ### dart.lineLength
 **Default:** `80`.
 <br />
-The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section if your settings to match.
+The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section of your settings to match.
 
 ## Flutter
 
@@ -626,10 +636,111 @@ Additional args to pass to the `flutter attach` command. Using the `args`/`toolA
 Additional args to pass to the `flutter run` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ### dart.flutterScreenshotPath
-The path to a directory to save Flutter screenshots.
+The path to a directory to save Flutter screenshots. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
 
 ### dart.flutterTestAdditionalArgs
 Additional args to pass to the `flutter test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+
+## Pub
+
+### dart.promptToGetPackages
+**Default:** `true`.
+<br />
+Whether to prompt to get/upgrade packages when opening a project with missing/out of date packages.
+
+### dart.pubAdditionalArgs
+Additional args to pass to all `pub` commands.
+
+### dart.runPubGetOnPubspecChanges
+**Options:** `"always"`, `"prompt"` or `"never"`.
+<br />
+**Default:** `"always"`.
+<br />
+Whether to run `pub get` whenever `pubspec.yaml` is saved.
+
+- `always` - Always run when pubspec is changed.
+- `prompt` - Prompt to run when pubspec is changed.
+- `never` - Never run when pubspec is changed.
+
+## Run and Debug
+
+### dart.cliAdditionalArgs
+Additional args to pass to the `dart` command when running CLI scripts. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+
+### dart.customDartDapPath
+The path to a custom Dart Debug Adapter. This setting is intended for use by Dart Debug Adapter developers. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.customFlutterDapPath
+The path to a custom Flutter Debug Adapter. This setting is intended for use by Dart Debug Adapter developers. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.evaluateGettersInDebugViews
+**Default:** `true`.
+<br />
+Whether to evaluate getters in order to display them in debug views (such as the Variables, Watch and Hovers views).
+
+### dart.showDartDeveloperLogs
+**Default:** `true`.
+<br />
+Whether to show logs from the `dart:developer` `log()` function in the debug console.
+
+### dart.showGettersInDebugViews
+**Default:** `true`.
+<br />
+Whether to show getters in order to display them in debug views (such as the Variables, Watch and Hovers views). If `evaluateGettersInDebugViews` is `true` getters will be eagerly evaluated, otherwise they will require clicking to evaluate.
+
+### dart.suppressTestTimeouts
+**Options:** `"never"`, `"debug"` or `"always"`.
+<br />
+**Default:** `"never"`.
+<br />
+Whether to suppress test timeouts when running/debugging tests. To work properly this requires package:test version 1.20.1 or newer. For older versions, the default timeout will be increased to 1d but this will not affect tests that have explicit (non-factor) timeouts set with @timeout.
+
+- `never` - Do not suppress test timeouts.
+- `debug` - Suppress test timeouts when Debugging.
+- `always` - Suppress test timeouts both when Running and Debugging.
+
+### dart.testAdditionalArgs
+Additional args to pass to the `dart test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
+
+### dart.vmAdditionalArgs
+Arguments to be passed to the Dart VM when running Dart CLI scripts.
+
+These arguments appear between "dart" and "run":
+
+`dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)`
+
+## SDK
+
+### dart.flutterSdkPath
+The location of the Flutter SDK to use. If blank (or not a valid SDK), Dart Code will attempt to find it from the project directory, `FLUTTER_ROOT` environment variable and the `PATH` environment variable. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.flutterSdkPaths
+An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs that can be used for fast SDK switching. These paths are not used directly when searching for an SDK. When this setting is populated, the version number in the status bar can be used to quickly switch between SDKs. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.sdkPath
+The location of the Dart SDK to use for analyzing and executing code. If blank (or not a valid SDK), Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.sdkPaths
+An array of paths that either directly point to a Dart SDK or the parent directory of multiple Dart SDKs that can be used for fast SDK switching. These paths are not used directly when searching for an SDK. When this setting is populated, the SDK version number in the status bar can be used to quickly switch between SDKs. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+## Experimental
+
+### dart.daemonPort
+EXPERIMENTAL: The port where `flutter daemon` can be accessed if daemon is run remotely. This setting is intended for use by Google developers.
+
+## Legacy
+
+### dart.doNotFormat
+**LEGACY SETTING: Only applies to legacy analysis server protocol.**
+
+An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test directories. Must always use forward slashes (even on Windows) as backslashes are used for escaping.
+
+### dart.flutterTrackWidgetCreation
+**Default:** `true`.
+<br />
+**LEGACY SETTING: Disabling this may break functionality on modern SDKs.**
+
+Whether to pass `--track-widget-creation` to Flutter apps (required to support 'Inspect Widget'). This setting is always ignored when running in Profile or Release mode.
 
 # Custom Color Settings
 
@@ -649,3 +760,53 @@ There are several settings for enabling logging of various services used by Dart
 
 ### dart.analyzerDiagnosticsPort
 The port number to be used for the Dart analyzer diagnostic server. This setting is can be useful for troubleshooting issues with the Dart Analysis Server.
+
+## Logging
+
+### dart.analyzerInstrumentationLogFile
+The path to a log file for very detailed logging in the Dart Analysis Server that may be useful when trying to diagnose Analysis Server issues. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Analyzer Instrumentation Logging](/docs/logging/#analyzer-instrumentation).
+
+### dart.analyzerLogFile
+The path to a log file for communication between Dart Code and the Analysis Server. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Analyzer Logging](/docs/logging/#analyzer).
+
+### dart.dapLogFile
+The path to a log file for communication with the DAP debug adapters. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `${kind}` to insert a description of the kind of debug session ('dart', 'dart_test', 'flutter' etc.). Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+### dart.devToolsLogFile
+The path to a low-traffic log file for the Dart DevTools service. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+### dart.extensionLogFile
+The path to a low-traffic log file for basic extension and editor issues. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Extension Logging](/docs/logging/#extension).
+
+### dart.flutterDaemonLogFile
+The path to a log file for the `flutter daemon` service, which provides information about connected devices accessible from the status bar. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
+
+### dart.toolingDaemonLogFile
+The path to a log file for the `dart tooling-daemon` service, which coordinates between various Dart and Flutter tools and extensions. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+## Legacy
+
+### dart.dartTestLogFile
+**LEGACY SETTING: Only applies when using the legacy debug adapters.**
+
+The path to a log file for Dart test runs. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+### dart.flutterRunLogFile
+**LEGACY SETTING: Only applies when using the legacy debug adapters.**
+
+The path to a log file for `flutter run`, which is used to launch Flutter apps from VS Code. This is useful when trying to diagnose issues with apps launching (or failing to) on simulators and devices. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
+
+### dart.flutterTestLogFile
+**LEGACY SETTING: Only applies when using the legacy debug adapters.**
+
+The path to a log file for `flutter test`, which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
+
+### dart.vmServiceLogFile
+**LEGACY SETTING: Only applies when using the legacy debug adapters.**
+
+The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+### dart.webDaemonLogFile
+**LEGACY SETTING: Only applies when using the legacy debug adapters.**
+
+The path to a log file for communication between Dart Code and the webdev daemon. This is useful when trying to diagnose issues with launching web apps. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
