@@ -7,6 +7,11 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
+## Debugger shows "Paused on Entry" if "continued" event arrives too soon after "stopped" event
+[github.com/microsoft/vscode#238591](https://github.com/microsoft/vscode/issues/238591)
+
+When multiple isolates are used, some isolates incorrectly show "Paused on Entry" in the UI even though they were only temporarily paused at entry while breakpoints were configured.
+
 ## Allow Grouping of edits in Fix All in Workspace by default
 [github.com/microsoft/vscode#207580](https://github.com/microsoft/vscode/issues/207580)
 
