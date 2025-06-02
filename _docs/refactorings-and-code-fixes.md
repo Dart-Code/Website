@@ -35,7 +35,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.explicitCast` - Add cast
 - `quickfix.add.explicitCast.multi` - Add cast everywhere in file
 - `quickfix.add.extensionOverride` - Add an extension override for '...'
-- `quickfix.add.fieldFormalParameters` - Add final field formal parameters
+- `quickfix.add.initializingFormalParameters` - Add final initializing formal parameters
 - `quickfix.add.keyToConstructors` - Add 'key' to constructors
 - `quickfix.add.keyToConstructors.multi` - Add 'key' to constructors everywhere in file
 - `quickfix.add.late` - Add 'late' modifier
@@ -45,7 +45,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.missingParameterNamed` - Add named parameter '...'
 - `quickfix.add.missingParameterPositional` - Add optional positional parameter
 - `quickfix.add.missingParameterRequired` - Add required positional parameter
-- `quickfix.add.missingRequiredArgument` - Add required argument '...'
+- `quickfix.add.missingRequiredArgument` - Add ... required argument...
 - `quickfix.add.missingSwitchCases` - Add missing switch cases
 - `quickfix.add.neNull` - Add != null
 - `quickfix.add.neNull.multi` - Add != null everywhere in file
@@ -77,8 +77,11 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.bodyToBlock.multi` - Convert to block body everywhere in file
 - `quickfix.convert.classToEnum` - Convert class to an enum
 - `quickfix.convert.classToEnum.multi` - Convert classes to enums in file
+- `quickfix.convert.getter` - Convert '...' to a getter
 - `quickfix.convert.isNot` - Convert to is!
 - `quickfix.convert.isNot.multi` - Convert to is! everywhere in file
+- `quickfix.convert.nullCheckToNullAwareElement` - Convert null check to null-aware element
+- `quickfix.convert.nullCheckToNullAwareElement.multi` - Convert null check to null-aware element in file
 - `quickfix.convert.quotes` - Convert the quotes and remove escapes
 - `quickfix.convert.quotes.multi` - Convert the quotes and remove escapes everywhere in file
 - `quickfix.convert.toBoolExpression` - Convert to boolean expression
@@ -93,6 +96,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.toExpressionBody.multi` - Convert to expression bodies everywhere in file
 - `quickfix.convert.toFlutterStyleTodo` - Convert to flutter style todo
 - `quickfix.convert.toFlutterStyleTodo.multi` - Convert to flutter style todos everywhere in file
+- `quickfix.convert.toForEach` - Convert to 'forEach'
 - `quickfix.convert.toForElement` - Convert to a 'for' element
 - `quickfix.convert.toForElement.multi` - Convert to 'for' elements everywhere in file
 - `quickfix.convert.toForLoop` - Convert 'forEach' to a 'for' loop
@@ -115,6 +119,10 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.toNamedArguments` - Convert to named arguments
 - `quickfix.convert.toNullAware` - Convert to use '?.'
 - `quickfix.convert.toNullAware.multi` - Convert to use '?.' everywhere in file
+- `quickfix.convert.toNullAwareListElement` - Convert to use '?'
+- `quickfix.convert.toNullAwareMapEntryKey` - Convert to use '?'
+- `quickfix.convert.toNullAwareMayEntryValue` - Convert to use '?'
+- `quickfix.convert.toNullAwareSetElement` - Convert to use '?'
 - `quickfix.convert.toNullAwareSpread` - Convert to use '...?'
 - `quickfix.convert.toNullAwareSpread.multi` - Convert to use '...?' everywhere in file
 - `quickfix.convert.toOnType` - Convert to 'on ...'
@@ -158,10 +166,11 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.flutter.convert.childrenToChild` - Convert to child:
 - `quickfix.flutter.makeConditionalOnDebugMode` - Make conditional on 'kDebugMode'
 - `quickfix.flutter.wrap.text` - Wrap in a 'Text' widget
-- `quickfix.ignore.line` - Ignore '...' for this line
 - `quickfix.import.async` - Import 'dart:async'
-- `quickfix.import.libraryPrefix` - Use imported library '...' with prefix '...'
+- `quickfix.import.libraryHide` - Hide others to use '...' from '...'...
 - `quickfix.insertBody` - Insert body
+- `quickfix.insertOnKeyword` - Insert 'on' keyword
+- `quickfix.insertOnKeyword.multi` - Insert 'on' keyword in file
 - `quickfix.insertSemicolon` - Insert ';'
 - `quickfix.insertSemicolon.multi` - Insert ';' everywhere in file
 - `quickfix.makeClassAbstract` - Make class '...' abstract
@@ -177,6 +186,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.makeVariableNullable` - Make '...' nullable
 - `quickfix.matchAnyMap` - Match any map
 - `quickfix.matchEmptyMap` - Match an empty map
+- `quickfix.mergeCombinatorsHide.show` - Merge combinators into a single 'hide'
+- `quickfix.mergeCombinatorsShow.hide` - Merge combinators into a single 'show'
 - `quickfix.moveAnnotationToLibraryDirective` - Move this annotation to a library directive
 - `quickfix.moveDocCommentToLibraryDirective` - Move this doc comment to a library directive
 - `quickfix.moveTypeArgumentsToClass` - Move type arguments to after class name
@@ -190,24 +201,26 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.assertion` - Remove the assertion
 - `quickfix.remove.assignment` - Remove assignment
 - `quickfix.remove.assignment.multi` - Remove unnecessary assignments everywhere in file
-- `quickfix.remove.await` - Remove await
-- `quickfix.remove.await.multi` - Remove awaits in file
-- `quickfix.remove.break` - Remove break
-- `quickfix.remove.break.multi` - Remove unnecessary breaks in file
+- `quickfix.remove.async` - Remove 'async' modifier
+- `quickfix.remove.await` - Remove 'await'
+- `quickfix.remove.await.multi` - Remove 'await's in file
+- `quickfix.remove.break` - Remove 'break'
+- `quickfix.remove.break.multi` - Remove unnecessary 'break's in file
 - `quickfix.remove.character` - Remove the 'U+...' code point
 - `quickfix.remove.comma` - Remove the comma
 - `quickfix.remove.comma.multi` - Remove ...commas from ... everywhere in file
+- `quickfix.remove.comment` - Remove the comment
 - `quickfix.remove.comparison` - Remove comparison
 - `quickfix.remove.comparison.multi` - Remove comparisons in file
 - `quickfix.remove.comparison.multi` - Remove type check everywhere in file
-- `quickfix.remove.const` - Remove const
+- `quickfix.remove.const` - Remove 'const'
 - `quickfix.remove.constructor` - Remove the constructor
 - `quickfix.remove.constructorName` - Remove 'new'
 - `quickfix.remove.constructorName.multi` - Remove constructor names in file
 - `quickfix.remove.deadCode` - Remove dead code
 - `quickfix.remove.defaultValue` - Remove the default value
-- `quickfix.remove.deprecatedNewInCommentReference` - Remove deprecated new keyword
-- `quickfix.remove.deprecatedNewInCommentReference.multi` - Remove deprecated new keyword in file
+- `quickfix.remove.deprecatedNewInCommentReference` - Remove deprecated 'new' keyword
+- `quickfix.remove.deprecatedNewInCommentReference.multi` - Remove deprecated 'new' keyword in file
 - `quickfix.remove.duplicateCase` - Remove duplicate case statement
 - `quickfix.remove.duplicateCase.multi` - Remove duplicate case statement
 - `quickfix.remove.emptyCatch` - Remove empty catch clause
@@ -222,6 +235,10 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.extends.clause.multi` - Remove invalid 'extends' clauses everywhere in file
 - `quickfix.remove.ifNullOperator` - Remove the '??' operator
 - `quickfix.remove.ifNullOperator.multi` - Remove unnecessary '??' operators everywhere in file
+- `quickfix.remove.ignore.comment` - Remove unnecessary ignore comment
+- `quickfix.remove.ignore.comment.multi` - Remove unnecessary ignore comments everywhere in file
+- `quickfix.remove.ignored.diagnostic` - Remove ...
+- `quickfix.remove.ignored.diagnostic.multi` - Remove unnecessary ignored diagnostics everywhere in file
 - `quickfix.remove.initializer` - Remove initializer
 - `quickfix.remove.initializer.multi` - Remove unnecessary initializers everywhere in file
 - `quickfix.remove.interpolationBraces` - Remove unnecessary interpolation braces
@@ -261,11 +278,13 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.remove.typeAnnotation.multi` - Remove unnecessary type annotations in file
 - `quickfix.remove.typeArguments` - Remove type arguments
 - `quickfix.remove.typeCheck` - Remove type check
+- `quickfix.remove.unawaited` - Remove 'unawaited' call
+- `quickfix.remove.unawaited.multi` - Remove 'unawaited' call in file
 - `quickfix.remove.unexpectedUnderscores` - Remove unexpected '_' characters
 - `quickfix.remove.unexpectedUnderscores.multi` - Remove unexpected '_' characters in file
 - `quickfix.remove.unnecessaryCast` - Remove unnecessary cast
 - `quickfix.remove.unnecessaryCast.multi` - Remove all unnecessary casts in file
-- `quickfix.remove.unnecessaryConst` - Remove unnecessary const keyword
+- `quickfix.remove.unnecessaryConst` - Remove unnecessary 'const' keyword
 - `quickfix.remove.unnecessaryConst.multi` - Remove unnecessary 'const' keywords everywhere in file
 - `quickfix.remove.unnecessaryContainer` - Remove unnecessary 'Container'
 - `quickfix.remove.unnecessaryContainer.multi` - Remove unnecessary 'Container's in file
@@ -315,6 +334,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.colonWithEquals.multi` - Replace ':'s with '='s everywhere in file
 - `quickfix.replace.colonWithIn` - Replace ':' with 'in'
 - `quickfix.replace.colonWithIn.multi` - Replace ':'s with 'in's everywhere in file
+- `quickfix.replace.containerWithColoredBox` - Replace with 'ColoredBox'
+- `quickfix.replace.containerWithColoredBox.multi` - Replace with 'ColoredBox' everywhere in file
 - `quickfix.replace.containerWithSizedBox` - Replace with 'SizedBox'
 - `quickfix.replace.containerWithSizedBox.multi` - Replace with 'SizedBox' everywhere in file
 - `quickfix.replace.finalWithConst` - Replace 'final' with 'const'
@@ -357,6 +378,8 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.replace.withIsNotEmpty.multi` - Replace with 'isNotEmpty' everywhere in file
 - `quickfix.replace.withNotNullAware` - Replace with '...'
 - `quickfix.replace.withNotNullAware.multi` - Replace with non-null-aware operator everywhere in file
+- `quickfix.replace.withNotNullAwareElementOrEntry` - Remove the '?'
+- `quickfix.replace.withNotNullAwareElementOrEntry.multi` - Remove the '?' everywhere in file
 - `quickfix.replace.withNullAware` - Replace the '...' with a '...' in the invocation
 - `quickfix.replace.withPartOfUri` - Replace with 'part of ...'
 - `quickfix.replace.withTearOff` - Replace function literal with tear-off
@@ -403,7 +426,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.convert.classToEnum` - Convert class to an enum
 - `refactor.convert.classToMixin` - Convert class to a mixin
 - `refactor.convert.conditionalToIfElse` - Replace conditional with 'if-else'
-- `refactor.convert.finalFieldToGetter` - Convert to getter
+- `refactor.convert.finalFieldToGetter` - Convert '...' to a getter
 - `refactor.convert.forEachToForIndex` - Convert to for-index loop
 - `refactor.convert.getterToFinalField` - Convert to final field
 - `refactor.convert.ifCaseStatement` - Convert to 'if-case' statement
@@ -417,12 +440,12 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.convert.relativeToPackageImport` - Convert to 'package:' import
 - `refactor.convert.switchExpression` - Convert to switch expression
 - `refactor.convert.switchStatement` - Convert to switch statement
-- `refactor.convert.toConstructorFieldParameter` - Convert to field formal parameter
 - `refactor.convert.toConstructorNormalParameter` - Convert to normal parameter
 - `refactor.convert.toDoubleQuotedString` - Convert to double quoted string
 - `refactor.convert.toForElement` - Convert to a 'for' element
 - `refactor.convert.toGenericFunctionSyntax` - Convert into 'Function' syntax
 - `refactor.convert.toIfElement` - Convert to an 'if' element
+- `refactor.convert.toInitializingFormal` - Convert to initializing formal parameter
 - `refactor.convert.toIntLiteral` - Convert to an int literal
 - `refactor.convert.toMapLiteral` - Convert to map literal
 - `refactor.convert.toMultilineString` - Convert to multiline string
@@ -446,16 +469,24 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.flutter.wrap.center` - Wrap with Center
 - `refactor.flutter.wrap.column` - Wrap with Column
 - `refactor.flutter.wrap.container` - Wrap with Container
+- `refactor.flutter.wrap.expanded` - Wrap with Expanded
+- `refactor.flutter.wrap.flexible` - Wrap with Flexible
+- `refactor.flutter.wrap.futureBuilder` - Wrap with FutureBuilder
 - `refactor.flutter.wrap.generic` - Wrap with widget...
 - `refactor.flutter.wrap.padding` - Wrap with Padding
 - `refactor.flutter.wrap.row` - Wrap with Row
 - `refactor.flutter.wrap.sizedBox` - Wrap with SizedBox
 - `refactor.flutter.wrap.streamBuilder` - Wrap with StreamBuilder
+- `refactor.flutter.wrap.valueListenableBuilder` - Wrap with ValueListenableBuilder
 - `refactor.inline` - Inline invocation of '...'
+- `refactor.inlineElseBlock` - Join the 'else' block with inner 'if' statement
+- `refactor.inlineEnclosingElseBlock` - Join 'if' statement with outer 'else' block
+- `refactor.invertConditional` - Invert conditional expression
 - `refactor.invertIf` - Invert 'if' statement
 - `refactor.joinVariableDeclaration` - Join variable declaration
 - `refactor.joinWithInnerIf` - Join 'if' statement with inner 'if' statement
 - `refactor.joinWithOuterIf` - Join 'if' statement with outer 'if' statement
+- `refactor.remove.async` - Remove 'async' modifier
 - `refactor.remove.digitSeparators` - Remove digit separators
 - `refactor.replace.withVar` - Replace type annotation with 'var'
 - `refactor.shadowField` - Create a local variable that shadows the field
@@ -472,4 +503,3 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.surround.tryCatch` - Surround with 'try-catch'
 - `refactor.surround.tryFinally` - Surround with 'try-finally'
 - `refactor.surround.while` - Surround with 'while'
-- `refactor.unwrap.if` - Unwrap 'if' body
