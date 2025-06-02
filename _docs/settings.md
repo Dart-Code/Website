@@ -71,15 +71,15 @@ Whether to automatically close embedded DevTools tabs when a debug session ends.
 <br />
 **Default:** `"chrome"`.
 <br />
-Whether to launch external DevTools windows using Chrome or the system default browser.
+Whether to launch external DevTools windows using Chrome or the system default browser. This setting is ignored for remote workspaces (including Docker, SSH, WSL).
 
 - `chrome` - Locate and launch Google Chrome from your system.
 - `default` - Use your systems default web browser.
 
 ### dart.devToolsLocation
-**Default:** `{default: beside}`.
+**Default:** `{default: beside, inspector: sidebar}`.
 <br />
-Which editor/column to open [Dart DevTools](https://dart.dev/tools/dart-devtools) pages in.
+Where to open [Dart DevTools](https://dart.dev/tools/dart-devtools) pages.
 
 ### dart.devToolsPort
 The port number to be used for the Dart DevTools (requires restart).
@@ -505,6 +505,9 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 <br />
 How many levels (including the workspace roots) down the workspace to search for Dart/Flutter projects. Increasing this number may help detect Flutter projects that are deeply nested in your workspace but slow down all operations that search for projects, including extension activation.
 
+### dart.toolingDaemonAdditionalArgs
+Additional args to pass to the `dart tooling-daemon` command that runs as a background service (requires restart).
+
 ## Experimental
 
 ### dart.experimentalDtdHandlers
@@ -569,13 +572,6 @@ Whether to enable analysis for AngularDart templates (requires the Angular analy
 **LEGACY SETTING: Only applies to Dart SDKs before v2.15 since DevTools now ships in the SDK.**
 
 Whether to update DevTools if you are not using the latest version.
-
-### dart.useLegacyAnalyzerProtocol
-**Default:** `false`.
-<br />
-**LEGACY SETTING: Only applies to Dart SDKs before v3.3 and is generally not recommended since v2.12.**
-
- Whether to use the Dart Analyzer's original protocol instead of LSP. Some features are not supported when using the legacy protocol and support for it will eventually be removed. Please file issues on GitHub in the Dart Code repo if you find yourself needing to enable this setting.
 
 ### dart.useLegacyDebugAdapters
 **LEGACY SETTING: Legacy debug adapters are not recommended since Dart v3.4.**
@@ -703,11 +699,11 @@ Whether to suppress test timeouts when running/debugging tests. To work properly
 Additional args to pass to the `dart test` command. Using the `args`/`toolArgs` fields in `launch.json` is usually better than this setting as this setting will apply to _all_ projects.
 
 ### dart.vmAdditionalArgs
-Arguments to be passed to the Dart VM when running Dart CLI scripts.
+Arguments to be passed to the Dart VM when running Dart CLI scripts/tests.
 
-These arguments appear between "dart" and "run":
+These arguments appear after "dart" but before subcommands like "test":
 
-`dart (vmAdditionalArgs) run (toolArgs) bin/main.dart (args)`
+`dart (vmAdditionalArgs) test (toolArgs) test/my_test.dart (args)`
 
 ## SDK
 
@@ -716,6 +712,12 @@ The location of the Flutter SDK to use. If blank (or not a valid SDK), Dart Code
 
 ### dart.flutterSdkPaths
 An array of paths that either directly point to a Flutter SDK or the parent directory of multiple Flutter SDKs that can be used for fast SDK switching. These paths are not used directly when searching for an SDK. When this setting is populated, the version number in the status bar can be used to quickly switch between SDKs. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
+
+### dart.getDartSdkCommand
+Get the Dart SDK path from a command. Useful when using tools such as direnv, asdf, mise... The command should exit with a 0 status code and it should print to the standard output just the path to the SDK. If the command fails (non zero exit or bad path), the extension will keep looking for other SDK paths. Some configuration examples can be found in: https://github.com/Dart-Code/Dart-Code/pull/5377
+
+### dart.getFlutterSdkCommand
+Get the Flutter SDK path from a command. Useful when using tools such as direnv, asdf, mise... The command should exit with a 0 status code and it should print to the standard output just the path to the SDK. If the command fails (non zero exit or bad path), the extension will keep looking for other SDK paths. Some configuration examples can be found in: https://github.com/Dart-Code/Dart-Code/pull/5377
 
 ### dart.sdkPath
 The location of the Dart SDK to use for analyzing and executing code. If blank (or not a valid SDK), Dart Code will attempt to find it from the `PATH` environment variable. When editing a Flutter project, the version of Dart included in the Flutter SDK is used in preference. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows).
