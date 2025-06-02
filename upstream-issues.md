@@ -55,7 +55,7 @@ The current implementation of Flutter UI Guides has many display issues because 
 
 
 ## Bring Imports with Copy/Pasted Code
-[github.com/microsoft/vscode#30066](https://github.com/microsoft/vscode/issues/30066)
+[github.com/microsoft/language-server-protocol#2072](https://github.com/microsoft/language-server-protocol/issues/2072)
 
 This would allow copy/pasting code between files without having another step to add the relevant `import`s to make the code valid.
 
