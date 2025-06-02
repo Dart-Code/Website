@@ -1,7 +1,4 @@
----
----
-
-$dart-blue-dark: #0081C6;
+--- --- $dart-blue-dark: #0081C6;
 $dart-blue-light: #00A4E4;
 $dart-green-dark: #00D2B8;
 $dart-green-light: #55DDCA;
@@ -29,7 +26,9 @@ body {
 		"footer footer footer footer";
 }
 
-body, th, td {
+body,
+th,
+td {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 }
@@ -46,12 +45,18 @@ body.big-screen {
 		"line line line"
 		". main ."
 		"footer footer footer";
+
 	nav {
 		display: none;
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	line-height: 1.2em;
 	margin-top: 25px;
 
@@ -62,7 +67,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-p, pre {
+p,
+pre {
 	margin: 20px 0;
 }
 
@@ -81,6 +87,7 @@ header {
 	.imgs {
 		display: inline-block;
 		margin-left: 30px;
+
 		img {
 			vertical-align: middle;
 		}
@@ -110,7 +117,7 @@ nav {
 			display: block;
 		}
 
-		.current > a {
+		.current>a {
 			background-color: $dart-blue-dark;
 			color: #fff;
 		}
@@ -156,8 +163,10 @@ main {
 		tab-size: 2;
 	}
 
-	& > :not(aside) {
-		pre.highlight, img:not(.x) {
+	&> :not(aside) {
+
+		pre.highlight,
+		img:not(.x) {
 			box-shadow: 2px 2px 5px #999999;
 		}
 	}
@@ -183,6 +192,7 @@ main {
 			left: -1px;
 			bottom: -1px;
 		}
+
 		// This is a bit hacky, but can't get Kramdown to apply
 		// classes to multiple elements in one go ¯\_(ツ)_/¯
 		&.title {
@@ -192,6 +202,7 @@ main {
 			padding-bottom: 0;
 			color: $dart-blue-dark;
 		}
+
 		&.body {
 			margin-top: 0;
 			border-top-width: 0;
@@ -209,118 +220,27 @@ main {
 		padding-left: 16px;
 	}
 
-	h1,h2,h3,h4,h5.h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5.h6 {
 		a {
 			display: none;
 			margin-left: 5px;
 			color: #ccc;
+
 			&:hover {
 				text-decoration: none;
 			}
 		}
+
 		&:hover a {
 			display: inline;
 		}
+
 		&:target a {
 			color: $dart-blue-dark;
-		}
-	}
-
-	#test-results-warnings {
-		background-color: #ffcc00;
-		margin-bottom: 20px;
-		padding: 10px;
-		border-radius: 5px;
-	}
-
-	#test-results {
-		min-width: 100%;
-
-		tr:hover .test-name {
-			background-color: $dart-green-light;
-		}
-
-		.suite {
-			text-transform: capitalize;
-			font-weight: bold;
-
-			td {
-				padding-top: 10px;
-			}
-		}
-
-		.test-name {
-			padding: 1px 3px;
-		}
-
-		img {
-			width: 16px;
-			height: 16px;
-		}
-
-		th {
-			text-align: left;
-			padding-bottom: 3px;
-
-			&.h {
-				text-align: center;
-			}
-
-			&.r {
-				width: 18px;
-				height: 18px;
-			}
-
-			&.i {
-				width: 20px;
-			}
-
-			&.pass {
-				border-bottom: 3px solid $pass;
-			}
-			&.fail {
-				border-bottom: 3px solid $fail;
-			}
-		}
-		td {
-			empty-cells: show;
-			max-width: 100px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-
-			&.pass {
-				background-color: $pass;
-			}
-			&.unknown {
-				background-color: $unknown;
-				color: #666;
-				text-align: center;
-				position: relative;
-				&:after {
-					content: "?";
-					pointer-events: none;
-					position: absolute;
-					width: 20px;
-					height: 20px;
-					top: 0;
-					left: 0;
-					line-height: 20px;
-					text-align: center;
-				}
-				opacity: 0.2;
-			}
-			&.skipped {
-				background-color: $skipped;
-			}
-			&.fail {
-				background-color: $fail;
-			}
-			a {
-				display: block;
-				width: 18px;
-				height: 18px;
-			}
 		}
 	}
 
@@ -360,9 +280,11 @@ main {
 		height: 100px;
 		margin-bottom: 10px;
 		display: block;
+
 		&.dart-logo {
 			background-image: url("../images/dart.svg");
 		}
+
 		&.flutter-logo {
 			background-image: url("../images/flutter.svg");
 		}
@@ -373,46 +295,13 @@ main {
 	h2 {
 		margin-bottom: 0;
 	}
-	h2 + p {
+
+	h2+p {
 		margin: 0;
 	}
-	h2 + p + p {
+
+	h2+p+p {
 		margin-top: 10px;
-	}
-}
-
-.test-results-page {
-	ul {
-		padding: 0;
-	}
-	li {
-		list-style: none;
-		padding: 5px 0;
-		position: relative;
-		line-height: 20px;
-		.badges {
-			text-align: right;
-			position: absolute;
-			width: 500px;
-			left: -505px;
-			img {
-				box-shadow: none;
-				vertical-align: middle;
-				margin-left: 5px;
-			}
-		}
-		span {
-			margin-left: 5px;
-			color: #666;
-
-			&.today {
-				font-weight: bold;
-			}
-
-			&.days-ago:after {
-				content: " days ago";
-			}
-		}
 	}
 }
 
@@ -456,8 +345,13 @@ a {
 }
 
 @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .hide {
