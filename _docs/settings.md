@@ -459,6 +459,11 @@ Whether to add your selected Dart/Flutter SDK path to the `PATH` environment var
 <br />
 Whether to check you are using the latest version of the Dart SDK at startup.
 
+### dart.mcpServer
+**Default:** `false`.
+<br />
+Whether to register the Dart SDK's MCP server with VS Code. This only applies to Dart SDKs >= v3.9.0 which added the server.
+
 ### dart.sdkSwitchingTarget
 **Options:** `"workspace"` or `"global"`.
 <br />
