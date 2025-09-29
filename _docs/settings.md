@@ -41,7 +41,7 @@ Whether to show a notification the first few times an Analysis Server exception 
 ### dart.onlyAnalyzeProjectsWithOpenFiles
 **Default:** `false`.
 <br />
-Whether to ignore workspace folders and perform analysis based on the open files, as if no workspace was open at all. This allows opening large folders without causing them to be completely analyzed.
+Whether to ignore workspace folders and perform analysis based on the open files, as if no workspace was open at all. This allows opening very large folders without causing them to be fully analyzed but will result a lot of re-analysis as files are opened/closed. This is **not** recommended for small or medium sized workspaces, only very large workspaces where you are working in only a small part.
 
 ### dart.showExtensionRecommendations
 **Default:** `true`.
@@ -182,6 +182,11 @@ Whether to use code snippets from the Dart Analysis Server instead of those incl
 **Default:** `true`.
 <br />
 Whether to include Dart and Flutter snippets in code completion.
+
+### dart.inlayHints
+**Default:** `true`.
+<br />
+Whether to show Inlay Hints. When set to `true`, enables all inlay hints with default settings. When set to `false`, disables all inlay hints. Can also be an object to configure individual hint types. Requires Dart 3.10.
 
 ### dart.lspSnippetTextEdits
 **Default:** `true`.
@@ -334,6 +339,16 @@ Sets the [Web renderer](https://flutter.dev/to/web-renderers) used for Flutter w
 - `html` - Always use the HTML renderer.
 - `auto` - Use Flutter's "auto" renderer option to pick the best renderer based on the users device.
 
+### dart.flutterWidgetPreviewLocation
+**Options:** `"beside"` or `"sidebar"`.
+<br />
+**Default:** `"sidebar"`.
+<br />
+Where to display the Flutter Widget Preview.
+
+- `beside` - Open the Flutter Widget Preview beside the active editor.
+- `sidebar` - Open the Flutter Widget Preview in the sidebar.
+
 ### dart.hotReloadOnSave
 **Options:** `"never"`, `"manual"`, `"manualIfDirty"`, `"all"` or `"allIfDirty"`.
 <br />
@@ -351,6 +366,11 @@ Whether to automatically send a Hot Reload request to Dart apps during a debug s
 **Default:** `false`.
 <br />
 Whether to use the --offline switch for commands like `pub get` and **Flutter: New Project**.
+
+### dart.useFlutterDev
+**Default:** `false`.
+<br />
+Whether to use `flutter-dev` instead of `flutter`. This is a script for developers of the `flutter` tool to run from source and will run more slowly than the compiled tool.
 
 ## Logging
 
@@ -460,9 +480,14 @@ Whether to add your selected Dart/Flutter SDK path to the `PATH` environment var
 Whether to check you are using the latest version of the Dart SDK at startup.
 
 ### dart.mcpServer
-**Default:** `false`.
+**Default:** `true`.
 <br />
 Whether to register the Dart SDK's MCP server with VS Code. This only applies to Dart SDKs >= v3.9.0 which added the server.
+
+### dart.mcpServerTools
+**Default:** `{run_tests: false}`.
+<br />
+A map of MCP tool names to booleans to enable/disable specific tools from the Dart MCP server. Tools set to `false` will be excluded (if supported). By default, tools that overlap with built-in VS Code functionality will be excluded.
 
 ### dart.sdkSwitchingTarget
 **Options:** `"workspace"` or `"global"`.
@@ -480,6 +505,9 @@ Where to save SDK selections when using fast SDK switching from the language sta
 **Default:** `false`.
 <br />
 Whether to consider files ending `_test.dart` that are outside of the test directory as tests. This should be enabled if you put tests inside the `lib` directory of your Flutter app so they will be run with `flutter test` and not `flutter run`.
+
+### dart.coverageExcludePatterns
+An array of glob patterns to exclude from code coverage results. Paths matching any of these patterns will still be collected by the Dart VM but not be included in coverage reported to VS Code.
 
 ### dart.openTestView
 **Default:** `[testRunStart]`.
@@ -508,7 +536,7 @@ Additional environment variables to be added to all Dart/Flutter processes spawn
 ### dart.projectSearchDepth
 **Default:** `5`.
 <br />
-How many levels (including the workspace roots) down the workspace to search for Dart/Flutter projects. Increasing this number may help detect Flutter projects that are deeply nested in your workspace but slow down all operations that search for projects, including extension activation.
+How many levels (including the workspace roots) down the workspace to search for Dart/Flutter projects. Increasing this number may help detect Flutter projects that are deeply nested in your workspace but slow down all operations that search for projects, including extension activation (requires restart).
 
 ### dart.toolingDaemonAdditionalArgs
 Additional args to pass to the `dart tooling-daemon` command that runs as a background service (requires restart).
@@ -524,6 +552,11 @@ Whether to enable experimental (possibly unfinished or unstable) LSP handlers th
 **Default:** `false`.
 <br />
 Whether to enable experimental (possibly unfinished or unstable) refactors on the lightbulb menu. This setting is intended for use by Dart Analysis Server developers or users that want to try out and provide feedback on in-progress refactors.
+
+### dart.experimentalTestTracking
+**Default:** `false`.
+<br />
+Whether to enable experimental tracking of test locations. This may improve the experience when using packages like `pkg:test_reflective_loader` where tests are only discovered during test runs and not during coding.
 
 ### dart.normalizeFileCasing
 **Default:** `false`.
@@ -577,11 +610,6 @@ Whether to enable analysis for AngularDart templates (requires the Angular analy
 **LEGACY SETTING: Only applies to Dart SDKs before v2.15 since DevTools now ships in the SDK.**
 
 Whether to update DevTools if you are not using the latest version.
-
-### dart.useLegacyDebugAdapters
-**LEGACY SETTING: Legacy debug adapters are not recommended since Dart v3.4.**
-
-Whether to use the legacy debug adapters even if the new debug adapters are available in the current Dart/Flutter SDKs contain. Setting the value to `true` will force use of the legacay adapters. Setting to `false` will force use of the SDK adapters. Leaving as `null` will allow the extension to decide which debug adapters to use depending on the SDK version and rollout progress.
 
 # Resource Scoped Settings
 
@@ -787,6 +815,12 @@ The path to a low-traffic log file for basic extension and editor issues. Use `$
 
 ### dart.flutterDaemonLogFile
 The path to a log file for the `flutter daemon` service, which provides information about connected devices accessible from the status bar. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Daemon Logging](/docs/logging/#flutter-daemon).
+
+### dart.flutterWidgetPreviewLogFile
+The path to a log file for the `flutter widget-preview` service. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
+
+### dart.mcpServerLogFile
+The path to a log file for the Dart SDK's MCP server. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
 
 ### dart.toolingDaemonLogFile
 The path to a log file for the `dart tooling-daemon` service, which coordinates between various Dart and Flutter tools and extensions. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
