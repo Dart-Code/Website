@@ -12,7 +12,6 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 
 - `quickfix.add.async` - Add 'async' modifier
 - `quickfix.add.await` - Add 'await' keyword
-- `quickfix.add.await.multi` - Add 'await's everywhere in file
 - `quickfix.add.callSuper` - Add 'super....'
 - `quickfix.add.class.modifier.base` - Add 'base' modifier
 - `quickfix.add.class.modifier.base.multi` - Add 'base' modifier everywhere in file
@@ -35,6 +34,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.explicitCast` - Add cast
 - `quickfix.add.explicitCast.multi` - Add cast everywhere in file
 - `quickfix.add.extensionOverride` - Add an extension override for '...'
+- `quickfix.add.initializingFormalNamedParameters` - Add final initializing formal required named parameters
 - `quickfix.add.initializingFormalParameters` - Add final initializing formal parameters
 - `quickfix.add.keyToConstructors` - Add 'key' to constructors
 - `quickfix.add.keyToConstructors.multi` - Add 'key' to constructors everywhere in file
@@ -70,6 +70,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.add.typeAnnotation` - Add type annotation
 - `quickfix.add.typeAnnotation.multi` - Add type annotations everywhere in file
 - `quickfix.change.argumentName` - Change to '...'
+- `quickfix.change.to` - Change to '...'
 - `quickfix.change.toNearestPreciseValue` - Change to nearest precise int-as-double value: ...
 - `quickfix.change.toStaticAccess` - Change access to static using '...'
 - `quickfix.change.typeAnnotation` - Change '...' to '...' type annotation
@@ -84,6 +85,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.nullCheckToNullAwareElement.multi` - Convert null check to null-aware element in file
 - `quickfix.convert.quotes` - Convert the quotes and remove escapes
 - `quickfix.convert.quotes.multi` - Convert the quotes and remove escapes everywhere in file
+- `quickfix.convert.relatedToCascade` - Convert this and related to cascade notation
 - `quickfix.convert.toBoolExpression` - Convert to boolean expression
 - `quickfix.convert.toBoolExpression.multi` - Convert to boolean expressions everywhere in file
 - `quickfix.convert.toCascade` - Convert to cascade notation
@@ -144,19 +146,33 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.convert.toWhereType.multi` - Convert to using 'whereType' everywhere in file
 - `quickfix.convert.toWildcardPattern` - Convert to wildcard pattern
 - `quickfix.convert.toWildcardVariable` - Convert to wildcard variable
-- `quickfix.create.class` - Create class '...'
+- `quickfix.create.class.lowercase` - Create class '...'
+- `quickfix.create.class.lowercase.with` - Create class '...'
+- `quickfix.create.class.uppercase` - Create class '...'
+- `quickfix.create.class.uppercase.with` - Create class '...'
 - `quickfix.create.constructor` - Create constructor '...'
 - `quickfix.create.constructorForFinalFields` - Create constructor for final fields
 - `quickfix.create.constructorSuper` - Create constructor to call ...
+- `quickfix.create.extension.getter` - Create extension getter '...'
+- `quickfix.create.extension.method` - Create extension method '...'
+- `quickfix.create.extension.operator` - Create extension operator '...'
+- `quickfix.create.extension.setter` - Create extension setter '...'
 - `quickfix.create.field` - Create field '...'
 - `quickfix.create.file` - Create file '...'
 - `quickfix.create.function` - Create function '...'
+- `quickfix.create.function.tearoff` - Create function '...'
 - `quickfix.create.getter` - Create getter '...'
 - `quickfix.create.localVariable` - Create local variable '...'
 - `quickfix.create.method` - Create method '...'
 - `quickfix.create.method.multi` - Create methods in file
-- `quickfix.create.mixin` - Create mixin '...'
+- `quickfix.create.method.tearoff` - Create method '...'
+- `quickfix.create.missingOverrides` - Create ... missing override...
+- `quickfix.create.mixin.lowercase` - Create mixin '...'
+- `quickfix.create.mixin.lowercase.with` - Create mixin '...'
+- `quickfix.create.mixin.uppercase` - Create mixin '...'
+- `quickfix.create.mixin.uppercase.with` - Create mixin '...'
 - `quickfix.create.noSuchMethod` - Create 'noSuchMethod' method
+- `quickfix.create.operator` - Create operator '...'
 - `quickfix.create.parameter` - Create required positional parameter '...'
 - `quickfix.create.setter` - Create setter '...'
 - `quickfix.dataDriven` - ...
@@ -166,8 +182,31 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.flutter.convert.childrenToChild` - Convert to child:
 - `quickfix.flutter.makeConditionalOnDebugMode` - Make conditional on 'kDebugMode'
 - `quickfix.flutter.wrap.text` - Wrap in a 'Text' widget
-- `quickfix.import.async` - Import 'dart:async'
+- `quickfix.import.libraryCombinator` - Import '...' from ...
+- `quickfix.import.libraryCombinatorMultiple` - Import '...' and ... other... from ...
 - `quickfix.import.libraryHide` - Hide others to use '...' from '...'...
+- `quickfix.import.libraryPrefix` - Use imported library '...' with prefix '...'
+- `quickfix.import.libraryProject1` - Import library '...'
+- `quickfix.import.libraryProject1Prefixed` - Import library '...' with prefix '...'
+- `quickfix.import.libraryProject1PrefixedShow` - Import library '...' with prefix '...' and 'show'
+- `quickfix.import.libraryProject1Show` - Import library '...' with 'show'
+- `quickfix.import.libraryProject2` - Import library '...'
+- `quickfix.import.libraryProject2Prefixed` - Import library '...' with prefix '...'
+- `quickfix.import.libraryProject2PrefixedShow` - Import library '...' with prefix '...' and 'show'
+- `quickfix.import.libraryProject2Show` - Import library '...' with 'show'
+- `quickfix.import.libraryProject3` - Import library '...'
+- `quickfix.import.libraryProject3Prefixed` - Import library '...' with prefix '...'
+- `quickfix.import.libraryProject3PrefixedShow` - Import library '...' with prefix '...' and 'show'
+- `quickfix.import.libraryProject3Show` - Import library '...' with 'show'
+- `quickfix.import.libraryRemoveShow` - Remove show to use '...' from '...'...
+- `quickfix.import.librarySdk` - Import library '...'
+- `quickfix.import.librarySdkPrefixed` - Import library '...' with prefix '...'
+- `quickfix.import.librarySdkPrefixedShow` - Import library '...' with prefix '...' and 'show'
+- `quickfix.import.librarySdkShow` - Import library '...' with 'show'
+- `quickfix.inlineInvocation` - Inline invocation of '...'
+- `quickfix.inlineInvocation.multi` - Inline invocations everywhere in file
+- `quickfix.inlineTypedef` - Inline the definition of '...'
+- `quickfix.inlineTypedef.multi` - Inline type definitions everywhere in file
 - `quickfix.insertBody` - Insert body
 - `quickfix.insertOnKeyword` - Insert 'on' keyword
 - `quickfix.insertOnKeyword.multi` - Insert 'on' keyword in file
@@ -186,8 +225,10 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.makeVariableNullable` - Make '...' nullable
 - `quickfix.matchAnyMap` - Match any map
 - `quickfix.matchEmptyMap` - Match an empty map
+- `quickfix.mergeCombinatorsHide.hide` - Merge combinators into a single 'hide'
 - `quickfix.mergeCombinatorsHide.show` - Merge combinators into a single 'hide'
 - `quickfix.mergeCombinatorsShow.hide` - Merge combinators into a single 'show'
+- `quickfix.mergeCombinatorsShow.show` - Merge combinators into a single 'show'
 - `quickfix.moveAnnotationToLibraryDirective` - Move this annotation to a library directive
 - `quickfix.moveDocCommentToLibraryDirective` - Move this doc comment to a library directive
 - `quickfix.moveTypeArgumentsToClass` - Move type arguments to after class name
@@ -415,10 +456,14 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `quickfix.wrap.unawaited` - Wrap in 'unawaited'
 - `refactor.add.diagnosticPropertyReference` - Add a debug reference to this property
 - `refactor.add.digitSeparators` - Add digit separators
+- `refactor.add.late` - Add 'late' modifier
 - `refactor.add.returnType` - Add return type
 - `refactor.add.showCombinator` - Add explicit 'show' combinator
 - `refactor.add.typeAnnotation` - Add type annotation
 - `refactor.assignToVariable` - Assign value to new local variable
+- `refactor.bindAllToFields` - Bind all parameters to fields
+- `refactor.bindToField` - Bind parameter to field
+- `refactor.convert.ToDotShorthand` - Convert to dot shorthand
 - `refactor.convert.blockComment` - Convert to block documentation comment
 - `refactor.convert.bodyToAsync` - Convert to async function body
 - `refactor.convert.bodyToBlock` - Convert to block body
@@ -426,6 +471,7 @@ Note: These IDs are only provided by recent versions of the Dart analysis server
 - `refactor.convert.classToEnum` - Convert class to an enum
 - `refactor.convert.classToMixin` - Convert class to a mixin
 - `refactor.convert.conditionalToIfElse` - Replace conditional with 'if-else'
+- `refactor.convert.fieldFormalToNormal` - Convert to a normal parameter
 - `refactor.convert.finalFieldToGetter` - Convert '...' to a getter
 - `refactor.convert.forEachToForIndex` - Convert to for-index loop
 - `refactor.convert.getterToFinalField` - Convert to final field

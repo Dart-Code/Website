@@ -14,7 +14,8 @@ main() {
     ...extractIDs(File(assistFilePath), 'AssistKind'),
   ];
 
-  ids.sort((c1, c2) => c1.id != c2.id ? c1.id.compareTo(c2.id) : c1.name.compareTo(c2.name));
+  ids.sort((c1, c2) =>
+      c1.id != c2.id ? c1.id.compareTo(c2.id) : c1.name.compareTo(c2.name));
 
   printCodeActionsList(ids);
   print('');
@@ -24,7 +25,7 @@ main() {
 List<CodeAction> extractIDs(File file, String type) {
   final fileContents = file.readAsStringSync();
   final matches = RegExp(
-          '${RegExp.escape(type)}[\\s\\n]*\\([\\s\\n]*\'([\\w.]+)\',[\\s\\n]*[\\d\\w\\.]+,[\\s\\n]*["\']([\\w. \\{\\}\'"&+@?:=;!\\\\<>-]+)["\']')
+          '${RegExp.escape(type)}[\\s\\n]*\\([\\s\\n]*\'([\\w.]+)\',[\\s\\n]*[\\d\\w\\. +\\-]+,[\\s\\n]*["\']([\\w. \\{\\}\'"&+@?:=;!\\\\<>-]+)["\']')
       .allMatches(fileContents);
   return matches.map((match) {
     final id = match
