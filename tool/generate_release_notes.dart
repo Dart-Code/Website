@@ -125,23 +125,32 @@ List<String> _sortLabels(List<String> labels,
     {required bool forPrimarySelection}) {
   // Use this label first for primary selection, but sort it at the end for
   // display.
-  final reliesOnSdkRank = forPrimarySelection ? -1000 : 10;
-  const priorities = {
-    'in flutter': -10,
-    'in editor': -9,
-    'in testing': -8,
-    'in debugger': -7,
-    'in commands': -6,
-    'in views': -5,
-    'in cli': 1,
+  final reliesOnSdkRank = forPrimarySelection ? 0 : 10000;
+  const priorities = <String, int?>{
+    'in flutter': 1,
+    'in editor': 2,
+    'in ai': 3,
+    'in devtools': 4,
+    'in flutter sidebar': 5,
+    'in testing': 6,
+    'in debugging': 7,
+    'in commands': 8,
+    'in cli': 9,
+    'in views': 10,
+    'in remote': 11,
+    'in tasks': 12,
+    'in dtd': 13,
+    'in api': 14,
+    'in docs / website': 15,
+    'in misc': 16,
   };
   final labelRanks = {
     for (final label in labels)
       label: priorities[label] ??
-          (label.startsWith('relies on sdk') ? reliesOnSdkRank : 0),
+          (label.startsWith('relies on sdk') ? reliesOnSdkRank : null),
   };
 
-  return labels.sortedBy<num>((label) => labelRanks[label] ?? 0);
+  return labels.sortedBy<num>((label) => labelRanks[label] ?? 1000);
 }
 
 Future<dynamic> fetchJson(String uri) async {
