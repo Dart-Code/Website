@@ -7,6 +7,12 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
+## Improve APIs for Debug Console completion
+github.com/microsoft/vscode [#278113](https://github.com/microsoft/vscode/issues/278113), [#278108](https://github.com/microsoft/vscode/issues/278108), [#278109](https://github.com/microsoft/vscode/issues/278109), [#278115](https://github.com/microsoft/vscode/issues/278115)
+
+We don't yet support completion in the Debug Console, but there are various bugs/quirks that make it awkward to use. Implementing completion would be of more value if these issues were addressed.
+
+
 ## Unable to copy/paste with Cmd+C and Cmd+V in embedded DevTools windows on macOS
 [github.com/microsoft/vscode#129178](https://github.com/microsoft/vscode/issues/129178)
 
