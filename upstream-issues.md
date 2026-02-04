@@ -19,8 +19,8 @@ We don't yet support completion in the Debug Console, but there are various bugs
 Using Cmd+C/Cmd+V for copy/paste in embedded DevTools windows doesn't work because some of the events appear to be dropped.
 
 
-## Debugger shows "Paused on Entry" if "continued" event arrives too soon after "stopped" event
-[github.com/microsoft/vscode#238591](https://github.com/microsoft/vscode/issues/238591) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/238591?label=%20)
+## Debugger shows "Paused on Entry" for continued threads
+[github.com/microsoft/vscode#280933](https://github.com/microsoft/vscode/issues/280933) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/280933?label=%20)
 
 When multiple isolates are used, some isolates incorrectly show "Paused on Entry" in the UI even though they were only temporarily paused at entry while breakpoints were configured.
 
@@ -36,11 +36,6 @@ An upcoming feature "Fix All in Workspace" allows previewing changes before appl
 
 An upcoming feature "Fix All in Workspace" allows previewing changes before applying them. By default, VS Code has all changes unticked and requires manually ticking each branch. It would be better if we could tell VS Code to pre-tick all changes.
 
-
-## Improved File Selection API
-[github.com/microsoft/vscode#203326](https://github.com/microsoft/vscode/issues/203326) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/203326?label=%20)
-
-Currently when selecting an existing file as a target for the "Move to File" refactor, VS Code shows a prompt "Do you want to replace it?". This is misleading because the file is not replaced, the items being moved are simply merged into it. Having a better API would allow this prompt to be avoided.
 
 ## Editor Insets
 [github.com/microsoft/vscode#85682](https://github.com/microsoft/vscode/issues/85682) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/85682?label=%20)
