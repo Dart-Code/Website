@@ -295,6 +295,10 @@ main {
 }
 
 .upstream-issues {
+	img[src*="shields.io"] {
+		vertical-align: middle;
+	}
+
 	h2 {
 		margin-bottom: 0;
 	}

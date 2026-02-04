@@ -129,7 +129,7 @@ Although the debug adapter protocol has support for stepping by line or instruct
 ## Syntax Highlighting in Code Completion Details
 [github.com/microsoft/language-server-protocol#1115](https://github.com/microsoft/language-server-protocol/issues/1115) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/language-server-protocol/1115?label=%20)
 
-A lack of guidance about the use of `detail`/`documentation` makes it difficult to provide [syntax-highlighted details](https://github.com/Dart-Code/Dart-Code/issues/2792) on code completion items.
+A lack of guidance about the use of `detail`/`documentation` makes it difficult to provide [syntax-highlighted details](https://github.com/Dart-Code/Dart-Code/issues/2792) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/Dart-Code/Dart-Code/2792?label=%20) on code completion items.
 
 
 ## Code Folding Hides Closing Braces
