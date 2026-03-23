@@ -38,11 +38,6 @@ Whether to include symbols from the SDK and package dependencies in the "Go to S
 <br />
 Whether to show a notification the first few times an Analysis Server exception occurs.
 
-### dart.onlyAnalyzeProjectsWithOpenFiles
-**Default:** `false`.
-<br />
-Whether to ignore workspace folders and perform analysis based on the open files, as if no workspace was open at all. This allows opening very large folders without causing them to be fully analyzed but will result a lot of re-analysis as files are opened/closed. This is **not** recommended for small or medium sized workspaces, only very large workspaces where you are working in only a small part.
-
 ### dart.showExtensionRecommendations
 **Default:** `true`.
 <br />
@@ -160,7 +155,7 @@ The text style to use in closing labels. Using _Italic_ requires a font that sup
 What level of documentation to show in Hovers and Code Completion details. When `null`, defaults to 'full' when running locally and 'none' in remote workspaces. This setting is only supported for Dart SDKs after v2.18.
 
 - `full` - Show full documentation.
-- `summary` - Show short documentatin summary.
+- `summary` - Show short documentation summary.
 - `none` - Do not show documentation.
 
 ### dart.dtdEditorActiveLocationDelay
@@ -339,12 +334,23 @@ Sets the [Web renderer](https://flutter.dev/to/web-renderers) used for Flutter w
 - `html` - Always use the HTML renderer.
 - `auto` - Use Flutter's "auto" renderer option to pick the best renderer based on the users device.
 
+### dart.flutterWidgetPreview
+**Options:** `"startEagerly"`, `"startLazily"` or `"disabled"`.
+<br />
+**Default:** `"startLazily"`.
+<br />
+Controls whether the Widget Preview is enabled, and if so whether it is started eagerly or lazily. Starting lazily will avoid consuming any resources until you first use the Widget Preview, but will cause the first load to be slower. Requires restart.
+
+- `startEagerly` - Start the Widget Preview server immediately when a Flutter project is opened.
+- `startLazily` - Start the Widget Preview server only the first time the preview is shown.
+- `disabled` - Do not enable the Widget Preview.
+
 ### dart.flutterWidgetPreviewLocation
 **Options:** `"beside"` or `"sidebar"`.
 <br />
 **Default:** `"sidebar"`.
 <br />
-Where to display the Flutter Widget Preview.
+Where to display the Flutter Widget Preview. Requires restart.
 
 - `beside` - Open the Flutter Widget Preview beside the active editor.
 - `sidebar` - Open the Flutter Widget Preview in the sidebar.
@@ -388,6 +394,11 @@ The maximum length of a line in the log file. Lines longer than this will be tru
 **Default:** `true`.
 <br />
 Whether to enable functionality for using Pub. Turning this setting off will prevent the extension from ever running pub and hide all commands relating to this. Use this if you are using an alternative package manager.
+
+### dart.runPubConcurrently
+**Default:** `true`.
+<br />
+Whether to run Pub operations across multiple folders concurrently.
 
 ### dart.runPubGetOnNestedProjects
 **Options:** `"none"`, `"both"`, `"above"` or `"below"`.
@@ -485,7 +496,7 @@ Whether to check you are using the latest version of the Dart SDK at startup.
 Whether to register the Dart SDK's MCP server with VS Code. This only applies to Dart SDKs >= v3.9.0 which added the server.
 
 ### dart.mcpServerTools
-**Default:** `{run_tests: false}`.
+**Default:** `{analyze_files: false, dart_fix: false, dart_format: false, run_tests: false}`.
 <br />
 A map of MCP tool names to booleans to enable/disable specific tools from the Dart MCP server. Tools set to `false` will be excluded (if supported). By default, tools that overlap with built-in VS Code functionality will be excluded.
 
@@ -543,6 +554,11 @@ Additional args to pass to the `dart tooling-daemon` command that runs as a back
 
 ## Experimental
 
+### dart.dynamicTestTracking
+**Default:** `true`.
+<br />
+Whether to use the new dynamic test tracking. This is a temporary setting that will be removed in an upcoming release.
+
 ### dart.experimentalDtdHandlers
 **Default:** `false`.
 <br />
@@ -552,11 +568,6 @@ Whether to enable experimental (possibly unfinished or unstable) LSP handlers th
 **Default:** `false`.
 <br />
 Whether to enable experimental (possibly unfinished or unstable) refactors on the lightbulb menu. This setting is intended for use by Dart Analysis Server developers or users that want to try out and provide feedback on in-progress refactors.
-
-### dart.experimentalTestTracking
-**Default:** `false`.
-<br />
-Whether to enable experimental tracking of test locations. This may improve the experience when using packages like `pkg:test_reflective_loader` where tests are only discovered during test runs and not during coding.
 
 ### dart.normalizeFileCasing
 **Default:** `false`.
@@ -585,31 +596,10 @@ Whether to perform hot reload on save based on a filesystem watcher for Dart fil
 
 ## Legacy
 
-### dart.additionalAnalyzerFileExtensions
-**LEGACY SETTING: Only applies to legacy analysis server protocol.**
-
-Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).
-
-### dart.analysisServerFolding
-**Default:** `true`.
+### dart.onlyAnalyzeProjectsWithOpenFiles
+**Default:** `false`.
 <br />
-**LEGACY SETTING: Only applies to legacy analysis server protocol.**
-
-Whether to use folding data from the Dart Analysis Server instead of the built-in VS Code indent-based folding.
-
-### dart.analyzeAngularTemplates
-**Default:** `true`.
-<br />
-**LEGACY SETTING: The angular plugin is no longer supported.**
-
-Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in `analysis_options.yaml`).
-
-### dart.updateDevTools
-**Default:** `true`.
-<br />
-**LEGACY SETTING: Only applies to Dart SDKs before v2.15 since DevTools now ships in the SDK.**
-
-Whether to update DevTools if you are not using the latest version.
+**Deprecated**: Whether to ignore workspace folders and perform analysis based on the open files. This setting can make performance significantly worse when moving around a project and is not recommended.
 
 # Resource Scoped Settings
 
@@ -647,11 +637,6 @@ An array of glob patterns that should trigger Hot Reload when saved. The pattern
 **Default:** `true`.
 <br />
 Whether to insert argument placeholders during code completions. This feature is automatically disabled when `enableCompletionCommitCharacters` is enabled.
-
-### dart.lineLength
-**Default:** `80`.
-<br />
-The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section of your settings to match.
 
 ## Flutter
 
@@ -720,7 +705,7 @@ Whether to show getters in order to display them in debug views (such as the Var
 ### dart.suppressTestTimeouts
 **Options:** `"never"`, `"debug"` or `"always"`.
 <br />
-**Default:** `"never"`.
+**Default:** `"debug"`.
 <br />
 Whether to suppress test timeouts when running/debugging tests. To work properly this requires package:test version 1.20.1 or newer. For older versions, the default timeout will be increased to 1d but this will not affect tests that have explicit (non-factor) timeouts set with @timeout.
 
@@ -765,17 +750,12 @@ EXPERIMENTAL: The port where `flutter daemon` can be accessed if daemon is run r
 
 ## Legacy
 
-### dart.doNotFormat
-**LEGACY SETTING: Only applies to legacy analysis server protocol.**
-
-An array of glob patterns that should be excluded for formatting. The pattern is matched against the absolute path of the file. Use `[ "**/test/**" ]` to skip formatting for all test directories. Must always use forward slashes (even on Windows) as backslashes are used for escaping.
-
-### dart.flutterTrackWidgetCreation
-**Default:** `true`.
+### dart.lineLength
+**Default:** `80`.
 <br />
-**LEGACY SETTING: Disabling this may break functionality on modern SDKs.**
+**LEGACY SETTING: Use `formatter.page_width` in `analysis_options.yaml` instead.**
 
-Whether to pass `--track-widget-creation` to Flutter apps (required to support 'Inspect Widget'). This setting is always ignored when running in Profile or Release mode.
+The maximum length of a line of code. This is used by the document formatter. If you change this value, you may wish to update `editor.rulers` (which draws vertical lines in the editor) in the `["dart"]` section of your settings to match.
 
 # Custom Color Settings
 
@@ -826,26 +806,6 @@ The path to a log file for the Dart SDK's MCP server. Use `${workspaceName}` to 
 The path to a log file for the `dart tooling-daemon` service, which coordinates between various Dart and Flutter tools and extensions. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
 
 ## Legacy
-
-### dart.dartTestLogFile
-**LEGACY SETTING: Only applies when using the legacy debug adapters.**
-
-The path to a log file for Dart test runs. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
-
-### dart.flutterRunLogFile
-**LEGACY SETTING: Only applies when using the legacy debug adapters.**
-
-The path to a log file for `flutter run`, which is used to launch Flutter apps from VS Code. This is useful when trying to diagnose issues with apps launching (or failing to) on simulators and devices. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Run Logging](/docs/logging/#flutter-run).
-
-### dart.flutterTestLogFile
-**LEGACY SETTING: Only applies when using the legacy debug adapters.**
-
-The path to a log file for `flutter test`, which is used to run unit tests from VS Code. This is useful when trying to diagnose issues with unit test executions. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is. For more information on capturing these logs, see [Flutter Test Logging](/docs/logging/#flutter-test).
-
-### dart.vmServiceLogFile
-**LEGACY SETTING: Only applies when using the legacy debug adapters.**
-
-The path to a log file for communication between Dart Code and the VM service. This is useful when trying to diagnose issues with debugging such as missed breakpoints. Use `${name}` in the log file name to insert the Debug Session name to prevent concurrent debug sessions overwriting each others logs. Use `${workspaceName}` to insert the name of the current workspace in the file path. Use `~` to insert the user's home directory (the path should then use `/` separators even on Windows). Only the noted substitutions are supported, others will stay as-is.
 
 ### dart.webDaemonLogFile
 **LEGACY SETTING: Only applies when using the legacy debug adapters.**
