@@ -22,6 +22,12 @@ The following events are recorded by the Dart-Code extension:
 
 - `Extension_Activated`
 - `Extension_Restart`
+  In addition to the common properties below, this event includes the following properties:
+   - `reason`: The reason the extension restarted
+- `Extension_Deactivate`
+  In addition to the common properties below, this event includes the following properties:
+   - `sessionDurationSeconds`: Duration in seconds of the extension session that just ended
+   - `totalSessionDurationSeconds`: Duration in seconds of the overall session which may have included internal restarts
 - `SdkDetectionFailure`
 - `Debugger_Activated`
   In addition to the common properties below, this event includes the following properties:
@@ -34,7 +40,7 @@ The following events are recorded by the Dart-Code extension:
 - `FlutterSurvey_Shown`
 - `FlutterSurvey_Clicked`
 - `FlutterSurvey_Dismissed`
-- `FlutterOutline_Activated`
+- `FlutterOutline_FirstInteracted`
 - `Command_AddSdkToPath`
   In addition to the common properties below, this event includes the following properties:
    - `addSdkToPathResult`: Whether the request to add the SDK to path was successful
@@ -56,6 +62,12 @@ The following events are recorded by the Dart-Code extension:
 - `Command_RestartAnalyzer`
 - `Command_ForceReanalyze`
 - `Error_FlutterDaemonTimeout`
+  In addition to the common properties below, this event includes the following properties:
+   - `data`: The identifier of the request method that was timed out
+- `AnalysisServer_Terminate`
+  In addition to the common properties below, this event includes the following properties:
+   - `exitCode`: The exit code of the analysis server process
+   - `sessionDurationSeconds`: Duration in seconds of the analysis server session that just ended
 
 # Common Properties
 
@@ -66,6 +78,7 @@ The following properties are included in all events:
  - `common.extversion`: The version of the Dart extension
  - `common.vscodeversion`: The version of VS Code running the extension
  - `isDevExtension`: Whether the extension is running in development mode (this usually means running from source checked out from the Dart Code repo)
+ - `onlyAnalyzeProjectsWithOpenFiles`: Whether analysis is restricted to projects with open files
  - `showTodos`: Whether TODOs in Dart code are being shown in the Problems list
  - `analyzerProtocol`: Whether the Dart analysis server is running using the LSP or Legacy communication protocol
  - `formatter`: Whether the formatter is enabled, enabled-on-save, disabled, or set to something other than the Dart SDK formatter
