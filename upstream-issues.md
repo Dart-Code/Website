@@ -7,6 +7,12 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
+## Support opening files read-only
+github.com/microsoft/vscode [#307491](https://github.com/microsoft/vscode/issues/307491)
+
+It's very easy to `Ctrl+Click` into files in the Pub cache and modify files. Having a way to have these files read-only would prevent accidentally modying files here (whcich can lead to odd issues).
+
+
 ## Improve APIs for Debug Console completion
 github.com/microsoft/vscode [#278113](https://github.com/microsoft/vscode/issues/278113) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/278113?label=%20), [#278108](https://github.com/microsoft/vscode/issues/278108) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/278108?label=%20), [#278109](https://github.com/microsoft/vscode/issues/278109) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/278109?label=%20), [#278115](https://github.com/microsoft/vscode/issues/278115) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/278115?label=%20)
 
