@@ -7,8 +7,14 @@ Many feature requests for Dart-Code require some implementation in upstream repo
 
 New items are always added to the top of the list.
 
+# Support link providers in Test Results output
+[github.com/microsoft/vscode#318548](https://github.com/microsoft/vscode/issues/318548) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/318548?label=%20)
+
+Currently the extensions link provider does not fire for the test output in the Test Results pane, which means `package:` links do not work correctly when Ctrl+Clicking.
+
+
 ## Support opening files read-only
-github.com/microsoft/vscode [#307491](https://github.com/microsoft/vscode/issues/307491)
+[github.com/microsoft/vscode#307491](https://github.com/microsoft/vscode/issues/307491) ![GitHub issue status](https://img.shields.io/github/issues/detail/state/microsoft/vscode/307491?label=%20)
 
 It's very easy to `Ctrl+Click` into files in the Pub cache and modify files. Having a way to have these files read-only would prevent accidentally modying files here (whcich can lead to odd issues).
 
