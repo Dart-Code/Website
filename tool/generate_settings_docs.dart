@@ -177,7 +177,8 @@ String improveDocs(String key, String description) {
     'tab.inactiveForeground'
   ];
   const bold = [
-    'Flutter: New Project',
+    'Flutter: Create New Project',
+    'Dart: Create New Project',
   ];
   const logLinks = {
     "dart.analyzerInstrumentationLogFile":

@@ -237,20 +237,20 @@ Whether to automatically run `adb connect 100.115.92.2:5555` when spawning the F
 <br />
 **Default:** `"kotlin"`.
 <br />
-The programming language to use for Android apps when creating new projects using the **Flutter: New Project** command.
+The programming language to use for Android apps when creating new projects using the **Flutter: Create New Project** command.
 
 ### dart.flutterCreateIOSLanguage
 **Options:** `"objc"` or `"swift"`.
 <br />
 **Default:** `"swift"`.
 <br />
-The programming language to use for iOS apps when creating new projects using the **Flutter: New Project** command. This is only supported up until Flutter 3.22 after which it will be ignored.
+The programming language to use for iOS apps when creating new projects using the **Flutter: Create New Project** command. This is only supported up until Flutter 3.22 after which it will be ignored.
 
 ### dart.flutterCreateOrganization
-The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: New Project** command.
+The organization responsible for your new Flutter project, in reverse domain name notation (e.g. `com.google`). This string is used in Java package names and as prefix in the iOS bundle identifier when creating new projects using the **Flutter: Create New Project** command.
 
 ### dart.flutterCreatePlatforms
-The platforms to enable for new projects created using the **Flutter: New Project** command. If unset, all platforms will be enabled.
+The platforms to enable for new projects created using the **Flutter: Create New Project** command. If unset, all platforms will be enabled.
 
 ### dart.flutterCustomEmulators
 Custom emulators to show in the emulator list for easier launching. If IDs match existing emulators returned by Flutter, the custom emulators will override them.
@@ -371,7 +371,7 @@ Whether to automatically send a Hot Reload request to Dart apps during a debug s
 ### dart.offline
 **Default:** `false`.
 <br />
-Whether to use the --offline switch for commands like `pub get` and **Flutter: New Project**.
+Whether to use the --offline switch for commands like `pub get` and **Flutter: Create New Project**.
 
 ### dart.useFlutterDev
 **Default:** `false`.
