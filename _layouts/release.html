@@ -4,12 +4,15 @@ layout: template
 
 <main>
 	<p>For instructions on installing the Dart or Flutter extensions, <a href="/#installation">go here</a>.</p>
-	
+
 	{% if page.provisional %}
 		<h3 class="callout title">Provisional Release Notes</h3>
 		<p class="callout body">These release notes are provisional and may change before this version is published.</p>
 	{% endif %}
 	{{ content }}
+
+	<h2>Raising Bugs/Feature Requests and Voting on Issues</h2>
+	<p>If you encounter bugs or have suggestions for the extension, please file them in the [github.com/Dart-Code/Dart-Code repo](https://github.com/Dart-Code/Dart-Code/issues). Please add 👍s to existing issues you would like to see implemented to help us prioritize.</p>
 
 	<h2>Upstream Issues</h2>
 	<p>Some feature requests and fixes require new features and fixes in upstream projects like VS Code and LSP which use counts of 👍s on those issues to help gauge demand. The Dart-Code website now lists some of the most significant upstream issues with a description of the feature/fix they would enable. Please consider reviewing this list and adding your 👍 to any GitHub issues relevant to features you’d like to see!</p>
