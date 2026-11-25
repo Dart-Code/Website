@@ -15,7 +15,7 @@ However there are some things you can't do without a launch configuration, such 
 - Run Dart CLI scripts via the terminal to allow reading from `stdin`
 - Pass arguments to your Dart CLI scripts
 - Pass additional arguments to `flutter run` ([such as `--dart-define`](/docs/using-dart-define-in-flutter/))
-- Run [Dart (non-Flutter) web apps](/docs/running-dart-web-apps/)
+- Run [Dart (non-Flutter) web apps and tests](/docs/running-dart-web-apps/)
 - Create [custom CodeLens](/docs/custom-codelens/) actions for running apps
 
 You can open your launch configuration file by clicking on the **Debug** side bar and then either the cog icon at the top, or the **create a launch.json file** link below the big blue button, depending on whether you already have one or not.
@@ -37,7 +37,7 @@ You can open your launch configuration file by clicking on the **Debug** side ba
 		"cwd": "/foo/bar",
 
 		// The entry script to execute when running the app.
-		// Set to a "web" in a Dart web app to run in web move.
+		// Set to "web" in a Dart web app to run in web mode.
 		// Set to "test" in an app with tests to run all tests.
 		"program": "bin/main.dart",
 
