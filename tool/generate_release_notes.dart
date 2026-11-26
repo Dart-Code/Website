@@ -8,8 +8,8 @@ import 'package:path/path.dart' as path;
 main() async {
   Directory.current = path.dirname(Platform.script.toFilePath());
 
-  final List<dynamic> milestones = (await fetchJson(
-      'milestones?state=open&sort=completeness&direction=desc'));
+  final List<dynamic> milestones = await fetchAllPages(
+      'milestones?state=open&sort=completeness&direction=desc');
 
   final milestone =
       milestones.firstWhere((m) => (m['title'] as String).startsWith('v'));
@@ -43,10 +43,7 @@ main() async {
 
   final Map<String, Map<int, dynamic>> issuesByLabel = {};
   final List<dynamic> issues =
-      await fetchJson('issues?milestone=$key&state=closed&per_page=100');
-  if (issues.length >= 100) {
-    print('100 ITEMS RETURNED, THERE MAY BE MORE!');
-  }
+      await fetchAllPages('issues?milestone=$key&state=closed&per_page=100');
   for (final issue in issues) {
     final labels = issue['labels'] as List<dynamic>;
     final primaryLabel = _getPrimaryLabel(labels);
@@ -153,13 +150,28 @@ List<String> _sortLabels(List<String> labels,
   return labels.sortedBy<num>((label) => labelRanks[label] ?? 1000);
 }
 
-Future<dynamic> fetchJson(String uri) async {
+Future<List<dynamic>> fetchAllPages(String uri) async {
   final client = http.Client();
   try {
-    final resp = await client.get(
-        Uri.parse('https://api.github.com/repos/Dart-Code/Dart-Code/$uri'));
-    return jsonDecode(resp.body);
+    final results = <dynamic>[];
+    Uri? nextUri =
+        Uri.parse('https://api.github.com/repos/Dart-Code/Dart-Code/$uri');
+    while (nextUri != null) {
+      final resp = await client.get(nextUri);
+      if (resp.statusCode != 200) {
+        throw 'Failed to fetch $nextUri: ${resp.statusCode} ${resp.reasonPhrase}\n${resp.body}';
+      }
+      results.addAll(jsonDecode(resp.body) as List<dynamic>);
+      nextUri = _getNextPageUri(resp.headers['link']);
+    }
+    return results;
   } finally {
     client.close();
   }
+}
+
+Uri? _getNextPageUri(String? linkHeader) {
+  if (linkHeader == null) return null;
+  final match = RegExp(r'<([^>]+)>;\s*rel="next"').firstMatch(linkHeader);
+  return match != null ? Uri.parse(match.group(1)!) : null;
 }
