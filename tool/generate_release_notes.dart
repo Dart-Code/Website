@@ -37,7 +37,7 @@ main() async {
 
   final now = DateTime.now();
   final year = now.year;
-  final month = now.month;
+  final month = now.month.toString().padLeft(2, '0');
   output.writeln('# $name _$year-$month-??_');
   output.writeln('');
 
@@ -49,7 +49,13 @@ main() async {
     final primaryLabel = _getPrimaryLabel(labels);
 
     // Non-functional changes don't go in release notes.
-    if (labels.any((l) => l['name'] == 'is non-functional')) {
+    if (labels.any((l) => l['name'] == 'non-functional')) {
+      continue;
+    }
+
+    // Unmerged closed PRs don't go in release notes.
+    final pullRequest = issue['pull_request'] as Map<String, dynamic>?;
+    if (pullRequest != null && pullRequest['merged_at'] == null) {
       continue;
     }
 
@@ -105,12 +111,21 @@ String _getPrimaryLabel(List<Object?> labels) {
 }
 
 String _getLabelTitle(String label) {
-  if (label == 'in devtools sidebar') {
-    return 'Flutter Sidebar';
-  } else if (label == 'in devtools') {
-    return 'DevTools';
-  } else if (label == 'in other') {
-    return 'Misc';
+  const titles = {
+    'in ai': 'AI',
+    'in api': 'API',
+    'in ci': 'CI',
+    'in cli': 'CLI',
+    'in devtools': 'DevTools',
+    'in docs / website': 'Docs / Website',
+    'in dtd': 'Dart Tooling Daemon',
+    'in flutter sidebar': 'Flutter Sidebar',
+    'in flutter widget preview': 'Flutter Widget Preview',
+    'in lsp/analysis server': 'LSP / Analysis Server',
+    'in other': 'Misc',
+  };
+  if (titles.containsKey(label)) {
+    return titles[label]!;
   } else if (label.startsWith('in ')) {
     return label.substring(3, 4).toUpperCase() + label.substring(4);
   } else {
@@ -125,21 +140,28 @@ List<String> _sortLabels(List<String> labels,
   final reliesOnSdkRank = forPrimarySelection ? 0 : 10000;
   const priorities = <String, int?>{
     'in flutter': 1,
-    'in editor': 2,
-    'in ai': 3,
-    'in devtools': 4,
-    'in flutter sidebar': 5,
-    'in testing': 6,
-    'in debugging': 7,
-    'in commands': 8,
-    'in cli': 9,
-    'in views': 10,
-    'in remote': 11,
-    'in tasks': 12,
-    'in dtd': 13,
-    'in api': 14,
-    'in docs / website': 15,
-    'in misc': 16,
+    'in flutter widget preview': 2,
+    'in editor': 3,
+    'in lsp/analysis server': 4,
+    'in ai': 5,
+    'in devtools': 6,
+    'in flutter sidebar': 7,
+    'in testing': 8,
+    'in coverage': 9,
+    'in debugging': 10,
+    'in commands': 11,
+    'in cli': 12,
+    'in views': 13,
+    'in remote': 14,
+    'in tasks': 15,
+    'in dtd': 16,
+    'in api': 17,
+    'in dart': 18,
+    'in desktop': 19,
+    'in web': 20,
+    'in docs / website': 21,
+    'in ci': 22,
+    'in other': 5000,
   };
   final labelRanks = {
     for (final label in labels)
